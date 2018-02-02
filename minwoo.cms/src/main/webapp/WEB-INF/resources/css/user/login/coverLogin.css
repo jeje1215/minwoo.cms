@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.box{
+background-color:#f1f1f1;
+width: 500px;
+height:50%;
+margin: 50px auto;
+border:1px solid #f1f1f1;
+border-radius:5px;
+}
+form {
+	width: 400px;
+	font-family:HY강B;
+	margin: auto;	
+}
+.form-group a{
+float:right;
+color: #fdd813 ;
+}
+.btn-block{
+background-color:#428bca;
+color:white;
+font-family:HY강B;
+font-size:15px;
+}

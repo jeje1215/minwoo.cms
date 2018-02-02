@@ -1,0 +1,235 @@
+@CHARSET "UTF-8";
+
+p {
+   font-size: 11px;
+}
+
+body {
+   font-family: "HY강B";
+}
+
+/* 프로필 */
+
+.pricing-table .plan {
+   margin-left: 20px;
+   border-radius: 5px;
+   text-align: center;
+   background-color: #c0d6e4;
+   margin-left: 20px;
+   width: 190px;
+   height: 300px;
+   font-family: HY강B;
+}
+
+.plan:hover {
+   background-color: #ffdada;
+}
+
+.plan {
+   padding: 20px;
+   margin-left: 0px;
+   color: #ff;
+   background-color: #5e5f59;
+   border-radius: 5px 5px 0 0;
+}
+
+.plan-name-bronze {
+   padding: 5px;
+   background-color: white;
+   border-radius: 5px 5px 0 0;
+   height: 150px;
+   font-family: HY강B;
+}
+
+.pricing-table-bronze {
+   padding: 10px;
+   color: #fff;
+   background-color: #f89406;
+   border-radius: 5px 5px 0 0;
+}
+
+.pricing-table .plan .plan-name span {
+   font-size: 10px;
+}
+.pricing-table .plan ul {
+   list-style: none;
+   border-radius: 0 0 5px 5px;
+}
+
+.plan-feature {
+   font-size: 14px;
+}
+
+.pricing-table .plan ul li.plan-feature {
+   padding: 5px 5px;
+   border-top: 1px solid #c5c8c0;
+   font-family: HY강B;
+   text-align: left;
+}
+
+
+
+
+
+/* 탑메뉴입니다. */
+.navbar-default .navbar-nav>li>a {
+   color: white;
+   font-weight: bold;
+   font-family: HY강B;
+   
+}
+
+.navbar-default {
+   background-color: #1077A9;
+   font-size: 16px;
+   font-family: HY강B;
+   margin-left: 180px;
+   margin-right: 180px;
+   margin-bottom: 30px;
+}
+
+/* 옆메뉴 */
+
+nav.aside {
+   display: table-cell;
+   padding-left: 170px;
+   font-family: HY강B;
+}
+
+form.submenu {
+   width: 220px;
+   height: auto;
+   padding-left: 10px;
+   font-family: HY강B;
+}
+
+.nav ul {
+   list-style: none; 
+    width: 180px; 
+    font-size: 1em;
+   padding: 0; 
+   font-family: HY강B;
+   display: table-cell;
+}
+
+ul {
+   font-size: 15px;
+   font-family: HY강B;
+   padding-left: 5px;
+}
+
+li {
+   font-size: 15px;
+   font-family: HY강B;
+   font-color: black;
+}
+
+.btn-block {
+   font-size: 15px;
+   font-family: HY강B;
+   background-color: #1077a9;
+   color: white;
+}
+
+#accordian {
+   margin: 100px auto 0 0;
+   color: white;
+   text-decoration: none;
+   display: table-cell;
+   width: 200px;
+}
+/* 메뉴 스타일 */
+#accordian h3 {
+   font-size: 14px;
+   line-height: 40px;
+   padding: 0 10px;
+   cursor: pointer;
+   background: #003366;
+   margin-bottom: 0px;
+   width: 200px;
+}
+
+#accordian h3:hover {
+   width: 200px;
+}
+/* 아이콘폰트 스타일 */
+#accordian h3 span {
+   font-size: 20px;
+   margin-right: 10px;
+}
+
+#accordian li {
+   list-style-type: none;
+}
+/* 서브메뉴 스타일 */
+#accordian ul ul li a {
+   color: black;
+   text-decoration: none;
+   background: lightblue;
+   font-size: 13px;
+   line-height: 28px;
+   display: block;
+   padding: 0 15px;
+   width: 200px;
+}
+
+#accordian ul ul li a:hover {
+   background: #ffe4e4;
+   border-left: 5px solid #09c;
+   width: 200px;
+}
+
+/* active 클래스 외에 것은 보이지 않게 하기 */
+#accordian ul ul {
+   display: none;
+   padding-left: 0px;
+}
+
+#accordian li.active ul {
+   display: block;
+   width: 200px;
+}
+
+.plus {
+   float: right;
+} /* 메뉴 아이콘 배치 */
+/* form { */
+/*    position: relative; */
+/*    width: 200px; */
+/*    float: right; */
+/*    margin: 0 auto; */
+/* } */
+
+
+
+
+
+
+/* 로그인 버튼  */
+.btn-info {
+   height: 30px;
+   background-color: #FFDADA;
+   border: 1px solid #003366;
+   font-family: HY강B;
+   color: black;
+}
+
+.del {
+   border-radius: 5px;
+   width: 75px;
+   height: 35px;
+   float: right;
+   font-family: HY강B;
+   font-size: 14px;
+   color: white;
+   border: 1px solid #cccccc;
+   background-color: #007DC1;
+}
+
+
+/* 공지사항,회원관리,메시지함관리 글씨 css */
+.name {
+   padding-left: 10px;
+   font-family: HY강B;
+   margin-top: 10px;
+}

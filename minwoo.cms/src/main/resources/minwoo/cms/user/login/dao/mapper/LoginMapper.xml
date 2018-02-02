@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="minwoo.cms.user.login.dao.mapper.LoginMapper">
+	<resultMap id="userMap" type="minwoo.cms.user.login.domain.LoginInfo">
+		<id property="loginId"	column="user_id"/>
+		<result property="loginPw"	column="user_pwd"/>
+        <result property="regDate" column="reg_date"/>
+	</resultMap>	
+	
+	<select id="chkId" resultMap="userMap" parameterType="minwoo.cms.user.login.domain.LoginInfo">
+		select user_id from users where user_id=#{loginId}
+	</select>	
+
+	<select id="chkPwd" resultMap="userMap" parameterType="minwoo.cms.user.login.domain.LoginInfo">
+		select user_pwd from users where user_id=#{loginId} and user_pwd=#{loginPw}
+	</select>	
+	
+	<select id="getRegDate" resultType="date" parameterType="string">
+		select reg_date from users where user_id=#{loginId}
+	</select>
+	
+	<select id="getUserLevel" resultType="string" parameterType="string">
+		select user_level from users where user_id=#{loginId}
+	</select>	
+</mapper>

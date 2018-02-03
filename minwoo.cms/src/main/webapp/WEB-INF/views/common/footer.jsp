@@ -3,9 +3,13 @@
 <%@ include file="./modal.jsp"%>
 <style>
 footer{
+		width:100%;
+		position:fixed;
+		bottom:0;
+		margin-left:auto;
+		margin-right:auto;
 		font-family: HY강B;
 		font-size:15px;
-	
 }
 </style>	
 	<footer>

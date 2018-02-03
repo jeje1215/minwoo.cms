@@ -10,6 +10,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String main(){
 		return "common/cover";
+		//return "index";
 	}
 	// 페이지 이동
 	@RequestMapping(value="/url", method=RequestMethod.POST)

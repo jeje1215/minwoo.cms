@@ -22,8 +22,8 @@
 				<a href="#" onclick="goUrl('common/cover', urlForm)"><span class="glyphicon glyphicon-home"></span>Home</a>
 				<div class="form-group">
 					<button type="button" class="btn btn-def btn-block"
-						data-toggle="modal" data-target="#myModal"
-						style="background-color: #0084cd">ID 찾기</button>
+						 id="popbutton"
+						 style="background-color: #0084cd">ID 찾기</button>
 				</div>
 			</div>
 		</form>
@@ -51,5 +51,6 @@
 				</div>
 			</div>
 		</form>
-	</div>
+	</div>	
+<%@ include file="../../common/footer.jsp"%>
 	

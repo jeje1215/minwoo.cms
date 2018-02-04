@@ -1,6 +1,6 @@
 
 	$(function() {
-		$("#loginBtn").bind("click", function() {
+		$("#idFind").bind("click", function() {
 			var id = $("input[name=loginId]").val();
 			var pwd = $("input[name=loginPw]").val();
 			var msg;
@@ -44,28 +44,5 @@
 			}
 			$('#loginTxt').css('color', 'red');
 			$("#loginTxt").html(msg);
-			
-		});
-		
-		$("#logout").bind("click", function(){
-			if(confirm("로그아웃 하시겠습니까?")){
-				$.ajax({
-					url : "login/logOut",
-					method : "post",
-					data : {},
-					success : function(result) {
-						if (result == true) {
-							goUrl('main', urlForm);
-						} else{
-							$('#loginTxt').css('color', 'red');
-							$("#loginTxt").html("※ error-관리자에게 문의하세요.");
-						}
-					},
-					error : function(a, b, errMsg) {
-						$('#loginTxt').css('color', 'blue');
-						$("#loginTxt").html("※ 실패 : " + errMsg);
-					}
-				});
-			}
 		});
 	});

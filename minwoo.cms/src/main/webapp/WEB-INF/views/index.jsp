@@ -13,13 +13,9 @@
 
 <script type="text/javascript">
 $(function(){
-
     $("#popbutton").click(function(){
-
         $('div.modal').modal();
-
     })
-
 })
 
 </script>

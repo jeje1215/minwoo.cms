@@ -3,7 +3,6 @@
 		$("#idFind").bind("click", function() { //아이디 찾기
 			var userNm = $("input[name=userNm]").val();
 			var userMail = $("#userMail_id").val();
-			var msg;
 			if(userNm == "" || userNm.length == 0){
 				$('#modalBody_one').html("이름을 정확히 입력해 주세요."); 
 				$('#myModal_one').modal();
@@ -40,10 +39,9 @@
 		});
 		
 
-		$("#pwFind").bind("click", function() { //비밀번호 찾기
+		$("#pwdFind").bind("click", function() { //비밀번호 찾기
 			var userId = $("input[name=userId]").val();
 			var userMail = $("#userMail_pwd").val();
-			var msg;
 			if(userId == "" || userId.length == 0){
 				$('#modalBody_one').html("ID를 정확히 입력해 주세요."); 
 				$('#myModal_one').modal();

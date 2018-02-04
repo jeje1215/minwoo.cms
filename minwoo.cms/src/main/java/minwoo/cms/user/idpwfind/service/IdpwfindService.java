@@ -4,5 +4,5 @@ import minwoo.cms.user.idpwfind.domain.UserInfo;
 
 public interface IdpwfindService {
 	UserInfo idFind(UserInfo userInfo);
-	UserInfo pwFind(UserInfo userInfo);
+	UserInfo pwdFind(UserInfo userInfo);
 }

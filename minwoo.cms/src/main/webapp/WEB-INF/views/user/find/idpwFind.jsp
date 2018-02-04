@@ -43,7 +43,7 @@
 			<div class="form-group text-center">
 				<a href="#" onclick="goUrl('common/cover', urlForm)"><span class="glyphicon glyphicon-home"></span>Home</a>
 				<div class="form-group">
-					<button type="button" class="btn btn-def btn-block" style="background-color: #0084cd" id="pwFind">PW 찾기</button>
+					<button type="button" class="btn btn-def btn-block" style="background-color: #0084cd" id="pwdFind">PW 찾기</button>
 				</div>
 			</div>
 		</form>

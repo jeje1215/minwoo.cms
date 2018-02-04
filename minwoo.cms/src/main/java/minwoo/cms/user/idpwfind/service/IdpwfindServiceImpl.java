@@ -26,7 +26,7 @@ public class IdpwfindServiceImpl implements IdpwfindService{
 		return userInfo;
 	}
 	
-	public UserInfo pwFind(UserInfo userInfo) {
+	public UserInfo pwdFind(UserInfo userInfo) {
 		UserInfo tmpInfo = null;
 		String userPwd;
 		String finPwd;

@@ -24,8 +24,8 @@ public class IdpwfindController {
 	//비밀번호 찾기
 	@RequestMapping(value="/find/pwFind")
 	@ResponseBody 
-	public UserInfo pwFind(UserInfo userInfo){
-		userInfo = idpwfindService.pwFind(userInfo);
+	public UserInfo pwdFind(UserInfo userInfo){
+		userInfo = idpwfindService.pwdFind(userInfo);
 		return userInfo;
 	}
 }

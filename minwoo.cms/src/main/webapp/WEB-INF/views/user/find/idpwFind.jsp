@@ -16,7 +16,7 @@
 				<span class="input-group-addon"><i
 					class="glyphicon glyphicon-envelope"></i></span> <input
 					class="form-control" name="userMail" type="email" autofocus required
-					placeholder="이메일" />
+					placeholder="MAIL" id="userMail_id"/>
 			</div>
 			<div class="form-group text-center">
 				<a href="#" onclick="goUrl('common/cover', urlForm)"><span class="glyphicon glyphicon-home"></span>Home</a>
@@ -38,7 +38,7 @@
 				<span class="input-group-addon"><i
 					class="glyphicon glyphicon-envelope"></i></span> <input
 					class="form-control" name="userMail" type="email" autofocus required
-					placeholder="이메일" />
+					placeholder="MAIL" id="userMail_pwd"/>
 			</div>
 			<div class="form-group text-center">
 				<a href="#" onclick="goUrl('common/cover', urlForm)"><span class="glyphicon glyphicon-home"></span>Home</a>

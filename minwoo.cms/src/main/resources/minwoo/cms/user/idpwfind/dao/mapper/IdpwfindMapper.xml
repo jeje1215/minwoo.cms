@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="minwoo.cms.user.idpwfind.dao.mapper.IdpwfindMapper">
+	<resultMap id="userMap" type="minwoo.cms.user.idpwfind.domain.UserInfo">
+		<id property="userId" column="user_id" />
+		<result property="userMail" column="user_mail" />
+		<result property="userNm" column="user_nm" />
+	</resultMap>
+
+	<select id="idFind" resultMap="userMap"
+		parameterType="minwoo.cms.user.idpwfind.domain.UserInfo">
+		select user_id from users where user_nm=#{userNm} and
+		user_mail=#{userMail}
+	</select>
+
+	<select id="pwdFind" resultMap="userMap"
+		parameterType="minwoo.cms.user.idpwfind.domain.UserInfo">
+		select user_pwd from users where user_id=#{userId} and
+		user_mail=#{userMail}
+	</select>
+
+</mapper>

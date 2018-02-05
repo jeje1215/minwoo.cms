@@ -6,6 +6,7 @@
 		<id property="userId" column="user_id" />
 		<result property="userMail" column="user_mail" />
 		<result property="userNm" column="user_nm" />
+		<result property="userPwd" column="user_pwd" />
 	</resultMap>
 
 	<select id="idFind" resultMap="userMap"
@@ -16,7 +17,7 @@
 
 	<select id="pwdFind" resultMap="userMap"
 		parameterType="minwoo.cms.user.idpwfind.domain.UserInfo">
-		select user_id from users where user_id=#{userId} and
+		select user_pwd from users where user_id=#{userId} and
 		user_mail=#{userMail}
 	</select>
 </mapper>

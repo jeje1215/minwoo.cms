@@ -35,11 +35,13 @@ public class IdpwfindServiceImpl implements IdpwfindService{
 
 		if (tmpInfo == null) {
 			userInfo.setResultCode(1);//일치하는 정보 없음
-			System.out.println(userInfo.getUserId());
-			System.out.println(userInfo.getUserMail());
+			//System.out.println(userInfo.getUserId());
+			//System.out.println(userInfo.getUserMail());
 		} else {
 			userInfo.setResultCode(2);//성공
 			userPwd = tmpInfo.getUserPwd();
+			System.out.println(userPwd);
+			System.out.println("------");
 			finPwd = userPwd.substring(0, 2); //앞에 3글자
 			for(int i=3; i< userPwd.length(); i++){
 				finPwd = finPwd + "*";

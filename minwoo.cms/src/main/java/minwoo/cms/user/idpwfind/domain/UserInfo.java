@@ -1,10 +1,10 @@
 package minwoo.cms.user.idpwfind.domain;
 
 public class UserInfo {
-	private String userNm;
-	private String userMail;
-	private String userId;
-	private String userPwd;
+	public String userNm;
+	public String userMail;
+	public String userId;
+	public String userPwd;
 	public int resultCode;
 
 	public String getUserNm() {

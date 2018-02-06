@@ -1,4 +1,10 @@
-
+$(document).ready(function(){ 
+	$("input[name=loginPw]").keydown(function (key) {
+        if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+        	$('#loginBtn').trigger('click');
+        }
+    });  
+});
 	$(function() {
 		$("#loginBtn").bind("click", function() {
 			var id = $("input[name=loginId]").val();

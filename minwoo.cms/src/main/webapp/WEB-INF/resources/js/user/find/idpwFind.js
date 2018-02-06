@@ -1,4 +1,10 @@
-
+$(document).ready(function(){ 
+    $("#userMail_id").keydown(function (key) {
+        if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+        	$('#idFind').trigger('click');
+        }
+    });
+});
 	$(function() {
 		$("#idFind").bind("click", function() { //아이디 찾기
 			var userNm = $("input[name=userNm]").val();
@@ -17,7 +23,7 @@
 						data : $("#findIdForm").serialize(),
 						success : function(user) {
 							if (user.resultCode == 1) {
-								$('#modalBody_one').html("입력하신 정보와 일치하는 회원정보가 없습니다."); 
+								$('#modalBody_one').html("입력하신 정보와 일치하는 \n회원정보가 없습니다."); 
 								$('#myModal_one').modal();
 							} else if (user.resultCode == 2) {
 								$('#modalBody_one').html("회원님의 ID는 "+user.userId+" 입니다."); 
@@ -56,7 +62,7 @@
 						data : $("#findPwForm").serialize(),
 						success : function(user) {
 							if (user.resultCode == 1) {
-								$('#modalBody_one').html("입력하신 정보와 일치하는 회원정보가 없습니다."); 
+								$('#modalBody_one').html("입력하신 정보와 일치하는 \n회원정보가 없습니다."); 
 								$('#myModal_one').modal();
 							} else if (user.resultCode == 2) {
 								$('#modalBody_one').html("회원님의 비밀번호는 "+user.userPwd+" 입니다."); 

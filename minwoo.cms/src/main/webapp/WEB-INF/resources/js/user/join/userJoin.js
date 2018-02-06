@@ -6,6 +6,7 @@
 				method : "post",
 				data : $("#joinForm").serialize(),
 				success : function(result) {
+					alert("ddd");
 					if(result == true){
 						$('#modalBody_one').html("사용가능한 아이디 입니다."); 
 						$('#myModal_one').modal();

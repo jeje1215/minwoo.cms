@@ -14,14 +14,15 @@ public class JoinController {
 	@Autowired private JoinService joinService;
 
 	//회원가입
-	@RequestMapping(value="join/userJoin", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="join/userJoin", method = RequestMethod.POST)
 	@ResponseBody 
 	public boolean userJoin(User user){
-		return joinService.userJoin(user);
+		System.out.println(joinService.userJoin(user));
+		return true;
 	}	
 	
 	//아이디 중복체크
-	@RequestMapping(value="join/idChk", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="join/idChk", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean idChk(User user){
 		return joinService.idChk(user);

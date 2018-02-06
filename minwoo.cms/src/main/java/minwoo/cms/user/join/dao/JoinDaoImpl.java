@@ -19,4 +19,8 @@ public class JoinDaoImpl implements JoinDao{
 		return result;
 	}
 	
+	public User doubleChk(User user){
+		return joinMapper.doubleChk(user);
+	}
+	
 }

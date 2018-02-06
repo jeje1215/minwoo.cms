@@ -20,4 +20,10 @@ public class JoinController {
 		return joinService.userJoin(user);
 	}	
 	
+	@RequestMapping(value="/join/idChk", method = {RequestMethod.GET, RequestMethod.POST})
+	@ResponseBody
+	public boolean idChk(User user){
+		return joinService.idChk(user);
+	}
+	
 }

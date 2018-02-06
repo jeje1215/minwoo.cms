@@ -10,11 +10,12 @@
 		<h1>회원가입</h1>
 	</div>
 	<form class="form-horizontal" id="joinForm">
+	<input type="text" name="idChk" id="idChk" value="N" style="display:none">
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="inputId">ID</label>
 			<div class="col-sm-6">
 				<input class="form-control" id="inputId" type="text" required
-					placeholder="ID" name="userId" style="width:150px;">
+					placeholder="ID" name="userId" style="width:150px;display:inline;">
 				<button class="btn btn-danger" id="doubleChk">
 					중복체크<i class="fa fa-times spaceLeft"></i>
 				</button>

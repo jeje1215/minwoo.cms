@@ -7,6 +7,10 @@
 				data : $("#joinForm").serialize(),
 				success : function(result) {
 					if(result == true){
+						$("#idChk").val('Y');
+						$("#doubleChk").hide();
+						$("#inputId").attr("readonly", true); 
+
 						$('#modalBody_one').html("사용가능한 아이디 입니다."); 
 						$('#myModal_one').modal();
 					}else{

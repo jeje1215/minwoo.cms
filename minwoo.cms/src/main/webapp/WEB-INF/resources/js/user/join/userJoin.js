@@ -1,6 +1,6 @@
 
 	$(function() {
-		$("#userJoin").bind("click", function() { //아이디 찾기
+		$("#userJoin").bind("click", function() { //회원가입
 			var pwd = $("#inputPassword").val();
 			var chkPwd = $("#inputPasswordCheck").val();
 			if(pwd != chkPwd){
@@ -13,8 +13,8 @@
 					url : "join/userJoin",
 					method : "post",
 					data : $("#joinForm").serialize(),
-					success : function(user) {
-						alert("Hello");
+					success : function(result) {
+						alert(result);
 					},
 					error : function(a, b, errMsg) {
 						$('#modalBody_one').html("※ 실패 : " + errMsg);

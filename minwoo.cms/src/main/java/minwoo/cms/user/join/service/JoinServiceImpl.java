@@ -12,7 +12,6 @@ public class JoinServiceImpl implements JoinService{
 	private JoinDao joinDao;
 	
 	public boolean userJoin(User user){
-		joinDao.addUser(user);
-		return true;
+		return joinDao.addUser(user);
 	}
 }

@@ -1,7 +1,5 @@
 package minwoo.cms.user.join.controller;
 
-import javax.servlet.http.HttpSession;
-
 import minwoo.cms.user.join.domain.User;
 import minwoo.cms.user.join.service.JoinService;
 
@@ -16,11 +14,10 @@ public class JoinController {
 	@Autowired private JoinService joinService;
 
 	//회원가입
-	@RequestMapping(value="/join/userJoin", method=RequestMethod.POST)
+	@RequestMapping(value="/join/userJoin", method = {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody 
-	public User userJoin(User user){
-		
-		return user;
+	public boolean userJoin(User user){
+		return joinService.userJoin(user);
 	}	
 	
 }

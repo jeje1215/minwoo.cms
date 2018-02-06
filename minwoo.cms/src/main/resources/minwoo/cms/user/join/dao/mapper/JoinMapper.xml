@@ -11,7 +11,7 @@
 	<insert id="addUser" parameterType="minwoo.cms.user.join.domain.User">
 		insert into users(USER_ID,USER_PWD,USER_MAIL,USER_BIRTH,USER_NM,USER_NIC) 
 			values(
-					 #{userId},#{userPwd}#{userMail}#{userBirth}#{userNm}#{userNic}
+					 #{userId},#{userPwd},#{userMail},#{userBirth},#{userNm},#{userNic}
 				)
 	</insert>	
 </mapper>

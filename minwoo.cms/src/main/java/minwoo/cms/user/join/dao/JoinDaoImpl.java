@@ -11,8 +11,12 @@ public class JoinDaoImpl implements JoinDao{
 	@Autowired
 	private JoinMapper joinMapper;
 	
-	public User addUser(User user){
-		return joinMapper.addUser(user);
+	public boolean addUser(User user){
+		boolean result = false;
+		if(joinMapper.addUser(user)>0){
+			result = true;
+		}
+		return result;
 	}
 	
 }

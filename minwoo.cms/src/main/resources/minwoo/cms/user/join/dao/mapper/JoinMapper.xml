@@ -14,4 +14,12 @@
 					 #{userId},#{userPwd},#{userMail},#{userBirth},#{userNm},#{userNic}
 				)
 	</insert>	
+	
+	<resultMap id="userMap" type="minwoo.cms.user.join.domain.User">
+		<id property="userId"	column="user_id"/>
+	</resultMap>	
+	
+	<select id="doubleChk" resultMap="userMap" parameterType="minwoo.cms.user.join.domain.User">
+		select user_id from users where user_id=#{userId}
+	</select>		
 </mapper>

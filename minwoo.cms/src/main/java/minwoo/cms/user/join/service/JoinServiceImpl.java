@@ -14,4 +14,17 @@ public class JoinServiceImpl implements JoinService{
 	public boolean userJoin(User user){
 		return joinDao.addUser(user);
 	}
+	
+	public boolean idChk(User user){
+		User tempUser = new User();
+		boolean result;
+		tempUser = joinDao.doubleChk(user);
+		if (tempUser == null){ //조회되는 값이 없으면 아이디 사용 가능
+			result = true;
+		}else{
+			result = false;
+		}
+		
+		return result;
+	}
 }

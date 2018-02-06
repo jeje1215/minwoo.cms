@@ -17,7 +17,15 @@ public class JoinController {
 	@RequestMapping(value="/join/userJoin", method = {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody 
 	public boolean userJoin(User user){
+		System.out.println("ddd");
 		return joinService.userJoin(user);
 	}	
+	
+	//아이디 중복체크
+	@RequestMapping(value="/join/idChk", method = {RequestMethod.GET, RequestMethod.POST})
+	@ResponseBody
+	public boolean idChk(User user){
+		return joinService.idChk(user);
+	}
 	
 }

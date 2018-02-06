@@ -14,15 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class LoginController {
 	@Autowired private LoginService loginService;
-
-/*	//메인 페이지로 이동
-	@RequestMapping("/")
-	public String form(){
-		return "main";
-	}	*/
 	
 	//로그인 체크
-	@RequestMapping(value="/login/loginChk", method=RequestMethod.POST)
+	@RequestMapping(value="/login/loginChk", method = {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody 
 	public LoginInfo loginChk(LoginInfo login, HttpSession session){
 		login = loginService.userChk(login);

@@ -4,6 +4,11 @@ $(document).ready(function(){
         	$('#idFind').trigger('click');
         }
     });
+    $("#userMail_pwd").keydown(function (key) {
+        if(key.keyCode == 13){
+        	$('#pwdFind').trigger('click');
+        }
+    });    
 });
 	$(function() {
 		$("#idFind").bind("click", function() { //아이디 찾기

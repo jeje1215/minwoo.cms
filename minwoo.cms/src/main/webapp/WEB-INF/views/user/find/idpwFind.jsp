@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <%@ include file="../../common/header.jsp"%>
 <style>@import url("<c:url value="/css/user/find/idpwFind.css"/>");</style>
 <script src="<c:url value="/js/user/find/idpwFind.js"/>"></script>
+
 <div class="allBox">
 	<div class="box1">
 		<form id="findIdForm">

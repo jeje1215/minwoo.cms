@@ -4,8 +4,9 @@
 <style>
 footer{
 		width:100%;
-		position:fixed;
+		/* position:fixed; */
 		bottom:0;
+		/* margin-top:100px; */
 		margin-left:auto;
 		margin-right:auto;
 		font-family: HY강B;

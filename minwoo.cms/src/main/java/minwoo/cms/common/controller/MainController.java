@@ -12,7 +12,7 @@ public class MainController {
 		return "common/cover";
 	}
 	// 공통 페이지 이동
-	@RequestMapping(value="/url", method=RequestMethod.POST)
+	@RequestMapping(value="/url", method = {RequestMethod.GET, RequestMethod.POST})
 	public String url(String url){
 		return url;
 	}

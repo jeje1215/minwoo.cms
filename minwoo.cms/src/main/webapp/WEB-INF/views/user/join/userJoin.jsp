@@ -14,8 +14,10 @@
 			<label class="col-sm-3 control-label" for="inputId">ID</label>
 			<div class="col-sm-6">
 				<input class="form-control" id="inputId" type="text" required
-					placeholder="ID" name="userId">
-				<button type="button" name=""/>
+					placeholder="ID" name="userId" style="width:150px;">
+				<button class="btn btn-danger" id="doubleChk">
+					중복체크<i class="fa fa-times spaceLeft"></i>
+				</button>
 			</div>
 		</div>
 		<div class="form-group">

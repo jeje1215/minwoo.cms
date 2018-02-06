@@ -15,6 +15,7 @@
 			<div class="col-sm-6">
 				<input class="form-control" id="inputId" type="text" required
 					placeholder="ID" name="userId">
+				<button type="button" name=""/>
 			</div>
 		</div>
 		<div class="form-group">

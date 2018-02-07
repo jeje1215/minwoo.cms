@@ -42,11 +42,11 @@
 			value="classpath:minwoo/cms/user/login/config/SqlMapConfig.xml"></property>
 		<property name="mapperLocations">
 			<array>
-				<value>classpath:minwoo/cms/user/**/dao/mapper/**/*.xml</value>
+				<value>classpath:minwoo/cms/**/dao/mapper/**/*.xml</value>
 			</array>
 		</property>
 	</bean>
-	<mybatis:scan base-package="minwoo.cms.user.**.dao.mapper" />
+	<mybatis:scan base-package="minwoo.cms.**.dao.mapper" />
 	<!-- ajax -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">

@@ -37,7 +37,7 @@
 			<div class="col-sm-6">
 				<input class="form-control" id="inputPassword" type="password"
 					placeholder="비밀번호" name="userPwd">
-				<p class="help-block">숫자, 특수문자 포함 8자 이상</p>
+				<p class="help-block">숫자, 영문자 포함 6자 이상 12자 이하</p>
 			</div>
 		</div>
 		<div class="form-group">

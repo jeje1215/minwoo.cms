@@ -18,14 +18,6 @@ ul, ol {
 	text-align: left;
 }
 
-section#post {
-	display: table-cell;
-}
-
-.container {
-	padding-right: 150px;
-	padding-top: 10px;
-}
 
 .part {
 	list-style-type: upper-roman;
@@ -34,23 +26,6 @@ section#post {
 .section {
 	list-style-type: lower-alpha;
 }
-
-.navbar-default .navbar-nav>li>a {
-	color: white;
-	font-weight: bold;
-	font-family: HY강B;
-}
-
-.navbar-default {
-	background-color: #1077A9;
-	font-size: 15px;
-	font-family: HY강B;
-	margin-left: 180px;
-	margin-right: 180px;
-	margin-bottom: 30px;
-}
-
-
 
 .nav ul {
 	list-style: none;

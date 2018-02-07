@@ -6,7 +6,7 @@
 		<img src="<c:url value="/img/logo.png"/>"
 			style="width: 300px; height: 95px; margin-left: 39%;">
 
-		<nav class="navbar navbar-default navbar-fixed">
+		<nav class="navbar navbar-default navbar-fixed" >
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#"
 					onclick="goUrl('common/cover', urlForm)"><span

@@ -2,22 +2,8 @@
 <%@ include file="../common/header.jsp"%>
 <%@ include file="../menu/topMenu.jsp"%>
 <%@ include file="../menu/leftMenu.jsp"%>
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="ko"> -->
-<!-- <head> -->
-<!-- <title>UMS</title> -->
-<!-- <meta charset="utf-8"> -->
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-<!-- <link rel="stylesheet"    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
-<!-- <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --> -->
-<!-- <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> --> -->
-<!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
-<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
-
-<style>@import url("<c:url value="/css/manad/01.css"/>");</style>	
+<style>@import url("<c:url value="/css/manad/manad.css"/>");</style>	
 <body>
 <script>
    $(function() {
@@ -85,104 +71,104 @@ var regBtns = function(){
 
 
 <body>
-	<header>
-		<img style="width: 300px; height: 95px; margin-left: 39%;"
-			src="../res/img/logo.png">
+<!-- 	<header> -->
+<!-- 		<img style="width: 300px; height: 95px; margin-left: 39%;" -->
+<!-- 			src="../res/img/logo.png"> -->
 
-		<nav class="navbar navbar-default navbar-fixed">
-			<ul class="nav navbar-nav">
-				<li><a href="#"><span class="glyphicon glyphicon-home">
-							HOME </span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-heart"><b>
-								MYPAGE </b></span></a></li>
-				<li class="active"><a href="#"><span
-						class="glyphicon glyphicon-cog"><b> SETTING </b></span></a></li>
-				<!--          <li><a href="#"><span class="glyphicon glyphicon-earphone"><b>
-                     CONTACT </b></span> </a></li> -->
-			</ul>
-		</nav>
-	</header>
+<!-- 		<nav class="navbar navbar-default navbar-fixed"> -->
+<!-- 			<ul class="nav navbar-nav"> -->
+<!-- 				<li><a href="#"><span class="glyphicon glyphicon-home"> -->
+<!-- 							HOME </span></a></li> -->
+<!-- 				<li><a href="#"><span class="glyphicon glyphicon-heart"><b> -->
+<!-- 								MYPAGE </b></span></a></li> -->
+<!-- 				<li class="active"><a href="#"><span -->
+<!-- 						class="glyphicon glyphicon-cog"><b> SETTING </b></span></a></li> -->
+<!-- 				         <li><a href="#"><span class="glyphicon glyphicon-earphone"><b>
+<!--                      CONTACT </b></span> </a></li> --> -->
+<!-- 			</ul> -->
+<!-- 		</nav> -->
+<!-- 	</header> -->
 
-	<nav class="aside">
+<!-- 	<nav class="aside"> -->
 
-		<div class="profile">
-			<div class="pricing-table pricing-three-column row">
-				<div class="plan col-sm-4 col-lg-4">
-					<div class="plan-name-bronze">
-						<img src="../res/img/pro.jpg" style="width: 90px; height: 90px">
-						<h5>
-							<i class="fa fa-child" aria-hidden="true" style="float: center"></i>
-							남승창님!
-						</h5>
-						<p>CMS에오신것을환영합니다.</p>
+<!-- 		<div class="profile"> -->
+<!-- 			<div class="pricing-table pricing-three-column row"> -->
+<!-- 				<div class="plan col-sm-4 col-lg-4"> -->
+<!-- 					<div class="plan-name-bronze"> -->
+<!-- 						<img src="../res/img/pro.jpg" style="width: 90px; height: 90px"> -->
+<!-- 						<h5> -->
+<!-- 							<i class="fa fa-child" aria-hidden="true" style="float: center"></i> -->
+<!-- 							남승창님! -->
+<!-- 						</h5> -->
+<!-- 						<p>CMS에오신것을환영합니다.</p> -->
 
-					</div>
-					<ul class="pro">
-						<li class="plan-feature"><i class="far fa-calendar-alt"
-							aria-hidden="true"></i> 가입일:</li>
-						<li class="plan-feature"><i class="fas fa-chart-line"
-							aria-hidden="true"></i> 회원등급:</li>
-						<li class="plan-feature"><i class="far fa-edit"
-							aria-hidden="true"></i> 게시글:</li>
-						<div class="row">
-							<button type="button" class="btn btn-default"
-								style="width: 80px;">
-								<i class="fa fa-paw" aria-hidden="true"></i>MyPage
-							</button>
-							<button type="button" class="btn btn-default"
-								style="background-color: #ffc4d7; width: 80px;">
-								<i class="fas fa-sign-in-alt" aria-hidden="true"></i>Logout
-							</button>
-						</div>
-					</ul>
-				</div>
-			</div>
-		</div>
+<!-- 					</div> -->
+<!-- 					<ul class="pro"> -->
+<!-- 						<li class="plan-feature"><i class="far fa-calendar-alt" -->
+<!-- 							aria-hidden="true"></i> 가입일:</li> -->
+<!-- 						<li class="plan-feature"><i class="fas fa-chart-line" -->
+<!-- 							aria-hidden="true"></i> 회원등급:</li> -->
+<!-- 						<li class="plan-feature"><i class="far fa-edit" -->
+<!-- 							aria-hidden="true"></i> 게시글:</li> -->
+<!-- 						<div class="row"> -->
+<!-- 							<button type="button" class="btn btn-default" -->
+<!-- 								style="width: 80px;"> -->
+<!-- 								<i class="fa fa-paw" aria-hidden="true"></i>MyPage -->
+<!-- 							</button> -->
+<!-- 							<button type="button" class="btn btn-default" -->
+<!-- 								style="background-color: #ffc4d7; width: 80px;"> -->
+<!-- 								<i class="fas fa-sign-in-alt" aria-hidden="true"></i>Logout -->
+<!-- 							</button> -->
+<!-- 						</div> -->
+<!-- 					</ul> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 
 
-		<div id="accordian">
-			<ul>
-				<li class="active">
-					<h3>게시판관리</h3>
-					<ul>
-						<li><a href="#"></a></li>
-					</ul>
-				</li>
-				<li>
-					<h3>
-						회원관리<span class="plus">+</span>
-					</h3>
-					<ul>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-					</ul>
-				</li>
-				<li>
-					<h3>
-						접속통계 <span class="plus">+</span>
-					</h3>
-					<ul>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-					</ul>
-				</li>
-				<li>
-					<h3>
-						광고 등록<span class="plus">+</span>
-					</h3>
-					<ul>
-						<li><a href="#"
-							onclick="javascript:location.href='./01.html'">광고 등록</a></li>
-						<li><a href="#"
-							onclick="javascript:location.href='./02.html'">광고 관리</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+<!-- 		<div id="accordian"> -->
+<!-- 			<ul> -->
+<!-- 				<li class="active"> -->
+<!-- 					<h3>게시판관리</h3> -->
+<!-- 					<ul> -->
+<!-- 						<li><a href="#"></a></li> -->
+<!-- 					</ul> -->
+<!-- 				</li> -->
+<!-- 				<li> -->
+<!-- 					<h3> -->
+<!-- 						회원관리<span class="plus">+</span> -->
+<!-- 					</h3> -->
+<!-- 					<ul> -->
+<!-- 						<li><a href="#"></a></li> -->
+<!-- 						<li><a href="#"></a></li> -->
+<!-- 						<li><a href="#"></a></li> -->
+<!-- 					</ul> -->
+<!-- 				</li> -->
+<!-- 				<li> -->
+<!-- 					<h3> -->
+<!-- 						접속통계 <span class="plus">+</span> -->
+<!-- 					</h3> -->
+<!-- 					<ul> -->
+<!-- 						<li><a href="#"></a></li> -->
+<!-- 						<li><a href="#"></a></li> -->
+<!-- 						<li><a href="#"></a></li> -->
+<!-- 					</ul> -->
+<!-- 				</li> -->
+<!-- 				<li> -->
+<!-- 					<h3> -->
+<!-- 						광고 등록<span class="plus">+</span> -->
+<!-- 					</h3> -->
+<!-- 					<ul> -->
+<!-- 						<li><a href="#" -->
+<!-- 							onclick="javascript:location.href='./01.html'">광고 등록</a></li> -->
+<!-- 						<li><a href="#" -->
+<!-- 							onclick="javascript:location.href='./02.html'">광고 관리</a></li> -->
+<!-- 					</ul> -->
+<!-- 				</li> -->
+<!-- 			</ul> -->
+<!-- 		</div> -->
 
-	</nav>
+<!-- 	</nav> -->
 
 	<section id="post">
 		<div class="container">

@@ -8,6 +8,18 @@ body {
    font-family: "HY강B";
 }
 
+.navbar-default {
+   background-color:pink;
+   font-size: 16px;
+   font-family: HY강B;
+   margin-left: 180px;
+   margin-right: 180px;
+   margin-bottom: 30px;
+}
+
+
+
+
 /* 프로필 */
 
 .pricing-table .plan {
@@ -76,18 +88,19 @@ body {
    color: white;
    font-weight: bold;
    font-family: HY강B;
-   
+   height:50px;
+  
 }
 
 .navbar-default {
-   background-color: #1077A9;
-   font-size: 16px;
+
+   background-color:#1077A9;
+   font-size: 15px;
    font-family: HY강B;
    margin-left: 180px;
    margin-right: 180px;
    margin-bottom: 30px;
 }
-
 /* 옆메뉴 */
 
 nav.aside {
@@ -233,3 +246,10 @@ li {
    font-family: HY강B;
    margin-top: 10px;
 }
+
+
+
+
+
+
+

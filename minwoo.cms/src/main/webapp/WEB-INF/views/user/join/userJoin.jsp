@@ -67,7 +67,7 @@
 			<label class="col-sm-3 control-label" for="inputBirth">생년월일</label>
 			<div class="col-sm-6">
 				<input class="form-control" id="inputBirth" type="number"
-					placeholder="19930512" name="userBirth" maxlength="6">
+					placeholder="ex)19930101" name="userBirth" maxlength="6"  required>
 			</div>
 		</div>
 

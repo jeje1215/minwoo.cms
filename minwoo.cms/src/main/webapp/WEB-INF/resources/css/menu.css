@@ -1,18 +1,57 @@
 @CHARSET "UTF-8";
 
+.allPage {
+	background-color: #9aafda;
+	width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 50px;
+}
+
 p {
    font-size: 11px;
 }
 
-
+/* 탑메뉴입니다. */
 .navbar-default {
+   width:1200px;	
+   background-color:#1077A9;
+   font-size: 15px;
+   font-family: HY강B;
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-bottom: 30px;
+}
+
+.navbar-default .navbar-nav>li>a {
+   color: white;
+   font-weight: bold;
+   font-family: HY강B;
+   height:50px;
+  
+}
+
+
+/* 가운데 위치 */
+
+section#post {
+   display: table-cell;
+}
+
+.container {
+   width:950px;
+  /*  padding-right: 100px; */
+}
+
+
+/* .navbar-default {
    background-color:pink;
    font-size: 16px;
    font-family: HY강B;
    margin-left: 180px;
    margin-right: 180px;
    margin-bottom: 30px;
-}
+} */
 
 /* 프로필 */
 
@@ -73,29 +112,12 @@ p {
    text-align: left;
 }
 
-/* 탑메뉴입니다. */
-.navbar-default .navbar-nav>li>a {
-   color: white;
-   font-weight: bold;
-   font-family: HY강B;
-   height:50px;
-  
-}
-
-.navbar-default {
-
-   background-color:#1077A9;
-   font-size: 15px;
-   font-family: HY강B;
-   margin-left: 180px;
-   margin-right: 180px;
-   margin-bottom: 30px;
-}
 /* 옆메뉴 */
 
 nav.aside {
    display: table-cell;
-   padding-left: 170px;
+  /*  padding-left: 170px; */
+   padding-left: 50px;
 
 }
 
@@ -202,11 +224,6 @@ li {
 /*    float: right; */
 /*    margin: 0 auto; */
 /* } */
-
-
-
-
-
 
 /* 로그인 버튼  */
 .btn-info {

@@ -5,6 +5,7 @@
 
    <div id="menutop">
       <ul class="nav navbar-nav navbar-right">
+      	<c:if test="${sessionScope.user == null}">
          <li>
          	<a href="#" onclick="goUrl('user/join/userJoin', urlForm)">
          		<span class="glyphicon glyphicon-user"></span> Sign Up
@@ -12,14 +13,14 @@
          </li>
          <li>
          	<a href="#" onclick="goUrl('user/login/coverLogin', urlForm)">
-         	<%-- <a href="<c:url value="../../user/login/coverLogin.jsp"/>"> --%>
          		<span class="glyphicon glyphicon-log-in"></span> Login
            </a>
         </li>
+        </c:if>
       </ul>
    </div>
    <div id="cover">
-      <p class="covertitle" onclick="goUrl('main', urlForm)">
+      <p class="covertitle" onclick="goUrl('main', urlForm)" style="cursor:pointer;">
         Cafe's Management System
          <br>
       </p>

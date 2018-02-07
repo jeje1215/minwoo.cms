@@ -26,7 +26,7 @@ $(function(){
 						<li><a href="#">게시판공지사항</a></li>
 					</ul>
 				</li>
-				<li>
+<!-- 			<li>
 					<h3>
 						연예 게시판<span class="plus">+</span>
 					</h3>
@@ -55,7 +55,7 @@ $(function(){
 						<li><a href="#">오버워치</a></li>
 						<li><a href="#">스타크래프트</a></li>
 					</ul>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div class="ad">

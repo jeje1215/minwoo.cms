@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <style>@import url("<c:url value="/css/board/list.css"/>");</style>	
+
 	<section id="post">
 		<div class="container">
 			<div class="name">

@@ -23,6 +23,129 @@
          }
       })
    })
+   
+$(function(){
+    regBtns();
+});
+ 
+var showAd = function(ad){
+    $(":input[name='name']").val($(ad).data("adName"));
+}
+ 
+var regBtns = function(){
+    var modal = $("#resultModal");  // 추가, 수정, 삭제 결과 창
+    var msg = $("#msg");            // 결과 메세지
+        
+    var chkName = function(){ // 광고 이름 입력 여부    
+        if($(":input[name='name']").val()) return true;
+        else {
+            msg.text("광고 이름을 입력하세요..");
+            modal.modal("show");
+        }
+    }
+    
+    //버튼 클릭시 이벤트
+    $("#listBtn").bind("click", function(){
+        var adList = $("#adList");  // 회원목록
+        var tr;
+        var input;
+        var etc;
+        
+        adList.empty();
+        
+        $.ajax({
+            url:"listads",
+            success:function(ads){
+                $(ads).each(function(idx, ad){        
+                    tr = $("<tr></tr>");
+                    td = $("<td><input type='radio' name='adNo' value='"
+                          +ad.adNo+"'onClick='showAd(this)'/>"
+                          +"&nbsp;&nbsp;&nbsp;"
+                          +ad.adNo+"</td>");
+                    td2 = $("<td>"+ad.adName+"</td> <td>"+ad.startDate+"</td> " "<td>"+ad.finishDate+"</td>);
+                    
+                    adList.append(tr.append(td).append(td2));      
+                    td.find("input").data("adName", ad.adName);
+                });                    
+            }
+        });    
+    });
+    
+//     $("#addBtn").bind("click", function(){
+//         if(chkName()){
+//                $.ajax({
+//                    url:"join",                
+//                    data:{userName:$("input[name='name']").val()},
+//                    success:function(result){                    
+//                        if(result) msg.text("추가 성공");
+//                        else msg.text("추가 실패");
+//                        $("#listBtn").trigger("click");
+//                    },
+//                    error:function(a, b, errMsg){
+//                        msg.text("추가 실패: " + errMsg);                
+//                    },
+//                    complete:function(){
+//                        modal.modal("show");                    
+//                    }
+//                });
+//         }
+//     });
+    
+//     $("#updateBtn").bind("click", function(){
+//         if(chkName()){
+//             var user = $(":checked");
+//             if(user.size()){
+//                 $.ajax({
+//                     url:"fixUserInfo",            
+//                     data:{userNo:user.val(), userName:$("input[name='name']").val()},
+//                     success:function(result){
+//                         if(result) msg.text("수정 성공");
+//                         else msg.text("수정 실패");
+//                         $("#listBtn").trigger("click");
+//                     },
+//                     error:function(a, b, errMsg){                
+//                         msg.text("수정 실패: " + errMsg);                
+//                     },
+//                     complete:function(){
+//                         modal.modal("show");                    
+//                     }
+//                 });
+//             }else{
+//                 msg.text("수정할 회원을 선택하세요.");
+//                 modal.modal("show");
+//             }
+//         }
+//     });
+    
+//     $("#delBtn").bind("click", function(){
+//         var user = $(":checked");
+//         if(user.size()){
+//                $.ajax({
+//                    url:"secede",                
+//                    data:{userNo:user.val()},
+//                    success:function(result){
+//                        if(result) msg.text("삭제 성공");
+//                        else msg.text("삭제 실패");
+//                        $("#listBtn").trigger("click");
+//                    },
+//                    error:function(a, b, errMsg){                
+//                        msg.text("삭제 실패: " + errMsg);                
+//                    },
+//                    complete:function(){
+//                        modal.modal("show");                    
+//                    }
+//                });
+//         }else{
+//             msg.text("삭제할 회원을 선택하세요.");
+//             modal.modal("show");
+//         }    
+//     });
+// }
+
+   
+   
+   
+   
 </script>
 
 <body>
@@ -140,7 +263,7 @@
 		<button type="button" class="btn btn-primary btn-md" >
 			<i class="glyphicon glyphicon-ok"></i> 등록
 		</button>
-		<button type="button" class="btn btn-success btn-md" id="list">
+		<button type="button" class="btn btn-success btn-md" id="listBtn">
 			<i class="glyphicon glyphicon-list-alt"></i> 목록
 		</button>
 		<button type="button" class="btn btn-warning btn-md" id="up">
@@ -151,9 +274,28 @@
 		</button>
 	</div>
 	<br>
+	
+	  <div class="modal fade" id="resultModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" id="msg"></h4>
+            </div>            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	
+	
+	
 
          <table class="table table-hover">
-         
             <thead>
                <tr>
                   <th>번호</th>
@@ -164,7 +306,7 @@
                   <th>관리자</th>
                </tr>
             </thead>
-            <tbody>
+            <tbody id="adList">
                <tr>
                   <th>10</th>
                   <td><input type="text" name="" value="매체"></td>
@@ -173,96 +315,9 @@
                   <td><input type="text" name="" value="금액"></td>
                   <td><input type="text" name="" value="관리자"></td>
                </tr>
-               <tr>
-                  <th>9</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-               </tr>
-               <tr>
-                  <th>8</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-               </tr>
-               <tr>
-                  <th>7</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-               </tr>
-               <tr>
-                  <th>6</th>
-                  
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-               </tr>
-               <tr>
-                  <th>5</th>
-                  <td>네이버</td>
-                  
-                  <td>2018.05.30</td>
-                  <td>2019.05.30</td>
-                  <td>5,000,000</td>
-                  <td>남승창</td>
-               </tr>
-               <tr>
-                  <th>4</th>
-                  <td>다음</td>
-                  <td>2018.04.05</td>
-                  <td>2019.04.05</td>
-                  <td>5,000,000</td>
-                  <td>남승창</td>
-               </tr>
-               <tr>
-                  <th>3</th>
-                  <td>구글</td>
-                  <td>2018.03.25</td>
-                  <td>2019.03.25</td>
-                  <td>5,000,000</td>
-                  <td>남승창</td>
-               </tr>
-               <tr>
-                  <th>2</th>
-                  <td>삼성</td>
-              <td>2018.02.15</td>
-                  <td>2019.02.15</td>
-                  <td>5,000,000</td>
-                  <td>남승창</td>
-               </tr>
-               <tr>
-                  <th>1</th>
-                  <td>현대</td>
-                   <td>2018.01.30</td>
-                  <td>2018.01.30</td>
-                  <td>5,000,000</td>
-                  <td>남승창</td>
-               </tr>
-            </tbody>
-            <tfoot>
-               <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-               </tr>
-            </tfoot>
+       
          </table>
+         
          <div class="form-group-right">
             <div class="col-sm-12 text-right">
          <button type="button" class="btn btn-primary pull-right" data-toggle="modal"

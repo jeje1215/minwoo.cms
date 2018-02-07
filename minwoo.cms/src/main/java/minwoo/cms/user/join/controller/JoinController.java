@@ -17,8 +17,7 @@ public class JoinController {
 	@RequestMapping(value="join/userJoin", method = RequestMethod.POST)
 	@ResponseBody 
 	public boolean userJoin(User user){
-		System.out.println(joinService.userJoin(user));
-		return true;
+		return joinService.userJoin(user);
 	}	
 	
 	//아이디 중복체크

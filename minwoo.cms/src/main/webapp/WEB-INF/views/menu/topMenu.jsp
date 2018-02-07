@@ -9,7 +9,7 @@
 		<nav class="navbar navbar-default navbar-fixed">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#"
-					onclick="goUrl('board/list', urlForm)"><span
+					onclick="goUrl('common/cover', urlForm)"><span
 						class="glyphicon glyphicon-home"> HOME </span></a></li>
 				<li><a href="#"
 					onclick="goUrl('', urlForm)"><span

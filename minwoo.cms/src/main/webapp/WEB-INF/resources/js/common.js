@@ -4,8 +4,3 @@ function goUrl(url, frm) {
 	frm.submit();
 }
 
-$(function(){
-    $("#popbutton").click(function(){
-        $('#myModal_one').modal();
-    })
-})

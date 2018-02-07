@@ -19,6 +19,9 @@
 				<button class="btn btn-danger" id="doubleChk">
 					중복체크<i class="fa fa-times spaceLeft"></i>
 				</button>
+				<button class="btn btn-primary" id="previousChk" style="display:none;">
+					ID 변경<i class="fa fa-times spaceLeft"></i>
+				</button>
 			</div>
 		</div>
 		<div class="form-group">
@@ -63,8 +66,8 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="inputBirth">생년월일</label>
 			<div class="col-sm-6">
-				<input class="form-control" id="inputBirth" type="date"
-					placeholder="생년월일" required name="userBirth">
+				<input class="form-control" id="inputBirth" type="number"
+					placeholder="19930512" required name="userBirth" maxlength="6">
 			</div>
 		</div>
 

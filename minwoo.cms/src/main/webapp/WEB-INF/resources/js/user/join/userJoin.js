@@ -63,7 +63,6 @@ $(function() {
 							return false;
 						}
 
-
 						if (!/^[a-zA-Z0-9]{6,12}$/.test(pwd)) {
 							$('#modalBody_one').html("비밀번호는 숫자와 영문자 조합으로 6~12자리를 사용해야 합니다.");
 							$('#myModal_one').modal();
@@ -86,32 +85,35 @@ $(function() {
 							$("#inputPassword").val("");
 							$("#inputPasswordCheck").val("");
 							return false;
-						} else {
-							$.ajax({
-								url : "/cms/join/userJoin",
-								method : "post",
-								data : $("#joinForm").serialize(),
-								success : function(result) {
-									if (result == true) {
-										goUrl('user/join/userJoinEnd',
-												urlForm);
-									} else {
-										$('#modalBody_one')
-												.html(
-														"회원가입이 실패하였습니다.\n다시 가입하시기 바랍니다.");
-										$('#myModal_one').modal();
-									}
-
-								},
-								error : function(a, b, errMsg) {
-									$('#modalBody_one').html(
-											"※ 실패 : " + errMsg);
+						} 
+						
+						if (!/^[0-9]{6}$/.test(birth)) {
+							$('#modalBody_one').html("생년월일은 숫자와 6자리로 입력해야합니다.");
+							$('#myModal_one').modal();
+							return false;
+						} 						
+						$.ajax({
+							url : "/cms/join/userJoin",
+							method : "post",
+							data : $("#joinForm").serialize(),
+							success : function(result) {
+								if (result == true) {
+									goUrl('user/join/userJoinEnd',urlForm);
+								} else {
+									$('#modalBody_one').html("회원가입이 실패하였습니다.\n다시 가입하시기 바랍니다.");
 									$('#myModal_one').modal();
-								},
-								complete : function() {
 								}
-							});
-						}
+
+							},
+							error : function(a, b, errMsg) {
+								$('#modalBody_one').html(
+										"※ 실패 : " + errMsg);
+								$('#myModal_one').modal();
+							},
+							complete : function() {
+							}
+						});
+						
 					});
 
 });

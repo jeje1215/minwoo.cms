@@ -4,9 +4,6 @@ p {
    font-size: 11px;
 }
 
-body {
-   font-family: "HY강B";
-}
 
 .navbar-default {
    background-color:pink;
@@ -92,6 +89,9 @@ body {
   
 }
 
+
+
+
 .navbar-default {
 
    background-color:#1077A9;
@@ -106,7 +106,7 @@ body {
 nav.aside {
    display: table-cell;
    padding-left: 170px;
-   font-family: HY강B;
+
 }
 
 form.submenu {

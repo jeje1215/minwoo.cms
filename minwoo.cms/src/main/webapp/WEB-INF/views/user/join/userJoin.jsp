@@ -14,7 +14,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="inputId">ID</label>
 			<div class="col-sm-6">
-				<input class="form-control" id="inputId" type="text" required
+				<input class="form-control" id="inputId" type="text" 
 					placeholder="ID" name="userId" style="width:150px;display:inline;">
 				<button class="btn btn-danger" id="doubleChk">
 					중복체크<i class="fa fa-times spaceLeft"></i>
@@ -27,7 +27,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="inputEmail">이메일</label>
 			<div class="col-sm-6">
-				<input class="form-control" id="inputEmail" type="email" required
+				<input class="form-control" id="inputEmail" type="email"
 					placeholder="이메일" name="userMail">
 			</div>
 		</div>
@@ -53,21 +53,21 @@
 			<label class="col-sm-3 control-label" for="inputName">이름</label>
 			<div class="col-sm-6">
 				<input class="form-control" id="inputName" type="text"
-					placeholder="이름" required name="userNm">
+					placeholder="이름" name="userNm">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="inputNic">닉네임</label>
 			<div class="col-sm-6">
 				<input class="form-control" id="inputNic" type="text"
-					placeholder="닉네임" required name="userNic">
+					placeholder="닉네임" name="userNic">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="inputBirth">생년월일</label>
 			<div class="col-sm-6">
 				<input class="form-control" id="inputBirth" type="number"
-					placeholder="19930512" required name="userBirth" maxlength="6">
+					placeholder="19930512" name="userBirth" maxlength="6">
 			</div>
 		</div>
 

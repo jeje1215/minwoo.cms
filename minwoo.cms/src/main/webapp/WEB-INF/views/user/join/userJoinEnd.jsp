@@ -5,7 +5,7 @@
 <style>@import url("<c:url value="/css/user/join/userJoin.css"/>");</style>
 
 <div class="col-md-12">
-	<div class="page-header">
+	<div class="page-header" style="text-align:center;">
 		<h1>회원가입이 완료되었습니다.</h1>
 	</div>
 	<div class="form-group">

@@ -87,11 +87,20 @@ $(function() {
 							return false;
 						} 
 						
-						if (!/^[0-9]{6}$/.test(birth)) {
-							$('#modalBody_one').html("생년월일은 숫자와 6자리로 입력해야합니다.");
+						var str = "1234567890";
+						for (i = 0; i < birth.length; i++) {
+							if (str.indexOf(birth.charAt(i)) < 0) {
+								$('#modalBody_one').html("생년월일은 숫자만 입력해야합니다.");
+								$('#myModal_one').modal();
+								return false;
+							}
+						}						
+						
+						if (birth.length != 8) {
+							$('#modalBody_one').html("생년월일은 8자리로 입력해야합니다.");
 							$('#myModal_one').modal();
 							return false;
-						} 						
+						} 								
 						$.ajax({
 							url : "/cms/join/userJoin",
 							method : "post",

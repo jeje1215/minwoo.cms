@@ -4,21 +4,6 @@ p {
    font-size: 11px;
 }
 
-
-
-/* 본문입니다 */
-
-/* section#post {
-   display: table-cell;
-}
-
-.container {
-   padding-right: 100px;
-}
- */
-
-
-
 table {
    font-family: HY강B;
 }
@@ -49,42 +34,44 @@ table {
 
 /* 검색/분류 버튼입니다. */
 .d1 input {
-   width: 200px;
-   height: 30px;
-   padding-left: 10px;
-   border: 2px solid #007DC1;
-   border-radius: 5px;
-   outline: none;
-   float: right;
-    font-family: "HY강B";
+	width: 200px;
+	height: 30px;
+	padding-left: 10px;
+	border: 2px solid #007DC1;
+	border-radius: 5px;
+	outline: none;
+	float: right;
 }
 
 .d1 button {
-   position: absolute;
-   margin-left:700px;
-   width: 30px;
-   height: 30px;
-   border: none;
-   background: #007DC1;
-   border-radius: 0 5px 5px 0;
-   cursor: pointer;
+	position: relative;
+	top: -30;
+	margin-left: 900px;
+	width: 30px;
+	height: 30px;
+	border: none;
+	background: #007DC1;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
 }
 
 .d1 button:before {
-   content: "\f002";
-   font-family: FontAwesome;
-   font-size: 16px;
-   color: white;
+	content: "\f002";
+	font-family: FontAwesome;
+	font-size: 16px;
+	color: white;
 }
 
 select {
-   font-family: HY강B;
-   border: 2px solid #007DC1;
-   border-radius: 5px;
-   width: 100px;
-   height: 30px;
-   float: right;
+	position: absolute;
+	font-family: HY강B;
+	border: 2px solid #007DC1;
+	border-radius: 5px;
+	width: 100px;
+	height: 30px;
+	margin-left: 610PX;
 }
+
 /* 로그인 버튼  */
 .btn-info {
    height: 30px;
@@ -111,7 +98,9 @@ select {
 .name {
    padding-left: 10px;
    font-family: HY강B;
+   font-size:14px;
    margin-top: 10px;
+   margin-bottom: -20px;
 }
 
 

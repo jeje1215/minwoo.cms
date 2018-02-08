@@ -189,7 +189,7 @@ var regBtns = function(){
 			</div>
 
 
-			<h4>Cms.광고관리</h4>
+			<h3>Cms.광고관리</h3>
 			<div class="btn-group-center">
 				<button type="button" class="btn btn-primary btn-md" id="addBtn">
 					<i class="glyphicon glyphicon-ok"></i> 등록

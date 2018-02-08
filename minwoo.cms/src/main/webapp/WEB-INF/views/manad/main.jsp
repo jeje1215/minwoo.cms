@@ -3,8 +3,8 @@
 <%@ include file="../menu/topMenu.jsp"%>
 <%@ include file="../menu/leftMenu.jsp"%>
 
-<style>@import url("<c:url value="/css/manad/manad.css"/>");</style>	
-<body>
+<style>@import url("<c:url value="/css/manad/manad.css"/>");</style>
+
 <script>
    $(function() {
       $("#accordian h3").click(function() {
@@ -83,8 +83,8 @@ var regBtns = function(){
 <!-- 								MYPAGE </b></span></a></li> -->
 <!-- 				<li class="active"><a href="#"><span -->
 <!-- 						class="glyphicon glyphicon-cog"><b> SETTING </b></span></a></li> -->
-<!-- 				         <li><a href="#"><span class="glyphicon glyphicon-earphone"><b>
-<!--                      CONTACT </b></span> </a></li> --> -->
+<!-- 				         <li><a href="#"><span class="glyphicon glyphicon-earphone"><b> -->
+<!--                      CONTACT </b></span> </a></li> -->
 <!-- 			</ul> -->
 <!-- 		</nav> -->
 <!-- 	</header> -->

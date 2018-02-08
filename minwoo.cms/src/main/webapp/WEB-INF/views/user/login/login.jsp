@@ -70,18 +70,3 @@
 			</div>
 	</c:when>
 </c:choose>
-<!-- 	<div id="msgModal" class="modal fade">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body">
-					<p id="msg"></p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="close" data-dismiss="modal">확인</button>
-				</div>
-			</div>
-		</div>
-	</div> -->

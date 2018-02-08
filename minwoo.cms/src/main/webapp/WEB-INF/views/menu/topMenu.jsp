@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <style>@import url("<c:url value="/css/menu.css"/>");</style>
+	
 	<div class="allPage">
 		<header>
 			<img src="<c:url value="/img/logo.png"/>" style="width: 300px; height: 95px; margin-left: 39%;">

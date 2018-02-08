@@ -19,14 +19,19 @@ $(function(){
 				</a><br> <a href="#">updates<span class="badge">2</sapn></a><br>
 			</div>	 -->		
 		<div id="accordian">
-			<ul>
+			<ul id="home_menu">
 				<li class="active">
 					<h3>공지사항</h3>
 					<ul>
 						<li><a href="#">게시판공지사항</a></li>
 					</ul>
 				</li>
-<!-- 			<li>
+			</ul>
+			<ul id="setting_menu" style="display:none">
+				<li class="active">
+					<h3>관리자게시판</h3>
+				</li>
+				<li>
 					<h3>
 						연예 게시판<span class="plus">+</span>
 					</h3>
@@ -36,26 +41,6 @@ $(function(){
 						<li><a href="#"></a></li>
 					</ul>
 				</li>
-				<li>
-					<h3>
-						시사 게시판 <span class="plus">+</span>
-					</h3>
-					<ul>
-						<li><a href="#">경제</a></li>
-						<li><a href="#">사회</a></li>
-						<li><a href="#">문화</a></li>
-					</ul>
-				</li>
-				<li>
-					<h3>
-						게임 게시판 <span class="plus">+</span>
-					</h3>
-					<ul>
-						<li><a href="#">배틀그라운</a></li>
-						<li><a href="#">오버워치</a></li>
-						<li><a href="#">스타크래프트</a></li>
-					</ul>
-				</li> -->
 			</ul>
 		</div>
 		<div class="ad">

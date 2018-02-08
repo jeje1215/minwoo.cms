@@ -1,23 +1,11 @@
 @CHARSET "UTF-8";
 
-p {
-	font-size: 11px;
+.btn-primary {
+	color: wihte;
+	text-decoration: none;
+	border: 1px solid #286BF7;
+	font-family: HY강B;	
 }
-
-ul, ol {
-	margin-top: 0;
-	margin-left: 0px;
-	padding-left: 0px;
-	font-size: 11px;
-}
-/* 
-.pricing-table .plan ul li.plan-feature {
-	padding: 5px 5px;
-	border-top: 1px solid #c5c8c0;
-	font-family: HY강B;
-	text-align: left;
-}
- */
 
 .part {
 	list-style-type: upper-roman;
@@ -27,44 +15,10 @@ ul, ol {
 	list-style-type: lower-alpha;
 }
 
-/* .nav ul {
-	list-style: none;
-	width: 180px;
-	font-size: 1em;
-	padding: 0;
-	font-family: HY강B;
-	display: table-cell;
-}
-
-ul {
-	font-size: 15px;
-	font-family: HY강B;
-	padding-left: 5px;
-}
-
-li {
-	font-size: 15px;
-	font-family: HY강B;
-	font-color: black;
-}
-
-.btn-block {
-	font-size: 15px;
-	font-family: HY강B;
-	background-color: #1077a9;
-	color: white;
-}
- */
-
 .plus {
 	float: right;
-} /* 메뉴 아이콘 배치 */
-/* form { */
-/*    position: relative; */
-/*    width: 200px; */
-/*    float: right; */
-/*    margin: 0 auto; */
-/* } */
+}
+
 .table {
 	width: 40%;
 }
@@ -73,12 +27,14 @@ table {
 	font-family: HY강B;
 	float: left;
 	margin-right: 50px;
+	font-size: 12px;
 }
 
 table#yuri {
 	margin-top: 10px;
 	cellpadding: 20px;
 	border-spacing: 10px;
+	font-size: 12px;
 }
 
 td {
@@ -88,107 +44,3 @@ td {
 .title {
 	text-align: center;
 }
-
-/* .btn-primary:hover {
-	border: 1px solid #1689b9;
-	background-color: #1689b9;
-}
- */
-/* .btn-primary { */
-
-/*    color: wihte; */
-/*    text-decoration: none; */
-
-/* } */
-.pagination {
-	display: block;
-	test-align: center;
-}
-
-.pagination>li>a {
-	float: none;
-}
-/* 
-.d1 input {
-	width: 200px;
-	height: 30px;
-	padding-left: 10px;
-	border: 2px solid #007DC1;
-	border-radius: 5px;
-	outline: none;
-	float: right;
-}
-
-.d1 button {
-	position: absolute;
-	margin-left: 980px;
-	width: 30px;
-	height: 30px;
-	border: none;
-	background: #007DC1;
-	border-radius: 0 5px 5px 0;
-	cursor: pointer;
-}
-
-.d1 button:before {
-	content: "\f002";
-	font-family: FontAwesome;
-	font-size: 16px;
-	color: white;
-}
-
-select {
-	   position: absolute;
-	font-family: HY강B;
-	border: 2px solid #007DC1;
-	border-radius: 5px;
-	   width: 100px;
-	   height: 30px;
-	   margin-left: 700PX;
-}
-
-div.log1 {
-	font-family: HY나무B;
-}
-
-div.userif {
-	font-family: HY나무B;
-	border: 1px solid #bbbbbb;
-	border-radius: 10px;
-	width: 180px;
-	margin-top: auto;
-	margin-left: 10px;
-	margin-top: 25px;
-}
-
-div.user {
-	font-family: HY강B;
-	text-align: center;
-	border: 2px solid #007DC1;
-	border-radius: 5px;
-	color: #007DC1;
-	margin-bottom: 30px;
-	margin-top: -5px;
-}
-
-div.userf {
-	font-family: HY강B;
-	line-height: 1.8em;
-	border-top: 50px;
-}
-
-div.a {
-	padding-left: 10px;
-}
-
-hr {
-	border: 1px solid #777777;
-}
-
-div.name {
-	font-family: HY강B;
-}
-
-button {
-	font-family: HY강B;
-} */

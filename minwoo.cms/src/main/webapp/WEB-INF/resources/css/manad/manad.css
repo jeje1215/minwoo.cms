@@ -1,26 +1,36 @@
 @CHARSET "UTF-8";
-p{
-	font-size:11px;	
-}
-.modal-dialog{	
-	font-family:HY강B;
- 	text-align:center;	
+
+p {
+	font-size: 11px;
 }
 
-body {
-	font-family: "HY강B";
+.modal-dialog {
+	font-family: HY강B;
+	text-align: center;
 }
+
+.btn{
+	font-family: HY강B;
+	
+}
+
 .btn-block {
 	font-size: 15px;
 	font-family: HY강B;
 	background-color: #1077a9;
 	color: white;
 }
-
-table {
-	font-family: HY강B;
-	font-size:12px;
+table{
+	
+	margin-left: 15px;
+	
 }
+th {
+	font-family: HY강B;
+	font-size: 14px;
+
+}
+
 .title {
 	text-align: center;
 }
@@ -29,6 +39,7 @@ table {
 	display: block;
 	test-align: center;
 }
+
 .pagination>li>a {
 	float: none;
 }
@@ -42,9 +53,11 @@ table {
 	outline: none;
 	float: right;
 }
+
 .d1 button {
- 	position:fixed;
-	margin-left:900px;
+	position: relative;
+	top: -30;
+	margin-left: 900px;
 	width: 30px;
 	height: 30px;
 	border: none;
@@ -52,12 +65,14 @@ table {
 	border-radius: 0 5px 5px 0;
 	cursor: pointer;
 }
+
 .d1 button:before {
 	content: "\f002";
 	font-family: FontAwesome;
 	font-size: 16px;
 	color: white;
 }
+
 select {
 	position: absolute;
 	font-family: HY강B;
@@ -65,12 +80,15 @@ select {
 	border-radius: 5px;
 	width: 100px;
 	height: 30px;
-	margin-left:620PX;
+	margin-left: 610PX;
 }
 
-/* .name{ */
-/* 	padding-left:10px; */
-/* 	font-family: HY강B; */
-	
-/* } */
+div.form {
+	margin-top: -10px;
+	margin-bottom: -30px;
+}
+
+div.container {
+	height: 140px;
+}
 

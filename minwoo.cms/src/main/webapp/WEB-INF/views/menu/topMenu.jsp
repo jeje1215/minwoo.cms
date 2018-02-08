@@ -20,7 +20,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" onclick="goUrl('manboard/manageBoard', urlForm)">
+							<a href="#" onclick="goMenu('manboard/manageBoard', 'setting')">
 								<span class="glyphicon glyphicon-cog"><b> SETTING </b></span>
 							</a>
 						</li>

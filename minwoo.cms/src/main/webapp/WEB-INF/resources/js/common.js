@@ -4,3 +4,8 @@ function goUrl(url, frm) {
 	frm.submit();
 }
 
+function goMenu(url){
+	
+	goUrl(url, urlForm);
+}
+

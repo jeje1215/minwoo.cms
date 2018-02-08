@@ -12,8 +12,27 @@ public class MainController {
 		return "common/cover";
 	}
 	// 공통 페이지 이동
-	@RequestMapping(value="/url", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/url", method = RequestMethod.POST)
 	public String url(String url){
 		return url;
 	}
+	
+	//메인페이지 이동
+	@RequestMapping(value="/main", method = RequestMethod.POST)
+	public String urlMenu_main(String url){
+		return url;
+	}	
+	
+	//세팅페이지 이동
+	//관리자 게시판 이동
+	@RequestMapping(value="/manboard/manageBoard", method = RequestMethod.POST)
+	public String urlMenu_manboard(String url){
+		System.out.println(url);
+		return url;
+	}
+	
+	
+	
+	
+	
 }

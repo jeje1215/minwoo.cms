@@ -1,5 +1,5 @@
 package minwoo.cms.manboard.dao;
 
-public class ManboardDao {
+public interface ManboardDao {
 
 }

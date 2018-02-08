@@ -1,5 +1,5 @@
 package minwoo.cms.manboard.dao.mapper;
 
-public class ManboardMapper {
+public interface ManboardMapper {
 
 }

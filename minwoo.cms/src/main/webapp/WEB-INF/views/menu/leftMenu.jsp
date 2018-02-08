@@ -19,7 +19,8 @@ $(function(){
 				</a><br> <a href="#">updates<span class="badge">2</sapn></a><br>
 			</div>	 -->		
 		<div id="accordian">
-			<ul id="home_menu">
+			<!-- home 메뉴  -->
+			<ul id="menu_home">
 				<li class="active">
 					<h3>공지사항</h3>
 					<ul>
@@ -27,20 +28,42 @@ $(function(){
 					</ul>
 				</li>
 			</ul>
-			<ul id="setting_menu" style="display:none">
+			<!-- mypage 메뉴 -->
+			<ul id="menu_mypage">
+				<li>
+					<h3 onclick="menuUrl('', urlForm)" style="cursor:pointer;">회원정보</h3>
+				</li>
+				<li>
+					<h3 onclick="menuUrl('', urlForm)" style="cursor:pointer;">메시지함</h3>
+				</li>
+			</ul>			
+			<!-- setting 메뉴 -->
+			<ul id="menu_setting" style="display:none">
 				<li class="active">
-					<h3>관리자게시판</h3>
+					<h3 onclick="menuUrl('manboard/manageBoard', urlForm)" style="cursor:pointer;">관리자게시판</h3>
+				</li>
+				<li>
+					<h3 onclick="menuUrl('', urlForm)" style="cursor:pointer;">회원관리</h3>
 				</li>
 				<li>
 					<h3>
-						연예 게시판<span class="plus">+</span>
+						접속통계<span class="plus">+</span>
 					</h3>
 					<ul>
-						<li><a href="#">방탄소년단</a></li>
-						<li><a href="#">트와이스</a></li>
-						<li><a href="#"></a></li>
+						<li><a href="#">일일</a></li>
+						<li><a href="#">주간</a></li>
+						<li><a href="#">월간</a></li>
 					</ul>
 				</li>
+				<li>
+					<h3>
+						광고관리<span class="plus">+</span>
+					</h3>
+					<ul>
+						<li><a href="#">광고등록</a></li>
+						<li><a href="#">광고관리</a></li>
+					</ul>
+				</li>				
 			</ul>
 		</div>
 		<div class="ad">

@@ -20,7 +20,7 @@
       </ul>
    </div>
    <div id="cover">
-      <p class="covertitle" onclick="goUrl('main', urlForm)" style="cursor:pointer;">
+      <p class="covertitle" onclick="menuUrl('main', urlForm)" style="cursor:pointer;">
         Cafe's Management System
          <br>
       </p>

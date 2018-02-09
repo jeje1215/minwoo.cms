@@ -16,5 +16,8 @@ public class AdDaoImpl implements AdDao{
 		return adMapper.getAds();
 		
 	}
+	public int addAd(Ad ad){
+		return adMapper.addAd(ad);
+	}
 
 }

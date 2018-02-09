@@ -6,5 +6,6 @@ import minwoo.cms.manad.domain.Ad;
 
 public interface AdDao {
 	List<Ad>getAds();
+	int addAd(Ad ad);
 
 }

@@ -19,22 +19,53 @@ $(function(){
     regBtns();
 });
  
-var showAd = function(ad){
-    $(":input[name='name']").val($(ad).data("adsCompany"));
-}
+ var showAd = function(ad){
+   $(":input[name='name']").val($(ad).data("adsCompany"));
+ }
  
 var regBtns = function(){
     var modal = $("#resultModal");  // 추가, 수정, 삭제 결과 창
     var msg = $("#msg");            // 결과 메세지
         
-    var chkName = function(){ // 회원 이름 입력 여부    
-        if($(":input[name='name']").val()) return true;
+   var chkAd = function(){
+        if($(":input[name='adsCompany']").val()) return true;
         else {
-            msg.text("회원 이름을 입력하세요.");
-            modal.modal("show");
+            msg.text("광고 이름을 확인하세요.");
+          modal.modal("show");
+        }             
+        if($(":input[name='adsMan']").val()) return true;
+        else {
+            msg.text("관리자이름을 확인하세요..");
+          modal.modal("show");
+        }
+        if($(":input[name='adsMoney']").val()) return true;
+        else {
+            msg.text("금액 숫자로 입력하세요.");
+          modal.modal("show");
+        }
+        if($(":input[name='adsStartDate']").val()) return true;
+        else {
+            msg.text("광고시작일 확인하세요.");
+          modal.modal("show");
+        }
+        if($(":input[name='adsEndDate']").val()) return true;
+        else {
+            msg.text("광고종료일 확인하세요.");
+          modal.modal("show");
+        }
+        if($(":input[name='userId']").val()) return true;
+        else {
+            msg.text("광고작성자을 확인하세요.");
+          modal.modal("show");
+        }
+        if($(":input[name='adsUrl']").val()) return true;
+        else {
+            msg.text("광고Url을 확인하세요.");
+          modal.modal("show");
         }
     }
-    
+ 
+   
     //버튼 클릭시 이벤트
     $("#listBtn").bind("click", function(){
         var adList = $("#adList");  // 광고목록
@@ -53,10 +84,8 @@ var regBtns = function(){
                           +ad.adsId+"'onClick='showAd(this)'/>"
                           +"&nbsp;&nbsp;&nbsp;"
                           +ad.adsId+"</td>");
-                    td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td>"
-                    		
-                    
-                    );
+                    td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td><td>"+ad.userId+"</td><td>"+ad.adsUrl+"</td>"
+                      );
                     
                     adList.append(tr.append(td).append(td2));      
                     td.find("input").data("adsCompany", ad.adsCompany);
@@ -64,112 +93,38 @@ var regBtns = function(){
             }
         });    
     }); 
+    
+    
+    $("#addBtn").bind("click", function(){
+      if(chkAd()){  
+       
+        $.ajax({
+            url:"addjoin",
+            data:$("#adFormAdd").serialize(),
+            success:function(result){
+            	if(result)msg.text("추가 성공!");
+            	else msg.text("추가 실패");
+            	$("#listBtn").trigger("click");
+            },
+            error:function(a,b,errMsg){
+            	msg.text("추가 실패!" +errMsg);
+            	},
+            	complete:function(){
+            		modal.modal("show");
+            		}
+            	});
+            }             
+    
+    });
 }
+
+
    
    
 </script>
 
 
 <body>
-<!-- 	<header> -->
-<!-- 		<img style="width: 300px; height: 95px; margin-left: 39%;" -->
-<!-- 			src="../res/img/logo.png"> -->
-
-<!-- 		<nav class="navbar navbar-default navbar-fixed"> -->
-<!-- 			<ul class="nav navbar-nav"> -->
-<!-- 				<li><a href="#"><span class="glyphicon glyphicon-home"> -->
-<!-- 							HOME </span></a></li> -->
-<!-- 				<li><a href="#"><span class="glyphicon glyphicon-heart"><b> -->
-<!-- 								MYPAGE </b></span></a></li> -->
-<!-- 				<li class="active"><a href="#"><span -->
-<!-- 						class="glyphicon glyphicon-cog"><b> SETTING </b></span></a></li> -->
-<!-- 				         <li><a href="#"><span class="glyphicon glyphicon-earphone"><b> -->
-<!--                      CONTACT </b></span> </a></li> -->
-<!-- 			</ul> -->
-<!-- 		</nav> -->
-<!-- 	</header> -->
-
-<!-- 	<nav class="aside"> -->
-
-<!-- 		<div class="profile"> -->
-<!-- 			<div class="pricing-table pricing-three-column row"> -->
-<!-- 				<div class="plan col-sm-4 col-lg-4"> -->
-<!-- 					<div class="plan-name-bronze"> -->
-<!-- 						<img src="../res/img/pro.jpg" style="width: 90px; height: 90px"> -->
-<!-- 						<h5> -->
-<!-- 							<i class="fa fa-child" aria-hidden="true" style="float: center"></i> -->
-<!-- 							남승창님! -->
-<!-- 						</h5> -->
-<!-- 						<p>CMS에오신것을환영합니다.</p> -->
-
-<!-- 					</div> -->
-<!-- 					<ul class="pro"> -->
-<!-- 						<li class="plan-feature"><i class="far fa-calendar-alt" -->
-<!-- 							aria-hidden="true"></i> 가입일:</li> -->
-<!-- 						<li class="plan-feature"><i class="fas fa-chart-line" -->
-<!-- 							aria-hidden="true"></i> 회원등급:</li> -->
-<!-- 						<li class="plan-feature"><i class="far fa-edit" -->
-<!-- 							aria-hidden="true"></i> 게시글:</li> -->
-<!-- 						<div class="row"> -->
-<!-- 							<button type="button" class="btn btn-default" -->
-<!-- 								style="width: 80px;"> -->
-<!-- 								<i class="fa fa-paw" aria-hidden="true"></i>MyPage -->
-<!-- 							</button> -->
-<!-- 							<button type="button" class="btn btn-default" -->
-<!-- 								style="background-color: #ffc4d7; width: 80px;"> -->
-<!-- 								<i class="fas fa-sign-in-alt" aria-hidden="true"></i>Logout -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-
-
-<!-- 		<div id="accordian"> -->
-<!-- 			<ul> -->
-<!-- 				<li class="active"> -->
-<!-- 					<h3>게시판관리</h3> -->
-<!-- 					<ul> -->
-<!-- 						<li><a href="#"></a></li> -->
-<!-- 					</ul> -->
-<!-- 				</li> -->
-<!-- 				<li> -->
-<!-- 					<h3> -->
-<!-- 						회원관리<span class="plus">+</span> -->
-<!-- 					</h3> -->
-<!-- 					<ul> -->
-<!-- 						<li><a href="#"></a></li> -->
-<!-- 						<li><a href="#"></a></li> -->
-<!-- 						<li><a href="#"></a></li> -->
-<!-- 					</ul> -->
-<!-- 				</li> -->
-<!-- 				<li> -->
-<!-- 					<h3> -->
-<!-- 						접속통계 <span class="plus">+</span> -->
-<!-- 					</h3> -->
-<!-- 					<ul> -->
-<!-- 						<li><a href="#"></a></li> -->
-<!-- 						<li><a href="#"></a></li> -->
-<!-- 						<li><a href="#"></a></li> -->
-<!-- 					</ul> -->
-<!-- 				</li> -->
-<!-- 				<li> -->
-<!-- 					<h3> -->
-<!-- 						광고 등록<span class="plus">+</span> -->
-<!-- 					</h3> -->
-<!-- 					<ul> -->
-<!-- 						<li><a href="#" -->
-<!-- 							onclick="javascript:location.href='./01.html'">광고 등록</a></li> -->
-<!-- 						<li><a href="#" -->
-<!-- 							onclick="javascript:location.href='./02.html'">광고 관리</a></li> -->
-<!-- 					</ul> -->
-<!-- 				</li> -->
-<!-- 			</ul> -->
-<!-- 		</div> -->
-
-<!-- 	</nav> -->
-
 	<section id="post">
 		<div class="container">
 			<br>
@@ -206,7 +161,47 @@ var regBtns = function(){
 			</div>
 			<br>
 
-			<div class="modal fade" id="resultModal">
+		<table class="table table-hover" >
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>광고이름</th>
+					<th>광고관리자</th>
+					<th>광고금액</th>
+					<th>광고시작일</th>
+					<th>광고종료일</th>
+					<th>광고작성자</th>
+					<th>광고Url</th>
+				</tr>
+			</thead>
+			<form id="adFormAdd">
+				<tr>
+					<td> </td>
+					<td><input type="text" name="adsCompany" value="" ></td>
+					<td><input type="text" name="adsMan" value="" ></td>
+					<td><input type="text" name="adsMoney" value=""></td>
+					<td><input type="text" name="adsStartDate" value="" ></td>
+					<td><input type="text" name="adsEndDate" value="" ></td>
+					<td><input type="text" name="userId" value="광고작성자"></td>
+					<td><input type="text" name="adsUrl" value="" ></td>
+				</tr>
+			</form>
+		<tbody id="adList">
+		</tbody>
+	</table>
+
+	<br> <br>
+			<div class="text-center">
+				<ul class="pagination">
+					<li class="disabled"><a href="#"><span
+							class="glyphicon glyphicon-chevron-left"></span></a></li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-chevron-right"></span></a></li>
+				</ul>
+			</div>
+
+		<div class="modal fade" id="resultModal">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -220,64 +215,8 @@ var regBtns = function(){
 					</div>
 				</div>
 			</div>
-		</div>
 
+</div>
+</section>
 
-
-
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>번호</th>
-					<th>광고이름</th>
-					<th>광고관리자</th>
-					<th>광고금액</th>
-					<th>광고시작일</th>
-					<th>광고종료일</th>
-
-				</tr>
-			</thead>
-			<tbody id="adList">
-			</tbody>
-		</table>
-
-
-		<div class="form-group-right">
-			<div class="col-sm-12 text-right">
-				<button type="button" class="btn btn-primary pull-right"
-					data-toggle="modal" data-target="#myModal">
-					등록 <i class="fas fa-plus"></i>
-				</button>
-			</div>
-			<br> <br>
-			<div class="text-center">
-				<ul class="pagination">
-					<li class="disabled"><a href="#"><span
-							class="glyphicon glyphicon-chevron-left"></span></a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-chevron-right"></span></a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">
-							<span aria-hidden="true">×</span><span class="sr-only">Close</span>
-						</button>
-						<h5 class="modal-title" id="myModalLabel">등록되었습니다. 광고관리 메뉴로
-							이동합니다.</h5>
-					</div>
-
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal"
-							onclick="javascript:location.href='./02.html'">확인</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<%@ include file="../common/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

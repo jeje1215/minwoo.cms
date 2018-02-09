@@ -7,6 +7,7 @@ import minwoo.cms.manad.domain.Ad;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AdServiceImpl implements AdService{
@@ -14,6 +15,10 @@ public class AdServiceImpl implements AdService{
 	
 	public List<Ad>listAds(){
 		return adDao.getAds();
+	}
+	@Transactional
+	public boolean adjoin(Ad ad){
+		return adDao.addAd(ad)>0;
 	}
 
 }

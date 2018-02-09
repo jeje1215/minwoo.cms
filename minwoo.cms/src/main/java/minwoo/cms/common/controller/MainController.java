@@ -23,11 +23,4 @@ public class MainController {
 		return url;
 	}	
 	
-	//세팅페이지 이동
-	//관리자 게시판 이동
-	@RequestMapping(value="/manboard/manageBoard", method = RequestMethod.POST)
-	public String urlMenu_manboard(String url){
-		return url;
-	}
-
 }

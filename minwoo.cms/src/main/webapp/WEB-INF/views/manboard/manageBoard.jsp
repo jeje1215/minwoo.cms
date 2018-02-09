@@ -27,7 +27,7 @@
 				</table>
 			</div>
 			<div class="list1">
-				<form id="manboardForm">
+				<form name="manboardForm">
 					<table id="yuri">
 						<tr>
 							<td>카테고리 명 공백</td>

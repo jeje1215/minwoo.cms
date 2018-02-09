@@ -117,12 +117,8 @@ var regBtns = function(){
     
     });
 }
-
-
-   
    
 </script>
-
 
 <body>
 	<section id="post">

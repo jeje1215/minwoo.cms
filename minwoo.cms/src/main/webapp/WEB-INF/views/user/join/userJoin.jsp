@@ -16,8 +16,9 @@
 			<div class="col-sm-6">
 				<input class="form-control" id="inputId" type="text" 
 					placeholder="ID" name="userId" style="width:150px;display:inline;">
-				<button class="btn btn-danger" id="doubleChk">
-					중복체크<i class="fa fa-times spaceLeft"></i>
+			
+				<button class="btn btn-danger1" id="doubleChk" >
+					중복체크<i class="fas fa-check"></i>
 				</button>
 				<button class="btn btn-primary" id="previousChk" style="display:none;">
 					ID 변경<i class="fa fa-times spaceLeft"></i>

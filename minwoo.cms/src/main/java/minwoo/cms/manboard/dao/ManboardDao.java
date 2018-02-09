@@ -1,5 +1,7 @@
 package minwoo.cms.manboard.dao;
 
-public interface ManboardDao {
+import minwoo.cms.manboard.domain.ManboardInfo;
 
+public interface ManboardDao {
+	ManboardInfo getBoardList();
 }

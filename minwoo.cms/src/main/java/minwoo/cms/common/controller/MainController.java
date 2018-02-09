@@ -27,12 +27,7 @@ public class MainController {
 	//관리자 게시판 이동
 	@RequestMapping(value="/manboard/manageBoard", method = RequestMethod.POST)
 	public String urlMenu_manboard(String url){
-		System.out.println(url);
 		return url;
 	}
-	
-	
-	
-	
-	
+
 }

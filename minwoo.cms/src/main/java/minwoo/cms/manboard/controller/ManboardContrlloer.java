@@ -17,6 +17,7 @@ public class ManboardContrlloer {
 	public String manboard_list(Model model){
 		System.out.println("실행은 함?");
 		model.addAttribute("boardlist", manboardService.boardList());
+		System.out.println("나오긴 함?");
 		return "/manboard/manageBoard";	
 	}
 	

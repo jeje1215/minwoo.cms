@@ -1,5 +1,7 @@
 package minwoo.cms.manboard.service;
 
+import java.util.List;
+
 import minwoo.cms.manboard.dao.ManboardDao;
 import minwoo.cms.manboard.domain.ManboardInfo;
 
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class ManboardServiceImpl implements ManboardService{
 	@Autowired ManboardDao manboardDao;
 	
-	public ManboardInfo boardList(){
+	public List<ManboardInfo> boardList(){
 		return manboardDao.getBoardList();
 	}
 }

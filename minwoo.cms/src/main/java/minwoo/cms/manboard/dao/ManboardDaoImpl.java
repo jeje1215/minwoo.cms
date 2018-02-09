@@ -1,5 +1,7 @@
 package minwoo.cms.manboard.dao;
 
+import java.util.List;
+
 import minwoo.cms.manboard.dao.mapper.ManboardMapper;
 import minwoo.cms.manboard.domain.ManboardInfo;
 
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public class ManboardDaoImpl implements ManboardDao{
 	@Autowired ManboardMapper manboardMapper;
 
-	public ManboardInfo getBoardList(){
+	public List<ManboardInfo> getBoardList(){
 		return manboardMapper.getBoardList();
 	}
 }

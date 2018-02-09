@@ -8,11 +8,7 @@
 		<result property="mabYn" column="mab_yn" />
 	</resultMap>
 	
-	<select id="getBoardList" resultMap="userMap">
-		select MAB_ID, MAB_NM from MAINBOARDS
-	</select>	
-	
-	<select id="getBoardList2" resultType="minwoo.cms.manboard.domain.ManboardInfo">
+	<select id="getBoardList" resultMap="userMap" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
 		select MAB_ID, MAB_NM from MAINBOARDS
 	</select>		
 	

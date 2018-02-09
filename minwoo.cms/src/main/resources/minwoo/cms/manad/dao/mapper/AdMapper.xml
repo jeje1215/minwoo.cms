@@ -9,6 +9,24 @@
 	reg_date regDate, user_id userId
 	 from ads order by ads_id desc
 </select>
+
+<!-- <select id="getAd" parameterType="int" resultType="minwoo.cms.manad.domain.Ad"> -->
+<!-- 	select ads_id adsId, ads_company adsCompany, ads_man adsMan, -->
+<!-- 	ads_file adsFile, ads_money adsMoney, ads_url adsUrl, -->
+<!-- 	ads_start_date adsStartDate, ads_end_date adsEndDate, -->
+<!-- 	reg_date regDate, user_id userId -->
+<!-- 	 from ads -->
+<!-- 	 where ads_id=#{adsId} -->
 	
+<!-- 	</select> -->
+
+	<insert id="addAd" parameterType="minwoo.cms.manad.domain.Ad">
+	insert into ads(ads_id,ads_company,ads_man,ads_money,ads_start_date,	ads_end_date,ads_url) 
+		values(ads_adsid_seq.nextval, #{adsCompany},#{adsMan},#{adsMoney},#{adsStartDate},#{adsEndDate},#{adsUrl})
+	</insert>
+
+
+
+
 
 </mapper>

@@ -6,6 +6,7 @@ import minwoo.cms.manad.domain.Ad;
 
 public interface AdMapper {
 	List<Ad>getAds(); //광고 목록
+	int addAd(Ad ad);
 	
 
 }

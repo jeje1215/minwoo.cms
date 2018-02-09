@@ -23,5 +23,13 @@ public class AdController {
 	public List<Ad>listAds(){
 		return adService.listAds();
 	}	
+	@RequestMapping("addjoin")
+	@ResponseBody
+	public boolean addjoin(Ad ad){
+		System.out.println(ad.getAdsCompany());
+		System.out.println(ad.getAdsId());
+		return adService.adjoin(ad);
+		
+	}	
 
 }

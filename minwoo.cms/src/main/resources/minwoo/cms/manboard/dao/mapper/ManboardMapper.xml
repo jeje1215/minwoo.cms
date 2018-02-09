@@ -2,24 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="minwoo.cms.manboard.dao.mapper.ManboardMapper">
-<!-- 	<resultMap id="userMap" type="minwoo.cms.user.join.domain.User">
-		<id property="userId"	column="user_id"/>
-		<result property="userPwd"	column="user_pwd"/>
-        <result property="userNm" column="user_nm"/>
-	</resultMap>	 -->
-	
 	<resultMap id="userMap" type="minwoo.cms.manboard.domain.ManboardInfo">
 		<id property="mabId" column="mab_id" />
 		<result property="mabNm" column="mab_nm" />
 		<result property="mabYn" column="mab_yn" />
 	</resultMap>
 	
-<!-- 	<select id="getBoardList" resultMap="userMap"
-		parameterType="minwoo.cms.manboard.domain.ManboardInfo">
+	<select id="getBoardList" resultMap="userMap">
 		select MAB_ID, MAB_NM from MAINBOARDS
-	</select>	 -->
+	</select>	
 	
-	<select id="getBoardList" resultType="minwoo.cms.manboard.domain.ManboardInfo">
+	<select id="getBoardList2" resultType="minwoo.cms.manboard.domain.ManboardInfo">
 		select MAB_ID, MAB_NM from MAINBOARDS
 	</select>		
 	

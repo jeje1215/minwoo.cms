@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="minwoo.cms.manboard.dao.mapper.SubboardMapper">
+	<resultMap id="userMap" type="minwoo.cms.manboard.domain.SubboardInfo">
+		<id property="subId" column="sub_id" />
+		<result property="subNm" column="sub_nm" />
+		<result property="subYn" column="sub_yn" />
+		<result property="mabId" column="mab_id" />
+	</resultMap>
+	
+	<select id="getBoardList" resultMap="userMap" parameterType="minwoo.cms.manboard.domain.SubboardInfo">
+		select sub_id, sub_nm, sub_yn, mab_id from SUBBOARDS
+	</select>		
+	
+	<insert id="addUser" parameterType="minwoo.cms.manboard.domain.SubboardInfo">
+		insert into users(USER_ID,USER_PWD,USER_MAIL,USER_BIRTH,USER_NM,USER_NIC) 
+			values(
+					 #{userId},#{userPwd},#{userMail},#{userBirth},#{userNm},#{userNic}
+				)
+	</insert>	
+	
+</mapper>

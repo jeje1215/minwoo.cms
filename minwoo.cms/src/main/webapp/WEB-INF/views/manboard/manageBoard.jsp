@@ -38,7 +38,7 @@
 		</div>
 		<div class="list1">
 			<form name="manboardForm">
-				<table id="yuri">
+				<table id="GubunType">
 					<tr>
 						<td>게시판 구분</td>
 						<td>
@@ -50,24 +50,43 @@
 						</td>
 					</tr>
 				</table>
-				<table>
+				<table id="manboard" style="display:none;">
 					<tr>
 						<td>게시판 명</td>
-						<td><input type=text name="" size=35></td>
+						<td><input type=text name="mabNm" size=35></td>
 					</tr>
 					<tr>
 						<td>공개설정</td>
 						<td>
-							<input type="radio" name="memory" value="1">공개 
+							<input type="radio" name="mabYn" value="Y">공개 
 							&nbsp;&nbsp;
-							<input type="radio" name="memory" value="2">비공개
+							<input type="radio" name="mabYn" value="N">비공개
 						</td>
 					</tr>
-					<td>카테고리 정렬 </td>
-					<td>
-						<button id="up">위</button>
-						<button id="down">아래</button>
-					</td>
+				</table>
+				<table id="subboard" >
+					<tr>
+						<td>연결 게시판</td>
+						<td>
+							<select name="contact_id" onchange="go_boardGubun(this);">
+								<c:forEach items="${man_boardlist}" var="manlist">
+									<option value="${manlist.mabId}">${manlist.mabNm}</option>
+								</c:forEach>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>게시판 명</td>
+						<td><input type=text name="subNm" size=35></td>
+					</tr>
+					<tr>
+						<td>공개설정</td>
+						<td>
+							<input type="radio" name="subYn" value="Y">공개 
+							&nbsp;&nbsp;
+							<input type="radio" name="subYn" value="N">비공개
+						</td>
+					</tr>
 				</table>
 			</form>
 		</div>
@@ -75,17 +94,14 @@
 
 		<div class="form-group">
 			<div class="col-sm-12 text-right">
-				<button class="btn btn-primary" type="submit" data-toggle="modal"
-					data-target="#myModal">
+				<button class="btn btn-primary" type="submit" >
 					등록 <i class="fa fa-check spaceLeft"></i>
 				</button>
-				<button class="btn btn-warning" type="submit" data-toggle="modal"
-					data-target="#myModal2">
+				<button class="btn btn-warning" type="submit" >
 					<i class="fas fa-sync-alt"></i> 수정
 
 				</button>
-				<button class="btn btn-danger" data-toggle="modal"
-					data-target="#myModal3">
+				<button class="btn btn-danger" >
 					삭제 <i class="fa fa-times spaceLeft"></i>
 				</button>
 			</div>

@@ -1,10 +1,18 @@
 
 
 $(document).ready(function(){ 
-	manboardList();
+	//manboardList();
 });
 
-function manboardList() {
-	//var url = "/cms/manboard/manageBoard/list";
-	//$("form[name=manboardForm]").attr({method:"post", action:url}).submit();
+function go_boardGubun(val) {
+	if(val.value == 'M'){
+		$('#manboard').show();
+		$('#subboard').hide();
+	}else if(val.value == 'S'){
+		$('#manboard').hide();
+		$('#subboard').show();
+	}else{
+		$('#manboard').hide();
+		$('#subboard').hide();
+	}
 }

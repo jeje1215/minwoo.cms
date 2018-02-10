@@ -21,9 +21,16 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="boardls" items="${boardlist}">
-							${boardls.mabNm} 
-						</c:forEach>
+						<c:forEach items="${boardlist}" var="boardls">
+							<tr>
+								<td><b>${boardls.mabNm}</b></td>
+							</tr>
+							<c:forEach items="${boardlist}" var="boardls">
+								<tr>
+									<td>	└욥!!</td>
+								</tr>
+							</c:forEach>
+						</c:forEach>					
 					</tbody>
 				</table>
 			</div>

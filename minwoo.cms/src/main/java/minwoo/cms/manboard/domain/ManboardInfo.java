@@ -1,10 +1,12 @@
 package minwoo.cms.manboard.domain;
 
 public class ManboardInfo {
+	//메인 보드
 	private int mabId;
 	private String mabNm;
 	private String mabYn;
-
+	
+	
 	public int getMabId() {
 		return mabId;
 	}

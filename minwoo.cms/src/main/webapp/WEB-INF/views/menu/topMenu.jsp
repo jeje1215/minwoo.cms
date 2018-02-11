@@ -14,16 +14,27 @@
 					</li>
 					
      			 	<c:if test="${sessionScope.user != null}">
-						<li>
-							<a href="#" onclick="goUrl('', urlForm)">
-								<span class="glyphicon glyphicon-heart"><b> MYPAGE </b></span>
-							</a>
-						</li>
-						<li>
-							<a href="#" onclick="menuUrl('manboard/manageBoard', urlForm)">
-								<span class="glyphicon glyphicon-cog"><b> SETTING </b></span>
-							</a>
-						</li>
+	     			 	<c:choose>
+	     			 		<c:when test="${ sessionScope.user.userLevel eq 'A' }">
+								<li>
+									<a href="#" onclick="goUrl('', urlForm)">
+										<span class="glyphicon glyphicon-heart"><b> MYPAGE </b></span>
+									</a>
+								</li>
+								<li>
+									<a href="#" onclick="menuUrl('manboard/manageBoard', urlForm)">
+										<span class="glyphicon glyphicon-cog"><b> SETTING </b></span>
+									</a>
+								</li>
+	     			 		</c:when>
+	     			 		<c:when test="${ sessionScope.user.userLevel eq 'B' }">
+								<li>
+									<a href="#" onclick="goUrl('', urlForm)">
+										<span class="glyphicon glyphicon-heart"><b> MYPAGE </b></span>
+									</a>
+								</li>
+	     			 		</c:when>
+	     			 	</c:choose>
 					</c:if>
 				</ul>
 			</nav>

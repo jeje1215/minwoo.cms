@@ -22,7 +22,7 @@
 				<tbody>
 					<c:forEach items="${man_boardlist}" var="manlist">
 						<tr>
-							<td><b>${manlist.mabNm}</b></td>
+							<td onclick="go_edit(${manlist.mabId});" style="cursor:pointer;"><b>${manlist.mabNm}</b></td>
 						</tr>
 						<c:forEach items="${sub_boardlist}" var="sublist">
 							<c:if test="${manlist.mabId eq sublist.mabId}">

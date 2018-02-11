@@ -34,11 +34,11 @@ $(function() {
 			method : "post",
 			data : $("#manboardForm").serialize(),
 			success : function(result) {
-				alert(result);
 				if (result == true) {
-					alert("성공");
+					menuUrl('manboard/manageBoard', urlForm)
 				} else {
-					alert("실패");
+					$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.");
+					$('#myModal_one').modal();
 				}
 			},
 			error : function(a, b, errMsg) {

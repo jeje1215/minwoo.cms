@@ -16,7 +16,7 @@ public class ManboardServiceImpl implements ManboardService{
 		return manboardDao.getBoardList();
 	}
 	
-	public boolean addManboard(){
-		return manboardDao.insertBoard();
+	public boolean addManboard(ManboardInfo manboardInfo){
+		return manboardDao.insertBoard(manboardInfo);
 	}
 }

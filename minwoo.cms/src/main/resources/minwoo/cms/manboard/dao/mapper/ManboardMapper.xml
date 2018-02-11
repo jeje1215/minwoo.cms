@@ -6,16 +6,17 @@
 		<id property="mabId" column="mab_id" />
 		<result property="mabNm" column="mab_nm" />
 		<result property="mabYn" column="mab_yn" />
+		<result property="userId" column="user_id" />
 	</resultMap>
 	
 	<select id="getBoardList" resultMap="userMap" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
-		select mab_id, mab_nm, mab_yn from MAINBOARDS
+		select mab_id, mab_nm, mab_yn from MAINBOARDS order by mab_nm asc
 	</select>		
 	
 	<insert id="insertBoard" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
-		insert into MAINBOARDS(mab_id ,mab_nm ,mab_yn ) 
+		insert into MAINBOARDS(mab_id ,mab_nm ,mab_yn , user_id) 
 			values(
-					 mainboards_mabid_seq.nextval,#{mab_nm, jdbcType=VARCHAR},#{mab_yn, jdbcType=VARCHAR}
+					 mainboards_mabid_seq.nextval,#{mabNm},#{mabYn},#{userId}
 				)
 	</insert>	
 	

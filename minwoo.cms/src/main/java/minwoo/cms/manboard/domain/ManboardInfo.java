@@ -5,8 +5,17 @@ public class ManboardInfo {
 	private int mabId;
 	private String mabNm;
 	private String mabYn;
+	private String userId;
 	
 	
+	public String getUser_id() {
+		return userId;
+	}
+
+	public void setUser_id(String userId) {
+		this.userId = userId;
+	}
+
 	public int getMabId() {
 		return mabId;
 	}

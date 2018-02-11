@@ -6,6 +6,15 @@ public class SubboardInfo {
 	private String subYn;
 	private int mabId;
 	private String boardType;
+	private String userId;
+
+	public String getUser_id() {
+		return userId;
+	}
+
+	public void setUser_id(String userId) {
+		this.userId = userId;
+	}
 
 	public int getSubId() {
 		return subId;

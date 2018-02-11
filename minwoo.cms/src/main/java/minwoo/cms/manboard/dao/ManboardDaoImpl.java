@@ -13,15 +13,10 @@ public class ManboardDaoImpl implements ManboardDao{
 	@Autowired ManboardMapper manboardMapper;
 
 	public List<ManboardInfo> getBoardList(){
-/*		List<ManboardInfo> tmp = manboardMapper.getBoardList();
-		for (ManboardInfo manboardInfo : tmp) {
-			System.out.println(manboardInfo.getMabNm());
-		}	*/	
-		
 		return manboardMapper.getBoardList();
 	}
 	
-	public boolean insertBoard(){
-		return manboardMapper.insertBoard();
+	public boolean insertBoard(ManboardInfo manboardInfo){
+		return manboardMapper.insertBoard(manboardInfo);
 	}
 }

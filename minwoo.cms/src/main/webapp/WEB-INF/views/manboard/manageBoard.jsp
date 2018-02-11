@@ -36,7 +36,8 @@
 			</table>
 		</div>
 		<div class="list1">
-			<form name="manboardForm">
+			<form id="manboardForm">
+			<input type="text" name="user_id" value="${ sessionScope.user.loginId }" style="display:none;">
 				<table id="GubunType">
 					<tr>
 						<td>게시판 구분</td>

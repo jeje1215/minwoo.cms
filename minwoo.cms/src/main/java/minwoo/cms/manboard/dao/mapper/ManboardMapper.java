@@ -6,5 +6,5 @@ import minwoo.cms.manboard.domain.ManboardInfo;
 
 public interface ManboardMapper {
 	List<ManboardInfo> getBoardList();
-	boolean insertBoard();
+	boolean insertBoard(ManboardInfo manboardInfo);
 }

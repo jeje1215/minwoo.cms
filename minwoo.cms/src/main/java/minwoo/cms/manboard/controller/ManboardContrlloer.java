@@ -30,8 +30,7 @@ public class ManboardContrlloer {
 	@RequestMapping(value="manboard/manageBoard/madd", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean manboard_madd(ManboardInfo manboardInfo){
-/*		System.out.println(manboardService.addManboard());*/
-		return manboardService.addManboard();
+		return manboardService.addManboard(manboardInfo);
 	}
 	
 }

@@ -12,10 +12,10 @@
 		select mab_id, mab_nm, mab_yn from MAINBOARDS
 	</select>		
 	
-	<insert id="addUser" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
-		insert into users(USER_ID,USER_PWD,USER_MAIL,USER_BIRTH,USER_NM,USER_NIC) 
+	<insert id="insertBoard" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
+		insert into MAINBOARDS(mab_id ,mab_nm ,mab_yn ) 
 			values(
-					 #{userId},#{userPwd},#{userMail},#{userBirth},#{userNm},#{userNic}
+					 mainboards_mabid_seq.nextval,#{mab_nm, jdbcType=VARCHAR},#{mab_yn, jdbcType=VARCHAR}
 				)
 	</insert>	
 	

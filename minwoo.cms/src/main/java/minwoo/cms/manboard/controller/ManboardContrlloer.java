@@ -1,5 +1,6 @@
 package minwoo.cms.manboard.controller;
 
+import minwoo.cms.manboard.domain.ManboardInfo;
 import minwoo.cms.manboard.service.ManboardService;
 import minwoo.cms.manboard.service.SubboardService;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ManboardContrlloer {
@@ -24,13 +26,12 @@ public class ManboardContrlloer {
 	}
 	
 	
-	//왼쪽 위치에 리스트를 보여줌
-	@RequestMapping(value="/manboard/manageBoard/list", method = RequestMethod.POST)
-	public String manboard_list(Model model){
-		System.out.println("실행은 함?");
-		model.addAttribute("boardlist", manboardService.boardList());
-		System.out.println("나오긴 함?");
-		return "/manboard/manageBoard";	
+	//메인 게시판 등록
+	@RequestMapping(value="manboard/manageBoard/madd", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean manboard_madd(ManboardInfo manboardInfo){
+/*		System.out.println(manboardService.addManboard());*/
+		return manboardService.addManboard();
 	}
 	
 }

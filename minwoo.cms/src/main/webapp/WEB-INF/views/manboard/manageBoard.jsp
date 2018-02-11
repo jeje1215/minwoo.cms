@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <%@ include file="../common/header.jsp"%>
 <%@ include file="../menu/topMenu.jsp"%>
@@ -53,22 +52,22 @@
 				<table id="manboard" style="display:none;">
 					<tr>
 						<td>게시판 명</td>
-						<td><input type=text name="mabNm" size=35></td>
+						<td><input type="text" name="mabNm" size=35></td>
 					</tr>
 					<tr>
 						<td>공개설정</td>
 						<td>
-							<input type="radio" name="mabYn" value="Y">공개 
+							<input type="radio" name="mabYn" value="Y" checked="checked">공개 
 							&nbsp;&nbsp;
 							<input type="radio" name="mabYn" value="N">비공개
 						</td>
 					</tr>
 				</table>
-				<table id="subboard" >
+				<table id="subboard" style="display:none;">
 					<tr>
 						<td>연결 게시판</td>
 						<td>
-							<select name="contact_id" onchange="go_boardGubun(this);">
+							<select name="mabId">
 								<c:forEach items="${man_boardlist}" var="manlist">
 									<option value="${manlist.mabId}">${manlist.mabNm}</option>
 								</c:forEach>
@@ -77,12 +76,12 @@
 					</tr>
 					<tr>
 						<td>게시판 명</td>
-						<td><input type=text name="subNm" size=35></td>
+						<td><input type="text" name="subNm" size=35></td>
 					</tr>
 					<tr>
 						<td>공개설정</td>
 						<td>
-							<input type="radio" name="subYn" value="Y">공개 
+							<input type="radio" name="subYn" value="Y" checked="checked">공개 
 							&nbsp;&nbsp;
 							<input type="radio" name="subYn" value="N">비공개
 						</td>
@@ -91,18 +90,16 @@
 			</form>
 		</div>
 
-
 		<div class="form-group">
 			<div class="col-sm-12 text-right">
-				<button class="btn btn-primary" type="submit" >
-					등록 <i class="fa fa-check spaceLeft"></i>
+				<button class="btn btn-primary"  id="addBoard">
+					 <i class="fa fa-check spaceLeft"></i>등록
 				</button>
-				<button class="btn btn-warning" type="submit" >
+				<button class="btn btn-warning" onclick="editBoard();" >
 					<i class="fas fa-sync-alt"></i> 수정
-
 				</button>
-				<button class="btn btn-danger" >
-					삭제 <i class="fa fa-times spaceLeft"></i>
+				<button class="btn btn-danger" onclick="delBoard();">
+					 <i class="fa fa-times spaceLeft"></i>삭제
 				</button>
 			</div>
 		</div>

@@ -20,4 +20,8 @@ public class ManboardDaoImpl implements ManboardDao{
 		
 		return manboardMapper.getBoardList();
 	}
+	
+	public boolean insertBoard(){
+		return manboardMapper.insertBoard();
+	}
 }

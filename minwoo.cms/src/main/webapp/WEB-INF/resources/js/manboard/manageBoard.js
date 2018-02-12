@@ -71,6 +71,7 @@ $(function() {
 			$('#myModal_one').modal();
 			return false;
 		}
+		
 		$.ajax({
 			url : url,
 			method : "post",

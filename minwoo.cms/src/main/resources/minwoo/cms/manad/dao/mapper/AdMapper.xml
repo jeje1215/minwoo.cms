@@ -25,7 +25,10 @@
 		values(ads_adsid_seq.nextval, #{adsCompany},#{adsMan},#{adsMoney},#{adsStartDate},#{adsEndDate},#{adsUrl})
 	</insert>
 
-
+ <delete id="delAd" parameterType="minwoo.cms.manad.domain.Ad">
+ 	delete ads where ads_id=#{adsId}
+ 
+ </delete>
 
 
 

@@ -7,6 +7,7 @@ import minwoo.cms.manad.service.AdService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -26,10 +27,14 @@ public class AdController {
 	@RequestMapping("addjoin")
 	@ResponseBody
 	public boolean addjoin(Ad ad){
-		System.out.println(ad.getAdsCompany());
-		System.out.println(ad.getAdsId());
 		return adService.adjoin(ad);
 		
 	}	
-
+	@RequestMapping("delad")
+	@ResponseBody
+	public boolean secede(int adsId){
+		System.out.println("지은빈 바보");
+		return adService.secede(adsId);
+		
+	}
 }

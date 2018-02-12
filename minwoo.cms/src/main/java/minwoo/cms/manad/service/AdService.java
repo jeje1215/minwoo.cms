@@ -6,6 +6,8 @@ import minwoo.cms.manad.domain.Ad;
 
 public interface AdService {
 	List<Ad>listAds(); //광고목록
-	boolean adjoin(Ad ad);
+//	Ad findAd(int adsId);
+	boolean adjoin(Ad ad); //광고 추가 
+	boolean secede(int adsId); //광고 삭제
 
 }

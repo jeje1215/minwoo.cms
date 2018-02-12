@@ -2,14 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="minwoo.cms.manboard.dao.mapper.ManboardMapper">
-	<resultMap id="userMap" type="minwoo.cms.manboard.domain.ManboardInfo">
+	<resultMap id="manboardMap" type="minwoo.cms.manboard.domain.ManboardInfo">
 		<id property="mabId" column="mab_id" />
 		<result property="mabNm" column="mab_nm" />
 		<result property="mabYn" column="mab_yn" />
 		<result property="userId" column="user_id" />
 	</resultMap>
+
+	<resultMap id="subboardMap" type="minwoo.cms.manboard.domain.SubboardInfo">
+		<id property="subId" column="sub_id" />
+		<result property="mabId" column="mab_id" />
+	</resultMap>	
 	
-	<select id="getBoardList" resultMap="userMap" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
+	<select id="getBoardList" resultMap="manboardMap" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
 		select mab_id, mab_nm, mab_yn from MAINBOARDS order by mab_nm asc
 	</select>		
 	
@@ -20,4 +25,19 @@
 				)
 	</insert>	
 	
+	<select id="editListBoard" resultMap="manboardMap" parameterType="int">
+		select mab_id, mab_nm, mab_yn from MAINBOARDS where mab_id=#{mabId}
+	</select>	
+	
+    <update id="editBoard" parameterType="minwoo.cms.manboard.domain.ManboardInfo">
+        update MAINBOARDS set mab_nm=#{mabNm}, mab_yn=#{mabYn} where mab_id=#{mabId}
+    </update>    
+     
+    <delete id="delBoard" parameterType="int">
+        delete MAINBOARDS where mab_id=#{mabId}
+    </delete>
+    
+ 	<select id="emptySub" resultMap="subboardMap" parameterType="minwoo.cms.manboard.domain.SubboardInfo">
+		select sub_id from SUBBOARDS where mab_id=#{mabId}
+	</select>	       		
 </mapper>

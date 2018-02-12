@@ -22,7 +22,7 @@
 				<tbody>
 					<c:forEach items="${man_boardlist}" var="manlist">
 						<tr>
-							<td onclick="go_edit(${manlist.mabId});" style="cursor:pointer;"><b>${manlist.mabNm}</b></td>
+							<td onclick="go_edit(${manlist.mabId},'M');" style="cursor:pointer;"><b>${manlist.mabNm}</b></td>
 						</tr>
 						<c:forEach items="${sub_boardlist}" var="sublist">
 							<c:if test="${manlist.mabId eq sublist.mabId}">
@@ -38,6 +38,7 @@
 		<div class="list1">
 			<form id="manboardForm">
 			<input type="text" name="user_id" value="${ sessionScope.user.loginId }" style="display:none;">
+			<input type="text" name="boardidx" style="display:none;">
 				<table id="GubunType">
 					<tr>
 						<td>게시판 구분</td>
@@ -96,10 +97,10 @@
 				<button class="btn btn-primary"  id="addBoard">
 					 <i class="fa fa-check spaceLeft"></i>등록
 				</button>
-				<button class="btn btn-warning" onclick="editBoard();" >
+				<button class="btn btn-warning" id="editBoard" >
 					<i class="fas fa-sync-alt"></i> 수정
 				</button>
-				<button class="btn btn-danger" onclick="delBoard();">
+				<button class="btn btn-danger" id="delBoard">
 					 <i class="fa fa-times spaceLeft"></i>삭제
 				</button>
 			</div>

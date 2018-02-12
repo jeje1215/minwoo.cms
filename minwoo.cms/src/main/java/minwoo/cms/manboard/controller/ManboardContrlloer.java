@@ -33,4 +33,27 @@ public class ManboardContrlloer {
 		return manboardService.addManboard(manboardInfo);
 	}
 	
+	//메인 게시판 수정 view
+	@RequestMapping(value="manboard/manageBoard/medit_list")
+	@ResponseBody
+	public ManboardInfo manboard_madd(int mabId, Model model){
+		ManboardInfo manboardInfo = new ManboardInfo();
+		manboardInfo = manboardService.modiListManboard(mabId);
+		return manboardInfo;
+	}	
+	
+	//메인 게시판 수정 proc
+	@RequestMapping(value="manboard/manageBoard/medit", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean manboard_medit(ManboardInfo manboardInfo){
+		return manboardService.modiManboard(manboardInfo);
+	}	
+	
+	//메인 게시판 삭제 proc
+	@RequestMapping(value="manboard/manageBoard/mdel", method = RequestMethod.POST)
+	@ResponseBody
+	public int manboard_mdel(ManboardInfo manboardInfo){
+		return manboardService.removeManboard(manboardInfo);
+	}		
+	
 }

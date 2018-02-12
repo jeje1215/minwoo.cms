@@ -70,8 +70,7 @@ var regBtns = function(){
         var adList = $("#adList");  // 광고목록
         var tr;
         var input;
-        var etc;
-        
+        var etc;        
         adList.empty();
         
         $.ajax({
@@ -94,56 +93,58 @@ var regBtns = function(){
     }); 
     
     
-    $("#addBtn").bind("click", function(){
-      if(chkAd()){         
-        $.ajax({
-            url:"addjoin",
-            data:$("#adFormAdd").serialize(),
-            success:function(result){
-            	if(result)msg.text("추가 성공!");
-            	else msg.text("추가 실패");
-            	$("#listBtn").trigger("click");
-            },
-            error:function(a,b,errMsg){
-            	msg.text("추가 실패!" +errMsg);
-            	},
-            	complete:function(){
-            		modal.modal("show");
-            		}
-            	});
-            }             
-    
-    });
-    
-    $("#delBtnAd").bind("click", function(){
-		var ad=$('input:radio[name=adsId]:checked').val();
-		if(ad ==undefined){
-			modal.modal("show");
-			msg.text("선택하세요.")
-		}else{
-			   $.ajax({
-		            url:"delad",
-		            data:{adsId:ad},
-		            success:function(result){
-		            	if(result)msg.text("삭제 성공!");
-		            	else msg.text("삭제 실패");
-		            	$("#listBtn").trigger("click");
-		            },
-		            error:function(a,b,errMsg){
-		            	msg.text("삭제 실패!" +errMsg);
-		            	},
-		            	complete:function(){
-		            		modal.modal("show");
-		            		}
-		            	});
-					
-		}
-    });
-}
-    
-       
-  
 
+	$("#addBtn").bind("click", function() {
+			if (chkAd()) {
+				$.ajax({
+					url : "addjoin",
+					data : $("#adFormAdd").serialize(),
+					success : function(result) {
+						if (result)
+							msg.text("추가 성공!");
+						else
+							msg.text("추가 실패");
+						$("#listBtn").trigger("click");
+					},
+					error : function(a, b, errMsg) {
+						msg.text("추가 실패!" + errMsg);
+					},
+					complete : function() {
+						modal.modal("show");
+					}
+				});
+			}
+
+		});
+
+		$("#delBtnAd").bind("click", function() {
+			var ad = $('input:radio[name=adsId]:checked').val();
+			if (ad == undefined) {
+				modal.modal("show");
+				msg.text("선택하세요.")
+			} else {
+				$.ajax({
+					url : "delad",
+					data : {
+						adsId : ad
+					},
+					success : function(result) {
+						if (result)
+							msg.text("삭제 성공!");
+						else
+							msg.text("삭제 실패");
+						$("#listBtn").trigger("click");
+					},
+					error : function(a, b, errMsg) {
+						msg.text("삭제 실패!" + errMsg);
+					},
+					complete : function() {
+						modal.modal("show");
+					}
+				});
+			}
+		});
+	}
 </script>
 
 <body>
@@ -237,7 +238,6 @@ var regBtns = function(){
 					</div>
 				</div>
 			</div>
-
 </div>
 </section>
 

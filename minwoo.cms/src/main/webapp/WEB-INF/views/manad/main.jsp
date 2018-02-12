@@ -4,7 +4,6 @@
 <%@ include file="../menu/leftMenu.jsp"%>
 
 <style>@import url("<c:url value="/css/manad/manad.css"/>");</style>
-
 <script>
    $(function() {
       $("#accordian h3").click(function() {
@@ -71,8 +70,7 @@ var regBtns = function(){
         var adList = $("#adList");  // 광고목록
         var tr;
         var input;
-        var etc;
-        
+        var etc;        
         adList.empty();
         
         $.ajax({
@@ -80,7 +78,7 @@ var regBtns = function(){
             success:function(ads){
                 $(ads).each(function(idx, ad){        
                     tr = $("<tr></tr>");
-                    td = $("<td><input type='radio' name='adId' value='"
+                    td = $("<td><input type='radio' name='adsId' id='adadid'value='"
                           +ad.adsId+"'onClick='showAd(this)'/>"
                           +"&nbsp;&nbsp;&nbsp;"
                           +ad.adsId+"</td>");
@@ -95,29 +93,58 @@ var regBtns = function(){
     }); 
     
     
-    $("#addBtn").bind("click", function(){
-      if(chkAd()){  
-       
-        $.ajax({
-            url:"addjoin",
-            data:$("#adFormAdd").serialize(),
-            success:function(result){
-            	if(result)msg.text("추가 성공!");
-            	else msg.text("추가 실패");
-            	$("#listBtn").trigger("click");
-            },
-            error:function(a,b,errMsg){
-            	msg.text("추가 실패!" +errMsg);
-            	},
-            	complete:function(){
-            		modal.modal("show");
-            		}
-            	});
-            }             
-    
-    });
-}
-   
+
+	$("#addBtn").bind("click", function() {
+			if (chkAd()) {
+				$.ajax({
+					url : "addjoin",
+					data : $("#adFormAdd").serialize(),
+					success : function(result) {
+						if (result)
+							msg.text("추가 성공!");
+						else
+							msg.text("추가 실패");
+						$("#listBtn").trigger("click");
+					},
+					error : function(a, b, errMsg) {
+						msg.text("추가 실패!" + errMsg);
+					},
+					complete : function() {
+						modal.modal("show");
+					}
+				});
+			}
+
+		});
+
+		$("#delBtnAd").bind("click", function() {
+			var ad = $('input:radio[name=adsId]:checked').val();
+			if (ad == undefined) {
+				modal.modal("show");
+				msg.text("선택하세요.")
+			} else {
+				$.ajax({
+					url : "delad",
+					data : {
+						adsId : ad
+					},
+					success : function(result) {
+						if (result)
+							msg.text("삭제 성공!");
+						else
+							msg.text("삭제 실패");
+						$("#listBtn").trigger("click");
+					},
+					error : function(a, b, errMsg) {
+						msg.text("삭제 실패!" + errMsg);
+					},
+					complete : function() {
+						modal.modal("show");
+					}
+				});
+			}
+		});
+	}
 </script>
 
 <body>
@@ -151,7 +178,7 @@ var regBtns = function(){
 				<button type="button" class="btn btn-warning btn-md" id="updateBtn">
 					<i class="glyphicon glyphicon-refresh"></i> 수정
 				</button>
-				<button type="button" class="btn btn-danger btn-md" id="delBtn">
+				<button type="button" class="btn btn-danger btn-md" id="delBtnAd">
 					<i class="glyphicon glyphicon-trash"></i> 삭제
 				</button>
 			</div>
@@ -172,7 +199,7 @@ var regBtns = function(){
 			</thead>
 			<form id="adFormAdd">
 				<tr>
-					<td> </td>
+					<td></td>
 					<td><input type="text" name="adsCompany" value="" ></td>
 					<td><input type="text" name="adsMan" value="" ></td>
 					<td><input type="text" name="adsMoney" value=""></td>
@@ -211,7 +238,6 @@ var regBtns = function(){
 					</div>
 				</div>
 			</div>
-
 </div>
 </section>
 

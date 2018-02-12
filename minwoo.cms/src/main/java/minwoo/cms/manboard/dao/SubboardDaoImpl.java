@@ -20,4 +20,23 @@ public class SubboardDaoImpl implements SubboardDao{
 		
 		return subboardMapper.getBoardList();
 	}
+	
+	public boolean insertBoard(SubboardInfo subboardInfo){
+		return subboardMapper.insertBoard(subboardInfo);
+	}
+	
+	public SubboardInfo editListBoard(int subId){
+		return subboardMapper.editListBoard(subId);
+	}	
+	
+	public boolean editBoard(SubboardInfo subboardInfo){
+		return subboardMapper.editBoard(subboardInfo);
+	}	
+		
+	public int delBoard(SubboardInfo subboardInfo){
+		int isDel = 1;
+		if(subboardMapper.delBoard(subboardInfo.getSubId())>0)
+			isDel = 0;
+		return isDel;
+	}	
 }

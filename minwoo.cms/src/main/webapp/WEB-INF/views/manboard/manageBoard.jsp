@@ -27,7 +27,7 @@
 						<c:forEach items="${sub_boardlist}" var="sublist">
 							<c:if test="${manlist.mabId eq sublist.mabId}">
 								<tr>
-									<td>&nbsp;&nbsp;&nbsp; └${sublist.subNm}</td>
+									<td onclick="go_edit(${sublist.subId},'S');" style="cursor:pointer;">		└${sublist.subNm}</td>
 								</tr>
 							</c:if>
 						</c:forEach>
@@ -38,7 +38,7 @@
 		<div class="list1">
 			<form id="manboardForm">
 			<input type="text" name="user_id" value="${ sessionScope.user.loginId }" style="display:none;">
-			<input type="text" name="boardidx" style="display:none;">
+			<input type="text" name="subId" style="display:none;">
 				<table id="GubunType">
 					<tr>
 						<td>게시판 구분</td>

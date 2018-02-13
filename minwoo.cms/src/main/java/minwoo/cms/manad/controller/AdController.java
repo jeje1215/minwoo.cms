@@ -24,9 +24,10 @@ public class AdController {
 	public List<Ad>listAds(){
 		return adService.listAds();
 	}	
-	@RequestMapping("addjoin")
+	@RequestMapping("adjoin")
 	@ResponseBody
 	public boolean addjoin(Ad ad){
+		System.out.println("남승창 바보");
 		return adService.adjoin(ad);
 		
 	}	

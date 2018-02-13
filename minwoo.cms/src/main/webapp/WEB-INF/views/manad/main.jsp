@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ include file="../common/header.jsp"%>
 <%@ include file="../menu/topMenu.jsp"%>
 <%@ include file="../menu/leftMenu.jsp"%>
-<script src="<c:url value="/js/manboard/manageBoard.js"/>"></script>
+
 <style>@import url("<c:url value="/css/manad/manad.css"/>");</style>
 <script>
    
@@ -71,7 +70,7 @@ var regBtns = function(){
             success:function(ads){
                 $(ads).each(function(idx, ad){        
                     tr = $("<tr></tr>");
-                    td = $("<td><input type='radio'  id='adadid'value='"
+                    td = $("<td><input type='radio' name='adsId' id='adadid'value='"
                           +ad.adsId+"'onClick='showAd(this)'/>"
                           +"&nbsp;&nbsp;&nbsp;"
                           +ad.adsId+"</td>");
@@ -88,7 +87,7 @@ var regBtns = function(){
 	$("#addBtn").bind("click", function() {
 			if (chkAd()) {
 				$.ajax({
-					url : "addjoin",
+					url :"adjoin",
 					data : $("#adFormAdd").serialize(),
 					success : function(result) {
 						if (result)
@@ -139,7 +138,7 @@ var regBtns = function(){
 	    $("#updateBtn").bind("click", function(){
 	    	var ad = $("input:radio[id='adadid']:checked").val();
 				
-	    	$('input[name=adsId]').val(ad);
+	    	$('input[name=adadid]').val(ad);
 			if (ad == undefined) {
 				modal.modal("show");
 				msg.text("선택하세요.")
@@ -220,7 +219,7 @@ var regBtns = function(){
 			</thead>
 			<form id="adFormAdd">
 				<tr>
-					<td><input type="text" name="adsId" value="" style="display:none;"></td>
+					<td></td>
 					<td><input type="text" name="adsCompany" value="" ></td>
 					<td><input type="text" name="adsMan" value="" ></td>
 					<td><input type="text" name="adsMoney" value=""></td>

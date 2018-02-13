@@ -21,8 +21,8 @@
 	</select>
 
 	<insert id="addAd" parameterType="minwoo.cms.manad.domain.Ad">
-	insert into ads(ads_id,ads_company,ads_man,ads_money,ads_start_date,	ads_end_date,ads_url,user_id) 
-		values(ads_adsid_seq.nextval, #{adsCompany},#{adsMan},#{adsMoney},#{adsStartDate},#{adsEndDate},#{adsUrl},#{userId})
+	insert into ads(ads_id,ads_company,ads_man,ads_money,ads_start_date,	ads_end_date,ads_url) 
+		values(ads_adsid_seq.nextval, #{adsCompany},#{adsMan},#{adsMoney},#{adsStartDate},#{adsEndDate},#{adsUrl})
 	</insert>
 	
 	<update id="updateAd" parameterType="minwoo.cms.manad.domain.Ad">

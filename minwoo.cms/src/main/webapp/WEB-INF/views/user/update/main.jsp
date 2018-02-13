@@ -388,5 +388,5 @@ $.ajax({
 
       </div>
    </section>
-
+</body>
 <%@ include file="../../common/footer.jsp"%>

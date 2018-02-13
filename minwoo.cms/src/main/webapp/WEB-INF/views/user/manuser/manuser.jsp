@@ -60,7 +60,7 @@
 				<c:forEach items="${man_userlist}" var="manuserlist">
 					<tr>
 						<td><input type="checkbox" id="cb1" name="index" />${manuserlist.userNic}</td>
-						<td>${manuserlist.userId}</td>
+						<td>${manuserlist.userId}</td> <!-- test -->
 						<td>${manuserlist.userNm}</td>
 						<td>${manuserlist.userMail}</td>
 						<td>${manuserlist.userLevel}</td>

@@ -38,6 +38,7 @@
 		<div class="list1">
 			<form id="manboardForm" method="post">
 			<input type="text" name="user_id" value="${ sessionScope.user.loginId }" style="display:none;">
+			<input type="text" name="userId" value="${ sessionScope.user.loginId }" style="display:none;">
 			<input type="text" name="subId" style="display:none;">
 				<table id="GubunType">
 					<tr>

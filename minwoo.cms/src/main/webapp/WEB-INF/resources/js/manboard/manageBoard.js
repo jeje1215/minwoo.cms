@@ -72,22 +72,8 @@ $(function() {
 			return false;
 		}
 		
-		$.ajax({
-			url : url,
-			method : "post",
-			data : $("#manboardForm").serialize(),
-			success : function(result) {
-				if (result == true) {
-					menuUrl('manboard/manageBoard', urlForm)
-				} else {
-					$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.");
-					$('#myModal_one').modal();
-				}
-			},
-			error : function(a, b, errMsg) {
-				msg = "※ 실패 : " + errMsg;
-			}
-		});
+		addBoardproc(gubun);
+	
 
 	});
 	
@@ -135,6 +121,49 @@ $(function() {
 		menuUrl('manboard/manageBoard', urlForm)
 	});
 });
+
+function addBoardproc(gubun){
+	if (gubun == "M") { //메인
+		url = "/cms/manboard/manageBoard/medit";
+		$.ajax({
+			url : url,
+			method : "post",
+			data : $("#manboardForm").serialize(),
+			success : function(result) {
+				if (result == true) {
+					menuUrl('manboard/manageBoard', urlForm)
+				} else {
+					$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.");
+					$('#myModal_one').modal();
+				}
+			},
+			error : function(a, b, errMsg) {
+				msg = "※ 실패 : " + errMsg;
+				alert(msg);
+			}
+		});
+	}else if(gubun == "S"){ //서브
+
+		url = "/cms/manboard/manageBoard/sedit";
+		$.ajax({
+			url : url,
+			method : "post",
+			data : {"mabId":$("select[name=mabId]").val(), "subNm":$("input[name=subNm]").val(), "subYn":"Y", "userId":$("input[name=user_id]").val()} ,
+			success : function(result) {
+				if (result == true) {
+					menuUrl('manboard/manageBoard', urlForm)
+				} else {
+					$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.2");
+					$('#myModal_one').modal();
+				}
+			},
+			error : function(a, b, errMsg) {
+				msg = "※ 실패 : " + errMsg;
+				alert(msg);
+			}
+		});		
+	}
+}
 
 function go_boardDel(){
 	var gubun = $("select[name=boardGubun]").val();

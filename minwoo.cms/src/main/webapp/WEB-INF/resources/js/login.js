@@ -33,7 +33,7 @@ $(document).ready(function(){
 								$("input[name=loginPw]").val('');
 								$("input[name=loginPw]").focus();
 							} else if (user.resultCode == 0) {
-								goUrl('main', urlForm);
+								menuUrl('main', urlForm);
 							} else{
 								msg = "※ error-관리자에게 문의하세요.";
 							}
@@ -56,7 +56,7 @@ $(document).ready(function(){
 		$("#logout").bind("click", function(){
 			if(confirm("로그아웃 하시겠습니까?")){
 				$.ajax({
-					url : "login/logOut",
+					url : "/cms/login/logOut",
 					method : "post",
 					data : {},
 					success : function(result) {

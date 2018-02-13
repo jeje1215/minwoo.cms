@@ -1,12 +1,12 @@
 package minwoo.cms.manboard.domain;
 
 public class SubboardInfo {
+	private String userId;
 	private int subId; 
+	private int mabId;
 	private String subNm;
 	private String subYn;
-	private int mabId;
 	private String boardType;
-	private String userId;
 
 	public String getUser_id() {
 		return userId;

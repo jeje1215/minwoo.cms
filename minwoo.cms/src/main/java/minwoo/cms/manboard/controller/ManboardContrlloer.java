@@ -27,19 +27,17 @@ public class ManboardContrlloer {
 	}
 	
 	
-	//메인 게시판 등록
+	//메인 게시판 등록 proc
 	@RequestMapping(value="manboard/manageBoard/madd", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean manboard_madd(ManboardInfo manboardInfo){
 		return manboardService.addManboard(manboardInfo);
 	}
 	
-	//서브 게시판 등록
+	//서브 게시판 등록 proc
 	@RequestMapping(value="manboard/manageBoard/sadd", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean manboard_sadd(SubboardInfo subboardInfo){
-		System.out.println("dddD");
-		System.out.println(subboardInfo.getSubNm());
 		return subboardService.addManboard(subboardInfo);
 	}	
 	

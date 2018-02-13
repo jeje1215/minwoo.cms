@@ -27,19 +27,32 @@ public class ManboardContrlloer {
 	}
 	
 	
-	//메인 게시판 등록
+	//메인 게시판 등록 proc
 	@RequestMapping(value="manboard/manageBoard/madd", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean manboard_madd(ManboardInfo manboardInfo){
 		return manboardService.addManboard(manboardInfo);
 	}
 	
-	//서브 게시판 등록
-	@RequestMapping(value="manboard/manageBoard/sadd", method = RequestMethod.POST)
+	//서브 게시판 등록 proc 원래 이걸로 해야하는거임...오류남 발표하고 다시 고치기로
+/*	@RequestMapping(value="manboard/manageBoard/sadd", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean manboard_sadd(SubboardInfo subboardInfo){
 		return subboardService.addManboard(subboardInfo);
+	}*/
+	
+	//서브 게시판 등록 proc
+	@RequestMapping(value="manboard/manageBoard/sadd", method = RequestMethod.POST)
+	@ResponseBody
+	public boolean manboard_sadd(int mabId, String subNm, String subYn, String userId){
+		SubboardInfo subboardInfo = new SubboardInfo();
+		subboardInfo.setMabId(mabId);
+		subboardInfo.setSubNm(subNm);
+		subboardInfo.setSubYn(subYn);
+		subboardInfo.setUser_id(userId);
+		return subboardService.addManboard(subboardInfo);
 	}	
+		
 	
 	//메인 게시판 수정 view
 	@RequestMapping(value="manboard/manageBoard/medit_list")

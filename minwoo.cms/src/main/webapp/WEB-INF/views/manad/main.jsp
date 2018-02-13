@@ -5,14 +5,6 @@
 
 <style>@import url("<c:url value="/css/manad/manad.css"/>");</style>
 <script>
-   $(function() {
-      $("#accordian h3").click(function() {
-         $("#accordian ul ul").slideUp();
-         if (!$(this).next().is(":visible")) {
-            $(this).next().slideDown();
-         }
-      })
-   })
    
 $(function(){
     regBtns();
@@ -91,13 +83,11 @@ var regBtns = function(){
             }
         });    
     }); 
-    
-    
 
 	$("#addBtn").bind("click", function() {
 			if (chkAd()) {
 				$.ajax({
-					url : "addjoin",
+					url :"adjoin",
 					data : $("#adFormAdd").serialize(),
 					success : function(result) {
 						if (result)
@@ -118,7 +108,7 @@ var regBtns = function(){
 		});
 
 		$("#delBtnAd").bind("click", function() {
-			var ad = $('input:radio[name=adsId]:checked').val();
+			var ad = $("input:radio[id='adadid']:checked").val();
 			if (ad == undefined) {
 				modal.modal("show");
 				msg.text("선택하세요.")
@@ -144,8 +134,38 @@ var regBtns = function(){
 				});
 			}
 		});
+		
+	    $("#updateBtn").bind("click", function(){
+	    	var ad = $("input:radio[id='adadid']:checked").val();
+				
+	    	$('input[name=adadid]').val(ad);
+			if (ad == undefined) {
+				modal.modal("show");
+				msg.text("선택하세요.")
+	    	} else {
+						 $.ajax({
+	                    url:"fixAdInfo",            
+	                    data:$("#adFormAdd").serialize(),
+// 	                    	                    	adsId:ad.val(), adsCompany:$("input[name='name']").val()},
+	                    success:function(result){
+	                        if(result) msg.text("수정 성공");
+	                       else msg.text("수정 실패");
+	                        $("#listBtn").trigger("click");
+	                    },
+	                    error:function(a, b, errMsg){                
+	                        msg.text("빈칸을 확인하세요. " );                
+	                    },
+	                    complete:function(){
+	                        modal.modal("show");                    
+	                    }
+	                });
+	        }
+	    });  		
 	}
 </script>
+<!-- 광고작성자는 null 값입니다. db 오류 입니다 . -->
+<!-- 페이지 번호 순서대로 하는것 해야합니다.  -->
+
 
 <body>
 	<section id="post">
@@ -193,7 +213,7 @@ var regBtns = function(){
 					<th>광고금액</th>
 					<th>광고시작일</th>
 					<th>광고종료일</th>
-					<th>광고작성자</th>
+					<th>광고작성자</th> 
 					<th>광고Url</th>
 				</tr>
 			</thead>
@@ -205,7 +225,7 @@ var regBtns = function(){
 					<td><input type="text" name="adsMoney" value=""></td>
 					<td><input type="text" name="adsStartDate" value="" ></td>
 					<td><input type="text" name="adsEndDate" value="" ></td>
-					<td><input type="text" name="userId" value="광고작성자"></td>
+					<td><input type="text" name="userId" value=""></td>
 					<td><input type="text" name="adsUrl" value="" ></td>
 				</tr>
 			</form>

@@ -21,11 +21,25 @@ $(function(){
 		<div id="accordian">
 			<!-- home 메뉴  -->
 			<ul id="menu_home">
-				<li class="active">
+				<li>
 					<h3>공지사항</h3>
 					<ul>
 						<li><a href="#">게시판공지사항</a></li>
 					</ul>
+					<c:forEach items="${man_boardlist}" var="manlist">
+						<c:if test="${manlist.mabYn eq 'Y'}">
+						<h3>
+							${manlist.mabNm}<span class="plus">+</span>
+						</h3>
+						<c:forEach items="${sub_boardlist}" var="sublist">
+							<c:if test="${manlist.mabId eq sublist.mabId and sublist.subYn eq 'Y' }">
+								<ul>
+									<li><a href="#">${sublist.subNm}</a></li>
+								</ul>
+							</c:if>
+						</c:forEach>
+						</c:if>
+					</c:forEach>
 				</li>
 			</ul>
 			<!-- mypage 메뉴 -->
@@ -56,13 +70,9 @@ $(function(){
 					</ul>
 				</li>
 				<li>
-					<h3>
-						광고관리<span class="plus">+</span>
+					<h3 onclick="menuUrl('manad', urlForm)" style="cursor:pointer;">
+						광고관리
 					</h3>
-					<ul>
-						<li><a href="#">광고등록</a></li>
-						<li><a href="#">광고관리</a></li>
-					</ul>
 				</li>				
 			</ul>
 		</div>

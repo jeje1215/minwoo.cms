@@ -24,17 +24,23 @@ public class AdController {
 	public List<Ad>listAds(){
 		return adService.listAds();
 	}	
-	@RequestMapping("addjoin")
+	@RequestMapping("adjoin")
 	@ResponseBody
 	public boolean addjoin(Ad ad){
+		System.out.println("남승창 바보");
 		return adService.adjoin(ad);
 		
 	}	
 	@RequestMapping("delad")
 	@ResponseBody
 	public boolean secede(int adsId){
-		System.out.println("지은빈 바보");
 		return adService.secede(adsId);
+		
+	}
+	@RequestMapping("fixAdInfo")
+	@ResponseBody
+	public boolean fixAdInfo(Ad ad){
+		return adService.fixAdInfo(ad);
 		
 	}
 }

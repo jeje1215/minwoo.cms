@@ -36,8 +36,9 @@
 			</table>
 		</div>
 		<div class="list1">
-			<form id="manboardForm">
+			<form id="manboardForm" method="post">
 			<input type="text" name="user_id" value="${ sessionScope.user.loginId }" style="display:none;">
+			<input type="text" name="userId" value="${ sessionScope.user.loginId }" style="display:none;">
 			<input type="text" name="subId" style="display:none;">
 				<table id="GubunType">
 					<tr>
@@ -84,7 +85,6 @@
 						<td>공개설정</td>
 						<td>
 							<input type="radio" name="subYn" value="Y" checked="checked">공개 
-							&nbsp;&nbsp;
 							<input type="radio" name="subYn" value="N">비공개
 						</td>
 					</tr>
@@ -94,14 +94,17 @@
 
 		<div class="form-group">
 			<div class="col-sm-12 text-right">
-				<button class="btn btn-primary"  id="addBoard">
+				<button class="btn btn-primary"  id="addBoard" style="display:none">
 					 <i class="fa fa-check spaceLeft"></i>등록
 				</button>
-				<button class="btn btn-warning" id="editBoard" >
+				<button class="btn btn-warning" id="editBoard" style="display:none">
 					<i class="fas fa-sync-alt"></i> 수정
 				</button>
-				<button class="btn btn-danger" id="delBoard">
+				<button class="btn btn-danger" id="delBoard" style="display:none">
 					 <i class="fa fa-times spaceLeft"></i>삭제
+				</button>
+				<button class="btn btn-primary"  id="cancelBoard" style="display:none">
+					 <i class="fa fa-check spaceLeft"></i>취소
 				</button>
 			</div>
 		</div>

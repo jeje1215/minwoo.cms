@@ -137,30 +137,34 @@ var regBtns = function(){
 		
 	    $("#updateBtn").bind("click", function(){
 	    	var ad = $("input:radio[id='adadid']:checked").val();
+	    	$("input[name=adsId_tmp]").val(ad);
 				
 	    	$('input[name=adadid]').val(ad);
 			if (ad == undefined) {
 				modal.modal("show");
 				msg.text("선택하세요.")
-	    	} else {
-						 $.ajax({
-	                    url:"fixAdInfo",            
-	                    data:$("#adFormAdd").serialize(),
-// 	                    	                    	adsId:ad.val(), adsCompany:$("input[name='name']").val()},
-	                    success:function(result){
-	                        if(result) msg.text("수정 성공");
-	                       else msg.text("수정 실패");
-	                        $("#listBtn").trigger("click");
-	                    },
-	                    error:function(a, b, errMsg){                
-	                        msg.text("빈칸을 확인하세요. " );                
-	                    },
-	                    complete:function(){
-	                        modal.modal("show");                    
-	                    }
-	                });
-	        }
-	    });  		
+
+			} else {
+				$.ajax({
+					url : "fixAdInfo",
+					data : $("#adFormAdd").serialize(),
+					//adsId:ad.val(), adsCompany:$("input[name='name']").val()},
+					success : function(result) {
+						if (result)
+							msg.text("수정 성공");
+						else
+							msg.text("수정 실패");
+						$("#listBtn").trigger("click");
+					},
+					error : function(a, b, errMsg) {
+						msg.text("빈칸을 확인하세요. ");
+					},
+					complete : function() {
+						modal.modal("show");
+					}
+				});
+			}
+		});
 	}
 </script>
 <!-- 광고작성자는 null 값입니다. db 오류 입니다 . -->
@@ -218,6 +222,7 @@ var regBtns = function(){
 				</tr>
 			</thead>
 			<form id="adFormAdd">
+				<input type="text" name="adsId_tmp" style="display:none;">
 				<tr>
 					<td></td>
 					<td><input type="text" name="adsCompany" value="" ></td>

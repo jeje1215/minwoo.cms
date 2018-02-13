@@ -27,7 +27,7 @@ public class AdController {
 	@RequestMapping("adjoin")
 	@ResponseBody
 	public boolean addjoin(Ad ad){
-		System.out.println("남승창 바보");
+		//System.out.println("남승창 바보");
 		return adService.adjoin(ad);
 		
 	}	
@@ -39,7 +39,8 @@ public class AdController {
 	}
 	@RequestMapping("fixAdInfo")
 	@ResponseBody
-	public boolean fixAdInfo(Ad ad){
+	public boolean fixAdInfo(Ad ad, int adsId_tmp){
+		ad.setAdsId(adsId_tmp);
 		return adService.fixAdInfo(ad);
 		
 	}

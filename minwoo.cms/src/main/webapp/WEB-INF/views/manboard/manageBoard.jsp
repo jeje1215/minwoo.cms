@@ -36,7 +36,7 @@
 			</table>
 		</div>
 		<div class="list1">
-			<form id="manboardForm">
+			<form id="manboardForm" method="post">
 			<input type="text" name="user_id" value="${ sessionScope.user.loginId }" style="display:none;">
 			<input type="text" name="subId" style="display:none;">
 				<table id="GubunType">
@@ -84,7 +84,6 @@
 						<td>공개설정</td>
 						<td>
 							<input type="radio" name="subYn" value="Y" checked="checked">공개 
-							&nbsp;&nbsp;
 							<input type="radio" name="subYn" value="N">비공개
 						</td>
 					</tr>

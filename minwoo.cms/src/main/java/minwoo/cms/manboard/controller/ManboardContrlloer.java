@@ -38,6 +38,8 @@ public class ManboardContrlloer {
 	@RequestMapping(value="manboard/manageBoard/sadd", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean manboard_sadd(SubboardInfo subboardInfo){
+		System.out.println("dddD");
+		System.out.println(subboardInfo.getSubNm());
 		return subboardService.addManboard(subboardInfo);
 	}	
 	

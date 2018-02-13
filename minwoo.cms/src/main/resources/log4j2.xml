@@ -16,7 +16,7 @@
 
    <!-- FATAL, ERROR, WARN, INFO, DEBUG, TRACE -->
    <Loggers>      
-      <Root level="info">
+      <Root level="INFO">
          <AppenderRef ref="console" />
          <AppenderRef ref="file" />                           
       </Root>

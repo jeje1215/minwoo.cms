@@ -33,8 +33,13 @@ public class AdController {
 	@RequestMapping("delad")
 	@ResponseBody
 	public boolean secede(int adsId){
-		System.out.println("지은빈 바보");
 		return adService.secede(adsId);
+		
+	}
+	@RequestMapping("fixAdInfo")
+	@ResponseBody
+	public boolean fixAdInfo(Ad ad){
+		return adService.fixAdInfo(ad);
 		
 	}
 }

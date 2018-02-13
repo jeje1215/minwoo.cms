@@ -78,7 +78,7 @@ var regBtns = function(){
             success:function(ads){
                 $(ads).each(function(idx, ad){        
                     tr = $("<tr></tr>");
-                    td = $("<td><input type='radio' name='adsId' id='adadid'value='"
+                    td = $("<td><input type='radio'  id='adadid'value='"
                           +ad.adsId+"'onClick='showAd(this)'/>"
                           +"&nbsp;&nbsp;&nbsp;"
                           +ad.adsId+"</td>");
@@ -118,7 +118,7 @@ var regBtns = function(){
 		});
 
 		$("#delBtnAd").bind("click", function() {
-			var ad = $('input:radio[name=adsId]:checked').val();
+			var ad = $("input:radio[id='adadid']:checked").val();
 			if (ad == undefined) {
 				modal.modal("show");
 				msg.text("선택하세요.")
@@ -144,6 +144,67 @@ var regBtns = function(){
 				});
 			}
 		});
+		
+	    $("#updateBtn").bind("click", function(){
+	    	var ad = $("input:radio[id='adadid']:checked").val();
+				
+	    	$('input[name=adsId]').val(ad);
+			if (ad == undefined) {
+				modal.modal("show");
+				msg.text("선택하세요.")
+	    	} else {
+						 $.ajax({
+	                    url:"fixAdInfo",            
+	                    data:$("#adFormAdd").serialize(),
+// 	                    	                    	adsId:ad.val(), adsCompany:$("input[name='name']").val()},
+	                    success:function(result){
+	                        if(result) msg.text("수정 성공");
+	                       else msg.text("수정 실패");
+	                        $("#listBtn").trigger("click");
+	                    },
+	                    error:function(a, b, errMsg){                
+	                        msg.text("빈칸을 확인하세요. " );                
+	                    },
+	                    complete:function(){
+	                        modal.modal("show");                    
+	                    }
+	                });
+				
+	    	
+	    	
+	    	
+	    	
+// 	        if(chkAd()){
+// 	            var ad = $(":checked");
+// 	            console.log(ad);
+// 	            if(ad.size()){
+// 	                $.ajax({
+// 	                    url:"fixAdInfo",            
+// 	                    data:$("#adFormAdd").serialize(),
+	                    	
+// // 	                    	adsId:ad.val(), adsCompany:$("input[name='name']").val()},
+// 	                    success:function(result){
+// 	                        if(result) msg.text("수정 성공");
+// 	                       else msg.text("수정 실패");
+// 	                        $("#listBtn").trigger("click");
+// 	                    },
+// 	                    error:function(a, b, errMsg){                
+// 	                        msg.text("수정 실패: " + errMsg);                
+// 	                    },
+// 	                    complete:function(){
+// 	                        modal.modal("show");                    
+// 	                    }
+// 	                });
+// 	            }else{
+// 	                msg.text("수정할 회원을 선택하세요.");
+// 	                modal.modal("show");
+// 	            }
+	        }
+	    });
+	    
+		
+		
+		
 	}
 </script>
 
@@ -199,7 +260,7 @@ var regBtns = function(){
 			</thead>
 			<form id="adFormAdd">
 				<tr>
-					<td></td>
+					<td><input type="text" name="adsId" value="" style="display:none;"></td>
 					<td><input type="text" name="adsCompany" value="" ></td>
 					<td><input type="text" name="adsMan" value="" ></td>
 					<td><input type="text" name="adsMoney" value=""></td>

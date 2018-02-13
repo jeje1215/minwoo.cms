@@ -17,16 +17,16 @@ public class AdServiceImpl implements AdService{
 		return adDao.getAds();
 	}
 	
-//	public Ad findAd(int adsId){
-//		Ad ad=null;
-//		for(Ad tmp:adDao.getAds()){
-//			if(tmp.getAdsId()==adsId){
-//				ad=tmp;
-//				break;
-//			}
-//		}
-//		return ad;
-//	}
+	public Ad findAd(int adsId){
+		Ad ad=null;
+		for(Ad tmp:adDao.getAds()){
+			if(tmp.getAdsId()==adsId){
+				ad=tmp;
+				break;
+			}
+		}
+		return ad;
+	}
 	@Transactional
 	public boolean adjoin(Ad ad){
 		return adDao.addAd(ad)>0;
@@ -35,6 +35,10 @@ public class AdServiceImpl implements AdService{
 	@Transactional
 	public boolean secede(int adsId){
 		return adDao.delAd(adsId)>0;
+	}
+	@Transactional
+	public boolean fixAdInfo(Ad ad){
+		return adDao.updateAd(ad)>0;
 	}
 	
 }

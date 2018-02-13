@@ -16,15 +16,18 @@ public class AdDaoImpl implements AdDao{
 		return adMapper.getAds();
 		
 	}
-//	public Ad getAd(int adsId){
-//		return adMapper.getAd(adsId);
-//	}
+	public Ad getAd(int adsId){
+		return adMapper.getAd(adsId);
+	}
 		
 	public int addAd(Ad ad){
 		return adMapper.addAd(ad);
 	}
 	public int delAd(int adsId){
 		return adMapper.delAd(adsId);
+	}
+	public int updateAd(Ad ad){
+		return adMapper.updateAd(ad);
 	}
 
 }

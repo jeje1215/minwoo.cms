@@ -169,44 +169,13 @@ var regBtns = function(){
 	                        modal.modal("show");                    
 	                    }
 	                });
-				
-	    	
-	    	
-	    	
-	    	
-// 	        if(chkAd()){
-// 	            var ad = $(":checked");
-// 	            console.log(ad);
-// 	            if(ad.size()){
-// 	                $.ajax({
-// 	                    url:"fixAdInfo",            
-// 	                    data:$("#adFormAdd").serialize(),
-	                    	
-// // 	                    	adsId:ad.val(), adsCompany:$("input[name='name']").val()},
-// 	                    success:function(result){
-// 	                        if(result) msg.text("수정 성공");
-// 	                       else msg.text("수정 실패");
-// 	                        $("#listBtn").trigger("click");
-// 	                    },
-// 	                    error:function(a, b, errMsg){                
-// 	                        msg.text("수정 실패: " + errMsg);                
-// 	                    },
-// 	                    complete:function(){
-// 	                        modal.modal("show");                    
-// 	                    }
-// 	                });
-// 	            }else{
-// 	                msg.text("수정할 회원을 선택하세요.");
-// 	                modal.modal("show");
-// 	            }
 	        }
-	    });
-	    
-		
-		
-		
+	    });  		
 	}
 </script>
+<!-- 광고작성자는 null 값입니다. db 오류 입니다 . -->
+<!-- 페이지 번호 순서대로 하는것 해야합니다.  -->
+
 
 <body>
 	<section id="post">
@@ -254,7 +223,7 @@ var regBtns = function(){
 					<th>광고금액</th>
 					<th>광고시작일</th>
 					<th>광고종료일</th>
-					<th>광고작성자</th>
+					<th>광고작성자</th> 
 					<th>광고Url</th>
 				</tr>
 			</thead>

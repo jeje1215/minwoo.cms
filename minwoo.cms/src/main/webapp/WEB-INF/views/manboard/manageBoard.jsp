@@ -94,14 +94,17 @@
 
 		<div class="form-group">
 			<div class="col-sm-12 text-right">
-				<button class="btn btn-primary"  id="addBoard">
+				<button class="btn btn-primary"  id="addBoard" style="display:none">
 					 <i class="fa fa-check spaceLeft"></i>등록
 				</button>
-				<button class="btn btn-warning" id="editBoard" >
+				<button class="btn btn-warning" id="editBoard" style="display:none">
 					<i class="fas fa-sync-alt"></i> 수정
 				</button>
-				<button class="btn btn-danger" id="delBoard">
+				<button class="btn btn-danger" id="delBoard" style="display:none">
 					 <i class="fa fa-times spaceLeft"></i>삭제
+				</button>
+				<button class="btn btn-primary"  id="cancelBoard" style="display:none">
+					 <i class="fa fa-check spaceLeft"></i>취소
 				</button>
 			</div>
 		</div>

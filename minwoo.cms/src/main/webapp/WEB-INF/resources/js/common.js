@@ -23,7 +23,7 @@ $(function() {
     	namePage = namePage+name[i];
       }	
     namePage = namePage.split(',');
-	if (namePage[2] == 'manboard'){
+	if (namePage[2] == 'manboard' || namePage[2] == 'manad'){
 		$("ul[id=menu_setting]").show();
 	}else if(namePage[2] == 'main' || namePage[2] == 'url'){
 		$("ul[id=menu_home]").show();

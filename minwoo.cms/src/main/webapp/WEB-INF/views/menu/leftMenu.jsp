@@ -70,13 +70,9 @@ $(function(){
 					</ul>
 				</li>
 				<li>
-					<h3>
-						광고관리<span class="plus">+</span>
+					<h3 onclick="menuUrl('manad', urlForm)" style="cursor:pointer;">
+						광고관리
 					</h3>
-					<ul>
-						<li><a href="#">광고등록</a></li>
-						<li><a href="#">광고관리</a></li>
-					</ul>
 				</li>				
 			</ul>
 		</div>

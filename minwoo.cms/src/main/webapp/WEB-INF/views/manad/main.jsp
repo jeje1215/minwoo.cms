@@ -1,18 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ include file="../common/header.jsp"%>
 <%@ include file="../menu/topMenu.jsp"%>
 <%@ include file="../menu/leftMenu.jsp"%>
-
+<script src="<c:url value="/js/manboard/manageBoard.js"/>"></script>
 <style>@import url("<c:url value="/css/manad/manad.css"/>");</style>
 <script>
-   $(function() {
-      $("#accordian h3").click(function() {
-         $("#accordian ul ul").slideUp();
-         if (!$(this).next().is(":visible")) {
-            $(this).next().slideDown();
-         }
-      })
-   })
    
 $(function(){
     regBtns();
@@ -91,8 +84,6 @@ var regBtns = function(){
             }
         });    
     }); 
-    
-    
 
 	$("#addBtn").bind("click", function() {
 			if (chkAd()) {
@@ -235,7 +226,7 @@ var regBtns = function(){
 					<td><input type="text" name="adsMoney" value=""></td>
 					<td><input type="text" name="adsStartDate" value="" ></td>
 					<td><input type="text" name="adsEndDate" value="" ></td>
-					<td><input type="text" name="userId" value="광고작성자"></td>
+					<td><input type="text" name="userId" value=""></td>
 					<td><input type="text" name="adsUrl" value="" ></td>
 				</tr>
 			</form>

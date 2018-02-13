@@ -50,7 +50,7 @@ var regBtns = function(){
                           +"&nbsp;&nbsp;&nbsp;"
                           +ad.adsId+"</td>");
                     td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td>"
-                    		
+                          
                     
                     );
                     

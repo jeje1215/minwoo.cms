@@ -72,7 +72,24 @@ $(function() {
 			return false;
 		}
 		
-		addBoardproc(gubun);
+		$.ajax({
+			url : url,
+			method : "post",
+			data : $("#manboardForm").serialize(),
+			success : function(result) {
+				if (result == true) {
+					menuUrl('manboard/manageBoard', urlForm)
+				} else {
+					$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.");
+					$('#myModal_one').modal();
+				}
+			},
+			error : function(a, b, errMsg) {
+				msg = "※ 실패 : " + errMsg;
+				alert(msg);
+			}
+		});		
+		//addBoardproc(gubun);
 	
 
 	});

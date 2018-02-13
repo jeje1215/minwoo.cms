@@ -17,7 +17,7 @@ public class UserController {
    
    @RequestMapping("/update")
    public String main(){
-      return "/update/main";
+      return "user/update/main";
    }
    @RequestMapping("listUsers")
    @ResponseBody

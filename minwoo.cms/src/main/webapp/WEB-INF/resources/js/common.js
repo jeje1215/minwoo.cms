@@ -19,14 +19,17 @@ var namePage;
 
 $(function() {
 	$("ul[id^=menu_]").hide();
+	$("li[id^=top_]").removeClass("active")
     for ( var i in name ) {
     	namePage = namePage+name[i];
       }	
     namePage = namePage.split(',');
 	if (namePage[2] == 'manboard' || namePage[2] == 'manad' || namePage[2] == 'manuser'){
 		$("ul[id=menu_setting]").show();
+		$("#top_setting").addClass("active");
 	}else if(namePage[2] == 'main' || namePage[2] == 'url'){
 		$("ul[id=menu_home]").show();
+		$("#top_home").addClass("active");
 	}
 	//$.activeMenu("header", name[1]);
 })

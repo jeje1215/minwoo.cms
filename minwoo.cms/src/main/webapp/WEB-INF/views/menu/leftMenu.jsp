@@ -31,13 +31,13 @@ $(function(){
 							<h3>
 								${manlist.mabNm}<span class="plus">+</span>
 							</h3>
-							<c:forEach items="${sub_boardlist}" var="sublist">
-								<c:if test="${manlist.mabId eq sublist.mabId and sublist.subYn eq 'Y' }">
-									<ul>
+							<ul>
+								<c:forEach items="${sub_boardlist}" var="sublist">
+									<c:if test="${manlist.mabId eq sublist.mabId and sublist.subYn eq 'Y'}">
 										<li><a href="#">${sublist.subNm}</a></li>
-									</ul>
-								</c:if>
-							</c:forEach>
+									</c:if>
+								</c:forEach>
+							</ul>
 						</c:if>
 					</c:forEach>
 				</li>

@@ -19,5 +19,9 @@ public class ManUserDaoImpl implements ManUserDao{
 	public ManUser editListUser(String userId){
 		return manUserMapper.editListUser(userId);
 	}
+	
+	public boolean editLevelUser(ManUser manUser){
+		return manUserMapper.editLevelUser(manUser);
+	}
 		 
 }

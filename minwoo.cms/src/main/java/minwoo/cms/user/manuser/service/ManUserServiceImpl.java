@@ -19,4 +19,8 @@ public class ManUserServiceImpl implements ManUserService{
 	public ManUser modiListManUser(String userId){
 		return manUserDao.editListUser(userId);
 	}
+	
+	public boolean modiLevelManUser(ManUser manUser){
+		return manUserDao.editLevelUser(manUser);
+	}
 }

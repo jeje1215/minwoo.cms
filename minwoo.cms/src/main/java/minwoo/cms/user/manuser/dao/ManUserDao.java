@@ -7,5 +7,5 @@ import minwoo.cms.user.manuser.domain.ManUser;
 public interface ManUserDao {
 	List<ManUser> getUsers();
 	ManUser editListUser(String userId);
-
+	boolean editLevelUser(ManUser manUser);
 }

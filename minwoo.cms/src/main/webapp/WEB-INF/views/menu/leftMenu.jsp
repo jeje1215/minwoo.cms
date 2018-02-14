@@ -28,22 +28,22 @@ $(function(){
 					</ul>
 					<c:forEach items="${man_boardlist}" var="manlist">
 						<c:if test="${manlist.mabYn eq 'Y'}">
-						<h3>
-							${manlist.mabNm}<span class="plus">+</span>
-						</h3>
-						<c:forEach items="${sub_boardlist}" var="sublist">
-							<c:if test="${manlist.mabId eq sublist.mabId and sublist.subYn eq 'Y' }">
-								<ul>
-									<li><a href="#">${sublist.subNm}</a></li>
-								</ul>
-							</c:if>
-						</c:forEach>
+							<h3>
+								${manlist.mabNm}<span class="plus">+</span>
+							</h3>
+							<c:forEach items="${sub_boardlist}" var="sublist">
+								<c:if test="${manlist.mabId eq sublist.mabId and sublist.subYn eq 'Y' }">
+									<ul>
+										<li><a href="#">${sublist.subNm}</a></li>
+									</ul>
+								</c:if>
+							</c:forEach>
 						</c:if>
 					</c:forEach>
 				</li>
 			</ul>
 			<!-- mypage 메뉴 -->
-			<ul id="menu_mypage">
+			<ul id="menu_mypage" style="display:none">
 				<li>
 					<h3 onclick="menuUrl('', urlForm)" style="cursor:pointer;">회원정보</h3>
 				</li>
@@ -57,7 +57,7 @@ $(function(){
 					<h3 onclick="menuUrl('manboard/manageBoard', urlForm)" style="cursor:pointer;">관리자게시판</h3>
 				</li>
 				<li>
-					<h3 onclick="menuUrl('', urlForm)" style="cursor:pointer;">회원관리</h3>
+					<h3 onclick="menuUrl('manuser', urlForm)" style="cursor:pointer;">회원관리</h3>
 				</li>
 				<li>
 					<h3>

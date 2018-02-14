@@ -155,3 +155,9 @@ select#ulevel {
    border: 1px solid #cccccc;
    background-color: #007DC1;
 }
+
+
+button.btn-warning{
+	float:right;
+	
+}

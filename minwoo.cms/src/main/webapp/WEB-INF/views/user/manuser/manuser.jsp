@@ -11,7 +11,7 @@
 <section id="post">
    <div class="container">
       <div class="name">
-         <i class="far fa-user-circle"></i>회원관리
+        <i class="fas fa-user-plus"></i>회원관리
       </div>
       <br>
       <div class="d1">
@@ -67,8 +67,8 @@
          </tbody>
       </table>
 
-      <button class="del" data-toggle="modal" data-target="#myModal">
-         <i class="fa fa-trash-o" aria-hidden="true"></i> 변경
+      <button class="btn btn-warning btn-md" data-toggle="modal" data-target="#myModal">
+         <i class="fas fa-wrench"></i>변경
       </button>
    </div>
 

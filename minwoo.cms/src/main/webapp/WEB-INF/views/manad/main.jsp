@@ -68,14 +68,16 @@ var regBtns = function(){
         $.ajax({
             url:"listads",
             success:function(ads){
-                $(ads).each(function(idx, ad){        
+            	var x = 1;
+                $(ads).each(function(idx, ad){    
                     tr = $("<tr></tr>");
-                    td = $("<td><input type='radio' name='adsId' id='adadid'value='"
+                    td = $("<td>"+x+"<input type='radio' name='adsId' id='adadid'value='"
                           +ad.adsId+"'onClick='showAd(this)'/>"
-                          +"&nbsp;&nbsp;&nbsp;"
-                          +ad.adsId+"</td>");
+                          +"&nbsp;&nbsp;&nbsp;</td>");
                     td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td><td>"+ad.userId+"</td><td>"+ad.adsUrl+"</td>"
                       );
+                    
+                    x++;
                     
                     adList.append(tr.append(td).append(td2));      
                     td.find("input").data("adsCompany", ad.adsCompany);
@@ -239,7 +241,7 @@ var regBtns = function(){
 	</table>
 
 	<br> <br>
-			<div class="text-center">
+<!-- 			<div class="text-center">
 				<ul class="pagination">
 					<li class="disabled"><a href="#"><span
 							class="glyphicon glyphicon-chevron-left"></span></a></li>
@@ -248,7 +250,7 @@ var regBtns = function(){
 							class="glyphicon glyphicon-chevron-right"></span></a></li>
 				</ul>
 			</div>
-
+ -->
 		<div class="modal fade" id="resultModal">
 				<div class="modal-dialog">
 					<div class="modal-content">

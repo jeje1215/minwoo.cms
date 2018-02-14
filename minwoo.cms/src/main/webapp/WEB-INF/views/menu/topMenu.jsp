@@ -15,7 +15,7 @@
 					
      			 	<c:if test="${sessionScope.user != null}">
 						<li id="top_mypage">
-							<a href="#" onclick="goUrl('', urlForm)">
+							<a href="#" onclick="menuUrl('updateUser', urlForm)">
 								<span class="glyphicon glyphicon-heart"><b> MYPAGE </b></span>
 							</a>
 						</li>

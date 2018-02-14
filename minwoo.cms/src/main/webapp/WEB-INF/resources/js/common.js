@@ -1,18 +1,4 @@
 
-//메뉴없는 페이지 이동시 사용하는 공통 url이동
-function goUrl(url, frm) { 
-	$('#mvUrl').val(url);
-	frm.action = "/cms/url";
-	frm.submit();
-}
-
-//top,left 메뉴 존재하는 페이지 이동시 사용하는 url 이동
-function menuUrl(url, frm) {
-	$('#mvUrl').val(url);
-	frm.action = "/cms/"+url;
-	frm.submit();
-}
-
 var pathname = location.pathname;
 var name = pathname.split('/');
 var namePage;
@@ -30,9 +16,28 @@ $(function() {
 	}else if(namePage[2] == 'main' || namePage[2] == 'url'){
 		$("ul[id=menu_home]").show();
 		$("#top_home").addClass("active");
+	}else if(namePage[2] == 'updateUser'){
+		$("ul[id=menu_mypage]").show();
+		$("#top_mypage").addClass("active");
 	}
 	//$.activeMenu("header", name[1]);
 })
+
+
+
+//메뉴없는 페이지 이동시 사용하는 공통 url이동
+function goUrl(url, frm) { 
+	$('#mvUrl').val(url);
+	frm.action = "/cms/url";
+	frm.submit();
+}
+
+//top,left 메뉴 존재하는 페이지 이동시 사용하는 url 이동
+function menuUrl(url, frm) {
+	$('#mvUrl').val(url);
+	frm.action = "/cms/"+url;
+	frm.submit();
+}
 
 /*$.activeMenu = function(type, id) {
 	$("#" + type + "> li").each(function() {

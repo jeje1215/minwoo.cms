@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
    @Autowired private UserUpdateService userUpdateService;
    
-   @RequestMapping("/update")
+   @RequestMapping("/updateUser")
    public String main(){
       return "user/update/main";
    }

@@ -15,7 +15,7 @@
       </div>
       <br>
       <div class="d1">
-         <select class="click">
+<!--          <select class="click">
             <option value="">번호</option>
             <option value="제목">제목</option>
             <option value="날짜">날짜</option>
@@ -25,7 +25,8 @@
          <div class="form">
             <input type="text" placeholder="검색어 입력">
             <button type="submit" class="1"></button>
-         </div>
+         </div> -->
+         <br> <br>
          <br> <br>
       
 
@@ -51,7 +52,6 @@
                <th class="title">이름</th>
                <th>이메일</th>
                <th style="color: #EA990B;">등급</th>
-               <!--                   <th style="color: #EA990B;"><b>조회수</b></th> -->
             </tr>
          </thead>
          <tbody>

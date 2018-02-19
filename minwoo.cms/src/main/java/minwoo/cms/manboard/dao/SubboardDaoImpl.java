@@ -38,5 +38,9 @@ public class SubboardDaoImpl implements SubboardDao{
 		if(subboardMapper.delBoard(subboardInfo.getSubId())>0)
 			isDel = 0;
 		return isDel;
+	}
+	
+	public int emptySub(SubboardInfo subboardInfo){
+		return subboardMapper.emptySub(subboardInfo.getSubId());
 	}	
 }

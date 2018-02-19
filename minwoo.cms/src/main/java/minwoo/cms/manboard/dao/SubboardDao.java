@@ -10,5 +10,6 @@ public interface SubboardDao {
 	SubboardInfo editListBoard(int subId);
 	boolean editBoard(SubboardInfo subboardInfo);
 	int delBoard(SubboardInfo subboardInfo);
+	int emptySub(SubboardInfo subboardInfo);
 
 }

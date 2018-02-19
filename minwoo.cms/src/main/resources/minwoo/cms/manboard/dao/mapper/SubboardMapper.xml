@@ -7,28 +7,33 @@
 		<result property="subNm" column="sub_nm" />
 		<result property="subYn" column="sub_yn" />
 		<result property="mabId" column="mab_id" />
+		<result property="usbId" column="usb_id" />
 	</resultMap>	
 	
 	<select id="getBoardList" resultMap="subboardMap" parameterType="minwoo.cms.manboard.domain.SubboardInfo">
-		select sub_id, sub_nm, sub_yn, mab_id from SUBBOARDS
+		select sub_id, sub_nm, sub_yn, mab_id from subboards
 	</select>	
 	
 	<insert id="insertBoard" parameterType="minwoo.cms.manboard.domain.SubboardInfo">
-		insert into SUBBOARDS(sub_id ,sub_nm ,sub_yn , user_id, mab_id) 
+		insert into subboards(sub_id ,sub_nm ,sub_yn , user_id, mab_id) 
 			values(
 					 subboards_subid_seq.nextval,#{subNm},#{subYn},#{userId},#{mabId}
 				)
 	</insert>		
 	
 	<select id="editListBoard" resultMap="subboardMap" parameterType="int">
-		select sub_id ,sub_nm ,sub_yn , mab_id from SUBBOARDS where sub_id=#{subId}
+		select sub_id ,sub_nm ,sub_yn , mab_id from subboards where sub_id=#{subId}
 	</select>	
 	
     <update id="editBoard" parameterType="minwoo.cms.manboard.domain.SubboardInfo">
-        update SUBBOARDS set sub_nm=#{subNm}, sub_yn=#{subYn}, mab_id=#{mabId} where sub_id=#{subId}
+        update subboards set sub_nm=#{subNm}, sub_yn=#{subYn}, mab_id=#{mabId} where sub_id=#{subId}
     </update>    	
 	
     <delete id="delBoard" parameterType="int">
-        delete SUBBOARDS where sub_id=#{subId}
+        delete subboards where sub_id=#{subId}
     </delete>	
+    
+ 	<select id="emptySub" resultType="int" parameterType="int">
+		select count(*) from userboards where sub_id=#{subId}
+	</select>	 
 </mapper>

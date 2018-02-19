@@ -13,38 +13,38 @@ var regBtns = function(){
    var chkAd = function(){
         if($(":input[name='adsCompany']").val()) return true;
         else {
-            msg.text("광고 이름을 확인하세요.");
-          modal.modal("show");
+			$('#modalBody_one').html("광고 이름을 확인하세요.");
+			$('#myModal_one').modal(); return false;
         }             
         if($(":input[name='adsMan']").val()) return true;
         else {
-            msg.text("관리자이름을 확인하세요..");
-          modal.modal("show");
+			$('#modalBody_one').html("관리자이름을 확인하세요.");
+			$('#myModal_one').modal(); return false;
         }
         if($(":input[name='adsMoney']").val()) return true;
         else {
-            msg.text("금액 숫자로 입력하세요.");
-          modal.modal("show");
+			$('#modalBody_one').html("금액 숫자로 입력하세요.");
+			$('#myModal_one').modal(); return false;
         }
         if($(":input[name='adsStartDate']").val()) return true;
         else {
-            msg.text("광고시작일 확인하세요.");
-          modal.modal("show");
+			$('#modalBody_one').html("광고시작일 확인하세요.");
+			$('#myModal_one').modal(); return false;
         }
         if($(":input[name='adsEndDate']").val()) return true;
         else {
-            msg.text("광고종료일 확인하세요.");
-          modal.modal("show");
+			$('#modalBody_one').html("광고종료일 확인하세요.");
+			$('#myModal_one').modal(); return false;
         }
         if($(":input[name='userId']").val()) return true;
         else {
-            msg.text("광고작성자을 확인하세요.");
-          modal.modal("show");
+			$('#modalBody_one').html("광고작성자을 확인하세요.");
+			$('#myModal_one').modal(); return false;
         }
         if($(":input[name='adsUrl']").val()) return true;
         else {
-            msg.text("광고Url을 확인하세요.");
-          modal.modal("show");
+			$('#modalBody_one').html("광고Url을 확인하세요.");
+			$('#myModal_one').modal(); return false;
         }
     }
  
@@ -84,17 +84,18 @@ var regBtns = function(){
 					url :"adjoin",
 					data : $("#adFormAdd").serialize(),
 					success : function(result) {
-						if (result)
-							msg.text("추가 성공!");
-						else
-							msg.text("추가 실패");
+						if (result){
+							$('#modalBody_one').html("광고가 등록되었습니다.");
+						}else{
+							$('#modalBody_one').html("광고 등록이 실패하였습니다. 관리자에게 문의하세요.");
+						}
 						$("#listBtn").trigger("click");
 					},
 					error : function(a, b, errMsg) {
-						msg.text("추가 실패!" + errMsg);
+						//$('#modalBody_one').html("추가 실패!" + errMsg);
 					},
 					complete : function() {
-						modal.modal("show");
+						$('#myModal_one').modal();
 					}
 				});
 			}
@@ -104,8 +105,8 @@ var regBtns = function(){
 		$("#delBtnAd").bind("click", function() {
 			var ad = $("input:radio[id='adadid']:checked").val();
 			if (ad == undefined) {
-				modal.modal("show");
-				msg.text("선택하세요.")
+				$('#modalBody_one').html("삭제할 광고를 선택해주세요.");
+				$('#myModal_one').modal(); return false;
 			} else {
 				$.ajax({
 					url : "delad",
@@ -113,17 +114,18 @@ var regBtns = function(){
 						adsId : ad
 					},
 					success : function(result) {
-						if (result)
-							msg.text("삭제 성공!");
-						else
-							msg.text("삭제 실패");
+						if (result){
+							$('#modalBody_one').html("광고가 삭제되었습니다.");
+						}else{
+							$('#modalBody_one').html("광고 삭제가 실패하였습니다. 관리자에게 문의하세요.");
+						}
 						$("#listBtn").trigger("click");
 					},
 					error : function(a, b, errMsg) {
-						msg.text("삭제 실패!" + errMsg);
+						//msg.text("삭제 실패!" + errMsg);
 					},
 					complete : function() {
-						modal.modal("show");
+						$('#myModal_one').modal(); 
 					}
 				});
 			}
@@ -135,8 +137,8 @@ var regBtns = function(){
 				
 	    	$('input[name=adadid]').val(ad);
 			if (ad == undefined) {
-				modal.modal("show");
-				msg.text("선택하세요.")
+				$('#modalBody_one').html("수정할 광고를 선택해주세요.");
+				$('#myModal_one').modal(); return false;
 
 			} else {
 				$.ajax({
@@ -144,17 +146,18 @@ var regBtns = function(){
 					data : $("#adFormAdd").serialize(),
 					//adsId:ad.val(), adsCompany:$("input[name='name']").val()},
 					success : function(result) {
-						if (result)
-							msg.text("수정 성공");
-						else
-							msg.text("수정 실패");
+						if (result){
+							$('#modalBody_one').html("광고가 수정되었습니다.");
+						}else{
+							$('#modalBody_one').html("광고 수정이 실패하였습니다. 관리자에게 문의하세요.");
+						}
 						$("#listBtn").trigger("click");
 					},
 					error : function(a, b, errMsg) {
-						msg.text("빈칸을 확인하세요. ");
+						$('#modalBody_one').html("빈칸을 확인하세요.");
 					},
 					complete : function() {
-						modal.modal("show");
+						$('#myModal_one').modal(); 
 					}
 				});
 			}

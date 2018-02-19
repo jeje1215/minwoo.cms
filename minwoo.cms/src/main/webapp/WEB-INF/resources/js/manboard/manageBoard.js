@@ -130,8 +130,8 @@ $(function() {
 	});	
 	
 	$("#delBoard").click(function() {
-		$('#modalBody_two').html("게시판을 삭제하시겠습니까?");
-		$('#myModal_two').modal();
+		$('#modalBody_manboard').html("게시판을 삭제하시겠습니까?");
+		$('#myModal_manboard').modal();
 	});		
 	
 	$("#cancelBoard").click(function(){

@@ -9,11 +9,9 @@ p {
 	text-align: center;
 }
 
-.btn{
+.btn {
 	font-family: HY강B;
-	
 }
-
 
 .btn-block {
 	font-size: 15px;
@@ -25,7 +23,7 @@ p {
 th {
 	font-family: HY강B;
 	font-size: 14px;
-
+	text-align:center;
 }
 
 .title {
@@ -82,28 +80,30 @@ select {
 
 div.form {
 	margin-top: -10px;
-    margin-bottom: -50px;
+	margin-bottom: -50px;
 	font-family: HY강B;
 }
 
 div.container {
 	height: 140px;
 }
-h3{
-	font-family: HY강B;
 
-	
+h3 {
+	font-family: HY강B;
 }
-td input{
+
+td{
+	text-align:center;
+}
+
+td input {
 	border: 2px solid #007DC1;
 	border-radius: 5px;
-	width:100px;
+	width: 100px;
 	font-family: HY강B;
-	text-align:center;
-		
+	text-align: center;
 }
-tbody#adList{
-	
+
+tbody#adList {
 	font-family: HY강B;
-	
 }

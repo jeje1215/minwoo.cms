@@ -33,14 +33,14 @@
 				<button type="button" class="btn btn-primary btn-md" id="addBtn">
 					<i class="glyphicon glyphicon-ok"></i> 등록
 				</button>
-				<button type="button" class="btn btn-success btn-md" id="listBtn">
-					<i class="glyphicon glyphicon-list-alt"></i> 목록
-				</button>
 				<button type="button" class="btn btn-warning btn-md" id="updateBtn">
 					<i class="glyphicon glyphicon-refresh"></i> 수정
 				</button>
 				<button type="button" class="btn btn-danger btn-md" id="delBtnAd">
 					<i class="glyphicon glyphicon-trash"></i> 삭제
+				</button>
+ 				<button type="button" class="btn btn-success btn-md" onclick="adList();">
+					<i class="glyphicon glyphicon-list-alt"></i> 취소
 				</button>
 			</div>
 			<br>
@@ -48,27 +48,28 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>번호</th>
+						<th>선택</th>
 						<th>광고이름</th>
 						<th>광고관리자</th>
 						<th>광고금액</th>
 						<th>광고시작일</th>
+						
 						<th>광고종료일</th>
 						<th>광고작성자</th>
 						<th>광고Url</th>
 					</tr>
 				</thead>
 				<form id="adFormAdd">
-					<input type="text" name="adsId_tmp" style="display: none;">
+					<input type="text" name="adsId_tmp" style="display:none;">
 					<tr>
 						<td></td>
-						<td><input type="text" name="adsCompany" value=""></td>
-						<td><input type="text" name="adsMan" value=""></td>
-						<td><input type="text" name="adsMoney" value=""></td>
-						<td><input type="text" name="adsStartDate" value=""></td>
-						<td><input type="text" name="adsEndDate" value=""></td>
-						<td><input type="text" name="userId" value=""></td>
-						<td><input type="text" name="adsUrl" value=""></td>
+						<td><input type="text" name="adsCompany"></td>
+						<td><input type="text" name="adsMan"></td>
+						<td><input type="number" name="adsMoney"></td>
+						<td><input type="text" name="adsStartDate" maxlength="10"></td>
+						<td><input type="text" name="adsEndDate" maxlength="10"></td>
+						<td><input type="text" name="userId" value="${ sessionScope.user.loginId }" readonly></td>
+						<td><input type="text" name="adsUrl"></td>
 					</tr>
 				</form>
 				<tbody id="adList">
@@ -76,7 +77,8 @@
 			</table>
 			<br>
 			<br>
-			<!-- 			<div class="text-center">
+			<!-- 			
+			<div class="text-center">
 				<ul class="pagination">
 					<li class="disabled"><a href="#"><span
 							class="glyphicon glyphicon-chevron-left"></span></a></li>

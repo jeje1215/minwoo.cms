@@ -44,9 +44,9 @@ var regBtns = function(){
                   
                     td = $("<td><input type='radio' name='mesId' value='"
                           +mes.mesId+"'onClick='showMes(this)'/>"
-                          +"&nbsp;&nbsp;&nbsp;"
+                          +""
                           +mes.mesId+"</td>");
-                    td2 = $("<td>"+mes.userNic+"</td><td>"+mes.userMail+"</td><td>"+mes.mesContent+"</td> ");
+                    td2 = $("<td>"+mes.userNic+"</td><td>"+mes.userNm+"</td><td>"+mes.userMail+"</td><td>"+mes.mesContent+"</td> ");
                     
                     mesList.append(tr.append(td).append(td2));      
                     td.find("input").data("userNic", mes.userNic);
@@ -81,16 +81,11 @@ var regBtns = function(){
 
 
 			<h3>Cms.메세지함</h3>
-			<div class="btn-group-center">
-				<button type="button" class="btn btn-primary btn-md" id="addBtn">
-					<i class="glyphicon glyphicon-ok"></i> 등록
-				</button>
+	
 				<button type="button" class="btn btn-success btn-md" id="listBtn">
 					<i class="glyphicon glyphicon-list-alt"></i> 목록
 				</button>
-				<button type="button" class="btn btn-warning btn-md" id="updateBtn">
-					<i class="glyphicon glyphicon-refresh"></i> 수정
-				</button>
+
 				<button type="button" class="btn btn-danger btn-md" id="delBtnAd">
 					<i class="glyphicon glyphicon-trash"></i> 삭제
 				</button>
@@ -101,46 +96,19 @@ var regBtns = function(){
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>번호</th>
+						<th></th>
 						<th>닉네임(아이디)</th>
+						<th>이름</th>
+						<th>이메일</th>
 						<th>메세지</th>
 						
 					</tr>
 				</thead>
 				<tbody id="mesList">
-<!-- 				<form id="adFormAdd"> -->
-<!-- 					<input type="text" name="adsId_tmp" style="display: none;"> -->
-<!-- 					<tr> -->
-<!-- 						<td></td> -->
-<!-- 						<td><input type="text" name="adsCompany" value=""></td> -->
-<!-- 						<td><input type="text" name="adsMan" value=""></td> -->
-<!-- 						<td><input type="text" name="adsMoney" value=""></td> -->
-<!-- 						<td><input type="text" name="adsStartDate" value=""></td> -->
-<!-- 						<td><input type="text" name="adsEndDate" value=""></td> -->
-<!-- 						<td><input type="text" name="userId" value=""></td> -->
-<!-- 						<td><input type="text" name="adsUrl" value=""></td> -->
-<!-- 					</tr> -->
-<!-- 				</form> -->
-		
+<!-- 	
 				</tbody>
 			</table>
-			<br>
-			<br>
-			
 
-			
-			
-			
-			
-			<!-- 			<div class="text-center">
-				<ul class="pagination">
-					<li class="disabled"><a href="#"><span
-							class="glyphicon glyphicon-chevron-left"></span></a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-chevron-right"></span></a></li>
-				</ul>
-			</div> -->
 		</div>
 	</section>
 

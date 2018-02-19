@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 public class ManMesServiceImpl implements ManMesService{
 	@Autowired private ManMesDao manmesDao;
 	
-	public List<Mes>listMess(){
-		return manmesDao.getMess();
+	public List<Mes>listMess(String userId){
+		return manmesDao.getMess(userId);
 	}
 
 }

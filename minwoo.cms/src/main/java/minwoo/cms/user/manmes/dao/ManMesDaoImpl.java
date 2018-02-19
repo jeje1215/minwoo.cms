@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 public class ManMesDaoImpl implements ManMesDao {
 	@Autowired private ManMesMapper manmesMapper;
 	
-	public List<Mes>getMess(){
-		return manmesMapper.getMess();
+	public List<Mes>getMess(String userId){
+		return manmesMapper.getMess(userId);
 	}
 
 }

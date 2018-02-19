@@ -8,23 +8,26 @@ import minwoo.cms.user.manmes.service.ManMesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ManMesController {
 	@Autowired private ManMesService manmesService;
 	
-
-	@RequestMapping("/manmes")
+	@RequestMapping(value="user/manmes")
 	public String main(){
-		System.out.println("낭똥개11111");
 		return "user/manmes/main";
 	}
-	@RequestMapping("listmess")
-	@ResponseBody
-	public List<Mes>listMess(){
-		System.out.println("낭똥개");
-		return manmesService.listMess();
-	}	
-
-}
+//	
+//	@ResponseBody
+//	@RequestMapping(value="meslists",method=RequestMethod.POST)
+//	public List<Mes>listMess(
+//		String userId=Integer.parsInt(reqeust.getParameter("userId"));
+//		
+//	request.setAttribute("userId",userId);
+//	retru
+//	
+//}
+	}

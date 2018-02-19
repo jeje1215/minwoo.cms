@@ -5,7 +5,7 @@ import java.util.List;
 import minwoo.cms.user.manmes.domain.Mes;
 
 public interface ManMesService {
-	List<Mes>listMess();
+	List<Mes>listMess(String userId);
 	
 
 }

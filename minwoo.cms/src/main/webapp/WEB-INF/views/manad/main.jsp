@@ -62,17 +62,21 @@
             </thead>
             <form id="adFormAdd" >
                <input type="text" name="adsId_tmp" style="display:none;">
-               <tr>
-                  <td></td>
-                  <td><input type="text" name="adsCompany"></td>
-                  <td><input type="text" name="adsMan"></td>
-                  <td><input type="number" name="adsMoney"></td>
-                  <td><input type="text" name="adsStartDate" maxlength="10"></td>
-                  <td><input type="text" name="adsEndDate" maxlength="10"></td>
-                  <td><input type="text" name="userId" value="${ sessionScope.user.loginId }" readonly></td>
-                  <td><input type="text" name="adsUrl"></td>
-                  <td><input type="file" name="adsFile"></td>
-               </tr>
+               <tr class="inTr">
+                  <td><input type="text"   class="inEmp" readonly></td>
+                  <td><input type="text"   class="inTxt" name="adsCompany"></td>
+                  <td><input type="text"   class="inTxt" name="adsMan"></td>
+                  <td><input type="number" class="inTxt" name="adsMoney"></td>
+                  <td><input type="text"   class="inTxt" name="adsStartDate" maxlength="10"></td>
+                  <td><input type="text"   class="inTxt" name="adsEndDate" maxlength="10"></td>
+                  <td><input type="text"   class="inTxt" name="userId" value="${ sessionScope.user.loginId }" readonly></td>
+                  <td><input type="text"   class="inTxt" name="adsUrl"></td>
+				  <td class="filebox">
+						<input class="upload-name" value="파일선택" disabled="disabled" id="viewFile">
+						<label for="ex_filename">업로드</label> 
+						<input type="file" id="ex_filename" name="adsFile" class="upload-hidden">
+				  </td>
+				</tr>
             </form>
             <tbody id="adList">
             </tbody>

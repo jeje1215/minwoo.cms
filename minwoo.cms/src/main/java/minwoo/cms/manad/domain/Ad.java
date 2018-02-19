@@ -13,7 +13,7 @@ public class Ad {
 	private String adsEndDate;
 	private Date regDate;
 	private String userId;
-
+	
 	public int getAdsId() {
 		return adsId;
 	}

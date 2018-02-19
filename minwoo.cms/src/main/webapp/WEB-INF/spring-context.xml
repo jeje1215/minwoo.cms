@@ -55,4 +55,8 @@
 			</list>
 		</property>
 	</bean>	
+	<!-- fileupload -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<context:property-placeholder location="classpath:minwoo/cms/user/login/config/upload.properties"/>
+	<mvc:resources location="/upload/" mapping="/upload/**"/>
 </beans>

@@ -1,6 +1,17 @@
+
+
 $(function(){
     regBtns();
     adList();
+	var fileTarget = $('.filebox .upload-hidden');
+	fileTarget.on('change', function() {
+		if (window.FileReader) {
+			var filename = $(this)[0].files[0].name;
+		} else {
+			var filename = $(this).val().split('/').pop().split('\\').pop();
+		}
+		$(this).siblings('.upload-name').val(filename);
+	});    
 });
  
  var showAd = function(ad){
@@ -12,6 +23,7 @@ $(function(){
    $(":input[name='userId']").val($(ad).data("userId"));
    $(":input[name='adsUrl']").val($(ad).data("adsUrl"));
    $(":input[name='adsFile']").val($(ad).data("adsFile"));
+   $("#viewFile").val($(ad).data("adsFile"));
  }
  
 var regBtns = function(){

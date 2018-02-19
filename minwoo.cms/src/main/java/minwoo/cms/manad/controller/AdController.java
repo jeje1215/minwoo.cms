@@ -45,7 +45,8 @@ public class AdController {
       boolean isStored = true;
       String dir = request.getServletContext().getRealPath(uploadDir);
       String fileName = adsFile.getOriginalFilename();
-      
+
+     // Ad ad = new Ad(adsCompany, adsMan, fileName, adsMoney, adsUrl, adsStartDate, adsEndDate, userId);
       Ad ad = new Ad();
       ad.setAdsCompany(adsCompany);
       ad.setAdsMan(adsMan);

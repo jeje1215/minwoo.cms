@@ -7,6 +7,15 @@ public class SubboardInfo {
 	private String subNm;
 	private String subYn;
 	private String boardType;
+	private int usbId;
+
+	public int getUsbId() {
+		return usbId;
+	}
+
+	public void setUsbId(int usbId) {
+		this.usbId = usbId;
+	}
 
 	public String getUser_id() {
 		return userId;

@@ -90,8 +90,6 @@ $(function() {
 			}
 		});		
 		//addBoardproc(gubun);
-	
-
 	});
 	
 
@@ -160,7 +158,6 @@ function addBoardproc(gubun){
 			}
 		});
 	}else if(gubun == "S"){ //서브
-
 		url = "/cms/manboard/manageBoard/sedit";
 		$.ajax({
 			url : url,
@@ -170,7 +167,7 @@ function addBoardproc(gubun){
 				if (result == true) {
 					menuUrl('manboard/manageBoard', urlForm)
 				} else {
-					$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.2");
+					$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.");
 					$('#myModal_one').modal();
 				}
 			},
@@ -198,7 +195,7 @@ function go_boardDel(){
 			if (result == 0) {
 				menuUrl('manboard/manageBoard', urlForm)
 			}else{
-				$('#modalBody_one').html("서브게시판이 등록되어 삭제할 수 없습니다.");
+				$('#modalBody_one').html("하위게시판이 등록되어 삭제할 수 없습니다.");
 				$('#myModal_one').modal();
 			}
 		},

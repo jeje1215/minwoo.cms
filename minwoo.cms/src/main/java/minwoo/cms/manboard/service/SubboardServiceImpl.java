@@ -30,7 +30,13 @@ public class SubboardServiceImpl implements SubboardService{
 	
 	public int removeManboard(SubboardInfo subboardInfo){
 		int fin = 0; //삭제 성공
-		fin = subboardDao.delBoard(subboardInfo);
-		return fin;
+		int emptyYn = 0;
+		emptyYn = subboardDao.emptySub(subboardInfo);
+		if (emptyYn == 0){ // 삭제 가능
+			fin = subboardDao.delBoard(subboardInfo);
+		}else{ //회원게시판 존재하므로 회원게시판 삭제 불가
+			fin = 1;
+		}
+		return fin;		
 	}	
 }

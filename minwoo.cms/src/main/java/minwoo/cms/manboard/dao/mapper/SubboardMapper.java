@@ -10,5 +10,6 @@ public interface SubboardMapper {
 	SubboardInfo editListBoard(int subId);
 	boolean editBoard(SubboardInfo subboardInfo);
 	int delBoard(int subId);
+	int emptySub(int subId);
 
 }

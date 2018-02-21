@@ -14,36 +14,30 @@
         <i class="fas fa-user-plus"></i>회원관리
       </div>
       <br>
-      <div class="d1">
-<!--          <select class="click">
-            <option value="">번호</option>
-            <option value="제목">제목</option>
-            <option value="날짜">날짜</option>
-            <option value="조회수">조회수</option>
-         </select>
-
-         <div class="form">
+		<div class="d1">
+			<!--  <div class="form">
             <input type="text" placeholder="검색어 입력">
             <button type="submit" class="1"></button>
-         </div> -->
-         <br> <br>
-         <br> <br>
-      
-
-   
-         <div class="selectlevel" id="slevel">
-            <select id="ulevel" name="ulevel">
-               <option value="">선택</option>
-               <option value="A">관리자</option>
-               <option value="B">일반회원</option>
-            </select>
-         </div>
-   </div>
-   
+      </div> -->
+			<br> <br> <br> <br>
 
 
+			<form id="levelForm" method="post">
+				<input name="checkVal" id="checkVal">
+				<div class="selectlevel" id="selectlevel">
+					<select id="userLevel" name="userLevel">
+						<option value="">선택</option>
+						<option value="A">관리자</option>
+						<option value="B">일반회원</option>
+					</select>
+				</div>
+			</form>
+		</div>
 
-   <div class="list">
+
+
+
+		<div class="list">
       <table class="table table-hover">
          <thead>
             <tr>
@@ -57,8 +51,8 @@
          <tbody>
             <c:forEach items="${man_userlist}" var="manuserlist">
                <tr>
-                  <td><input type="checkbox" id="cb1" name="index" />${manuserlist.userNic}</td>
-                  <td>${manuserlist.userId}</td> <!-- test -->
+                  <td><input type="checkbox" id="cb1" name="level" value="${manuserlist.userId}"/></td>
+                  <td>${manuserlist.userId}</td> 
                   <td>${manuserlist.userNm}</td>
                   <td>${manuserlist.userMail}</td>
                   <td>${manuserlist.userLevel}</td>
@@ -67,7 +61,7 @@
          </tbody>
       </table>
 
-      <button class="btn btn-warning btn-md" data-toggle="modal" data-target="#myModal">
+      <button class="btn btn-warning btn-md" id="testbtn" onclick="go_btn()">
          <i class="fas fa-wrench"></i>변경
       </button>
    </div>
@@ -90,24 +84,6 @@
          <li><a href="#"><span
                class="glyphicon glyphicon-chevron-right"></span></a></li>
       </ul>
-   </div>
-   <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-      aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal">
-                  <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-               </button>
-               <h4 class="modal-title" id="myModalLabel">변경되었습니다.</h4>
-            </div>
-
-            <div class="modal-footer">
-               <button type="button" class="btn btn-primary" class="close"
-                  data-dismiss="modal">확인</button>
-            </div>
-         </div>
-      </div>
    </div>
 </div>   
 

@@ -6,8 +6,25 @@ public class ManUser {
 	public String userNm; // 이름
 	public String userMail; // 이메일
 	public String userLevel; // 등급
+	public String checkVal; // 체크박스 중 체크된 값
+	public String ulevel; // select박스 회원등급
 	
-
+	public String getUlevel(){
+		return ulevel;
+	}
+	
+	public void setUlevel(String ulevel){
+		this.ulevel = ulevel;
+	}
+	
+	public String getCheckVal(){
+		return checkVal;
+	}
+	
+	public void setCheckVal(String checkVal){
+		this.checkVal = checkVal;
+	}
+	
 	public String getUserId() {
 		return userId;
 	}

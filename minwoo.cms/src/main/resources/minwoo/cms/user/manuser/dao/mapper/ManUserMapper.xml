@@ -8,11 +8,18 @@
 	<result property="userNic" column="user_nic" />
 	<result property="userMail" column="user_mail" />
 	<result property="userLevel" column="user_level" />
+	<result property="ulevel" column="u_level" />
+	<result property="checkVal" column="check_Val" />
 </resultMap>
 
 <select id="getUsers" resultMap="manuserMap" parameterType="minwoo.cms.user.manuser.domain.ManUser">
 	select user_id, user_nic, user_nm, user_mail, user_level
 	from USERS order by user_nm asc
 </select>
+
+<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser">
+	update users set user_level=#{userLevel} where user_id=#{checkVal}
+
+</update>
 
 </mapper>

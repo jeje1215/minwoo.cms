@@ -1,42 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<style>@import url("<c:url value="/css/board/list.css"/>");</style>
+<style>@import url("<c:url value="/css/board/list.css"/>");
+</style>
 <script>
 $(function(){
-   regBtns();
+	   regBtns();
+	   boardList();
 });
 
-var showBoard = function(board){
-   $(":input[name='name']").val($(board).data(usbTitle));
-}
+	var showBoard = function(board){
+	   $(":input[name='name']").val($(board).data(usbTitle));
+	}
 
-var regBtns = function(){
-   $("#listBtn").bind("click",function() {
-      var boardList = ("#boardList");
-      var tr;
-      var input;
-      var etc;
-      boardList.empty();
+	var regBtns = function(){
+	    var modal = $("#resultModal");  // 추가, 수정, 삭제 결과 창
+	    var msg = $("#msg");  // 결과 메세지
+	
+	}  
+	function boardList(){
+	   $("#listBtn").bind("click",function() {
+	      var boardList = ("#boardList");
+	      var tr;
+	      var input;
+	      var etc;
+	      boardList.empty();
 
-      $.ajax({
-         url : "listBoards",
-         success : function(boards) {
-            $(boards).each(function(idx, board) {
-               tr = $("<tr></tr>");
-               td = $("<td><input name='usbId' id='usbbid'value='"
-                     + board.usbId+ "'onClick='showBoard(this)'/>"
-                     + "&nbsp;&nbsp;&nbsp;"+ board.usbId+ "</td>");
-               td2 = $("<td>"+ board.usbTitle+ "</td><td>"+ board.usbContent
-                     + "</td><td>"+ board.subId+ "</td><td>"+ board.regDate
-                     + "</td><td>"+ board.usbCnt+"</td>");
+	      $.ajax({
+	         url : "listBoards",
+	         success : function(boards) {
+	           var x=1;
+	        	 $(boards).each(function(idx, board) {
+	               tr = $("<tr></tr>");
+	               td = $("<td><input name='usbId' id='usbusbid'value='"
+	                     + board.usbId+ "'onClick='showBoard(this)' style='cursor:pointer;'/>"
+	                     + board.usbId+ "</td>");
+	               td2 = $("<td>"+ board.usbTitle+ "</td><td>"+ board.usbContent
+	                     + "</td><td>"+ board.subId+ "</td><td>"+ board.regDate
+	                     + "</td><td>"+ board.usbCnt+"</td>");
 
-               boardList.append(tr.append(td).append(td2));
-               td.find("input").data("usbId",board.usbId);
-            });
-         }
-      });
-	});
-}
+	               boardList.append(tr.append(td).append(td2));
+	               td.find("input").data("usbId",board.usbId);
+	               td.find("input").data("usbTitle",board.usbTitle);
+	               td.find("input").data("usbContent",board.usbContent);
+	               td.find("input").data("subId",board.subId);
+	               td.find("input").data("regDate",board.regDate);
+	            });
+	         },
+	 		 complete : function() {
+	 			   $(":input[name='usbId']").val("");
+	 			   $(":input[name='usbTitle']").val("");
+	 			   $(":input[name='usbContent']").val("");
+	 			   $(":input[name='subId']").val("");
+	 			   $(":input[name='regDate']").val("");
+	 		}
+	      });
+		});
+	}
 </script>
 <section id="post">
    <div class="container">

@@ -4,10 +4,11 @@
 <%@ include file="../common/header.jsp"%>
 <%@ include file="../menu/topMenu.jsp"%>
 <%@ include file="../menu/leftMenu.jsp"%>
-<style>@import url("<c:url value="/css/manad/manad.css"/>");</style>
+<style>@import url("<c:url value="/css/board/list.css"/>");</style>
 <script>
 $(function(){
 	   regBtns();
+	   
 	});
 
 	var showBoard = function(board){
@@ -82,9 +83,9 @@ $(function(){
 			</form>
 			<div class="" style="width: 650px; text-align: center;">
 				<button type="button" class="btn btn-primary btn-md" id="addBtn"
-					onclick="menuUrl('board/list', urlForm)">확인</button>
+					onclick="menuUrl('main', urlForm)">확인</button>
 				<button type="reset" class="btn btn-success btn-md" id="listBtn"
-					onclick="menuUrl('board/list', urlForm)">취소</button>
+					onclick="menuUrl('main', urlForm)">취소</button>
 			</div>
 		</div>
 		<div class="modal fade" id="resultModal">

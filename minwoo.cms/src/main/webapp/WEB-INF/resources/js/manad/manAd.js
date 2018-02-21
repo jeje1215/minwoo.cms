@@ -57,11 +57,10 @@ var regBtns = function(){
 	   if($(":input[name='adsUrl']").val() == ""){
 		   msg = "광고Url을 확인하세요.";finYn = "N";
 	   } 
-	   if($("#viewFile").val() || $("#viewFile").val() == "파일선택"){
+	   if($("#viewFile").val() == "" || $("#viewFile").val() == "파일선택"){
 		   msg = "광고파일을 확인하세요.";finYn = "N";
 	   } 
 
-	   
 	   if (finYn == "N"){
 		    $('#modalBody_one').html(msg);
 		    $('#myModal_one').modal(); return false;

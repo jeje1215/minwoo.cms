@@ -13,6 +13,16 @@ $(function(){
 		$(this).siblings('.upload-name').val(filename);
 	});    
 });
+
+//이미지 파일 여부 판단
+function checkImageType(fileName){
+    var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();
+    
+    if (!(ext == "gif" || ext == "jpg" || ext == "png")) {
+        alert("이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.");
+        return false;
+    }
+}
  
  var showAd = function(ad){
    $(":input[name='adsCompany']").val($(ad).data("adsCompany"));
@@ -22,8 +32,8 @@ $(function(){
    $(":input[name='adsEndDate']").val($(ad).data("adsEndDate"));
    $(":input[name='userId']").val($(ad).data("userId"));
    $(":input[name='adsUrl']").val($(ad).data("adsUrl"));
-   $(":input[name='adsFile']").val($(ad).data("adsFile"));
-
+   //$(":input[name='adsFile']").val($(ad).data("adsFile"));
+   //alert(ad.adsFile);
    $("#viewFile").val($(ad).data("adsFile"));
 
    $("#addBtn").hide();
@@ -39,6 +49,8 @@ var regBtns = function(){
    var chkAd = function(){
 	   var msg = "";
 	   var finYn = "Y";
+	   var fileNm = $("#viewFile").val();
+	   var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();
 	   if($(":input[name='adsCompany']").val() == ""){
 		   msg = "광고 이름을 확인하세요.";finYn = "N";
 	   }
@@ -57,14 +69,19 @@ var regBtns = function(){
 	   if($(":input[name='adsUrl']").val() == ""){
 		   msg = "광고Url을 확인하세요.";finYn = "N";
 	   } 
-	   if($("#viewFile").val() == "" || $("#viewFile").val() == "파일선택"){
+	   if(fileNm == "" || fileNm == "파일선택"){
 		   msg = "광고파일을 확인하세요.";finYn = "N";
 	   } 
+	   if(!(ext == "gif" || ext == "jpg" || ext == "png")) {
+		   msg = "이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.";finYn = "N";
+	   }
 
 	   if (finYn == "N"){
 		    $('#modalBody_one').html(msg);
 		    $('#myModal_one').modal(); return false;
-	   } 
+	   }else{
+		   return true;
+	   }
    }
  
    $("#addBtn").bind("click", function() {
@@ -91,13 +108,15 @@ var regBtns = function(){
             });
          }
       });
-
+   		
+   	  // 삭제
       $("#delBtnAd").bind("click", function() {
          $('#modalBody_manad').html("광고를 삭제하시겠습니까?");
          $('#myModal_manad').modal();
       });
       
-       $("#updateBtn").bind("click", function(){
+      // 수정
+      $("#updateBtn").bind("click", function(){
           var ad = $("input:radio[id='adadid']:checked").val();
           $("input[name=adsId_tmp]").val(ad);
             
@@ -106,11 +125,15 @@ var regBtns = function(){
             $('#modalBody_one').html("수정할 광고를 선택해주세요.");
             $('#myModal_one').modal(); return false;
 
-         } else {
+         }
+         if (chkAd()) {
+             var formData = new FormData($("#adFormAdd")[0]);
             $.ajax({
+               method:"post",
                url : "fixAdInfo",
-               data : $("#adFormAdd").serialize(),
-               //adsId:ad.val(), adsCompany:$("input[name='name']").val()},
+               data : formData,//$("#adFormAdd").serialize(),
+               processData:false, //no serialize
+               contentType:false, //multipart/formdata
                success : function(result) {
                   if (result){$('#modalBody_one').html("광고가 수정되었습니다.");
                   }else{$('#modalBody_one').html("광고 수정이 실패하였습니다. 관리자에게 문의하세요.");}
@@ -124,6 +147,7 @@ var regBtns = function(){
                }
             });
          }
+         
       });
    }
 
@@ -155,7 +179,7 @@ function adList(){
                 td.find("input").data("userId", ad.userId);
                 td.find("input").data("adsUrl", ad.adsUrl);
                 td.find("input").data("adsFile", ad.adsFile);
-               // alert(ad.adsFile);
+              // alert(ad.adsFile);
             });                    
         },
       complete : function() {
@@ -166,6 +190,7 @@ function adList(){
             $(":input[name='adsEndDate']").val("");
             $(":input[name='adsUrl']").val("");
             $(":input[name='adsFile']").val("");
+            $("#viewFile").val("");
             
             $("#addBtn").show();
             $("#updateBtn").hide();
@@ -177,6 +202,7 @@ function adList(){
 
 function go_adDel(){
    var ad = $("input:radio[id='adadid']:checked").val();
+   var adsFile = $("#viewFile").val();
    if (ad == undefined) {
       $('#modalBody_one').html("삭제할 광고를 선택해주세요.");
       $('#myModal_one').modal(); return false;
@@ -184,7 +210,7 @@ function go_adDel(){
       $.ajax({
          url : "delad",
          data : {
-            adsId : ad
+            adsId : ad, adsFile : adsFile
          },
          success : function(result) {
             if (result){ $('#modalBody_one').html("광고가 삭제되었습니다.");

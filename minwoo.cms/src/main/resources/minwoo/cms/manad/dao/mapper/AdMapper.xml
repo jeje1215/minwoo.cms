@@ -30,7 +30,7 @@
       update ads
        set ads_Company=#{adsCompany},ads_Money=#{adsMoney}
        ,ads_Man=#{adsMan} ,ads_start_date=#{adsStartDate},ads_end_date=#{adsEndDate}
-       ,ads_url=#{adsUrl} where ads_Id=#{adsId}
+       ,ads_url=#{adsUrl},ads_file=#{adsFile} where ads_Id=#{adsId}
     </update>
 
     <delete id="delAd" parameterType="minwoo.cms.manad.domain.Ad">

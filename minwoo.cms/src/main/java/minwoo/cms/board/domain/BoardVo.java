@@ -6,7 +6,7 @@ public class BoardVo {
    private int usbId; // 게시글 번호
    private String usbTitle; // 게시글 제목
    private String usbContent; // 게시글 내용
-   private String subId; // 게시글 작성자
+   private String userId; // 게시글 작성자
    private Date regdate; // 게시글 작성일자
    private int usbCnt; // 게시글 조회수
 
@@ -34,14 +34,6 @@ public class BoardVo {
       this.usbContent = usbContent;
    }
 
-   public String getSubId() {
-      return subId;
-   }
-
-   public void setSubId(String subId) {
-      this.subId = subId;
-   }
-
    public Date getRegdate() {
       return regdate;
    }
@@ -56,6 +48,14 @@ public class BoardVo {
 
    public void setUsbCnt(int usbCnt) {
       this.usbCnt = usbCnt;
+   }
+
+   public String getUserId() {
+	return userId;
+   }
+
+   public void setUserId(String userId) {
+	this.userId = userId;
    }
 
 }

@@ -13,7 +13,7 @@ $(function(){
 var showBoard = function(board){
 	   $(":input[name='usbTitle']").val($(board).data("usbTitle"));
 	   $(":input[name='usbContent']").val($(board).data("usbContent"));
-	   $(":input[name='subId']").val($(board).data("subId"));
+	   $(":input[name='userId']").val($(board).data("userId"));
 	}
 
 	var regBtns = function(){
@@ -30,7 +30,7 @@ var showBoard = function(board){
 		    	  msg.text("내용을 입력하세요");
 		    	  modal.modal("show");
 		      }
-		      if($(":input[name='subId']").val()) return true;
+		      if($(":input[name='userId']").val()) return true;
 		      else{
 		    	  msg.text("아이디를 입력하세요");
 		    	  modal.modal("show");
@@ -76,7 +76,7 @@ var showBoard = function(board){
 					<br>
 				</div>
 				<div>
-					아이디 <input type="text" name="subId" placeholder="아이디를 입력해주세요">
+					아이디 <input type="text" name="userId" placeholder="아이디를 입력해주세요">
 				</div>
 			</form>
 			<div class="" style="width: 650px; text-align: center;">

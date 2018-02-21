@@ -11,7 +11,7 @@ $(function(){
 		$(":input[name='usbId']").val($(board).data(usbId));
 	   $(":input[name='usbTitle']").val($(board).data(usbTitle));
 	   $(":input[name='usbContent']").val($(board).data(usbContent));
-	   $(":input[name='subId']").val($(board).data(subId));
+	   $(":input[name='userId']").val($(board).data(userId));
 	   $(":input[name='regDate']").val($(board).data(regDate));
 	   $(":input[name='usbCnt']").val($(board).data(usbCnt));
 	}
@@ -33,13 +33,13 @@ function boardList(){
 	                     + board.usbId+ "'xxxxonClick='showBoard(this)'/>"
 	                     + board.usbId+ "</td>");
 	               td2 = $("<td>"+ board.usbTitle+ "</td><td>"+ board.usbContent
-	                     + "</td><td>"+ board.subId+ "</td><td>"+ board.regDate
+	                     + "</td><td>"+ board.userId+ "</td><td>"+ board.regDate
 	                     + "</td><td>"+ board.usbCnt+"</td>");
 	               boardList.append(tr.append(td).append(td2));
 	               td.find("input").data("usbId",board.usbId);
 	               td.find("input").data("usbTitle",board.usbTitle);
 	               td.find("input").data("usbContent",board.usbContent);
-	               td.find("input").data("subId",board.subId);
+	               td.find("input").data("userId",board.userId);
 	               td.find("input").data("regDate",board.regDate);
 	            });
 	         },
@@ -47,7 +47,7 @@ function boardList(){
 	 			   $(":input[name='usbId']").val("");
 	 			   $(":input[name='usbTitle']").val("");
 	 			   $(":input[name='usbContent']").val("");
-	 			   $(":input[name='subId']").val("");
+	 			   $(":input[name='userId']").val("");
 	 			   $(":input[name='regDate']").val("");
 	 		}
 	      });
@@ -56,25 +56,10 @@ function boardList(){
 </script>
 <section id="post">
    <div class="container">
-      <div class="name">
+      <!-- <div class="name">
          <i class="fa fa-envelope" aria-hidden="true"></i>공지사항
-      </div>
+      </div> -->
       <br>
-      <div class="d1">
-         <select>
-            <option value="">선택</option>
-            <option value="제목">제목</option>
-            <option value="날짜">날짜</option>
-            <option value="조회수">조회수</option>
-            
-         </select>
-         <div class="form">
-            <input type="text" placeholder="검색어 입력">
-            <button type="submit"></button>
-         </div>
-      </div>
-
-
       <table class="table table-hover">
          <thead>
             <tr>

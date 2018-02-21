@@ -80,7 +80,6 @@ h3 {
 	font-family: HY강B;
 }
 
-
 tr.inTr{
    background-color: #f4f2f2;
 }
@@ -95,7 +94,6 @@ th {
 
 td{
 	text-align:center;
-	width:30px;
 }
 td input.inEmp {
 	border:none;
@@ -147,6 +145,7 @@ tbody#adList {
 	border-bottom-color: #337ab7;
 	border-radius: .25em;
 } /* named upload */
+
 .filebox .upload-name {
 	width:90px;
 	display: inline-block;

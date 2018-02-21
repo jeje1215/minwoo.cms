@@ -23,7 +23,13 @@ $(function(){
    $(":input[name='userId']").val($(ad).data("userId"));
    $(":input[name='adsUrl']").val($(ad).data("adsUrl"));
    $(":input[name='adsFile']").val($(ad).data("adsFile"));
+
    $("#viewFile").val($(ad).data("adsFile"));
+
+   $("#addBtn").hide();
+   $("#updateBtn").show();
+   $("#delBtnAd").show();
+   $("#adlist_bin").show();
  }
  
 var regBtns = function(){
@@ -31,47 +37,36 @@ var regBtns = function(){
     var msg = $("#msg");            // 결과 메세지
         
    var chkAd = function(){
-        if($(":input[name='adsCompany']").val()) return true;
-        else {
-         $('#modalBody_one').html("광고 이름을 확인하세요.");
-         $('#myModal_one').modal(); return false;
-        }             
-        if($(":input[name='adsMan']").val()) return true;
-        else {
-         $('#modalBody_one').html("관리자이름을 확인하세요.");
-         $('#myModal_one').modal(); return false;
-        }
-        if($(":input[name='adsMoney']").val()) return true;
-        else {
-         $('#modalBody_one').html("금액 숫자로 입력하세요.");
-         $('#myModal_one').modal(); return false;
-        }
-        if($(":input[name='adsStartDate']").val()) return true;
-        else {
-         $('#modalBody_one').html("광고시작일 확인하세요.");
-         $('#myModal_one').modal(); return false;
-        }
-        if($(":input[name='adsEndDate']").val()) return true;
-        else {
-         $('#modalBody_one').html("광고종료일 확인하세요.");
-         $('#myModal_one').modal(); return false;
-        }
-        if($(":input[name='userId']").val()) return true;
-        else {
-         $('#modalBody_one').html("광고작성자을 확인하세요.");
-         $('#myModal_one').modal(); return false;
-        }
-        if($(":input[name='adsUrl']").val()) return true;
-        else {
-         $('#modalBody_one').html("광고Url을 확인하세요.");
-         $('#myModal_one').modal(); return false;
-        }
-        if($(":input[name='adsFile']").val()) return true;
-        else {
-         $('#modalBody_one').html("광고파일을 확인하세요.");
-         $('#myModal_one').modal(); return false;
-        }
-    }
+	   var msg = "";
+	   var finYn = "Y";
+	   if($(":input[name='adsCompany']").val() == ""){
+		   msg = "광고 이름을 확인하세요.";finYn = "N";
+	   }
+	   if($(":input[name='adsMan']").val() == ""){
+		   msg = "관리자 이름을 확인하세요.";finYn = "N";
+	   }  
+	   if($(":input[name='adsMoney']").val() == ""){
+		   msg = "광고금액을 확인하세요.";finYn = "N";
+	   }  
+	   if($(":input[name='adsStartDate']").val() == ""){
+		   msg = "광고시작일을 확인하세요.";finYn = "N";
+	   }  
+	   if($(":input[name='adsEndDate']").val() == ""){
+		   msg = "광고종료일을 확인하세요.";finYn = "N";
+	   } 
+	   if($(":input[name='adsUrl']").val() == ""){
+		   msg = "광고Url을 확인하세요.";finYn = "N";
+	   } 
+	   if($("#viewFile").val() || $("#viewFile").val() == "파일선택"){
+		   msg = "광고파일을 확인하세요.";finYn = "N";
+	   } 
+
+	   
+	   if (finYn == "N"){
+		    $('#modalBody_one').html(msg);
+		    $('#myModal_one').modal(); return false;
+	   } 
+   }
  
    $("#addBtn").bind("click", function() {
          if (chkAd()) {
@@ -149,7 +144,7 @@ function adList(){
                 td = $("<td><input type='radio' name='adsId' id='adadid'value='"
                       +ad.adsId+"'onClick='showAd(this)' style='cursor:pointer;'/>"
                       +"</td>");
-                td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td><td>"+ad.userId+"</td><td>"+ad.adsUrl+"</td><td>"+ad.adsFile+"</td>"
+                td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td><td>"+ad.adsUrl+"</td><td>"+ad.adsFile+"</td>"
                   );
                 x++;
                 adList.append(tr.append(td).append(td2));      
@@ -161,6 +156,7 @@ function adList(){
                 td.find("input").data("userId", ad.userId);
                 td.find("input").data("adsUrl", ad.adsUrl);
                 td.find("input").data("adsFile", ad.adsFile);
+               // alert(ad.adsFile);
             });                    
         },
       complete : function() {
@@ -171,6 +167,11 @@ function adList(){
             $(":input[name='adsEndDate']").val("");
             $(":input[name='adsUrl']").val("");
             $(":input[name='adsFile']").val("");
+            
+            $("#addBtn").show();
+            $("#updateBtn").hide();
+            $("#delBtnAd").hide();
+            $("#adlist_bin").hide();
       }
     });    
 }

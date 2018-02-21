@@ -33,13 +33,13 @@
             <button type="button" class="btn btn-primary btn-md" id="addBtn">
                <i class="glyphicon glyphicon-ok"></i> 등록
             </button>
-            <button type="button" class="btn btn-warning btn-md" id="updateBtn">
+            <button type="button" class="btn btn-warning btn-md" id="updateBtn" style="display:none;">
                <i class="glyphicon glyphicon-refresh"></i> 수정
             </button>
-            <button type="button" class="btn btn-danger btn-md" id="delBtnAd">
+            <button type="button" class="btn btn-danger btn-md" id="delBtnAd" style="display:none;">
                <i class="glyphicon glyphicon-trash"></i> 삭제
             </button>
-             <button type="button" class="btn btn-success btn-md" onclick="adList();">
+             <button type="button" class="btn btn-success btn-md" onclick="adList();" style="display:none;" id="adlist_bin">
                <i class="glyphicon glyphicon-list-alt"></i> 취소
             </button>
          </div>
@@ -55,7 +55,7 @@
                   <th>시작일</th>
                   
                   <th>종료일</th>
-                  <th>작성자</th>
+                 <!--  <th>작성자</th> -->
                   <th>Url</th>
                   <th>파일</th>
                </tr>
@@ -69,7 +69,9 @@
                   <td><input type="number" class="inTxt" name="adsMoney"></td>
                   <td><input type="text"   class="inTxt" name="adsStartDate" maxlength="10"></td>
                   <td><input type="text"   class="inTxt" name="adsEndDate" maxlength="10"></td>
-                  <td><input type="text"   class="inTxt" name="userId" value="${ sessionScope.user.loginId }" readonly></td>
+                  <td style="display:none;">
+                  	<input type="text"   class="inTxt" name="userId" value="${ sessionScope.user.loginId }" readonly >
+                  </td>
                   <td><input type="text"   class="inTxt" name="adsUrl"></td>
 				  <td class="filebox">
 						<input class="upload-name" value="파일선택" disabled="disabled" id="viewFile">

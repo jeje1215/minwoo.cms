@@ -27,7 +27,7 @@ public class ManMesController {
 	@RequestMapping(value="user/listMess",method={RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody
 	public List<Mes>listMess(String userId){
-		System.out.println("안녕");
+		
 		return manmesService.listMess(userId);		
 		
 		

@@ -6,7 +6,7 @@
 <c:choose>
 	<c:when test="${sessionScope.user == null}">
 		<form id="loginForm">
-			<h3>&nbsp;Login</h3>
+		<h3>  Login</h3>
 			<div id="loginTxt"></div>
 			<div class="form-group input-group">
 				<span class="input-group-addon"><i
@@ -24,7 +24,7 @@
 			</div>
 			<div class="form-group text-center">
 				<a href="#" onclick="goUrl('user/find/idpwFind', urlForm)">Find
-					ID</a>&nbsp;|&nbsp; <a href="#"
+					ID</a> | <a href="#"
 					onclick="goUrl('user/find/idpwFind', urlForm)">Find PW</a><br>
 				<a href="#" onclick="goUrl('user/join/userJoin', urlForm)"><b>Sign</b></a>
 			</div>

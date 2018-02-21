@@ -37,7 +37,7 @@ public class BoardController {
    }
 
    @ResponseBody
-   @RequestMapping("listboards")
+   @RequestMapping("/cms/main/listboards")
    public List<BoardVo> boardlist() {
       return boardService.listBoards();
    }

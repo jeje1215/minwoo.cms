@@ -4,7 +4,7 @@
 
    <!-- 01. 게시글 전체 목록 조회 -->
    <select id="getBoardLists" resultType="minwoo.cms.board.domain.BoardVo">
-      select usb_id, usb_title,usb_content, usb_cnt, sub_id, reg_date,user_id
+      select usb_id usbId, usb_title usbTitle,usb_content usbContent, reg_date regDate,usb_cnt usbCnt,sub_id subId, user_id
       from USERBOARDS
    </select>
    

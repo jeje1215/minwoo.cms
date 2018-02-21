@@ -18,7 +18,7 @@
 </select>
 
 <update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser">
-	update users set user_level=#{userLevel} where user_id=#{checkVal}
+	update users set user_level=#{userLevel} where user_id=#{checkVal} <!-- dd -->
 
 </update>
 

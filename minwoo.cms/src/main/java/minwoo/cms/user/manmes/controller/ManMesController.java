@@ -24,13 +24,11 @@ public class ManMesController {
 		return "user/manmes/main";
 	}
 	
-//	@RequestMapping(value="listMes",method=RequestMethod.GET))
-//	@ResponseBody
-//	public List<Mes>listMess_list(String userId)  throws Exception {
-//		List<Mes>listMess=new List<mes>list
-//	
-//	}
-//}
-}
+	@RequestMapping(value="user/listMess",method={RequestMethod.GET, RequestMethod.POST})
 
-
+	@ResponseBody
+	public List<Mes>listMess(String userId){
+		return manmesService.listMess(userId);		
+		
+		   }		
+	}

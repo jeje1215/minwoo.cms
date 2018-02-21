@@ -6,7 +6,7 @@
 	select m.MES_GET_ID mesGetId,m.MES_CONTENT mesContent,m.mes_id mesId ,
 	u.user_id userId, u.user_nic userNic ,u.user_nm userNm,u.user_mail userMail
 	from MESSAGES m join USERS u on m.MES_GET_ID=u.USER_ID 
-	where m.MES_GET_ID =
+	where m.MES_GET_ID =#{userId} 
    	
         
 	</select>

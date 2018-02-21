@@ -33,11 +33,14 @@ var regBtns = function(){
         var tr;
         var input;
         var etc;
+        var mes=$("#userId").val();
         
         mesList.empty();
         
-        $.ajax({
-            url:"listmess",
+        $.ajax({        	
+            url:"listMess",
+            method:"post",
+            data:{userId:mes},
             success:function(mess){
                 $(mess).each(function(idx,mes){        
                     tr = $("<tr></tr>");
@@ -97,7 +100,7 @@ var regBtns = function(){
 				<thead>
 					<tr>
 						<th></th>
-						<th>닉네임(아이디)</th>
+						<th>닉네임(아이디)<input type="text" name="userId" id="userId" value="${sessionScope.user.loginId}" style="display:none";></th>
 						<th>이름</th>
 						<th>이메일</th>
 						<th>메세지</th>
@@ -105,10 +108,11 @@ var regBtns = function(){
 					</tr>
 				</thead>
 				<tbody id="mesList">
-<!-- 	
+
 				</tbody>
 			</table>
 
+	
 		</div>
 	</section>
 

@@ -10,7 +10,15 @@ public class Mes {
 	private String userMail;  //회원 이메일
 	private String userNm; //이름
 	private String userNic; //닉네임 
+	private String userId;
+
 	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 	public int getMesId() {
 		return mesId;
 	}

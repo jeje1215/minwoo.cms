@@ -19,6 +19,7 @@ var showBoard = function(board){
 	var regBtns = function(){
 	   var modal = $("#resultModal");// 결과창
 	   var msg = $("#msg"); //결과 메세지
+	   
 	   var chkBoard=function(){ //게시물 작성 여부
 		      if($(":input[name='usbTitle']").val()) return true;
 		      else{
@@ -36,16 +37,16 @@ var showBoard = function(board){
 		    	  modal.modal("show");
 		      }
 		   }
+	   //등록버튼
 	   $("#addBtn").bind("click",function(){
-		  
 		   if(chkBoard()){
 			   $.ajax({
-				  url :"createBoard",
+				  	url :"board/createboard",
 					data : $("#boardForm").serialize(),
 					success : function(result){
 						if(result)msg.text("게시물 등록 성공");
 						else msg.text("게시물 등록 실패");
-						$("#listBtn").trigger("click");
+					$("#listBtn").trigger("click");
 					},
 					error:function(a, b, errMsg){
 						msg.text("게시물 등록 실패: "+errMsg);
@@ -76,7 +77,7 @@ var showBoard = function(board){
 					<br>
 				</div>
 				<div>
-					아이디 <input type="text" name="userId" placeholder="아이디를 입력해주세요">
+					아이디 <input type="text" name="subId"  size="30" placeholder="아이디를 입력해주세요">
 				</div>
 			</form>
 			<div class="" style="width: 650px; text-align: center;">

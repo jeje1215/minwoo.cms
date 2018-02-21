@@ -41,10 +41,10 @@ public class BoardController {
       return boardService.listBoards();
    }
    
-   @RequestMapping("/createboard")
+   @RequestMapping("board/createboard")
    @ResponseBody
    public boolean createBoard(BoardVo boardVo){
-	   System.out.println("지은빈짱");
+	   System.out.println("나와라");
       return boardService.createBoard(boardVo);
    }
 }

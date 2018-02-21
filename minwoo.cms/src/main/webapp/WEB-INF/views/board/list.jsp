@@ -8,7 +8,7 @@ $(function(){
 });
 
 	var showBoard = function(board){
-		$(":input[name='usbId']").val($(board).data(usbId));
+	   $(":input[name='usbId']").val($(board).data(usbId));
 	   $(":input[name='usbTitle']").val($(board).data(usbTitle));
 	   $(":input[name='usbContent']").val($(board).data(usbContent));
 	   $(":input[name='userId']").val($(board).data(userId));
@@ -18,7 +18,7 @@ $(function(){
 
 function boardList(){
 	   $("#listBtn").bind("click",function() {
-	      var boardList = $("#boardList");
+	      var boardList = $("#boardList"); //게시판 목록
 	      var tr;
 	      var input;
 	      var etc;
@@ -36,11 +36,9 @@ function boardList(){
 	                     + "</td><td>"+ board.userId+ "</td><td>"+ board.regDate
 	                     + "</td><td>"+ board.usbCnt+"</td>");
 	               boardList.append(tr.append(td).append(td2));
-	               td.find("input").data("usbId",board.usbId);
 	               td.find("input").data("usbTitle",board.usbTitle);
 	               td.find("input").data("usbContent",board.usbContent);
 	               td.find("input").data("userId",board.userId);
-	               td.find("input").data("regDate",board.regDate);
 	            });
 	         },
 	 		 complete : function() {
@@ -56,9 +54,6 @@ function boardList(){
 </script>
 <section id="post">
    <div class="container">
-      <!-- <div class="name">
-         <i class="fa fa-envelope" aria-hidden="true"></i>공지사항
-      </div> -->
       <br>
       <table class="table table-hover">
          <thead>

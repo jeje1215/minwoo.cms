@@ -23,8 +23,6 @@ $(function() {
 	//$.activeMenu("header", name[1]);
 })
 
-
-
 //메뉴없는 페이지 이동시 사용하는 공통 url이동
 function goUrl(url, frm) { 
 	$('#mvUrl').val(url);

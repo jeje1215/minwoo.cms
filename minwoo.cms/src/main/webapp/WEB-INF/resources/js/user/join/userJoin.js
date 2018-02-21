@@ -126,3 +126,12 @@ $(function() {
 					});
 
 });
+
+function cancelJoin(){
+    $('#modalBody_cancelJoin').html("회원가입을 취소하시겠습니까?");
+    $('#myModal_cancelJoin').modal();
+}
+
+function go_cancel(){
+	goUrl('common/cover', urlForm);
+}

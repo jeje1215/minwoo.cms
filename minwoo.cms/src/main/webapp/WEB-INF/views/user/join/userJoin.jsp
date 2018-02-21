@@ -87,7 +87,7 @@
 			<button class="btn btn-primary" id="userJoin">
 				회원가입<i class="fa fa-check spaceLeft"></i>
 			</button>
-			<button class="btn btn-danger" onclick="javacript:if(confirm('정말 취소하시겠습니까?')){goUrl('common/cover', urlForm);}">
+			<button class="btn btn-danger" onclick="cancelJoin()">
 				가입취소<i class="fa fa-times spaceLeft"></i>
 			</button>
 		</div>

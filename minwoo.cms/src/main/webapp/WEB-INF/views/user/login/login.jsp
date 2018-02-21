@@ -54,7 +54,7 @@
 						<div class="row">
 							<button type="button" class="btn btn-default"
 								style="width: 80px;"
-								onclick="javascript:location.href='../user/04.html'">
+								onclick="menuUrl('update', urlForm)">
 								<i class="fa fa-paw" aria-hidden="true"></i>MyPage
 							</button>
 							<button type="button" class="btn btn-default"

@@ -13,6 +13,21 @@ public class Ad {
 	private String adsEndDate;
 	private Date regDate;
 	private String userId;
+	
+	public Ad() {}
+	
+	public Ad(String adsCompany2, String adsMan2, String fileName,
+			int adsMoney2, String adsUrl2, String adsStartDate2,
+			String adsEndDate2, String userId2) {
+		this.adsCompany = adsCompany2;
+		this.adsMan = adsMan2;
+		this.adsFile = fileName;
+		this.adsMoney = adsMoney2;
+		this.adsUrl = adsUrl2;
+		this.adsStartDate = adsStartDate2;
+		this.adsEndDate = adsEndDate2;
+		this.userId = userId2;
+	}
 
 	public int getAdsId() {
 		return adsId;

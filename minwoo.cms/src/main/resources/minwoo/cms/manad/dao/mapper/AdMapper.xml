@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="minwoo.cms.manad.dao.mapper.AdMapper">
-	<select id="getAds" resultType="minwoo.cms.manad.domain.Ad">
-	select ads_id adsId, ads_company adsCompany, ads_man adsMan,
-	ads_file adsFile, ads_money adsMoney, ads_url adsUrl,
-	ads_start_date adsStartDate, ads_end_date adsEndDate,
-	reg_date regDate, user_id userId
-	 from ads order by ads_id desc
-	</select>
+   <select id="getAds" resultType="minwoo.cms.manad.domain.Ad">
+   select ads_id adsId, ads_company adsCompany, ads_man adsMan,
+   ads_file adsFile, ads_money adsMoney, ads_url adsUrl,
+   ads_start_date adsStartDate, ads_end_date adsEndDate,
+   reg_date regDate, user_id userId
+    from ads order by ads_id desc
+   </select>
 
-	<select id="getAd" parameterType="int" resultType="minwoo.cms.manad.domain.Ad">
-	select ads_id adsId, ads_company adsCompany, ads_man adsMan,
-	ads_file adsFile, ads_money adsMoney, ads_url adsUrl,
-	ads_start_date adsStartDate, ads_end_date adsEndDate,
-	reg_date regDate, user_id userId
-	 from ads
-	 where ads_id=#{adsId}
-	
-	</select>
+   <select id="getAd" parameterType="int" resultType="minwoo.cms.manad.domain.Ad">
+   select ads_id adsId, ads_company adsCompany, ads_man adsMan,
+   ads_file adsFile, ads_money adsMoney, ads_url adsUrl,
+   ads_start_date adsStartDate, ads_end_date adsEndDate,
+   reg_date regDate, user_id userId
+    from ads
+    where ads_id=#{adsId}
+   
+   </select>
 
-	<insert id="addAd" parameterType="minwoo.cms.manad.domain.Ad">
-	insert into ads(ads_id,ads_company,ads_man,ads_money,ads_start_date,ads_end_date,ads_url, user_id) 
-		values(ads_adsid_seq.nextval, #{adsCompany},#{adsMan},#{adsMoney},#{adsStartDate},#{adsEndDate},#{adsUrl},#{userId})
-	</insert>
-	
-	<update id="updateAd" parameterType="minwoo.cms.manad.domain.Ad">
-		update ads
-		 set ads_Company=#{adsCompany},ads_Money=#{adsMoney}
-		 ,ads_Man=#{adsMan} ,ads_start_date=#{adsStartDate},ads_end_date=#{adsEndDate}
-		 ,ads_url=#{adsUrl} where ads_Id=#{adsId}
-	 </update>
+   <insert id="addAd" parameterType="minwoo.cms.manad.domain.Ad">
+   insert into ads(ads_id,ads_company,ads_man,ads_money,ads_start_date,ads_end_date,ads_url, user_id, ads_file) 
+      values(ads_adsid_seq.nextval, #{adsCompany},#{adsMan},#{adsMoney},
+      #{adsStartDate},#{adsEndDate},#{adsUrl},#{userId},#{adsFile})
+   </insert>
+   
+   <update id="updateAd" parameterType="minwoo.cms.manad.domain.Ad">
+      update ads
+       set ads_Company=#{adsCompany},ads_Money=#{adsMoney}
+       ,ads_Man=#{adsMan} ,ads_start_date=#{adsStartDate},ads_end_date=#{adsEndDate}
+       ,ads_url=#{adsUrl},ads_file=#{adsFile} where ads_Id=#{adsId}
+    </update>
 
- 	<delete id="delAd" parameterType="minwoo.cms.manad.domain.Ad">
- 	delete ads where ads_id=#{adsId}
+    <delete id="delAd" parameterType="minwoo.cms.manad.domain.Ad">
+    delete ads where ads_id=#{adsId}
  
-	</delete>
+   </delete>
 
 
 

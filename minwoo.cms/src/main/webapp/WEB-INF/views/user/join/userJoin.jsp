@@ -17,7 +17,7 @@
 				<input class="form-control" id="inputId" type="text" 
 					placeholder="ID" name="userId" style="width:150px;display:inline;">
 			
-				<button class="btn btn-danger1" id="doubleChk" >
+				<button class="btn btn-success " id="doubleChk" >
 					중복체크<i class="fas fa-check"></i>
 				</button>
 				<button class="btn btn-primary" id="previousChk" style="display:none;">
@@ -87,10 +87,11 @@
 			<button class="btn btn-primary" id="userJoin">
 				회원가입<i class="fa fa-check spaceLeft"></i>
 			</button>
-			<button class="btn btn-danger" onclick="javacript:if(confirm('정말 취소하시겠습니까?')){goUrl('common/cover', urlForm);}">
+			<button class="btn btn-danger" onclick="cancelJoin()">
 				가입취소<i class="fa fa-times spaceLeft"></i>
 			</button>
 		</div>
 	</div>	
 </div>
+
 <%@ include file="../../common/footer.jsp"%>

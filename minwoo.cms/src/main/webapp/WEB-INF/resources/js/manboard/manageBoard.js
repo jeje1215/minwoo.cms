@@ -205,3 +205,4 @@ function go_boardDel(){
 	});
 }
 
+

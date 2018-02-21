@@ -1,6 +1,5 @@
 package minwoo.cms.user.userupdate.controller;
 
-import java.util.List;
 
 import minwoo.cms.user.userupdate.domain.User;
 import minwoo.cms.user.userupdate.service.UserUpdateService;
@@ -15,19 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
    @Autowired private UserUpdateService userUpdateService;
    
-   @RequestMapping("/updateUser")
+   @RequestMapping("/update")
    public String main(){
       return "user/update/main";
    }
    @RequestMapping("listUsers")
    @ResponseBody
-   public List<User> listUsers(){
-      return userUpdateService.listUsers();
-   }
-   @RequestMapping("fixUserInfo")
-   @ResponseBody
-   public boolean fixUserInfo(User user){
-      System.out.println("승창");
-      return userUpdateService.fixUserInfo(user);
+   public User listUsers(User user){
+      return userUpdateService.userList(user);
    }
 }

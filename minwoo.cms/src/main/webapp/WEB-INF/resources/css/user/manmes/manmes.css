@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+
+p {
+	font-size: 11px;
+}
+
+.modal-dialog {
+	font-family: HY강B;
+	text-align: center;
+}
+
+.btn{
+	font-family: HY강B;
+	
+}
+
+
+.btn-block {
+	font-size: 15px;
+	font-family: HY강B;
+	background-color: #1077a9;
+	color: white;
+}
+
+th {
+	font-family: HY강B;
+	font-size: 14px;
+
+}
+
+.title {
+	text-align: center;
+}
+
+.pagination {
+	display: block;
+	test-align: center;
+}
+
+.pagination>li>a {
+	float: none;
+}
+
+.d1 input {
+	width: 200px;
+	height: 30px;
+	padding-left: 10px;
+	border: 2px solid #007DC1;
+	border-radius: 5px;
+	outline: none;
+	float: right;
+}
+
+.d1 button {
+	position: relative;
+	top: -30;
+	margin-left: 900px;
+	width: 30px;
+	height: 30px;
+	border: none;
+	background: #007DC1;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+}
+
+.d1 button:before {
+	content: "\f002";
+	font-family: FontAwesome;
+	font-size: 16px;
+	color: white;
+}
+
+select {
+	position: absolute;
+	font-family: HY강B;
+	border: 2px solid #007DC1;
+	border-radius: 5px;
+	width: 100px;
+	height: 30px;
+	margin-left: 610PX;
+}
+
+div.form {
+	margin-top: -10px;
+    margin-bottom: -50px;
+	font-family: HY강B;
+}
+
+div.container {
+	height: 140px;
+}
+h3{
+	font-family: HY강B;
+
+	
+}
+td input{
+	border: 2px solid #007DC1;
+	border-radius: 5px;
+	width:100px;
+	font-family: HY강B;
+	text-align:center;
+		
+}
+tbody#adList{
+	
+	font-family: HY강B;
+	
+}
+button#delBtnMes{
+	
+	float: right;
+	
+}

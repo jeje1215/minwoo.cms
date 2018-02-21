@@ -3,6 +3,22 @@
 body {
 	font-family: "HY강B";
 }
+.col-md-12{
+	
+	margin-top:-100px;
+	margin-bottom:100px;
+
+	
+}
+.btn-primary{
+	margin-top:20px;
+	
+}
+.btn-danger{
+	
+	margin-top:20px;
+}
+
 
 .btn.btn-danger1{
 	background-color:#EC971F;

@@ -26,33 +26,36 @@ var showBoard = function(board){
 		    	  msg.text("제목을 입력하세요");
 		    	  modal.modal("show");
 		      }
-		      if($(":input[name='usbContent']").val()) return true;
+		    /*  if($(":input[name='usbContent']").val()) return true;
 		      else{
 		    	  msg.text("내용을 입력하세요");
 		    	  modal.modal("show");
 		      }
-		      if($(":input[name='userId']").val()) return true;
+		       if($(":input[name='userId']").val()) return true;
 		      else{
 		    	  msg.text("아이디를 입력하세요");
 		    	  modal.modal("show");
-		      }
+		      } */
 		   }
 	   //등록버튼
 	   $("#addBtn").bind("click",function(){
 		   if(chkBoard()){
 			   $.ajax({
-				  	url :"board/createboard",
+				   	method:"post",
+				  	url :"/cms/main/createboard",
 					data : $("#boardForm").serialize(),
 					success : function(result){
-						if(result)msg.text("게시물 등록 성공");
-						else msg.text("게시물 등록 실패");
-					$("#listBtn").trigger("click");
+						if(result) {msg.text("게시물 등록 성공"); 
+						menuUrl('main', urlForm);
+						}
+						else {msg.text("게시물 등록 실패");}
+						//$("#listBtn").trigger("click");
 					},
 					error:function(a, b, errMsg){
 						msg.text("게시물 등록 실패: "+errMsg);
 					},
 					complete:function(){
-						modla.modal("show");
+						modal.modal("show");
 					}
 			   });
 		   }
@@ -65,24 +68,29 @@ var showBoard = function(board){
 			<h2>게시글 작성</h2>
 			<form id="boardForm">
 				<div>
-					제 목 <input type="text" name="usbTitle" size="80"
+					제   목<input type="text" name="usbTitle" size="80"
 						placeholder="제목을 입력해주세요"> <br>
 					<br>
 				</div>
 				<div>
-					내 용 
-					<textarea name="usbContent" rows="4" cols="100"
-						placeholder="내용을 입력해주세요"></textarea>
+					내   용
+					<input type="text" name="usbContent" style="width:600px; height:400px"
+						placeholder="내용을 입력해주세요">
 					<br>
 					<br>
 				</div>
-				<div>
-					아이디 <input type="text" name="subId"  size="30" placeholder="아이디를 입력해주세요">
-				</div>
+				<c:if test="${sessionScope.user != null}">
+					아이디<input type="text" name="userId"  size="25" value="${ sessionScope.user.loginId }" readonly>
+					<%-- <c:choose>
+						<c:when test="${sessionScope.user == null}">
+						안녕하세요
+						</c:when>
+					</c:choose> --%>
+				</c:if>
 			</form>
 			<div class="" style="width: 650px; text-align: center;">
-				<button type="button" class="btn btn-primary btn-md" id="addBtn"
-					onclick="menuUrl('main', urlForm)">확인</button>
+				<button type="button" class="btn btn-default" id="addBtn"
+				>확인</button>
 				<button type="reset" class="btn btn-success btn-md" id="listBtn"
 					onclick="menuUrl('main', urlForm)">취소</button>
 			</div>

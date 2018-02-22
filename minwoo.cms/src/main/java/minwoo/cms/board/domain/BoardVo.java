@@ -7,7 +7,7 @@ public class BoardVo {
    private String usbTitle; // 게시글 제목
    private String usbContent; // 게시글 내용
    private String userId; // 게시글 작성자
-   private Date regdate; // 게시글 작성일자
+   private Date regDate; // 게시글 작성일자
    private int usbCnt; // 게시글 조회수
 
    public int getUsbId() {
@@ -35,11 +35,11 @@ public class BoardVo {
    }
 
    public Date getRegdate() {
-      return regdate;
+      return regDate;
    }
 
    public void setRegdate(Date regdate) {
-      this.regdate = regdate;
+      this.regDate = regdate;
    }
 
    public int getUsbCnt() {

@@ -4,15 +4,19 @@
 
    <!-- 01. 게시글 전체 목록 조회 -->
    <select id="getBoardLists" resultType="minwoo.cms.board.domain.BoardVo">
-      select usb_id usbId, usb_title usbTitle,usb_content usbContent, reg_date regDate,usb_cnt usbCnt,user_id userId, user_id
-      from USERBOARDS
+      select usb_id usbId, usb_title usbTitle, usb_content usbContent, reg_date regDate, usb_cnt usbCnt,user_id userId
+      from userboards
    </select>
    
    <!-- 02. 게시글 작성 추가 -->
    <insert id="addBoard" parameterType="minwoo.cms.board.domain.BoardVo">
-         insert into boards(usb_id,usb_title,usb_content,user_id,reg_data,usb_cnt)
-         values(boards_usbid_seq.nextval,#{usbId}#{usbTitle},#{usbContent},#{userId},#{regDate},#{usbCnt})
+         insert into userboards(usb_id,usb_title,usb_content,user_id)
+         values(userboards_usbid_seq.nextval,#{usbTitle},#{usbContent},#{userId})
    </insert>
+   
+   <!-- <delete id="delBoard" parameterType="minwoo.cms.board.domain.BoardVo">
+   	delete userboards where usb_id=#{usbId}
+   </delete> -->
    
 
    

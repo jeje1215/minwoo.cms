@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+
+div.box {
+	width: 530px;
+	height: 600px;
+	top: 50px;
+	marign-top: 0px;
+	margin-left: 5px;
+	/* left:30%; */ border : 5px solid #f1f1f1;
+	position: absolute;
+	border-radius: 5px;
+	border: 5px solid #f1f1f1
+}
+
+footer{
+	
+	margin-top:100px;
+	font-family: HY강B;
+	font-size:11px;
+	
+}
+
+div.letterpage {
+	width: 490px;
+	height: 480px;
+	position: absolute;
+	top: 40px;
+	left:15px;
+	border: 1px solid #639fb6;
+}
+
+div#header {
+	border: 1px solid #a0d9ef;
+	background-color: #a0d9ef;
+	height: 50px;
+	text-align: center;
+	padding-top: 13px;
+	color: white;
+	font-size: 20px;
+	font-family: HY강B;
+}
+
+label.recipient {
+	padding-top: 20px;
+	font-family: HY강B;
+	font-size: 15px
+}
+
+div.writing_area { 
+	border: 1px solid #b9d5d5;
+	padding-bottom: 20px;
+	font-family: HY강B;
+	font-size: 15px
+}
+
+label {
+	padding-left: 10px;
+}
+
+input {
+	border: 1px solid #c9d5d5;
+	border-radius: 5px;
+	margin-left: 10px;
+	font-family: HY강B;
+	font-size: 15px;
+	text-align: center;
+}
+
+button.btn-info {
+	margin-top: 10px;
+	border-radius: 5px;
+	float: right;
+	width: 120px;
+	color: white;
+	border-color: white;
+	margin-right: 10px;
+}
+
+
+
+div{
+	font-family: "HY강B";
+	
+
+}
+
+.modal-title{
+	text-align:center;
+}
+
+div.modal-fade{
+
+	text-align:center;
+	}

@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<script src="<c:url value="/js/login.js"/>"></script>
+<script src="<c:url value="/js/login.js"/>">
+
+
+
+</script>
 
 <c:choose>
 	<c:when test="${sessionScope.user == null}">
@@ -39,7 +43,10 @@
 						<img src="<c:url value="/img/pro.jpg"/>" style="width: 90px; height: 90px">
 						<h5>
 							<i class="fa fa-child" aria-hidden="true" style="float: center"></i>
-							${ sessionScope.user.loginId }님!
+						
+				<A onclick="window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=600,height=700,left=0, top=0, scrollbars=yes');return false" href="#">${ sessionScope.user.loginId }님!</A>		
+						
+						
 						</h5>
 						<p>CMS에오신것을환영합니다.</p>
 

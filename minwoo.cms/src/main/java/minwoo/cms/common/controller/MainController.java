@@ -33,4 +33,9 @@ public class MainController {
 		return url;
 	}	
 	
+	//쪽지창 이동
+	@RequestMapping(value="cms/message")
+	public String message_move(){
+		return "message/main";
+	}		
 }

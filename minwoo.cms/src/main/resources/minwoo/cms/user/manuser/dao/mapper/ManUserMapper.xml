@@ -26,6 +26,7 @@
 		</foreach>
 	</update>
 	
+	<!-- commit -->
 <!-- 	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser"> -->
 <!-- 		update users set user_level = #{userLevel} where user_id in -->
 <!-- 		<foreach item="tmp" collection="tmpCheckVal" open="(" close=")" -->

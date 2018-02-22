@@ -1,5 +1,7 @@
 package minwoo.cms.user.manuser.domain;
 
+import java.util.List;
+
 public class ManUser {
 	public String userId; // 아이디
 	public String userNic; // 닉네임
@@ -8,23 +10,32 @@ public class ManUser {
 	public String userLevel; // 등급
 	public String checkVal; // 체크박스 중 체크된 값
 	public String ulevel; // select박스 회원등급
-	
-	public String getUlevel(){
+	public List<String> tmpCheckVal; // 임시값
+
+	public List<String> getTmpCheckVal() {
+		return tmpCheckVal;
+	}
+
+	public void setTmpCheckVal(List<String> tmpCheckVal) {
+		this.tmpCheckVal = tmpCheckVal;
+	}
+
+	public String getUlevel() {
 		return ulevel;
 	}
-	
-	public void setUlevel(String ulevel){
+
+	public void setUlevel(String ulevel) {
 		this.ulevel = ulevel;
 	}
-	
-	public String getCheckVal(){
+
+	public String getCheckVal() {
 		return checkVal;
 	}
-	
-	public void setCheckVal(String checkVal){
+
+	public void setCheckVal(String checkVal) {
 		this.checkVal = checkVal;
 	}
-	
+
 	public String getUserId() {
 		return userId;
 	}
@@ -56,12 +67,12 @@ public class ManUser {
 	public void setUserNic(String userNic) {
 		this.userNic = userNic;
 	}
-	
-	public String getUserLevel(){
+
+	public String getUserLevel() {
 		return userLevel;
 	}
-	
-	public void setUserLevel(String userLevel){
-		this.userLevel=userLevel;
+
+	public void setUserLevel(String userLevel) {
+		this.userLevel = userLevel;
 	}
 }

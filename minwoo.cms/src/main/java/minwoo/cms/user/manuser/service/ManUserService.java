@@ -8,5 +8,4 @@ public interface ManUserService {
 	List<ManUser> listUsers(); //가입된 회원목록
 	ManUser modiListManUser(String userId);
 	boolean modiLevelManUser(ManUser manUser);
-	List<ManUser> listLevels();
 }

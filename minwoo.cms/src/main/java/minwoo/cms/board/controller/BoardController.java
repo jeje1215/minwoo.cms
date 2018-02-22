@@ -29,11 +29,6 @@ public class BoardController {
    public String boardadd(String url){
       return url;
    }
-   
-   @RequestMapping("/boardAdd")
-   public String boardAdd(){
-      return "board/write";
-   }
 
    @ResponseBody
    @RequestMapping("/cms/main/listboards")
@@ -41,10 +36,9 @@ public class BoardController {
       return boardService.listBoards();
    }
    
-   @RequestMapping("board/createboard")
+   @RequestMapping(value="/main/createboard" , method={RequestMethod.POST,RequestMethod.GET})
    @ResponseBody
    public boolean createBoard(BoardVo boardVo){
-	   System.out.println("나와라");
       return boardService.createBoard(boardVo);
    }
 }

@@ -21,12 +21,9 @@ public class ManUserDaoImpl implements ManUserDao{
 	}
 	
 	public boolean editLevelUser(ManUser manUser){
-		System.out.println(manUser.getCheckVal());
-		System.out.println(manUser.getUserLevel());
+		//System.out.println(manUser.getCheckVal());
+		//System.out.println(manUser.getUserLevel());
 		return manUserMapper.editLevelUser(manUser);
 	}
-	
-	public List<ManUser> getUlevels(){
-		return manUserMapper.getUlevels();
-	}
+
 }

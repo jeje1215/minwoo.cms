@@ -60,13 +60,13 @@ function boardList(){
             <tr>
                <th>번호</th>
                <th>제목</th>
-               <th>내용</th>
+               <th >내용</th>
                <th>작성자</th>
                <th>날짜</th>
                <th><b>조회수</b></th>
             </tr>
          </thead>
-         <tbody id=boardList>
+         <tbody id=boardList style="word-break:break-all">
          </tbody>
       </table>
 

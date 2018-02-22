@@ -50,16 +50,22 @@ public class AdController {
 		boolean isStored = true;
 		String dir = request.getServletContext().getRealPath(uploadDir);
 		String fileName = adsFile.getOriginalFilename();
+		
+        //System.out.println("UtilFile fileUpload fileName : " + fileName);
+        File file = new File(dir + "/" + fileName);
+        
+        //파일명이 중복으로 존재할 경우
+        if (fileName != null && !fileName.equals("")) {
+            if (file.exists()) {
+            	//파일명 앞에 업로드 시간 초단위로 붙여 파일명 중복을 방지
+                fileName = System.currentTimeMillis() + "_" + fileName;
+            }
+        }
+        //System.out.println("UtilFile fileUpload fileName : " + fileName);		
 
 		Ad ad = new Ad(adsCompany, adsMan, fileName, adsMoney, adsUrl,
 				adsStartDate, adsEndDate, userId);
-		/*
-		 * Ad ad = new Ad(); ad.setAdsCompany(adsCompany); ad.setAdsMan(adsMan);
-		 * ad.setAdsFile(fileName); ad.setAdsMoney(adsMoney);
-		 * ad.setAdsUrl(adsUrl); ad.setAdsStartDate(adsStartDate);
-		 * ad.setAdsEndDate(adsEndDate); ad.setUserId(userId);
-		 */
-		// System.out.println(dir);
+
 		try {
 			save(dir + "/" + fileName, adsFile);
 		} catch (IOException e) {
@@ -67,12 +73,7 @@ public class AdController {
 		}
 		
 		isStored = adService.adjoin(ad);
-
-		// System.out.println(fileName);
-
 		return isStored;
-		// return adService.adjoin(ad);
-
 	}
 
 	@RequestMapping("delad")
@@ -92,7 +93,7 @@ public class AdController {
 	@RequestMapping(value = "fixAdInfo", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean fixAdInfo/* (Ad ad, int adsId_tmp) */
-	(MultipartFile adsFile, HttpServletRequest request,
+	(MultipartFile adsFile, HttpServletRequest request, 
 			@RequestParam("adsCompany") String adsCompany,
 			@RequestParam("adsMan") String adsMan,
 			@RequestParam("adsMoney") int adsMoney,
@@ -105,16 +106,32 @@ public class AdController {
 		String infile; //기존 db에 저장된 파일명 
 		String dir = request.getServletContext().getRealPath(uploadDir);
 		String fileName = adsFile.getOriginalFilename(); //변경할려는 파일명
-
+		System.out.println(fileName);
 		Ad ad = new Ad(adsCompany, adsMan, fileName, adsMoney, adsUrl,
-				adsStartDate, adsEndDate, userId);
+				adsStartDate, adsEndDate, userId);		
 		ad.setAdsId(adsId_tmp);
 		Ad ad_tmp = new Ad();
 		ad_tmp = adService.findAd(adsId_tmp);		
-		isStored = adService.fixAdInfo(ad);
+		infile = ad_tmp.getAdsFile();
+		
+        System.out.println("UtilFile fileUpload fileName : " + fileName);
+        File file = new File(dir + "/" + fileName);
+        
+        //파일명이 중복으로 존재할 경우
+		if(infile != fileName){ //기존 파일명이랑 달라질 경우
+	        if (fileName != null && !fileName.equals("")) {
+	            if (file.exists()) {
+	            	//파일명 앞에 업로드 시간 초단위로 붙여 파일명 중복을 방지
+	                fileName = System.currentTimeMillis() + "_" + fileName;
+	                ad.setAdsFile(fileName);
+	            }
+	        }
+		}
+        System.out.println("UtilFile fileUpload fileName : " + fileName);		
+		
+/*		isStored = adService.fixAdInfo(ad);
 		if (isStored == true) {
 			try {
-				infile = ad_tmp.getAdsFile();
 				if(infile != fileName){
 					save(dir + "/" + fileName, adsFile);
 					del(dir + "/" + infile);
@@ -123,8 +140,13 @@ public class AdController {
 				isStored = false;
 			}
 		}
-
+*/
 		return isStored;
+	}
+
+	private String getSaveLocation(HttpServletRequest request, Object obj) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private void save(String fileFullName, MultipartFile adsFile)

@@ -71,7 +71,9 @@
 		<div class="ad">
 			<c:forEach items="${ads_img}" var="ad">
 				<h3>
-					<img src="<c:url value="/upload/${ad.adsFile}"/>" style="width:200px;height:100px;">
+					<a href="${ad.adsUrl}" target="_blank">
+						<img src="<c:url value="/upload/${ad.adsFile}"/>" style="width:200px;height:100px;">
+					</a>
 				</h3>
 			</c:forEach>
 		</div>

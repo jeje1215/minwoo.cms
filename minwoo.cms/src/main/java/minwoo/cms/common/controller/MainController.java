@@ -1,5 +1,6 @@
 package minwoo.cms.common.controller;
 
+import minwoo.cms.manad.service.AdService;
 import minwoo.cms.manboard.service.ManboardService;
 import minwoo.cms.manboard.service.SubboardService;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 	@Autowired ManboardService manboardService;
 	@Autowired SubboardService subboardService;
+	@Autowired AdService adService;
 	
 	// cover page 이동
 	@RequestMapping("/")
@@ -28,8 +30,10 @@ public class MainController {
 	//메인페이지 이동
 	@RequestMapping(value="/main", method = RequestMethod.POST)
 	public String urlMenu_main(String url, Model model){
-		model.addAttribute("man_boardlist", manboardService.boardList()); //<- List<T>
-		model.addAttribute("sub_boardlist", subboardService.boardList()); //<- List<T>
+		//왼쪽메뉴 나타내는 model
+		model.addAttribute("man_boardlist", manboardService.boardList()); //메인 게시판<- List<T>
+		model.addAttribute("sub_boardlist", subboardService.boardList()); //서브 게시판<- List<T>
+		model.addAttribute("ads_img", adService.findAdList());
 		return url;
 	}	
 	

@@ -10,5 +10,5 @@ public interface AdService {
 	boolean adjoin(Ad ad); //광고 추가 
 	boolean secede(int adsId); //광고 삭제
 	boolean fixAdInfo(Ad ad); //광고 수정 
-
+	List<Ad> findAdList();
 }

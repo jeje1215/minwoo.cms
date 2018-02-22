@@ -10,6 +10,5 @@ public interface AdDao {
 	int addAd(Ad ad);
 	int delAd(int adsId);
 	int updateAd(Ad ad); 
-	
-
+	List<Ad> getAdList();
 }

@@ -35,7 +35,8 @@ function checkImageType(fileName){
    //$(":input[name='adsFile']").val($(ad).data("adsFile"));
    //alert(ad.adsFile);
    $("#viewFile").val($(ad).data("adsFile"));
-
+   $("#ex_filename").val($(ad).data("adsFile"));
+   
    $("#addBtn").hide();
    $("#updateBtn").show();
    $("#delBtnAd").show();
@@ -167,7 +168,7 @@ function adList(){
                 td = $("<td><input type='radio' name='adsId' id='adadid'value='"
                       +ad.adsId+"'onClick='showAd(this)' style='cursor:pointer;'/>"
                       +"</td>");
-                td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td><td>"+ad.adsUrl+"</td><td>"+ad.adsFile+"</td>"
+                td2 = $("<td>"+ad.adsCompany+"</td><td>"+ad.adsMan+"</td><td>"+ad.adsMoney+"</td><td>"+ad.adsStartDate+"</td><td>"+ad.adsEndDate+"</td><td>"+ad.adsUrl+"</td><td style='text-overflow:ellipsis;'>"+ad.adsFile+"</td>"
                   );
                 x++;
                 adList.append(tr.append(td).append(td2));      

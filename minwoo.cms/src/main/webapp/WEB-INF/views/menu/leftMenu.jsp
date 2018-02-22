@@ -1,23 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<script type="text/javascript">
-$(function(){
-	$("#accordian h3").click(function(){
-		$("#accordian ul ul").slideUp();
-		if(!$(this).next().is(":visible")){
-			$(this).next().slideDown();
-		}
-	})
-}) 
-</script>     
+    pageEncoding="UTF-8"%>   
 	<nav class="aside">
 		<%@ include file="../user/login/login.jsp"%>
-<!-- 			<div class="a">
+			<!-- 			
+			<div class="a">
 				<h3>오늘 개소식!</h3>
 				<a href="#">New <span class="badge">5</sapn></a><br> <a href="#">은빈이
 					남친 사귄 횟수<span class="badge">10</sapn>
 				</a><br> <a href="#">updates<span class="badge">2</sapn></a><br>
-			</div>	 -->		
+			</div>	 
+			-->		
 		<div id="accordian">
 			<!-- home 메뉴  -->
 			<ul id="menu_home">
@@ -45,10 +37,10 @@ $(function(){
 			<!-- mypage 메뉴 -->
 			<ul id="menu_mypage" style="display:none">
 				<li>
-					<h3 onclick="menuUrl('', urlForm)" style="cursor:pointer;">회원정보</h3>
+					<h3 onclick="menuUrl('update', urlForm)" style="cursor:pointer;">회원정보</h3>
 				</li>
 				<li>
-					<h3 onclick="menuUrl('', urlForm)" style="cursor:pointer;">메시지함</h3>
+					<h3 onclick="menuUrl('sendMsg', urlForm)" style="cursor:pointer;">메시지함</h3>
 				</li>
 			</ul>			
 			<!-- setting 메뉴 -->
@@ -77,7 +69,13 @@ $(function(){
 			</ul>
 		</div>
 		<div class="ad">
-			<h3>광고 넣는 부분.</h3>
+			<c:forEach items="${ads_img}" var="ad">
+				<h3>
+					<a href="${ad.adsUrl}" target="_blank">
+						<img src="<c:url value="/upload/${ad.adsFile}"/>" style="width:200px;height:100px;">
+					</a>
+				</h3>
+			</c:forEach>
 		</div>
 	</nav>
 <!-- </div>	 -->

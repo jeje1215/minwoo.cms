@@ -10,35 +10,42 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class AdServiceImpl implements AdService{
-	@Autowired private AdDao adDao;
-	
-	public List<Ad>listAds(){
+public class AdServiceImpl implements AdService {
+	@Autowired
+	private AdDao adDao;
+
+	public List<Ad> listAds() {
 		return adDao.getAds();
 	}
-	
-	public Ad findAd(int adsId){
-		Ad ad=null;
-		for(Ad tmp:adDao.getAds()){
-			if(tmp.getAdsId()==adsId){
-				ad=tmp;
+
+	public Ad findAd(int adsId) {
+		Ad ad = null;
+		for (Ad tmp : adDao.getAds()) {
+			if (tmp.getAdsId() == adsId) {
+				ad = tmp;
 				break;
 			}
 		}
 		return ad;
 	}
+
 	@Transactional
-	public boolean adjoin(Ad ad){
-		return adDao.addAd(ad)>0;
+	public boolean adjoin(Ad ad) {
+		return adDao.addAd(ad) > 0;
+	}
+
+	@Transactional
+	public boolean secede(int adsId) {
+		return adDao.delAd(adsId) > 0;
+	}
+
+	@Transactional
+	public boolean fixAdInfo(Ad ad) {
+		return adDao.updateAd(ad) > 0;
 	}
 	
-	@Transactional
-	public boolean secede(int adsId){
-		return adDao.delAd(adsId)>0;
+	public List<Ad> findAdList(){
+		return adDao.getAdList();
 	}
-	@Transactional
-	public boolean fixAdInfo(Ad ad){
-		return adDao.updateAd(ad)>0;
-	}
-	
+
 }

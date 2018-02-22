@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="minwoo.cms.user.manuser.dao.mapper.ManUserMapper">
-<resultMap id="manuserMap" type="minwoo.cms.user.manuser.domain.ManUser">
-	<id property="userId" column="user_id" />
-	<result property="userNm" column="user_nm" />
-	<result property="userNic" column="user_nic" />
-	<result property="userMail" column="user_mail" />
-	<result property="userLevel" column="user_level" />
-	<result property="ulevel" column="u_level" />
-	<result property="checkVal" column="check_Val" />
-</resultMap>
+	<resultMap id="manuserMap" type="minwoo.cms.user.manuser.domain.ManUser">
+		<id property="userId" column="user_id" />
+		<result property="userNm" column="user_nm" />
+		<result property="userNic" column="user_nic" />
+		<result property="userMail" column="user_mail" />
+		<result property="userLevel" column="user_level" />
+		<result property="ulevel" column="u_level" />
+		<result property="checkVal" column="check_Val" />
+	</resultMap>
 
-<select id="getUsers" resultMap="manuserMap" parameterType="minwoo.cms.user.manuser.domain.ManUser">
-	select user_id, user_nic, user_nm, user_mail, user_level
-	from USERS order by user_nm asc
-</select>
-
-<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser">
-	update users set user_level=#{userLevel} where user_id=#{checkVal} <!-- dd -->
-
-</update>
-
+	<select id="getUsers" resultMap="manuserMap"
+		parameterType="minwoo.cms.user.manuser.domain.ManUser">
+		select user_id, user_nic, user_nm, user_mail, user_level
+		from USERS order by user_nm asc
+	</select>
+	
+	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser">
+		update users set user_level = #{userLevel} where user_id in
+		<foreach item="tmp" collection="tmpCheckVal" open="(" close=")"
+			separator=",">
+			#{tmp}
+		</foreach>
+	</update>
+	
+<!-- 	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser"> -->
+<!-- 		update users set user_level = #{userLevel} where user_id in -->
+<!-- 		<foreach item="tmp" collection="tmpCheckVal" open="(" close=")" -->
+<!-- 			separator=","> -->
+<!-- 			#{tmp} -->
+<!-- 		</foreach> -->
+<!-- 	</update> -->
 </mapper>

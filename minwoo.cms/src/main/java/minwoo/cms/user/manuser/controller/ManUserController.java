@@ -1,5 +1,7 @@
 package minwoo.cms.user.manuser.controller;
 
+import java.util.Arrays;
+
 import minwoo.cms.user.manuser.domain.ManUser;
 import minwoo.cms.user.manuser.service.ManUserService;
 
@@ -19,18 +21,12 @@ public class ManUserController {
 		model.addAttribute("man_userlist", manUserService.listUsers()); //<- List<T>
 		return "/user/manuser/manuser";
 	}
-
-	@RequestMapping(value="/manuser/manageUser/mlist", method = RequestMethod.POST)
-	@ResponseBody
-	public ManUser manuser_mlist(String userId){
-		ManUser manUser = new ManUser();
-		manUser = manUserService.modiListManUser(userId); //권한수정 view
-		return manUser;
-	}
 	
 	@RequestMapping(value="/manuser/manageUser/medit", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean manuser_medit(ManUser manUser){
+		manUser.setTmpCheckVal(Arrays.asList(manUser.getCheckVal()));
+		System.out.println(manUser.getTmpCheckVal());
 		return manUserService.modiLevelManUser(manUser); //권한수정 Proc
 	}	
 	

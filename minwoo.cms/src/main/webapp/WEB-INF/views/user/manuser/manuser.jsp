@@ -18,7 +18,7 @@
 			<!--  <div class="form">
             <input type="text" placeholder="검색어 입력">
             <button type="submit" class="1"></button>
-      </div> -->
+      		</div> -->
 			<br> <br> <br> <br>
 
 

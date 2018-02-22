@@ -23,8 +23,5 @@ public class ManUserServiceImpl implements ManUserService{
 	public boolean modiLevelManUser(ManUser manUser){
 		return manUserDao.editLevelUser(manUser);
 	}
-	
-	public List<ManUser> listLevels(){
-		return manUserDao.getUlevels();
-	}
+
 }

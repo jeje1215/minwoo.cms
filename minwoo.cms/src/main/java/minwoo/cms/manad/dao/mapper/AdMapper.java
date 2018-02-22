@@ -11,5 +11,5 @@ public interface AdMapper {
 	int delAd(int adsId); //광고 삭제 
 	int updateAd(Ad ad); //광고 수정
 	
-
+	List<Ad> getAdList(); //광고 조건값으로 가져오기
 }

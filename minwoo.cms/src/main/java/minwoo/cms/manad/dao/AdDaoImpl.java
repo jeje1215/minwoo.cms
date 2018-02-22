@@ -9,25 +9,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AdDaoImpl implements AdDao{
-	@Autowired private AdMapper adMapper;
-	
-	public List<Ad>getAds(){
+public class AdDaoImpl implements AdDao {
+	@Autowired
+	private AdMapper adMapper;
+
+	public List<Ad> getAds() {
 		return adMapper.getAds();
-		
+
 	}
-	public Ad getAd(int adsId){
+
+	public Ad getAd(int adsId) {
 		return adMapper.getAd(adsId);
 	}
-		
-	public int addAd(Ad ad){
+
+	public int addAd(Ad ad) {
 		return adMapper.addAd(ad);
 	}
-	public int delAd(int adsId){
+
+	public int delAd(int adsId) {
 		return adMapper.delAd(adsId);
 	}
-	public int updateAd(Ad ad){
+
+	public int updateAd(Ad ad) {
 		return adMapper.updateAd(ad);
+	}
+	
+	public List<Ad> getAdList(){
+		return adMapper.getAdList();
 	}
 
 }

@@ -16,7 +16,7 @@ $(function() {
 	}else if(namePage[2] == 'main' || namePage[2] == 'url'){
 		$("ul[id=menu_home]").show();
 		$("#top_home").addClass("active");
-	}else if(namePage[2] == 'updateUser'){
+	}else if(namePage[2] == 'update'){
 		$("ul[id=menu_mypage]").show();
 		$("#top_mypage").addClass("active");
 	}
@@ -36,7 +36,14 @@ function menuUrl(url, frm) {
 	frm.action = "/cms/"+url;
 	frm.submit();
 }
-
+$(function(){
+	$("#accordian h3").click(function(){
+		$("#accordian ul ul").slideUp();
+		if(!$(this).next().is(":visible")){
+			$(this).next().slideDown();
+		}
+	})
+}) 
 /*$.activeMenu = function(type, id) {
 	$("#" + type + "> li").each(function() {
 		$(this).removeClass("active")

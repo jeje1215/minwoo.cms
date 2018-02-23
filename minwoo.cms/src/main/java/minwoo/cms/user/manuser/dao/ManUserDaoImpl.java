@@ -1,5 +1,6 @@
 package minwoo.cms.user.manuser.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import minwoo.cms.user.manuser.dao.mapper.ManUserMapper;
@@ -21,8 +22,11 @@ public class ManUserDaoImpl implements ManUserDao{
 	}
 	
 	public boolean editLevelUser(ManUser manUser){
-		//System.out.println(manUser.getCheckVal());
-		//System.out.println(manUser.getUserLevel());
+		List<String> list = new ArrayList<String>();
+		list.add("tmdckdzoq");
+		list.add("nsc6173");	
+		list.add("tmdckd0102");		
+		//manUser.setTmpCheckVal(list);
 		return manUserMapper.editLevelUser(manUser);
 	}
 

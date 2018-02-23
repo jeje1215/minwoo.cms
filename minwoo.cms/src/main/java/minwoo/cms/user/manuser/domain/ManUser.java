@@ -10,7 +10,7 @@ public class ManUser {
 	public String userLevel; // 등급
 	public String checkVal; // 체크박스 중 체크된 값
 	public String ulevel; // select박스 회원등급
-	public List<String> tmpCheckVal; // 임시값
+	public List<String> tmpCheckVal; // 임시값 (테스트중)
 
 	public List<String> getTmpCheckVal() {
 		return tmpCheckVal;

@@ -40,9 +40,7 @@ function go_btn() {
 	}
 	$("input[name=level]:checked").each(function() {
 		var test = $(this).val();
-		// alert("벨류값확인 : " + test);
-		arrayParam.push($(this).val())
-		//arrayParam.push("'"+$(this).val()+"'")
+		arrayParam.push($(this).val());
 	});
 
 	$("#checkVal").val(arrayParam);

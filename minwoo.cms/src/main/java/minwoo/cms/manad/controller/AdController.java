@@ -114,8 +114,8 @@ public class AdController {
 		ad_tmp = adService.findAd(adsId_tmp);		
 		infile = ad_tmp.getAdsFile();
 
-        System.out.println("UtilFile fileUpload infile : " + infile);
-        System.out.println("UtilFile fileUpload fileName : " + fileName);
+        //System.out.println("UtilFile fileUpload infile : " + infile);
+        //System.out.println("UtilFile fileUpload fileName : " + fileName);
         File file = new File(dir + "/" + fileName);
         
         //파일명이 중복으로 존재할 경우
@@ -130,7 +130,7 @@ public class AdController {
 	        	fileName = infile;
 	        }
 		}
-        System.out.println("UtilFile fileUpload fileName : " + fileName);		
+        //System.out.println("UtilFile fileUpload fileName : " + fileName);		
 		
 		isStored = adService.fixAdInfo(ad);
 		if (isStored == true) {

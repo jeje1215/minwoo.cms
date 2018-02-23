@@ -3,7 +3,6 @@
 <%@ include file="../../common/header.jsp"%>
 <%@ include file="../../menu/topMenu.jsp"%>
 <%@ include file="../../menu/leftMenu.jsp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>@import url("<c:url value="/css/user/manuser/manuser.css"/>");</style>
 <script src="<c:url value="/js/user/manuser/manuser.js"/>"></script>
@@ -20,10 +19,8 @@
             <button type="submit" class="1"></button>
       		</div> -->
 			<br> <br> <br> <br>
-
-
 			<form id="levelForm" method="post">
-				<input name="checkVal" id="checkVal">
+				<input name="checkVal" id="checkVal" style="display:none;">
 				<div class="selectlevel" id="selectlevel">
 					<select id="userLevel" name="userLevel">
 						<option value="">선택</option>
@@ -33,10 +30,6 @@
 				</div>
 			</form>
 		</div>
-
-
-
-
 		<div class="list">
       <table class="table table-hover">
          <thead>
@@ -67,7 +60,7 @@
    </div>
 
    <br> <br>
-   <div class="text-center">
+<!--    <div class="text-center">
       <ul class="pagination">
          <li class="disabled"><a href="#"><span
                class="glyphicon glyphicon-chevron-left"></span></a></li>
@@ -84,7 +77,7 @@
          <li><a href="#"><span
                class="glyphicon glyphicon-chevron-right"></span></a></li>
       </ul>
-   </div>
+   </div> -->
 </div>   
 
 </section>

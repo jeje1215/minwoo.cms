@@ -20,11 +20,17 @@
 	
 	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser">
 		update users set user_level = #{userLevel} where user_id in
-		<foreach item="tmp" collection="tmpCheckVal" open="(" close=")"
-			separator=",">
-			#{tmp}
+		<foreach item="item" collection="tmpCheckVal" index="index" open="(" close=")" separator=",">
+			#{item}
 		</foreach>
 	</update>
+	
+	<update id="editLevelUser_tmp" parameterType="java.util.Map">
+		update users set user_level = 'B' where user_id in
+		<foreach item="item" collection="list" index="index" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+	</update>	
 	
 	<!-- commit -->
 <!-- 	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser"> -->

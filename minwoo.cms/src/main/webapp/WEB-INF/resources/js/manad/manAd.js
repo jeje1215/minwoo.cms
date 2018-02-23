@@ -35,7 +35,7 @@ function checkImageType(fileName){
    //$(":input[name='adsFile']").val($(ad).data("adsFile"));
    //alert(ad.adsFile);
    $("#viewFile").val($(ad).data("adsFile"));
-   $("#ex_filename").val($(ad).data("adsFile"));
+   //$("#ex_filename").val($(ad).data("adsFile"));
    
    $("#addBtn").hide();
    $("#updateBtn").show();

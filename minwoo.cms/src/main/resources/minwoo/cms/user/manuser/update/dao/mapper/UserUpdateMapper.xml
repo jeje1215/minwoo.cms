@@ -10,8 +10,13 @@
 
 <update id="updateUser" parameterType="minwoo.cms.user.userupdate.domain.User">
    update users
-   set user_name =# {userName}
-   where user_id =# {userId} 
+   set 
+   user_nic =#{userNic}
+   ,user_nm =#{userNm}
+   ,user_birth =#{userBirth}
+   ,user_mail =#{userMail}
+   ,user_pwd =#{userPwd}
+   where user_id =#{userId} 
 </update>
 
 </mapper>

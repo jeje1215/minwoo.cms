@@ -1,3 +1,4 @@
+
 package minwoo.cms.user.join.domain;
 
 public class User {

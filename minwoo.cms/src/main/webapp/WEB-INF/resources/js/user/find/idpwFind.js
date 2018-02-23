@@ -48,7 +48,6 @@ $(document).ready(function(){
 				}
 			}
 		});
-		
 
 		$("#pwdFind").bind("click", function() { //비밀번호 찾기
 			var userId = $("input[name=userId]").val();

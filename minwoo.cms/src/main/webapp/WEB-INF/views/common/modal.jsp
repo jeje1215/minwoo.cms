@@ -12,7 +12,7 @@
             <div class="modal-body" id="modalBody_one">
             </div>
             <div class="modal-footer">
-               <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+               <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalOk">확인</button>
             </div>
          </div>
       </div>

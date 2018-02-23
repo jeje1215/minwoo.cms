@@ -35,8 +35,8 @@ function go_btn() {
 	var arrayParam = new Array();
 	var selchk = $("#userLevel option:selected").val();
 	if (selchk == "") {
-		alert("수정할 등급을 선택해주세요.");
-		return false;
+	    $('#modalBody_one').html("수정할 등급을 선택해주세요.");
+	    $('#myModal_one').modal(); return false;
 	}
 	$("input[name=level]:checked").each(function() {
 		var test = $(this).val();
@@ -49,16 +49,21 @@ function go_btn() {
 		method : "post",
 		data : $("#levelForm").serialize(),
 		success : function(result) {
-			if (result == true) {
-				menuUrl('manuser', urlForm);
+			if (result == true) {			
+			    $('#modalBody_one').html("선택한 회원의 권한이 변경되었습니다. 홈페이지를 새로고침 하세요.");
+			    $('#myModal_one').modal();
+				$('#myModal_one').on('click', '#modalOk', function() {
+					menuUrl('manuser', urlForm);
+				}); 	
 			} else {
 				$('#modalBody_one').html("등록할 수 없습니다. 다시 확인해주세요.");
 				$('#myModal_one').modal();
 			}
+			//menuUrl('manuser', urlForm);
 		},
 		error : function(a, b, errMsg) {
 			msg = "※ 실패 : " + errMsg;
-			alert(msg);
+			//alert(msg);
 		}
 	});
 }

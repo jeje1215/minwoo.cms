@@ -22,4 +22,13 @@ public class BoardDaoImpl implements BoardDao {
       return boardMapper.addBoard(boardVo);
    }
 
+   // 게시판 상세보기
+   public BoardVo readBoard(int usbId){
+		return boardMapper.readBoard(usbId);
+	}
+
+   // 게시물 하나가져오기
+   public BoardVo oneListBoard(int usbId) {
+	return boardMapper.oneListBoard(usbId);
+}
 }

@@ -65,7 +65,7 @@ var showBoard = function(board){
 <body>
 	<section id="post">
 		<div class="container">
-			<h2>게시글 작성</h2>
+			<h3>게시글 작성</h3>
 			<form id="boardForm">
 				<div>
 					제   목<input type="text" name="usbTitle" size="80"

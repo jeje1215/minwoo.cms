@@ -2,6 +2,7 @@
    pageEncoding="UTF-8"%>
 <style>@import url("<c:url value="/css/board/list.css"/>");
 </style>
+<script src="<c:url value="/js/board/write.js"/>"></script>
 <script>
 $(function(){
 	   boardList();
@@ -22,6 +23,7 @@ function boardList(){
 	      var tr;
 	      var input;
 	      var etc;
+	      var tmpUrl = "'/board/detail'";
 	      boardList.empty();
 
 	      $.ajax({
@@ -29,11 +31,12 @@ function boardList(){
 	         success : function(boards) {
 	        	 $(boards).each(function(idx, board) {
 	               tr = $("<tr></tr>");
-	               td = $("<td><name='usbId' value='"
-	                     + board.usbId+ "'xxxxonClick='showBoard(this)'/>"
+	               td = $("<td ><name='usbId' value='"
+	                     + board.usbId+ "onClick='showBoard(this)'/>"
 	                     + board.usbId+ "</td>");
-	               td2 = $("<td>"+ board.usbTitle+ "</td><td>"+ board.usbContent
-	                     + "</td><td>"+ board.userId+ "</td><td>"+ board.regDate
+	               td2 = $("<td onclick='goviewUrl(\"/board/detail\", listForm, "+board.usbId+")'>"
+	            		   + board.usbTitle+ "oooo</td><td>"
+	                 		+ board.userId+ "</td><td>"+ board.regDate
 	                     + "</td><td>"+ board.usbCnt+"</td>");
 	               boardList.append(tr.append(td).append(td2));
 	               td.find("input").data("usbTitle",board.usbTitle);
@@ -55,12 +58,14 @@ function boardList(){
 <section id="post">
    <div class="container">
       <br>
+         <form name="listForm">
+         	<input name="usbId" value="" style="display:none;">
+         </form>
       <table class="table table-hover">
          <thead>
             <tr>
                <th>번호</th>
                <th>제목</th>
-               <th >내용</th>
                <th>작성자</th>
                <th>날짜</th>
                <th><b>조회수</b></th>

@@ -18,6 +18,7 @@ public class BoardServiceImpl implements BoardService{
    public List<BoardVo> listBoards(){
       return boardDao.getBoardLists();
    }
+   
 
    // 게시판 추가
    @Transactional
@@ -25,4 +26,16 @@ public class BoardServiceImpl implements BoardService{
       return boardDao.addBoard(boardVo)>0;
    }
 
+   //게시글 상세보기
+   @Override
+   public BoardVo readContent(int usbId) {
+	return boardDao.readBoard(usbId);
+   }
+
+   //게시글 하나 가져오기
+   @Override
+   public BoardVo onelistboard(int usbId) {
+	return boardDao.oneListBoard(usbId);
+   }
+   
 }

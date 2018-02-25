@@ -17,7 +17,7 @@
 
 			</div>
 			<div class="let">
-				<button type="button" class="btn btn-info" id="addBtn"
+				<button type="button" class="btn btn-info" id="sendMsg"
 					style="background-color: #ff80a0;"  >
 					<span class="glyphicon glyphicon-envelope"
 						style="font-family: HY강B;" >
@@ -41,8 +41,8 @@
            </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-primary" data-dismiss="modal"  
-                 >확인</button>
-<!--                  //window.close 하기 -->
+                 onclick="window.close();">확인</button>
+
                <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
             </div>
          </div>

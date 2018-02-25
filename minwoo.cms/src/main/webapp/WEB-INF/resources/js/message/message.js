@@ -28,7 +28,7 @@ var regBtns = function(){
         userList.empty();
     });
     
-    $("#addBtn").bind("click", function(){
+    $("#sendMsg").bind("click", function(){
         if(chkName()){
                $.ajax({
             	   method:"post",

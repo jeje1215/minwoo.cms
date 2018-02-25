@@ -44,7 +44,7 @@
 						<h5>
 							<i class="fa fa-child" aria-hidden="true" style="float: center"></i>
 						
-				<A onclick="window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=600,height=700,left=0, top=0, scrollbars=yes');return false" href="#">${ sessionScope.user.loginId }님!</A>		
+				<A onclick="window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=700,height=700,left=0, top=0, scrollbars=yes');return false" href="#">${ sessionScope.user.loginId }님!</A>		
 						
 						
 						</h5>

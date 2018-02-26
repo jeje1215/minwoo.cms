@@ -8,7 +8,7 @@ public interface BoardService {
    BoardVo onelistboard(int usbId);//게시판 하나 가져오기
    boolean createBoard(BoardVo boardVo); //게시물 등록
    public BoardVo readContent(int usbId); //게시물 상세보기
-   /* boolean updateBoard(BoardVo boardVo);
-    boolean secede(int usbId);*/
+   boolean fixBoard(BoardVo boardVo); //게시물 수정
+   boolean secede(int usbId); //게시물 삭제
     
 }

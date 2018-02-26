@@ -57,18 +57,17 @@ public class BoardController {
    public boolean createBoard(BoardVo boardVo){
       return boardService.createBoard(boardVo);
    }
-
+   
+   /*@ResponseBody
+   @RequestMapping("/board/fixBoard")
+   public boolean fixBoard(BoardVo boardVo){
+	   return boardService.fixBoard(boardVo);
+   }*/
+   
    @ResponseBody
-   @RequestMapping(value="boardView", method={RequestMethod.POST,RequestMethod.GET})
-   public ModelAndView view(@RequestParam int usbId, HttpSession session) throws Exception{
-   System.out.println(boardService.readContent(usbId)+"테스트");
-       
-       // 모델(데이터)+뷰(화면)를 함께 전달하는 객체
-       ModelAndView mav = new ModelAndView();
-       // 뷰의 이름
-       mav.setViewName("board/view");
-       // 뷰에 전달할 데이터
-       mav.addObject("boardview", boardService.readContent(usbId));
-       return mav;
+   @RequestMapping(value="/cms/board/secede", method={RequestMethod.POST,RequestMethod.GET})
+   public boolean secede(int usbId){
+	   System.out.println("ㅇ나ㅓ라ㅣ ");
+	   return boardService.secede(usbId);
    }
 }

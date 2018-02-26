@@ -9,8 +9,8 @@ public interface BoardMapper {
    public BoardVo readBoard(int usbId); // 게시글 상세보기
    BoardVo oneListBoard(int usbId);// 게시글 하나가져오기
    int updateBoard(BoardVo boardVo);//게시글 수정
+   int deleteBoard(int usbId);//게시글 삭제
    /*
-    int deleteBoard(int usbId);//게시글 삭제
     public void increaseViewcnt(int usbId);//조회수 증가
     */
 }

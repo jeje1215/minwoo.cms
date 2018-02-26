@@ -36,4 +36,9 @@ public class BoardDaoImpl implements BoardDao {
    public int updateBoard(BoardVo boardVo) {
 	return boardMapper.updateBoard(boardVo);
 	}
+
+   @Override
+	public int deleteBoard(int usbId) {
+	 return boardMapper.deleteBoard(usbId);
+	}
 }

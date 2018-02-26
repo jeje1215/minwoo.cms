@@ -37,5 +37,17 @@ public class BoardServiceImpl implements BoardService{
    public BoardVo onelistboard(int usbId) {
 	return boardDao.oneListBoard(usbId);
    }
+
+
+   @Transactional
+   public boolean fixBoard(BoardVo boardVo) {
+	return boardDao.updateBoard(boardVo)>0;
+   }
+
+
+   @Transactional
+   public boolean secede(int usbId) {
+	 return boardDao.deleteBoard(usbId)>0;
+   }
    
 }

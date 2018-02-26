@@ -10,7 +10,6 @@ public interface BoardDao {
    BoardVo oneListBoard(int usbId);// 게시글 하나가져오기
    public BoardVo readBoard(int usbId); //게시글 상세보기
    int updateBoard(BoardVo boardVo);//게시글 수정
-    /*
-    int deleteBoard(int usbId);//게시글 삭제
-   */
+   int deleteBoard(int usbId);//게시글 삭제
+
 }

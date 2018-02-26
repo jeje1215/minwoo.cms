@@ -12,8 +12,11 @@ import org.springframework.stereotype.Service;
 public class ManMesServiceImpl implements ManMesService{
 	@Autowired private ManMesDao manmesDao;
 	
-	public List<Mes>listMess(String userId){
+	public List<Mes>listMess(String userId){ //목록
 		return manmesDao.getMess(userId);
+	}
+	public boolean delMess(Mes mes){ //체크박스 값 지우기 
+		return manmesDao.delMess(mes);
 	}
 
 }

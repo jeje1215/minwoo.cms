@@ -42,8 +42,8 @@ public class ManUserController {
         	list.add(tmp);
         }		*/
 		
-        //System.out.println(list);	
-		manUser.setTmpCheckVal(list);
+        System.out.println(list);	
+		manUser.setTmpCheckVal(list);  //테스트 부분
 		return manUserService.modiLevelManUser(manUser);
 	}
 

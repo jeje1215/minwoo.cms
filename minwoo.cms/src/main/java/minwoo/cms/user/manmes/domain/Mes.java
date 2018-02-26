@@ -1,6 +1,7 @@
 package minwoo.cms.user.manmes.domain;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Mes {
 	private int mesId; //고유값
@@ -10,7 +11,24 @@ public class Mes {
 	private String userMail;  //회원 이메일
 	private String userNm; //이름
 	private String userNic; //닉네임 
-	private String userId;
+	public String checked; // 체크박스 중 체크된 값
+	public List<String> tmpChecked; // 임시값 (테스트중)
+	
+	
+	
+	public List<String> getTmpChecked() {
+		return tmpChecked;
+	}
+	public void setTmpChecked(List<String> tmpChecked) {
+		this.tmpChecked = tmpChecked;
+	}
+	public String getChecked() {
+		return checked;
+	}
+	public void setChecked(String checked) {
+		this.checked = checked;
+	}
+	private String userId;	
 
 	
 	public String getUserId() {

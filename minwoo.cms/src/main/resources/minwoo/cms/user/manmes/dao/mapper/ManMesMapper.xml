@@ -17,4 +17,14 @@
 <!--    	where mes_id=#{mesId} -->
 <!-- 	</select> -->
 
+<delete id="delMess" parameterType="java.util.Map">
+ 		delete MESSAGES where mes_id in 
+ 		<foreach item="item" collection="tmpChecked" index="index" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+ 
+</delete>
+
+
+
 </mapper>

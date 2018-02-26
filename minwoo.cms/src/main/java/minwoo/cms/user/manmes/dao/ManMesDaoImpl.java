@@ -15,5 +15,24 @@ public class ManMesDaoImpl implements ManMesDao {
 	public List<Mes>getMess(String userId){
 		return manmesMapper.getMess(userId);
 	}
+	public boolean delMess(Mes mes){
+		return manmesMapper.delMess(mes);
+	}
+	
+	
+	
+//	
+//	public boolean editLevelUser(ManUser manUser){
+//		List<String> list = new ArrayList<String>();
+////		list.add("tmdckdzoq");
+////		list.add("nsc6173");	
+////		list.add("tmdckd0102");		
+//		//manUser.setTmpCheckVal(list);
+//		return manUserMapper.editLevelUser(manUser);
+//	}
 
+	
+	
+	
+	
 }

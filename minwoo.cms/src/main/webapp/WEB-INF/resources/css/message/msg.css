@@ -5,7 +5,7 @@ div.box {
 	height: 600px;
 	top: 50px;
 	marign-top: 0px;
-	margin-left: 5px;
+	margin-left:50px;
 	/* left:30%; */ border : 5px solid #f1f1f1;
 	position: absolute;
 	border-radius: 5px;

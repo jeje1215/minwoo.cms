@@ -6,5 +6,6 @@ import minwoo.cms.user.manmes.domain.Mes;
 
 public interface ManMesDao {
 	List<Mes>getMess(String userId);
+	boolean delMess(Mes mes); 	//	
 
 }

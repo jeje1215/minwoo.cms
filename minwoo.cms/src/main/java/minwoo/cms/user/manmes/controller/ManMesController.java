@@ -1,11 +1,8 @@
 package minwoo.cms.user.manmes.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
-import minwoo.cms.manboard.domain.ManboardInfo;
-import minwoo.cms.manboard.domain.SubboardInfo;
 import minwoo.cms.user.manmes.domain.Mes;
 import minwoo.cms.user.manmes.service.ManMesService;
 
@@ -26,10 +23,27 @@ public class ManMesController {
 	
 	@RequestMapping(value="user/listMess",method={RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody
-	public List<Mes>listMess(String userId){
-		
+	public List<Mes>listMess(String userId){		
+
 		return manmesService.listMess(userId);		
 		
-		
-		   }		
 	}
+	
+	@RequestMapping(value ="user/delMess", method= RequestMethod.POST)
+	@ResponseBody
+	public boolean delMes(Mes mes){
+		//manUser.setTmpCheckVal(Arrays.asList(manUser.getCheckVal()));
+		List<String> list = new ArrayList<String>();
+		String chkMes =mes.getChecked();
+		String[] array;
+		
+		array = chkMes.split(",");
+		for(int i=0;i<array.length;i++){
+			list.add(array[i]);
+		}		
+		  System.out.println(list);	
+		  mes.setTmpChecked(list);		
+		return manmesService.delMess(mes);
+	}
+
+}

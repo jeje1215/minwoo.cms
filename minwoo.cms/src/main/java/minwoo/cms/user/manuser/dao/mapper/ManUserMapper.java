@@ -8,5 +8,5 @@ public interface ManUserMapper {
 	List<ManUser> getUsers(); //가입된 회원목록
 	ManUser editListUser(String userId);
 	boolean editLevelUser(ManUser manUser);
-	boolean editLevelUser_tmp(List<String> list);
+	boolean editLevelUser_tmp(List<String> list); //임시
 }

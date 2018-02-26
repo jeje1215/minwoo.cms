@@ -103,13 +103,15 @@ public class AdController {
 		String infile; //기존 db에 저장된 파일명 
 		String dir = request.getServletContext().getRealPath(uploadDir);
 		String fileName = adsFile.getOriginalFilename(); //변경할려는 파일명
-		System.out.println(fileName);
 		Ad ad = new Ad(adsCompany, adsMan, fileName, adsMoney, adsUrl,
 				adsStartDate, adsEndDate, userId);		
 		ad.setAdsId(adsId_tmp);
 		Ad ad_tmp = new Ad();
 		ad_tmp = adService.findAd(adsId_tmp);		
 		infile = ad_tmp.getAdsFile();
+		System.out.println(fileName);
+		System.out.println(infile);
+		System.out.println("=================");
 
         //System.out.println("UtilFile fileUpload infile : " + infile);
         //System.out.println("UtilFile fileUpload fileName : " + fileName);
@@ -117,18 +119,26 @@ public class AdController {
         
         //파일명이 중복으로 존재할 경우
 		if(infile != fileName){ //기존 파일명이랑 달라질 경우
+			System.out.println("1");
 	        if (fileName != null && !fileName.equals("")) { //파일 이름이 없으면~(파일 수정 안할경우)
-	            if (file.exists()) {
+	        	System.out.println("2");
+	        	if (file.exists()) {
+	        		System.out.println("3");
 	            	//파일명 앞에 업로드 시간 초단위로 붙여 파일명 중복을 방지
 	                fileName = System.currentTimeMillis() + "_" + fileName;
 	                ad.setAdsFile(fileName);
+	            }else{
+	            	System.out.println("4");
+	            	fileName = infile;
 	            }
 	        }else{
+	        	System.out.println("5");
 	        	fileName = infile;
 	        }
 		}
         //System.out.println("UtilFile fileUpload fileName : " + fileName);		
-		
+		ad.setAdsFile(fileName);
+//    	/System.out.println(ad.getAdsFile());
 		isStored = adService.fixAdInfo(ad);
 		if (isStored == true) {
 			try {
@@ -142,11 +152,6 @@ public class AdController {
 		}
 
 		return isStored;
-	}
-
-	private String getSaveLocation(HttpServletRequest request, Object obj) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	private void save(String fileFullName, MultipartFile adsFile)

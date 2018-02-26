@@ -15,8 +15,8 @@
 .box1 {
 	background-color: #f1f1f1;
 	width: 500px;
-	
-	margin: 50px auto;
+
+	margin: 150px auto;
 	border: 1px solid #f1f1f1;
 	border-radius: 5px;
 	float:left;
@@ -27,8 +27,8 @@
 .box2 {
 	background-color: #f1f1f1;
 	width: 500px;
-	
-	margin: 50px auto;
+
+	margin: 150px auto;
 	border: 1px solid #f1f1f1;
 	border-radius: 5px;
 	float:right;

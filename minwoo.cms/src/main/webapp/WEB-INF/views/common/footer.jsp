@@ -6,7 +6,7 @@
 	
 	<footer>
 
-		<center>
+		<center id="footerfix">
 			MinWoo.CMS
 			<p class="footer_text">이용약관 | 개인정보 취급방침 | 자주 묻는 질문</p>
 			<p>

@@ -40,7 +40,7 @@
 					<h3 onclick="menuUrl('update', urlForm)" style="cursor:pointer;">회원정보</h3>
 				</li>
 				<li>
-					<h3 onclick="menuUrl('sendMsg', urlForm)" style="cursor:pointer;">메시지함</h3>
+					<h3 onclick="menuUrl('user/manmes', urlForm)" style="cursor:pointer;">메시지함</h3>
 				</li>
 			</ul>			
 			<!-- setting 메뉴 -->
@@ -73,6 +73,7 @@
 				<h3>
 					<a href="${ad.adsUrl}" target="_blank">
 						<img src="<c:url value="/upload/${ad.adsFile}"/>" style="width:200px;height:100px;">
+						<%-- <img src="<c:url value="/upload/${ad.adsFile}"/>" style="width:200px;height:100px;"> --%>
 					</a>
 				</h3>
 			</c:forEach>

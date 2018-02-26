@@ -50,10 +50,10 @@ public class AdController {
 		boolean isStored = true;
 		String dir = request.getServletContext().getRealPath(uploadDir);
 		String fileName = adsFile.getOriginalFilename();
-		
-        //System.out.println("UtilFile fileUpload fileName : " + fileName);
         File file = new File(dir + "/" + fileName);
         
+        
+        System.out.println(dir);
         //파일명이 중복으로 존재할 경우
         if (fileName != null && !fileName.equals("")) {
             if (file.exists()) {
@@ -61,11 +61,8 @@ public class AdController {
                 fileName = System.currentTimeMillis() + "_" + fileName;
             }
         }
-        //System.out.println("UtilFile fileUpload fileName : " + fileName);		
-
 		Ad ad = new Ad(adsCompany, adsMan, fileName, adsMoney, adsUrl,
 				adsStartDate, adsEndDate, userId);
-
 		try {
 			save(dir + "/" + fileName, adsFile);
 		} catch (IOException e) {

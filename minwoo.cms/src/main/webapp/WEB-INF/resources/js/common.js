@@ -16,7 +16,7 @@ $(function() {
 	}else if(namePage[2] == 'main' || namePage[2] == 'url'){
 		$("ul[id=menu_home]").show();
 		$("#top_home").addClass("active");
-	}else if(namePage[2] == 'update'){
+	}else if(namePage[2] == 'update' || namePage[2]+"/"+namePage[3] == 'user/manmes'){
 		$("ul[id=menu_mypage]").show();
 		$("#top_mypage").addClass("active");
 	}

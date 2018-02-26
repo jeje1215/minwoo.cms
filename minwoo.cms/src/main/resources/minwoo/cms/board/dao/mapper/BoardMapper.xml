@@ -15,8 +15,8 @@
    </insert>
    
    <!-- 03. 게시글 상세보기 -->
-   <select id="readBoard" parameterType="int">
-		select *  
+   <select id="oneListBoard" parameterType="int" resultType="minwoo.cms.board.domain.BoardVo">
+		select usb_id usbId, usb_title usbTitle, usb_content usbContent, reg_date regDate, usb_cnt usbCnt,user_id userId  
 		from userboards
 		where usb_Id = #{usbId}
 	</select>

@@ -31,4 +31,9 @@ public class BoardDaoImpl implements BoardDao {
    public BoardVo oneListBoard(int usbId) {
 	return boardMapper.oneListBoard(usbId);
 }
+
+   @Override
+   public int updateBoard(BoardVo boardVo) {
+	return boardMapper.updateBoard(boardVo);
+	}
 }

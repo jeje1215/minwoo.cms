@@ -23,7 +23,6 @@ function boardList(){
 	      var tr;
 	      var input;
 	      var etc;
-	      var tmpUrl = "'/board/detail'";
 	      boardList.empty();
 
 	      $.ajax({
@@ -34,8 +33,8 @@ function boardList(){
 	               td = $("<td ><name='usbId' value='"
 	                     + board.usbId+ "onClick='showBoard(this)'/>"
 	                     + board.usbId+ "</td>");
-	               td2 = $("<td onclick='goviewUrl(\"/board/detail\", listForm, "+board.usbId+")'>"
-	            		   + board.usbTitle+ "oooo</td><td>"
+	               td2 = $("<td onclick='goviewUrl(\"board/detail\", listForm, "+board.usbId+")'>"
+	            		   + board.usbTitle+ "</td><td>"
 	                 		+ board.userId+ "</td><td>"+ board.regDate
 	                     + "</td><td>"+ board.usbCnt+"</td>");
 	               boardList.append(tr.append(td).append(td2));
@@ -100,7 +99,7 @@ function boardList(){
 				</div>
 			</div>
 		</div>
-         <div class="text-center">
+<!--          <div class="text-center">
             <ul class="pagination">
                <li class="disabled"><a href="#"><span
                      class="glyphicon glyphicon-chevron-left"></span></a></li>
@@ -108,7 +107,7 @@ function boardList(){
                <li><a href="#">2</a></li>
                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
             </ul>
-         </div>
+         </div> -->
       </div>
    </div>
 </section>

@@ -3,7 +3,7 @@
 <%@ include file="../../common/header.jsp"%>
 <%@ include file="../../menu/topMenu.jsp"%>
 <%@ include file="../../menu/leftMenu.jsp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <style>@import url("<c:url value="/css/user/manmes/manmes.css"/>");</style>
 <script src="<c:url value="/js/user/manmes/manmes.js"/>"></script>

@@ -8,14 +8,15 @@ var showMsg = function(msg){
 }
  
 var regBtns = function(){
-    var modal = $("#resultModal");  // 추가, 수정, 삭제결과창
-    var msg1 = $("#msg1");            // 결과메세지
+//    var modal = $("#resultModal");  // 추가, 수정, 삭제결과창
+//    var msg1 = $("#msg1");            // 결과메세지
         
     var chkName = function(){ // 회원이름입력여부   
         if($(":input[id='chk11']").val()) return true;
         else {
-            msg1.text("받는 사람을 입력하세요!");
-            modal.modal("show");
+        	   $('#modalBody_one').html("받는 사람 입력하세요!");
+			    $('#myModal_one').modal();
+       
         }
     }
     
@@ -35,15 +36,22 @@ var regBtns = function(){
                    url:"sendmsg",                
                    data:$("#msgSend").serialize(),
                    success:function(result){                    
-                       if(result) msg1.text("쪽지가 보내졌습니다.");
-                       else msg1.text("발신불가");
+                       if(result) {
+					    $('#modalBody_two').html("쪽지가 보내졌습니다!");
+					    $('#myModal_two').modal();
+   			            $('#myModal_two').on('click', '#modalOk', function() {
+			                window.close();
+			             }); 
+                       }else {
+                    	   msg1.text("발신불가");
+                       }
                        $("#listBtn").trigger("click");
                    },
                    error:function(a, b, errMsg1){
-                       msg1.text("발신불가: " + errMsg1);                
+                       //msg1.text("발신불가: " + errMsg1);                
                    },
                    complete:function(){
-                       modal.modal("show");                    
+                       //modal.modal("show");                    
                    }
                });
         }

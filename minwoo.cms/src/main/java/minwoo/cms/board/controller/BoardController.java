@@ -20,10 +20,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class BoardController {
    @Autowired BoardService boardService;
 
-   @RequestMapping("/board")
+ /*  @RequestMapping("/board")
    public String list() {
       return "board/list";
-   }
+   }*/
    
    @RequestMapping(value="/board/list", method = RequestMethod.POST)
    public String boardlist(String url){
@@ -35,11 +35,11 @@ public class BoardController {
       return url;
    }
    
-   @RequestMapping(value="/board/view", method = RequestMethod.POST)
+   /*@RequestMapping(value="/board/view", method = RequestMethod.POST)
    public String boardview(int usbId){
 	   return "board/view";
    }
-   
+   */
    @RequestMapping(value="/board/detail" , method={RequestMethod.POST,RequestMethod.GET})
    public String boardone(String url,Model model, int usbId){
 	   model.addAttribute("board_one",boardService.onelistboard(usbId));
@@ -65,9 +65,8 @@ public class BoardController {
    }*/
    
    @ResponseBody
-   @RequestMapping(value="/cms/board/secede", method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value="/board/del",  method={RequestMethod.POST,RequestMethod.GET})
    public boolean secede(int usbId){
-	   System.out.println("ㅇ나ㅓ라ㅣ ");
 	   return boardService.secede(usbId);
    }
 }

@@ -37,10 +37,12 @@ var regBtns = function(){
 	   
 	   
 function delBtn(){ //삭제버튼
+	var board = $("#boardId").val();
+	
 		$.ajax({
-			url : "/cms/board/secede",
-			method : "post",
-			data : $("#delForm").serialize(),
+			url : "del",
+			method:"post",
+			data : {usbId:board},
 			success : function(result) {
 				if (result){
 					$('#modalBody_one').html("삭제 성공");
@@ -68,12 +70,15 @@ function delBtn(){ //삭제버튼
 			<form id="delForm">
 			<table id="detailBoard" width="800" border="6" bordercolor="black">
 				
-				
 				<tr>
 					<td id="title" style="width: 90px;">작성일</td>
 					<td>${board_one.regDate}</td>
 				</tr>
-
+				
+				<tr>
+				<td style="display:none;"><input value="${board_one.usbId}" id="boardId"/></td>
+				</tr>
+				
 				<tr>
 					<td style="width: 90px;">작성자</td>
 					<td>${board_one.userId}</td>

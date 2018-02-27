@@ -29,13 +29,21 @@ function boardList(){
 	         url : "cms/main/listboards",
 	         success : function(boards) {
 	        	 $(boards).each(function(idx, board) {
+	        		 
+	        		 var nowDate = new Date();
+		        	 month = ''+(nowDate.getMonth()+1);
+		        	 day = ''+nowDate.getDate();
+		        	 year = nowDate.getFullYear();
+		        	 if(day.length<2) day = '0' + day;
+		        	 if(month.length < 2) month = '0' + month;	 
+	        		 
 	               tr = $("<tr></tr>");
 	               td = $("<td ><name='usbId' value='"
 	                     + board.usbId+ "onClick='showBoard(this)'/>"
 	                     + board.usbId+ "</td>");
 	               td2 = $("<td onclick='goviewUrl(\"board/detail\", listForm, "+board.usbId+")'>"
 	            		   + board.usbTitle+ "</td><td>"
-	                 		+ board.userId+ "</td><td>"+ board.regDate
+	                 		+ board.userId+ "</td><td>"+ [year,month,day].join('-')
 	                     + "</td><td>"+ board.usbCnt+"</td>");
 	               boardList.append(tr.append(td).append(td2));
 	               td.find("input").data("usbTitle",board.usbTitle);

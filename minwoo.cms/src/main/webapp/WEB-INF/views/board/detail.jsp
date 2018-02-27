@@ -1,107 +1,129 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ include file="../common/header.jsp"%>
 <%@ include file="../menu/topMenu.jsp"%>
 <%@ include file="../menu/leftMenu.jsp"%>
-<style>@importurl("<c:url value="/css/board/list.css"/>");</style>
+<style>@importurl("<c:url value="/css/board/detail.css"/>");</style>
 <script src="<c:url value="/js/board/write.js"/>"></script>
 <script>
 $(function(){
-	   regBtns();
+      regBtns();
 });
-/* $("#btnUpdete").click(function() {
-	var title = $("#title").val();
-	var content = $("#content").val();
-	var writer = $("#writer").val();
-	if (title == "") {
-		alert("제목을 입력하세요");
-		document.form1.title.focus();
-		return;
-	}
-	if (content == "") {
-		alert("내용을 입력하세요");
-		document.form1.content.focus();
-		return;
-	}
-	if (writer == "") {
-		alert("이름을 입력하세요");
-		document.form1.writer.focus();
-		return;
-	}
-	
-} */
+
 var regBtns = function(){
-	 var modal = $("#resultModal");// 결과창
-	   var msg = $("#msg"); //결과 메세지
+    var modal = $("#resultModal");// 결과창
+      var msg = $("#msg"); //결과 메세지
 }
-	   
-	   
+
+function updBtn(){ //수정 버튼
+	   var board = $("#boardId").val();
+	   			
+	   console.log("dsfsdf");
+	      $.ajax({
+	         url:"fixBoard",
+	         method:"post",
+	         data : $("#delForm").serialize(),
+	         success : function(result) {
+	            if (result){
+	               $('#modalBody_one').html("수정 성공");
+	               $('#myModal_one').modal();
+	            }else{
+	               $('#modalBody_one').html("수정 실패");
+	               $('#myModal_one').modal();
+	            }
+	      },
+	   });
+	}
+
+
+      
 function delBtn(){ //삭제버튼
-	var board = $("#boardId").val();
-	
-		$.ajax({
-			url : "del",
-			method:"post",
-			data : {usbId:board},
-			success : function(result) {
-				if (result){
-					$('#modalBody_one').html("삭제 성공");
-					$('#myModal_one').modal();
-				}else{
-					$('#modalBody_one').html("삭제 실패");
-					$('#myModal_one').modal();
-				}
-			},
-			error : function(a, b, errMsg) {
-				$('#modalBody_one').html("삭제 땡"+errMsg);
-				$('#myModal_one').modal();
-			}
-		});
+   var board = $("#boardId").val();
+   
+      $.ajax({
+         url : "del",
+         method:"post",
+         data : {usbId:board},
+         success : function(result) {
+            if (result){
+               $('#modalBody_one').html("삭제 성공");
+               $('#myModal_one').modal();
+            }else{
+               $('#modalBody_one').html("삭제 실패");
+               $('#myModal_one').modal();
+            }
+         },
+         error : function(a, b, errMsg) {
+            $('#modalBody_one').html("삭제 땡"+errMsg);
+            $('#myModal_one').modal();
+         }
+      });
 }
 
 
 </script>
 
 <body>
-	<div class="container">
-		<br> <br>
-		<div class="container">
-			<h3>게시글 작성</h3>
-			<form id="delForm">
-			<table id="detailBoard" width="800" border="6" bordercolor="black">
-				
-				<tr>
-					<td id="title" style="width: 90px;">작성일</td>
-					<td>${board_one.regDate}</td>
-				</tr>
-				
-				<tr>
-				<td style="display:none;"><input value="${board_one.usbId}" id="boardId"/></td>
-				</tr>
-				
-				<tr>
-					<td style="width: 90px;">작성자</td>
-					<td>${board_one.userId}</td>
-				</tr>
+<section id="post">
+   <div class="container">
+   <br>
+      <form id="delForm">
+         <table class="table table-hover"  id="detailBoard" style="font-size:14px;">
+            <caption>게시글</caption>
+           
+            <thead>
+               <tr>
+                  <th>번호</th>
+                  <th class="title">제목</th>
+                  <th>작성자</th>
+                  <th style="color: #EA990B;">날짜</th>
+                  <th style="color: #EA990B;"><b>조회수</b></th>
+               </tr>
+            </thead>
+           <tr>
+               <td>작성일</td>
+                <td>${board_one.regDate} </td>
+            </tr>
+            
+            <tr>
+                  <td style="display: none;"><input value="${board_one.usbId}"
+                     id="boardId" /></td>
+               </tr>
+            
+            
+            <tfoot>
+               <td>제 목</td>
+               <td><input value="${board_one.usbTitle}" /></td>
+               </tr>
+               <tr>
+                  <td>작성자 </td>
+                  <td>${board_one.userId}</td>
+               </tr>
+               <tr>
+                  <td>내용</td>
+                  <td><textarea name=content rows="10" cols="100">${board_one.usbContent}</textarea></td>
+               </tr>
+               
+            </tfoot>
+         </table>
+</form>
 
-				<tr>
-					<td style="width: 90px;">제 목</td>
-					<td>${board_one.usbTitle}</td>
-				</tr>
+   
+      <div class="form-group">
+         <div class="col-sm-12 text-right">
+   			
+   			
+   			<button class="btn btn-warning" onclick="updBtn()">수정</button>
+            <button class="btn btn-danger" onclick="delBtn()">
+                <i class="fa fa-times spaceLeft"></i>삭제
+            </button>
+            <button type="reset" class="btn btn-primary"   id="listBtn" onclick="menuUrl('main', urlForm)">
+                <i class="fa fa-check spaceLeft"></i>취소
+            </button>
+         </div>
+      </div>
 
-				<tr>
-					<td style="width: 90px;">내 용</td>
-					<td>${board_one.usbContent}</td>
-				</tr>
-			</table>
-			<br> <br> <br> <br>
-			</form>
-			<div class="" style="width: 650px; text-align: center;">
-			<button type="button" class="btn btn-danger" onclick="delBtn()">삭제</button>
-			<button type="reset" class="btn btn-success btn-md" id="listBtn"
-				onclick="menuUrl('main', urlForm)">취소</button>
-		</div>
-		</div>
-	</div>
+   
+   </section>
 </body>
 <%@ include file="../common/footer.jsp"%>

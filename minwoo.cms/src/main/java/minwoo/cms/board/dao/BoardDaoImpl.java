@@ -30,13 +30,15 @@ public class BoardDaoImpl implements BoardDao {
    // 게시물 하나가져오기
    public BoardVo oneListBoard(int usbId) {
 	return boardMapper.oneListBoard(usbId);
-}
-
+   }
+   
+   //게시물 수정
    @Override
    public int updateBoard(BoardVo boardVo) {
 	return boardMapper.updateBoard(boardVo);
 	}
 
+   //게시물 삭제
    @Override
 	public int deleteBoard(int usbId) {
 	 return boardMapper.deleteBoard(usbId);

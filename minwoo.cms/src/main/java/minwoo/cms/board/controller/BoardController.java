@@ -58,11 +58,12 @@ public class BoardController {
       return boardService.createBoard(boardVo);
    }
    
-   /*@ResponseBody
-   @RequestMapping("/board/fixBoard")
+   @ResponseBody
+   @RequestMapping(value="/board/fixBoard",method={RequestMethod.POST,RequestMethod.GET})
    public boolean fixBoard(BoardVo boardVo){
-	   return boardService.fixBoard(boardVo);
-   }*/
+      System.out.println("하이");
+      return boardService.fixBoard(boardVo);
+   }
    
    @ResponseBody
    @RequestMapping(value="/board/del",  method={RequestMethod.POST,RequestMethod.GET})

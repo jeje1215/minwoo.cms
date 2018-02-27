@@ -23,16 +23,15 @@
 	
 	<!-- 04. 게시글 수정 -->
 	<update id="updateBoard" parameterType="minwoo.cms.board.domain.BoardVo">
-		update boards
-		set usb_Title=#{usbTitle},usb_Content=#{usbContent}
-		where usb_Id=#{usbId}
+		update userboards
+		set usb_title=#{usbTitle,javaType=String, jdbcType=VARCHAR}, usb_content=#{usbContent,javaType=String, jdbcType=NCLOB}
+		where usb_id=#{usbId,javaType=INTEGER, jdbcType=INTEGER}
 	</update>
 	
   	<!-- 05. 게시글 삭제 --> 
    	<delete id="deleteBoard" parameterType="int">
    		delete userboards where usb_id=#{usbId}
    	</delete>
-   
 
    
 </mapper>

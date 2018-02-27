@@ -38,13 +38,13 @@ public class BoardServiceImpl implements BoardService{
 	return boardDao.oneListBoard(usbId);
    }
 
-
+   //게시물 수정
    @Transactional
    public boolean fixBoard(BoardVo boardVo) {
 	return boardDao.updateBoard(boardVo)>0;
    }
 
-
+   //게시물 삭제
    @Transactional
    public boolean secede(int usbId) {
 	 return boardDao.deleteBoard(usbId)>0;

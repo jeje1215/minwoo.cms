@@ -9,7 +9,7 @@
 
 <section id="post">
 	<div class="container">
-		<div class="name">
+		<div class="name1" >
 			<i class="far fa-list-alt" aria-hidden="true"></i> 관리자 게시판
 		</div>
 		<div class="list">

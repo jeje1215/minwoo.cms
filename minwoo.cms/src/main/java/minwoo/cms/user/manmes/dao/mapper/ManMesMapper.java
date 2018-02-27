@@ -7,7 +7,7 @@ import minwoo.cms.user.manmes.domain.Mes;
 
 public interface ManMesMapper {
 	List<Mes>getMess(String userId);	
-	boolean delMess(Mes mes);
+	boolean delMess(Mes mes); //삭제
 
 
 }

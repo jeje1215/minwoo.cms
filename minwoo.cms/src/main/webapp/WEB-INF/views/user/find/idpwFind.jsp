@@ -4,7 +4,7 @@
 <%@ include file="../../common/header.jsp"%>
 <style>@import url("<c:url value="/css/user/find/idpwFind.css"/>");</style>
 <script src="<c:url value="/js/user/find/idpwFind.js"/>"></script>
-
+<body>
 <div class="allBox">
 	<div class="box1">
 		<form id="findIdForm">
@@ -52,5 +52,5 @@
 	</div>	
 </div>	
 
-<%@ include file="../../common/footer.jsp"%>
+
 	

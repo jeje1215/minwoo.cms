@@ -10,7 +10,7 @@
 <section id="post">
    <div class="container">
       <div class="name">
-        <i class="fas fa-user-plus"></i>회원관리
+    <i class="far fa-address-card"></i> 회원관리
       </div>
       <br>
 		<div class="d1">
@@ -18,7 +18,7 @@
             <input type="text" placeholder="검색어 입력">
             <button type="submit" class="1"></button>
       		</div> -->
-			<br> <br> <br> <br>
+			<br>
 			<form id="levelForm" method="post">
 				<input name="checkVal" id="checkVal" style="display:none;">
 				<div class="selectlevel" id="selectlevel">

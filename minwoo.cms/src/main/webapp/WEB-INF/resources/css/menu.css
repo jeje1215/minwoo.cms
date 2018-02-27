@@ -251,7 +251,10 @@ li {
 
 /* 공지사항,회원관리,메시지함관리 글씨 css */
 .name {
-	padding-left: 10px;
-	font-family: HY강B;
-	margin-top: 10px;
+
+   font-size:15px;
+   font-family: HY강B;
+   padding-top: 10px;
+}
+
 }

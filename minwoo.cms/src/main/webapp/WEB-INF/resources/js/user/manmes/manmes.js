@@ -68,7 +68,7 @@ var regBtns = function(){
 			                menuUrl('user/manmes', urlForm);
 			             }); 
 					} else {
-						$('#modalBody_one').html("삭제할수 없습니다.");
+						$('#modalBody_one').html("삭제 할 쪽지가 없습니다..");
 						$('#myModal_one').modal();
 					}
 					//menuUrl('manuser', urlForm);

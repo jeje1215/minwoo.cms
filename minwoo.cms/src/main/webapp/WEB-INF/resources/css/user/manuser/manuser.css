@@ -99,26 +99,20 @@ div.d1 {
    color: white;
 }
 
-.click {
-   position: absolute;
-   font-family: HY강B;
-   border: 2px solid #007DC1;
-   border-radius: 5px;
-   width: 100px;
-   height: 30px;
-   margin-left: 610PX;
-}
 
-select#ulevel {
-   position: absolute;
+select {
+/*   position: absolute; */
    font-family: HY강B;
    border: 2px solid #F9B073;
    border-radius: 5px;
    width: 100px;
    height: 30px;
    flaot: left;
-   margin-top: -70px;
+   margin-top:-20px;
+/*    margin-top: -100px; */
+	margin-bottom:30px;
 }
+
 
 .btn-primary {
    background-color: #c0d6e4;
@@ -139,9 +133,9 @@ select#ulevel {
 }
 
 .name {
-   font-size: 15px;
+   font-size:15px;
    font-family: HY강B;
-   padding-top: 15px;
+   padding-top: 10px;
 }
 
 .del {

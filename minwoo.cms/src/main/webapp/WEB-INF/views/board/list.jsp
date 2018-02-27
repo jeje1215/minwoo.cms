@@ -74,8 +74,8 @@ function boardList(){
                <th>번호</th>
                <th>제목</th>
                <th>작성자</th>
-               <th>날짜</th>
-               <th><b>조회수</b></th>
+               <th style="color: #EA990B;">날짜</th>
+               <th style="color: #EA990B;"><b>조회수</b></th>
             </tr>
          </thead>
          <tbody id=boardList style="word-break:break-all">

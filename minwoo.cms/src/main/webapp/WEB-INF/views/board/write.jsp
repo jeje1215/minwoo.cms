@@ -23,8 +23,8 @@ var showBoard = function(board){
 	   var chkBoard=function(){ //게시물 작성 여부
 		      if($(":input[name='usbTitle']").val()) return true;
 		      else{
-		    	  msg.text("제목을 입력하세요");
-		    	  modal.modal("show");
+		    	  $('#modalBody_one').html("제목을 입력하세요!");
+				    $('#myModal_one').modal();
 		      }
 		    /*  if($(":input[name='usbContent']").val()) return true;
 		      else{
@@ -62,39 +62,55 @@ var showBoard = function(board){
 	   });		   
 	}
 </script>
+<style>
+
+
+</style>
+
+
 <body>
 	<section id="post">
 		<div class="container">
-			<h3>게시글 작성</h3>
 			<form id="boardForm">
-				<div>
-					제   목<input type="text" name="usbTitle" size="80"
-						placeholder="제목을 입력해주세요"> <br>
-					<br>
-				</div>
-				<div>
-					내   용
-					<input type="text" name="usbContent" style="width:600px; height:400px"
-						placeholder="내용을 입력해주세요">
-					<br>
-					<br>
-				</div>
-				<c:if test="${sessionScope.user != null}">
-					아이디<input type="text" name="userId"  size="25" value="${ sessionScope.user.loginId }" readonly>
-					<%-- <c:choose>
-						<c:when test="${sessionScope.user == null}">
-						안녕하세요
-						</c:when>
-					</c:choose> --%>
-				</c:if>
+				<table class="table table-hover">
+					<caption>게시글 작성</caption>
+
+					<tfoot>
+						<td>제 목</td>
+						<td><input type="text" name="usbTitle" size="80"
+							placeholder="제목을 입력해주세요"></td>
+
+						<tr>
+							<td>내용</td>
+							<td><textarea name="usbContent" rows="10" cols="100"
+									style="width: 600px; height: 400px" placeholder="내용을 입력해주세요"></textarea></td>
+						</tr>
+						<c:if test="${sessionScope.user != null}">
+							<tr>
+								<td>아이디</td>
+								<td><input type="text" name="userId" size="25"
+									value="${ sessionScope.user.loginId }" readonly></td>
+							</tr>
+						</c:if>
+					</tfoot>
+				</table>
 			</form>
-			<div class="" style="width: 650px; text-align: center;">
-				<button type="button" class="btn btn-default" id="addBtn"
-				>확인</button>
-				<button type="reset" class="btn btn-success btn-md" id="listBtn"
-					onclick="menuUrl('main', urlForm)">취소</button>
+			
+
+	<div class="form-group">
+			<div class="col-sm-12 text-right">
+				<button class="btn btn-primary"  id="addBtn" >
+					 <i class="fa fa-check spaceLeft"></i>등록
+				</button>
+			
+				<button class="btn btn-danger" id="listBtn" onclick="menuUrl('main', urlForm)" >
+					 <i class="fa fa-times spaceLeft"></i>취소
+				</button>
+			
 			</div>
 		</div>
+		
+		
 		<div class="modal fade" id="resultModal">
 			<div class="modal-dialog">
 				<div class="modal-content">

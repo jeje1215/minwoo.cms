@@ -1,8 +1,8 @@
 @CHARSET "UTF-8";
 
-p {
-   font-size: 11px;
-}
+/* p { */
+/*    font-size: 11px; */
+/* } */
 
 table {
    font-family: HY강B;
@@ -17,93 +17,93 @@ table {
 
 /* 등록취소 버튼 css */
 
-.btn-primary {
-   color: wihte;
-   text-decoration: none;
-   border: 1px solid #286BF7;
-   font-family: HY강B;ㄴ
-}
-/* 페이지 css */
+/* .btn-primary { */
+/*    color: wihte; */
+/*    text-decoration: none; */
+/*    border: 1px solid #286BF7; */
+/*    font-family: HY강B;ㄴ */
+/* } */
+/* /* 페이지 css */ */
 
-.pagination {
-   display: block;
-   test-align: center;
-   font-family: HY강B;
-}
+/* .pagination { */
+/*    display: block; */
+/*    test-align: center; */
+/*    font-family: HY강B; */
+/* } */
 
-.pagination>li>a {
-   float: none;
-}
+/* .pagination>li>a { */
+/*    float: none; */
+/* } */
 
-/* 검색/분류 버튼입니다. */
-.d1 input {
-	width: 200px;
-	height: 30px;
-	padding-left: 10px;
-	border: 2px solid #007DC1;
-	border-radius: 5px;
-	outline: none;
-	float: right;
-}
+/* /* 검색/분류 버튼입니다. */ */
+/* .d1 input { */
+/* 	width: 200px; */
+/* 	height: 30px; */
+/* 	padding-left: 10px; */
+/* 	border: 2px solid #007DC1; */
+/* 	border-radius: 5px; */
+/* 	outline: none; */
+/* 	float: right; */
+/* } */
 
-.d1 button {
-	position: relative;
-	top: -30;
-	margin-left: 900px;
-	width: 30px;
-	height: 30px;
-	border: none;
-	background: #007DC1;
-	border-radius: 0 5px 5px 0;
-	cursor: pointer;
-}
+/* .d1 button { */
+/* 	position: relative; */
+/* 	top: -30; */
+/* 	margin-left: 900px; */
+/* 	width: 30px; */
+/* 	height: 30px; */
+/* 	border: none; */
+/* 	background: #007DC1; */
+/* 	border-radius: 0 5px 5px 0; */
+/* 	cursor: pointer; */
+/* } */
 
-.d1 button:before {
-	content: "\f002";
-	font-family: FontAwesome;
-	font-size: 16px;
-	color: white;
-}
+/* .d1 button:before { */
+/* 	content: "\f002"; */
+/* 	font-family: FontAwesome; */
+/* 	font-size: 16px; */
+/* 	color: white; */
+/* } */
 
-select {
-	position: absolute;
-	font-family: HY강B;
-	border: 2px solid #007DC1;
-	border-radius: 5px;
-	width: 100px;
-	height: 30px;
-	margin-left: 610PX;
-}
+/* select { */
+/* 	position: absolute; */
+/* 	font-family: HY강B; */
+/* 	border: 2px solid #007DC1; */
+/* 	border-radius: 5px; */
+/* 	width: 100px; */
+/* 	height: 30px; */
+/* 	margin-left: 610PX; */
+/* } */
 
-/* 로그인 버튼  */
-.btn-info {
-   height: 30px;
-   background-color: #FFDADA;
-   border: 1px solid #003366;
-   font-family: HY강B;
-   color: black;
-}
+/* /* 로그인 버튼  */ */
+/* .btn-info { */
+/*    height: 30px; */
+/*    background-color: #FFDADA; */
+/*    border: 1px solid #003366; */
+/*    font-family: HY강B; */
+/*    color: black; */
+/* } */
 
-.del {
-   border-radius: 5px;
-   width: 75px;
-   height: 35px;
-   float: right;
-   font-family: HY강B;
-   font-size: 14px;
-   color: white;
-   border: 1px solid #cccccc;
-   background-color: #007DC1;
-}
+/* .del { */
+/*    border-radius: 5px; */
+/*    width: 75px; */
+/*    height: 35px; */
+/*    float: right; */
+/*    font-family: HY강B; */
+/*    font-size: 14px; */
+/*    color: white; */
+/*    border: 1px solid #cccccc; */
+/*    background-color: #007DC1; */
+/* } */
 
 
-/* 공지사항,회원관리,메시지함관리 글씨 css */
-.name {
-   padding-left: 10px;
-   font-family: HY강B;
-   font-size:14px;
-   margin-top: 10px;
-   margin-bottom: -20px;
-}
+/* /* 공지사항,회원관리,메시지함관리 글씨 css */ */
+/* .name { */
+/*    padding-left: 10px; */
+/*    font-family: HY강B; */
+/*    font-size:14px; */
+/*    margin-top: 10px; */
+/*    margin-bottom: -20px; */
+/* } */
 
 

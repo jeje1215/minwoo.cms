@@ -51,7 +51,7 @@ public class AdController {
 		String dir = request.getServletContext().getRealPath(uploadDir);
 		String fileName = adsFile.getOriginalFilename();
         File file = new File(dir + "/" + fileName);
-        System.out.println("in dir : " + dir);
+       // System.out.println("in dir : " + dir);
         
         
         //System.out.println(dir);

@@ -8,58 +8,55 @@ $(function(){
 	   boardList();
 });
 
-	var showBoard = function(board){
-	   $(":input[name='usbId']").val($(board).data(usbId));
-	   $(":input[name='usbTitle']").val($(board).data(usbTitle));
-	   $(":input[name='usbContent']").val($(board).data(usbContent));
-	   $(":input[name='userId']").val($(board).data(userId));
-	   $(":input[name='regDate']").val($(board).data(regDate));
-	   $(":input[name='usbCnt']").val($(board).data(usbCnt));
-	}
+var showBoard = function(board){
+   $(":input[name='usbId']").val($(board).data(usbId));
+   $(":input[name='usbTitle']").val($(board).data(usbTitle));
+   $(":input[name='usbContent']").val($(board).data(usbContent));
+   $(":input[name='userId']").val($(board).data(userId));
+   $(":input[name='regDate']").val($(board).data(regDate));
+   $(":input[name='usbCnt']").val($(board).data(usbCnt));
+}
 
 function boardList(){
-	   $("#listBtn").bind("click",function() {
-	      var boardList = $("#boardList"); //게시판 목록
-	      var tr;
-	      var input;
-	      var etc;
-	      boardList.empty();
+      var boardList = $("#boardList"); //게시판 목록
+      var tr;
+      var input;
+      var etc;
+      boardList.empty();
 
-	      $.ajax({
-	         url : "cms/main/listboards",
-	         success : function(boards) {
-	        	 $(boards).each(function(idx, board) {
-	        		 
-	        		 var nowDate = new Date(board.regDate);
-		        	 month = ''+(nowDate.getMonth()+1);
-		        	 day = ''+nowDate.getDate();
-		        	 year = nowDate.getFullYear();
-		        	 if(day.length<2) day = '0' + day;
-		        	 if(month.length < 2) month = '0' + month;	 
-	        		 
-	               tr = $("<tr></tr>");
-	               td = $("<td ><name='usbId' value='"
-	                     + board.usbId+ "onClick='showBoard(this)'/>"
-	                     + board.usbId+ "</td>");
-	               td2 = $("<td onclick='goviewUrl(\"board/detail\", listForm, "+board.usbId+")'>"
-	            		   + board.usbTitle+ "</td><td>"
-	                 		+ board.userId+ "</td><td>"+ [year,month,day].join('-')
-	                     + "</td><td>"+ board.usbCnt+"</td>");
-	               boardList.append(tr.append(td).append(td2));
-	               td.find("input").data("usbTitle",board.usbTitle);
-	               td.find("input").data("usbContent",board.usbContent);
-	               td.find("input").data("userId",board.userId);
-	            });
-	         },
-	 		 complete : function() {
-	 			   $(":input[name='usbId']").val("");
-	 			   $(":input[name='usbTitle']").val("");
-	 			   $(":input[name='usbContent']").val("");
-	 			   $(":input[name='userId']").val("");
-	 			   $(":input[name='regDate']").val("");
-	 		}
-	      });
-		});
+      $.ajax({
+         url : "cms/main/listboards",
+         success : function(boards) {
+        	 $(boards).each(function(idx, board) {
+        		 var nowDate = new Date(board.regDate);
+	        	 month = ''+(nowDate.getMonth()+1);
+	        	 day = ''+nowDate.getDate();
+	        	 year = nowDate.getFullYear();
+	        	 if(day.length<2) day = '0' + day;
+	        	 if(month.length < 2) month = '0' + month;	 
+        		 
+               tr = $("<tr></tr>");
+               td = $("<td ><name='usbId' value='"
+                     + board.usbId+ "onClick='showBoard(this)'/>"
+                     + board.usbId+ "</td>");
+               td2 = $("<td onclick='goviewUrl(\"board/detail\", listForm, "+board.usbId+")'>"
+            		   + board.usbTitle+ "</td><td>"
+                 		+ board.userId+ "</td><td>"+ [year,month,day].join('-')
+                     + "</td><td>"+ board.usbCnt+"</td>");
+               boardList.append(tr.append(td).append(td2));
+               td.find("input").data("usbTitle",board.usbTitle);
+               td.find("input").data("usbContent",board.usbContent);
+               td.find("input").data("userId",board.userId);
+            });
+         },
+ 		 complete : function() {
+ 			   $(":input[name='usbId']").val("");
+ 			   $(":input[name='usbTitle']").val("");
+ 			   $(":input[name='usbContent']").val("");
+ 			   $(":input[name='userId']").val("");
+ 			   $(":input[name='regDate']").val("");
+ 		}
+      });
 	}
 </script>
 <section id="post">
@@ -85,9 +82,9 @@ function boardList(){
 
       <div class="form-group">
          <div class="col-sm-12 text-right">
-            <button type="button" class="btn btn-success btn-md" id="listBtn">
+           <!--  <button type="button" class="btn btn-success btn-md" id="listBtn">
                <i class="glyphicon glyphicon-list-alt"></i> 목록
-            </button>
+            </button> -->
             <button class="btn btn-primary" type="submit"
                onclick="menuUrl('board/write', urlForm)">
                등록 <i class="fas fa-plus"></i>

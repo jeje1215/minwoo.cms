@@ -6,6 +6,8 @@
 <script src="<c:url value="/js/user/join/userJoin.js"/>"></script>
 
 <div class="col-md-12">
+<br>
+<br>
 	<div class="page-header">
 		<h1>회원가입</h1>
 	</div>
@@ -93,5 +95,12 @@
 		</div>
 	</div>	
 </div>
+
+
+
+
+
+
+
 
 <%@ include file="../../common/footer.jsp"%>

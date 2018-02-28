@@ -49,13 +49,6 @@ table {
    background-color: #1689b9;
 }
 
-.btn-primary {
-   background-color: #286BF7;
-   border-radius: 10px;
-   color: wihte;
-   text-decoration: none;
-   border: 1px solid #286BF7;
-}
 
 .pagination {
    display: block;
@@ -110,18 +103,7 @@ select {
    flaot: left;
    margin-top:-20px;
 /*    margin-top: -100px; */
-	margin-bottom:30px;
-}
-
-
-.btn-primary {
-   background-color: #c0d6e4;
-   color: black;
-   border-radius: 0 3px 3px 0;
-   font-family: HY강B;
-   text-align: center;
-   height: 30px;
-   border: 1px solid #1a3547;
+   margin-bottom:30px;
 }
 
 .btn-info {
@@ -138,20 +120,9 @@ select {
    padding-top: 10px;
 }
 
-.del {
-   border-radius: 5px;
-   width: 75px;
-   height: 35px;
-   float: right;
-   font-family: HY강B;
-   font-size: 14px;
-   color: white;
-   border: 1px solid #cccccc;
-   background-color: #007DC1;
-}
 
 
 button.btn-warning{
-	float:right;
-	
+   float:right;
+   
 }

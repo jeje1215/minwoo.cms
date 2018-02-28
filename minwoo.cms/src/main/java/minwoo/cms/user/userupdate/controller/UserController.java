@@ -23,12 +23,24 @@ public class UserController {
    @RequestMapping("listUsers")
    @ResponseBody
    public User listUsers(User user){
-	  // System.out.println(user.getUserNm());
+     // System.out.println(user.getUserNm());
       return userUpdateService.userList(user);
    }
    @RequestMapping(value="fixUserInfo", method=RequestMethod.POST)
    @ResponseBody
    public boolean fixUserInfo(User user){
-	   return userUpdateService.fixUserInfo(user);
+      return userUpdateService.fixUserInfo(user);
    }
+   @RequestMapping(value="secede",method=RequestMethod.POST)
+   @ResponseBody
+   public boolean secede(User user){
+      return userUpdateService.secede(user);
+   }
+
+   @RequestMapping(value="/user/update/updateEnd",method=RequestMethod.POST)
+   public String goupdateEnd(String url){
+      return url;
+   }
+   
+ 
 }

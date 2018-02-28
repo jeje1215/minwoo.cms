@@ -19,4 +19,17 @@
    where user_id =#{userId} 
 </update>
 
+
+<update id="delUser" parameterType="minwoo.cms.user.userupdate.domain.User">
+   update users
+   set 
+   user_nic = null
+   ,user_nm = null
+   ,user_birth = null
+   ,user_mail = null
+   ,user_pwd = null
+   ,mod_date = sysdate
+   where user_id =#{userId} 
+</update>
+
 </mapper>

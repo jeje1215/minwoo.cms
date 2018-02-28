@@ -6,4 +6,5 @@ import minwoo.cms.user.userupdate.domain.User;
 public interface UserUpdateService {
    User userList(User user); //회원정보
    boolean fixUserInfo(User user); //회원수정
+   boolean secede(User user); //삭제
 }

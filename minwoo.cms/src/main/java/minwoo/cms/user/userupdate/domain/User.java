@@ -7,41 +7,62 @@ public class User {
    public String userMail; // 메일
    public String userBirth;// 생년월일
    public String userNic; // 닉네임
-   
+   public String regDate; // 가입일
+
    public String getUserId() {
       return userId;
    }
+
    public String getUserPwd() {
       return userPwd;
    }
+
    public String getUserNm() {
       return userNm;
    }
+
    public String getUserMail() {
       return userMail;
    }
+
    public String getUserBirth() {
       return userBirth;
    }
+
    public String getUserNic() {
       return userNic;
    }
+
    public void setUserId(String userId) {
       this.userId = userId;
    }
+
    public void setUserPwd(String userPwd) {
       this.userPwd = userPwd;
    }
+
    public void setUserNm(String userNm) {
       this.userNm = userNm;
    }
+
    public void setUserMail(String userMail) {
       this.userMail = userMail;
    }
+
    public void setUserBirth(String userBirth) {
       this.userBirth = userBirth;
    }
+
    public void setUserNic(String userNic) {
       this.userNic = userNic;
    }
+
+   public String getRegDate() {
+      return regDate;
+   }
+
+   public void setRegDate(String regDate) {
+      this.regDate = regDate;
+   }
+
 }

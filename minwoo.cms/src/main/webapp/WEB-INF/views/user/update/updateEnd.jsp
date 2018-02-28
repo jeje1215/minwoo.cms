@@ -6,7 +6,7 @@
 
 <div class="col-md-12">
 	<div class="page-header" style="text-align:center;">
-		<h1>회원가입이 완료되었습니다.</h1>
+		<h1>수정이 완료되었습니다.</h1>
 	</div>
 	<div class="form-group">
 		<div class="col-sm-12 text-center">

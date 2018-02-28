@@ -19,4 +19,8 @@ public class UserUpdateDaoImpl implements UserUpdateDao{
    public int updateUser(User user){
       return userMapper.updateUser(user);
    }
+   //삭제
+   public int delUser(User user){
+      return userMapper.delUser(user);
+   }
 }

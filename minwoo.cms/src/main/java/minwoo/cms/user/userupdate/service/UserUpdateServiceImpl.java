@@ -15,11 +15,11 @@ public class UserUpdateServiceImpl implements UserUpdateService{
    }
   
    public boolean fixUserInfo(User user){
-	   System.out.println(user.getUserNic());
-	   System.out.println(user.getUserBirth());
-	   System.out.println(user.getUserMail());
-	   System.out.println(user.getUserPwd());
-	   System.out.println(user.getUserNm());
       return userUpdateDao.updateUser(user)>0;
+   }
+   
+   public boolean secede(User user){
+	   
+      return userUpdateDao.delUser(user)>0;
    }
 }

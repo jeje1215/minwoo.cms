@@ -15,7 +15,7 @@
 	<select id="getUsers" resultMap="manuserMap"
 		parameterType="minwoo.cms.user.manuser.domain.ManUser">
 		select user_id, user_nic, user_nm, user_mail, user_level
-		from USERS order by user_nm asc
+		from USERS where mod_date is null order by user_nm asc
 	</select>
 	
 	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser">

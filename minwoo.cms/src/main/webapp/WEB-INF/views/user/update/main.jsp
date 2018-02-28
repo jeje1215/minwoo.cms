@@ -3,88 +3,8 @@
 <%@ include file="../../common/header.jsp"%>
 <%@ include file="../../menu/topMenu.jsp"%>
 <%@ include file="../../menu/leftMenu.jsp"%>
-<%@ include file="../../common/modal.jsp"%>
 <style>@import url("<c:url value="/css/user/update/update.css"/>");</style>
 
-   <section id="post">
-      <div class="container">
-         <div class="col-md-12" style="font-family: HY강B";>
-            <div class="page-header">
-               <h3>회원정보수정</h3>
-            </div>
-            <form class="form-horizontal"id="userform">
-        	 <input type="text" name="userId" value="${ sessionScope.user.loginId }" style="display:none;">
-               <div class="form-group">
-                  <label class="col-sm-3 control-label" for="inputId">ID</label>
-                  <div class="col-sm-6">
-                     ${ sessionScope.user.loginId }
-                  </div>
-               </div>
-               <div class="form-group">
-                  <label class="col-sm-3 control-label" for="inputEmail">이메일</label>
-                  <div class="col-sm-6">
-                     <input class="form-control" id="inputEmail" type="email"
-                        placeholder="이메일" name="userMail">
-                  </div>
-               </div>
-
-               <div class="form-group">
-                  <label class="col-sm-3 control-label" for="inputPassword">비밀번호</label>
-                  <div class="col-sm-6">
-                     <input class="form-control" id="inputPassword" type="password" 
-                         placeholder="비밀번호" name="userPwd">
-                     <p class="help-block">숫자, 영문자 포함 6자 이상 12자 이하</p>
-                  </div>
-               </div>
-               
-               <div class="form-group">
-                  <label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호
-                     확인</label>
-                  <div class="col-sm-6">
-                     <input class="form-control" id="inputPasswordCheck" 
-                        type="password"  placeholder="비밀번호 확인" name="userPwd1">
-                     <p class="help-block">비밀번호를 한번 더 입력해주세요.</p>
-                  </div>
-               </div>
-               
-               <div class="form-group">
-                  <label class="col-sm-3 control-label" for="inputName">이름</label>
-                  <div class="col-sm-6">
-                     <input class="form-control" id="inputName" type="text"   
-                        placeholder="이름" name="userNm">
-                  </div>
-               </div>
-               
-               <div class="form-group">
-                  <label class="col-sm-3 control-label" for="inputNicname">닉네임</label>
-                  <div class="col-sm-6">
-                     <input class="form-control" id="inputNicname" type="text" 
-                        placeholder="닉네임" name="userNic">
-                  </div>
-               </div>
-               
-               <div class="form-group">
-                  <label class="col-sm-3 control-label" for="inputBirth">생년월일</label>
-                  <div class="col-sm-6">
-                     <input class="form-control" id="inputBirth" type="text" maxlength="8"
-                  	 	required  placeholder="생년월일" name="userBirth">
-                  </div>
-               </div>
-               <div class="form-group">
-                  <div class="col-sm-12 text-center">
-                     <button class="btn btn-primary" onclick="go_update()">
-                      	  회원수정<i class="fa fa-check spaceLeft"></i>
-                     </button>
-                     
-                     <button class="btn btn-danger"  onclick="userDel();">
-                      	  회원탈퇴<i class="fa fa-times spaceLeft"></i>
-                     </button>
-                  </div>
-               </div>
-            </form>
-         </div>
-      </div>
-   </section>
 <script>
 	$(function update() {
 		$.ajax({  
@@ -177,17 +97,21 @@
 	                  }
 					//menuUrl('user/update/updateEnd', urlForm);
 				}
-			
 			});
 	}
 
 	function userDel() {
-		$("userDel").on("click",function(){
 			var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
 			var pwd = $("#inputPassword").val();
 			var chkPwd = $("#inputPasswordCheck").val();
 			var chk_num = pwd.search(/[0-9]/g);		
 			var chk_eng = pwd.search(/[a-z]/ig);
+			
+		    $('#modalBody_two').html("탈퇴하시겠습니까?");
+		    $('#myModal_two').modal();
+	            $('#myModal_two').on('click', '#modalOk', function() {
+                return true;
+             }); 
 
 			if (pwd != chkPwd) {
 				$('#modalBody_one').html("비밀번호가 일치하지 않습니다.");
@@ -205,8 +129,7 @@
 					go_Logout();
 				},
 			});
-				
-		})
+	}
 		
 	function go_Logout(){
 		$.ajax({
@@ -227,6 +150,85 @@
 			}
 		});
 	}
-}
 </script>   
+   <section id="post">
+      <div class="container">
+         <div class="col-md-12" style="font-family: HY강B";>
+            <div class="page-header">
+               <h3>회원정보수정</h3>
+            </div>
+            <form class="form-horizontal"id="userform">
+        	 <input type="text" name="userId" value="${ sessionScope.user.loginId }" style="display:none;">
+               <div class="form-group">
+                  <label class="col-sm-3 control-label" for="inputId">ID</label>
+                  <div class="col-sm-6">
+                     ${ sessionScope.user.loginId }
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-sm-3 control-label" for="inputEmail">이메일</label>
+                  <div class="col-sm-6">
+                     <input class="form-control" id="inputEmail" type="email"
+                        placeholder="이메일" name="userMail">
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label class="col-sm-3 control-label" for="inputPassword">비밀번호</label>
+                  <div class="col-sm-6">
+                     <input class="form-control" id="inputPassword" type="password" 
+                         placeholder="비밀번호" name="userPwd">
+                     <p class="help-block">숫자, 영문자 포함 6자 이상 12자 이하</p>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호
+                     확인</label>
+                  <div class="col-sm-6">
+                     <input class="form-control" id="inputPasswordCheck" 
+                        type="password"  placeholder="비밀번호 확인" name="userPwd1">
+                     <p class="help-block">비밀번호를 한번 더 입력해주세요.</p>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label class="col-sm-3 control-label" for="inputName">이름</label>
+                  <div class="col-sm-6">
+                     <input class="form-control" id="inputName" type="text"   
+                        placeholder="이름" name="userNm">
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label class="col-sm-3 control-label" for="inputNicname">닉네임</label>
+                  <div class="col-sm-6">
+                     <input class="form-control" id="inputNicname" type="text" 
+                        placeholder="닉네임" name="userNic">
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label class="col-sm-3 control-label" for="inputBirth">생년월일</label>
+                  <div class="col-sm-6">
+                     <input class="form-control" id="inputBirth" type="text" maxlength="8"
+                  	   placeholder="생년월일" name="userBirth">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                     <button class="btn btn-primary" onclick="go_update()">
+                      	  회원수정<i class="fa fa-check spaceLeft"></i>
+                     </button>
+                     
+                     <button class="btn btn-danger"  onclick="userDel();">
+                      	  회원탈퇴<i class="fa fa-times spaceLeft"></i>
+                     </button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>
+
 <%@ include file="../../common/footer.jsp"%>

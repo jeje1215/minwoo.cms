@@ -54,5 +54,5 @@ $(function(){
 }*/
 
 function go_boardList(subid){
-	alert(subid);
+	//alert(subid);
 }

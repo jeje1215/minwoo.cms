@@ -25,7 +25,7 @@
          <br>
       </p>
    </div>
-   <table>
+<!--    <table>
       <tr>
          <td>게시글 1</td>
          <td>게시글 2</td>
@@ -36,6 +36,6 @@
          <td>게시글 2</td>
          <td>게시글 3</td>
       </tr>
-   </table>
+   </table> -->
 </body>
 </html>

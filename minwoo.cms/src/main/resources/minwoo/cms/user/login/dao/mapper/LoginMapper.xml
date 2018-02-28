@@ -9,11 +9,11 @@
 	</resultMap>	
 	
 	<select id="chkId" resultMap="userMap" parameterType="minwoo.cms.user.login.domain.LoginInfo">
-		select user_id from users where user_id=#{loginId}
+		select user_id from users where user_id=#{loginId} and mod_date is null
 	</select>	
 
 	<select id="chkPwd" resultMap="userMap" parameterType="minwoo.cms.user.login.domain.LoginInfo">
-		select user_pwd from users where user_id=#{loginId} and user_pwd=#{loginPw}
+		select user_pwd from users where user_id=#{loginId} and user_pwd=#{loginPw} and mod_date is null
 	</select>	
 	
 	<select id="getRegDate" resultType="date" parameterType="string">

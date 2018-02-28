@@ -8,6 +8,14 @@ $(function() {
 
 	$("#doubleChk").click(
 			function() {
+				var id = $("#inputId").val();
+				id = id.replace(/ /gi, "")
+				if(id == 'ID' || id == '' ){
+					$('#modalBody_one').html("아이디를 정확히 입력해주세요.");
+					$('#myModal_one').modal();
+					return false;
+				}
+				
 				$.ajax({
 					url : "/cms/join/idChk",
 					method : "post",

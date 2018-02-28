@@ -13,20 +13,21 @@ $(function(){
 var showBoard = function(board){
 	   $(":input[name='usbTitle']").val($(board).data("usbTitle"));
 	   $(":input[name='usbContent']").val($(board).data("usbContent"));
-	}
+}
 
 var regBtns = function(){
     var modal = $("#resultModal");// 결과창
-      var msg = $("#msg"); //결과 메세지
+    var msg = $("#msg"); //결과 메세지
 }
 
 function updBtn(){ //수정 버튼
-	   console.log("콘솔은찍힌다!");
-	   
+
+	console.log("안녕하세요");
+
 	      $.ajax({
 	         url:"fixBoard",
 	         method:"post",
-	         data :  $("#boardForm").serialize(),
+	         data :$("#boardForm").serialize(),
 	         success : function(result) {
 	            if (result){
 	               $('#modalBody_one').html("수정 성공");
@@ -36,6 +37,10 @@ function updBtn(){ //수정 버튼
 	               $('#myModal_one').modal();
 	            }
 	      },
+	      error : function(a, b, errMsg) {
+	            $('#modalBody_one').html("수정 땡"+errMsg);
+	            $('#myModal_one').modal();
+	         }
 	   });
 	}
       
@@ -50,6 +55,9 @@ function delBtn(){ //삭제버튼
             if (result){
                $('#modalBody_one').html("삭제 성공");
                $('#myModal_one').modal();
+               $('#myModal_one').on('click', '#modalOk', function() {
+	                menuUrl('main', urlForm);
+	             }); 
             }else{
                $('#modalBody_one').html("삭제 실패");
                $('#myModal_one').modal();
@@ -95,7 +103,7 @@ function delBtn(){ //삭제버튼
             
             <tfoot>
                <td>제 목</td>
-               <td><input value="${board_one.usbTitle}" name="usbTitle"/></td>
+               <td><input value="${board_one.usbTitle}" id="upTitle"/></td>
                </tr>
                <tr>
                   <td>작성자 </td>
@@ -103,7 +111,7 @@ function delBtn(){ //삭제버튼
                </tr>
                <tr>
                   <td>내용</td>
-                  <td><textarea name="usbContent" rows="10" cols="100">${board_one.usbContent}</textarea></td>
+                  <td><textarea id="upContent" rows="10" cols="100">${board_one.usbContent}</textarea></td>
                </tr>
                
             </tfoot>

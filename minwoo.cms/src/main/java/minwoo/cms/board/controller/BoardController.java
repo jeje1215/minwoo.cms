@@ -61,7 +61,6 @@ public class BoardController {
    @ResponseBody
    @RequestMapping(value="/board/fixBoard",method={RequestMethod.POST,RequestMethod.GET})
    public boolean fixBoard(BoardVo boardVo){
-      System.out.println("하이");
       return boardService.fixBoard(boardVo);
    }
    

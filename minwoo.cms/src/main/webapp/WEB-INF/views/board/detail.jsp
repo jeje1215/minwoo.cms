@@ -10,19 +10,23 @@ $(function(){
       regBtns();
 });
 
+var showBoard = function(board){
+	   $(":input[name='usbTitle']").val($(board).data("usbTitle"));
+	   $(":input[name='usbContent']").val($(board).data("usbContent"));
+	}
+
 var regBtns = function(){
     var modal = $("#resultModal");// 결과창
       var msg = $("#msg"); //결과 메세지
 }
 
 function updBtn(){ //수정 버튼
-	   var board = $("#boardId").val();
-	   			
-	   console.log("dsfsdf");
+	   console.log("콘솔은찍힌다!");
+	   
 	      $.ajax({
 	         url:"fixBoard",
 	         method:"post",
-	         data : $("#delForm").serialize(),
+	         data :  $("#boardForm").serialize(),
 	         success : function(result) {
 	            if (result){
 	               $('#modalBody_one').html("수정 성공");
@@ -34,8 +38,6 @@ function updBtn(){ //수정 버튼
 	      },
 	   });
 	}
-
-
       
 function delBtn(){ //삭제버튼
    var board = $("#boardId").val();
@@ -67,8 +69,8 @@ function delBtn(){ //삭제버튼
 <section id="post">
    <div class="container">
    <br>
-      <form id="delForm">
-         <table class="table table-hover"  id="detailBoard" style="font-size:14px;">
+      <form id="boardForm">
+         <table class="table table-hover" style="font-size:14px;">
             <caption>게시글</caption>
            
             <thead>
@@ -93,7 +95,7 @@ function delBtn(){ //삭제버튼
             
             <tfoot>
                <td>제 목</td>
-               <td><input value="${board_one.usbTitle}" /></td>
+               <td><input value="${board_one.usbTitle}" name="usbTitle"/></td>
                </tr>
                <tr>
                   <td>작성자 </td>
@@ -101,7 +103,7 @@ function delBtn(){ //삭제버튼
                </tr>
                <tr>
                   <td>내용</td>
-                  <td><textarea name=content rows="10" cols="100">${board_one.usbContent}</textarea></td>
+                  <td><textarea name="usbContent" rows="10" cols="100">${board_one.usbContent}</textarea></td>
                </tr>
                
             </tfoot>

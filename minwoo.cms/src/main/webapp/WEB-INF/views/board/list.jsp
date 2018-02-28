@@ -30,7 +30,7 @@ function boardList(){
 	         success : function(boards) {
 	        	 $(boards).each(function(idx, board) {
 	        		 
-	        		 var nowDate = new Date();
+	        		 var nowDate = new Date(board.regDate);
 		        	 month = ''+(nowDate.getMonth()+1);
 		        	 day = ''+nowDate.getDate();
 		        	 year = nowDate.getFullYear();

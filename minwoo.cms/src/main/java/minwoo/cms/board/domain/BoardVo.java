@@ -1,6 +1,6 @@
 package minwoo.cms.board.domain;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class BoardVo {
    private int usbId; // 게시글 번호

@@ -110,7 +110,7 @@ public class AdController {
 		Ad ad_tmp = new Ad();
 		ad_tmp = adService.findAd(adsId_tmp);		
 		infile = ad_tmp.getAdsFile();
-        System.out.println("edit dir : " + dir);
+        //System.out.println("edit dir : " + dir);
 
         //System.out.println("UtilFile fileUpload infile : " + infile);
         //System.out.println("UtilFile fileUpload fileName : " + fileName);

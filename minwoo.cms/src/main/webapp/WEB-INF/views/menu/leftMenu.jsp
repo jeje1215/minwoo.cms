@@ -14,10 +14,6 @@
 			<!-- home 메뉴  -->
 			<ul id="menu_home">
 				<li>
-					<h3>공지사항</h3>
-					<ul>
-						<li><a href="#">게시판공지사항</a></li>
-					</ul>
 					<c:forEach items="${man_boardlist}" var="manlist">
 						<c:if test="${manlist.mabYn eq 'Y'}">
 							<h3>
@@ -26,7 +22,7 @@
 							<ul>
 								<c:forEach items="${sub_boardlist}" var="sublist">
 									<c:if test="${manlist.mabId eq sublist.mabId and sublist.subYn eq 'Y'}">
-										<li><a href="#">${sublist.subNm}</a></li>
+										<li><a href="#" onclick="go_boardList(${sublist.subId})">${sublist.subNm}</a></li>
 									</c:if>
 								</c:forEach>
 							</ul>
@@ -73,7 +69,6 @@
 				<h3>
 					<a href="${ad.adsUrl}" target="_blank">
 						<img src="<c:url value="/upload/${ad.adsFile}"/>" style="width:200px;height:100px;">
-						<%-- <img src="<c:url value="/upload/${ad.adsFile}"/>" style="width:200px;height:100px;"> --%>
 					</a>
 				</h3>
 			</c:forEach>

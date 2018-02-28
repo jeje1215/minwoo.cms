@@ -52,3 +52,7 @@ $(function(){
 
 	$("#" + $("#" + id).attr("data-val")).addClass("active");
 }*/
+
+function go_boardList(subid){
+	alert(subid);
+}

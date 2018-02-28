@@ -39,7 +39,7 @@ function boardList(){
                td = $("<td ><name='usbId' value='"
                      + board.usbId+ "onClick='showBoard(this)'/>"
                      + board.usbId+ "</td>");
-               td2 = $("<td onclick='goviewUrl(\"board/detail\", listForm, "+board.usbId+")'>"
+               td2 = $("<td style='cursor:pointer;' onclick='goviewUrl(\"board/detail\", listForm, "+board.usbId+")'>"
             		   + board.usbTitle+ "</td><td>"
                  		+ board.userId+ "</td><td>"+ [year,month,day].join('-')
                      + "</td><td>"+ board.usbCnt+"</td>");

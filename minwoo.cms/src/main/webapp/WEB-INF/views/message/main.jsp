@@ -9,9 +9,16 @@
 	<div class="box">
 		<div class="letterpage">
 			<div id="header">쪽지보내세요!</div>
-			<label for="who" class="recipient"> 받는사람	</label>
+			<div id="recipient">
+			<label for="who" class="recipient"> 받는사람 아이디</label>
 			<input type="text" name="mesGetId" id="chk11" value="" >	
 			<hr>
+				</div>
+				<div id="recipient">
+			<label for="who" class="recipient"> 보낸사람 아이디</label>
+		<input type="text" name="userId"  id="userId" value="${sessionScope.user.loginId}"  >	
+			<hr>
+			</div>
 			<div class="writing_area">
 				<textarea id="writeNote" name="mesContent" style="resize: none;" rows="12" cols="64">		
 				</textarea>
@@ -29,24 +36,6 @@
 		</div>
 
 	</div>
-		<input type="text" name="userId"  id="userId" value="${sessionScope.user.loginId}"  style="display:none;">	
+	
 </form>
-
-<!--   <div class="modal fade"  id="resultModal"  tabindex="-1" role="dialog" -->
-<!--       aria-labelledby="myModalLabel" aria-hidden="true"> -->
-<!--       <div class="modal-dialog modal-sm"> -->
-<!--          <div class="modal-content"> -->
-<!--             <div class="modal-header"> -->
-<!--                <button type="button" class="close" data-dismiss="modal">     </button> -->
-<!--                  <h4 class="modal-title" id="msg1"></h4> -->
-<!--            </div> -->
-<!--              <div class="modal-footer"> -->
-<!--                <button type="button" class="btn btn-primary" data-dismiss="modal"   -->
-<!--                  onclick="window.close();">확인</button> -->
-
-<!--                <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button> -->
-<!--             </div> -->
-<!--          </div> -->
-<!--       </div> -->
-<!--  </div>   -->
 </body>

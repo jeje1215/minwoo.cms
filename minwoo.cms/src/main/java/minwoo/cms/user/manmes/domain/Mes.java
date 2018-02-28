@@ -6,7 +6,7 @@ import java.util.List;
 public class Mes {
 	private int mesId; //고유값
 	private String mesContent; //메세지 내용
-	private Date sysDate; 
+	private Date mesWriteDate;  //보낸 날짜	
 	private String mesGetId; //메세지 받는 사람 id
 	private String userMail;  //회원 이메일
 	private String userNm; //이름
@@ -14,7 +14,12 @@ public class Mes {
 	public String checked; // 체크박스 중 체크된 값
 	public List<String> tmpChecked; // 임시값 (테스트중)
 	
-	
+	public Date getMesWriteDate() {
+		return mesWriteDate;
+	}
+	public void setMesWriteDate(Date mesWriteDate) {
+		this.mesWriteDate = mesWriteDate;
+	}
 	
 	public List<String> getTmpChecked() {
 		return tmpChecked;
@@ -49,12 +54,7 @@ public class Mes {
 	public void setMesContent(String mesContent) {
 		this.mesContent = mesContent;
 	}
-	public Date getSysDate() {
-		return sysDate;
-	}
-	public void setSysDate(Date sysDate) {
-		this.sysDate = sysDate;
-	}
+
 	public String getMesGetId() {
 		return mesGetId;
 	}

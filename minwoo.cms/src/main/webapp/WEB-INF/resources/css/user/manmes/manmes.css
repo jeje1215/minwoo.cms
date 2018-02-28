@@ -3,7 +3,11 @@
 p {
 	font-size: 11px;
 }
-
+.table{
+	
+	width:980px;
+	
+}
 .modal-dialog {
 	font-family: HY강B;
 	text-align: center;

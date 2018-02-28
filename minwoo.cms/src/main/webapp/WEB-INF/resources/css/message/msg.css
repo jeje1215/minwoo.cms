@@ -19,6 +19,16 @@ footer{
 	font-size:11px;
 	
 }
+textarea#writeNote{
+
+    width: 100%;
+    height:252px;
+    }
+div#recipient{
+	
+	height:50px;
+}
+
 
 div.letterpage {
 	width: 490px;
@@ -43,7 +53,8 @@ div#header {
 label.recipient {
 	padding-top: 20px;
 	font-family: HY강B;
-	font-size: 15px
+	font-size: 15px;
+	height:20px;
 }
 
 div.writing_area { 

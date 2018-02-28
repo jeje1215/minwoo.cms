@@ -39,7 +39,7 @@ var regBtns = function(){
                           +mes.mesId+"'onClick='showMes(this)'/>"
                           +""
                           +"</td>");
-                    td2 = $("<td>"+mes.userNic+"</td><td>"+mes.userNm+"</td><td>"+mes.userMail+"</td><td>"+mes.mesContent+"</td> ");
+                    td2 = $("<td>"+mes.userId+"</td><td>"+mes.mesWriteDate+"</td><td>"+mes.mesContent+"</td> ");
                     
                     mesList.append(tr.append(td).append(td2));      
                     td.find("input").data("userNic", mes.userNic);

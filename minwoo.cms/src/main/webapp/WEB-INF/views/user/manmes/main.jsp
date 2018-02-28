@@ -19,9 +19,8 @@
 				<thead>
 						<tr>					
 						<th ></th>
-						<th>닉네임(아이디)<input type="text" name="userId" id="userId" value="${sessionScope.user.loginId}" style="display:none";></th>
-						<th>이름</th>
-						<th>이메일</th>
+						<th>보낸 사람 Id<input type="text" name="userId" id="userId" value="${sessionScope.user.loginId}" style="display:none;" ;></th>				
+						<th>보낸날짜</th>
 						<th>메세지</th>						
 					</tr>				
 				</thead>				  

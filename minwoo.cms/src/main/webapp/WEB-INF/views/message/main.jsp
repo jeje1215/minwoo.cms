@@ -14,15 +14,16 @@
 			<input type="text" name="mesGetId" id="chk11" value="" >	
 			<hr>
 				</div>
-				<div id="recipient">
-			<label for="who" class="recipient"> 보낸사람 아이디</label>
-		<input type="text" name="userId"  id="userId" value="${sessionScope.user.loginId}"  >	
-			<hr>
-			</div>
+
 			<div class="writing_area">
 				<textarea id="writeNote" name="mesContent" style="resize: none;" rows="12" cols="64">		
 				</textarea>
 
+			</div>
+			<div id="recipient">
+			<label for="who" class="recipient"> 보낸사람 아이디</label>
+		<input type="text" name="userId"  id="userId" value="${sessionScope.user.loginId}"  >	
+		
 			</div>
 			<div class="let">
 				<button type="button" class="btn btn-info" id="sendMsg"

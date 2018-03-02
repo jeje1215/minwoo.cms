@@ -82,13 +82,13 @@ function delBtn(){ //삭제버튼
             <caption>게시글</caption>
            
             <thead>
-               <tr>
+<!--                <tr>
                   <th>번호</th>
                   <th class="title">제목</th>
                   <th>작성자</th>
                   <th style="color: #EA990B;">날짜</th>
                   <th style="color: #EA990B;"><b>조회수</b></th>
-               </tr>
+               </tr> -->
             </thead>
            <tr>
                <td>작성일</td>

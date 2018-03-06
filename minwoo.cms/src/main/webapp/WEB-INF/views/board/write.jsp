@@ -45,17 +45,20 @@ var showBoard = function(board){
 				  	url :"/cms/main/createboard",
 					data : $("#boardForm").serialize(),
 					success : function(result){
-						if(result) {msg.text("게시물 등록 성공"); 
-						menuUrl('main', urlForm);
-						}
-						else {msg.text("게시물 등록 실패");}
-						//$("#listBtn").trigger("click");
+						if(result) {
+						 $('#modalBody_one').html("등록 성공");
+				         $('#myModal_one').modal();
+				         $('#myModal_one').on('click', '#modalOk', function() {
+					       	menuUrl('main', urlForm);
+					         }); 
+						}else {
+						$('#modalBody_one').html("등록 실패");
+			            $('#myModal_one').modal();
+			            }
 					},
 					error:function(a, b, errMsg){
-						msg.text("게시물 등록 실패: "+errMsg);
-					},
-					complete:function(){
-						modal.modal("show");
+						$('#modalBody_one').html("등록 실패!"+errMsg);
+			            $('#myModal_one').modal();
 					}
 			   });
 		   }

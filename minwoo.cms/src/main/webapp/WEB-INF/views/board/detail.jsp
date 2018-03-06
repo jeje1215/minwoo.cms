@@ -20,25 +20,27 @@ var regBtns = function(){
     var msg = $("#msg"); //결과 메세지
 }
 
-function updBtn(){ //수정 버튼
-
+function updBtn(){ //수정 버튼	
 	console.log("안녕하세요");
 
 	      $.ajax({
 	         url:"fixBoard",
 	         method:"post",
-	         data :$("#boardForm").serialize(),
+	         data :$("#upForm").serialize(),
 	         success : function(result) {
 	            if (result){
-	               $('#modalBody_one').html("수정 성공");
-	               $('#myModal_one').modal();
-	            }else{
+	           	 $('#modalBody_one').html("수정 성공");
+			   	 $('#myModal_one').modal();
+			  	  $('#myModal_one').on('click', '#modalOk', function() {
+					menuUrl('main', urlForm);
+					}); 
+				}else{
 	               $('#modalBody_one').html("수정 실패");
 	               $('#myModal_one').modal();
 	            }
 	      },
 	      error : function(a, b, errMsg) {
-	            $('#modalBody_one').html("수정 땡"+errMsg);
+	            $('#modalBody_one').html("수정 실패"+errMsg);
 	            $('#myModal_one').modal();
 	         }
 	   });
@@ -77,18 +79,12 @@ function delBtn(){ //삭제버튼
 <section id="post">
    <div class="container">
    <br>
-      <form id="boardForm">
+      <form id="upForm" name="upForm" method="post">
          <table class="table table-hover" style="font-size:14px;">
             <caption>게시글</caption>
            
             <thead>
-<!--                <tr>
-                  <th>번호</th>
-                  <th class="title">제목</th>
-                  <th>작성자</th>
-                  <th style="color: #EA990B;">날짜</th>
-                  <th style="color: #EA990B;"><b>조회수</b></th>
-               </tr> -->
+
             </thead>
            <tr>
                <td>작성일</td>
@@ -97,13 +93,13 @@ function delBtn(){ //삭제버튼
             
             <tr>
                   <td style="display: none;"><input value="${board_one.usbId}"
-                     id="boardId" /></td>
+                     id="boardId" name="usbId" /></td>
                </tr>
             
             
             <tfoot>
                <td>제 목</td>
-               <td><input value="${board_one.usbTitle}" id="upTitle"/></td>
+               <td><input value="${board_one.usbTitle}" name="usbTitle"/></td>
                </tr>
                <tr>
                   <td>작성자 </td>
@@ -111,12 +107,12 @@ function delBtn(){ //삭제버튼
                </tr>
                <tr>
                   <td>내용</td>
-                  <td><textarea id="upContent" rows="10" cols="100">${board_one.usbContent}</textarea></td>
+                  <td><textarea name="usbContent" rows="10" cols="100">${board_one.usbContent}</textarea></td>
                </tr>
                
             </tfoot>
          </table>
-</form>
+	</form>
 
    
       <div class="form-group">

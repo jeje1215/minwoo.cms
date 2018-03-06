@@ -33,5 +33,11 @@
    		delete userboards where usb_id=#{usbId}
    	</delete>
 
+	<!-- 조회수 -->
+	<update id="updateCnt" parameterType="int">
+		update userboards
+		set usb_cnt = usb_cnt+1
+		where usb_id=#{usbId}
+	</update>
    
 </mapper>

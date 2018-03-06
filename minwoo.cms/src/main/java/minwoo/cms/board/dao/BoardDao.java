@@ -12,4 +12,5 @@ public interface BoardDao {
    int updateBoard(BoardVo boardVo);//게시글 수정
    int deleteBoard(int usbId);//게시글 삭제
 
+   void updateCnt(int usbId);
 }

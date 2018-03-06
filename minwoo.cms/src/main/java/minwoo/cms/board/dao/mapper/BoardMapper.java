@@ -13,4 +13,6 @@ public interface BoardMapper {
    /*
     public void increaseViewcnt(int usbId);//조회수 증가
     */
+   
+   void updateCnt(int usbId);
 }

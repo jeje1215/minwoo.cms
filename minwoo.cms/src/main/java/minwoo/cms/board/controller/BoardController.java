@@ -42,6 +42,7 @@ public class BoardController {
    */
    @RequestMapping(value="/board/detail" , method={RequestMethod.POST,RequestMethod.GET})
    public String boardone(String url,Model model, int usbId){
+	   boardService.plusCnt(usbId);
 	   model.addAttribute("board_one",boardService.onelistboard(usbId));
 	   return url;
    }

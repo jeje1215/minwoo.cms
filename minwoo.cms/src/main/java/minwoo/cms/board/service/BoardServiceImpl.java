@@ -50,4 +50,8 @@ public class BoardServiceImpl implements BoardService{
 	 return boardDao.deleteBoard(usbId)>0;
    }
    
+   public void plusCnt(int usbId){
+	   boardDao.updateCnt(usbId);
+   }
+   
 }

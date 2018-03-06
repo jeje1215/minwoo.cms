@@ -11,13 +11,24 @@
 		<result property="ulevel" column="u_level" />
 		<result property="checkVal" column="check_Val" />
 	</resultMap>
-
+<!-- 
 	<select id="getUsers" resultMap="manuserMap"
-		parameterType="minwoo.cms.user.manuser.domain.ManUser">
-		select user_id, user_nic, user_nm, user_mail, user_level
-		from USERS where mod_date is null order by user_nm asc
+		parameterType="minwoo.cms.user.manuser.domain.ManUser"> -->
+	<select id="getUsers" resultType="minwoo.cms.user.manuser.domain.ManUser">	
+        <![CDATA[	
+			select x.rnum, x.userId, x.userNic, x.userNm, x.userMail, x.userLevel 
+			from( 
+				select rownum as rnum, a.userId, a.userNic, a.userNm, a.userMail, a.userLevel
+				from( 
+					select user_id userId, user_nic userNic, user_nm userNm, user_mail userMail, user_level userLevel
+					from users where mod_date is null 
+					order by user_id desc) a
+				where rownum <=#{rowCnt}*#{currentPage}) x
+			where x.rnum > #{rowCnt}*(#{currentPage}-1)
+        ]]>
 	</select>
-	
+	<!-- where rownum <=10) x
+			where x.rnum >=6 -->
 	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser">
 		update users set user_level = #{userLevel} where user_id in
 		<foreach item="item" collection="tmpCheckVal" index="index" open="(" close=")" separator=",">
@@ -32,12 +43,7 @@
 		</foreach>
 	</update>	
 	
-	<!-- commit -->
-<!-- 	<update id="editLevelUser" parameterType="minwoo.cms.user.manuser.domain.ManUser"> -->
-<!-- 		update users set user_level = #{userLevel} where user_id in -->
-<!-- 		<foreach item="tmp" collection="tmpCheckVal" open="(" close=")" -->
-<!-- 			separator=","> -->
-<!-- 			#{tmp} -->
-<!-- 		</foreach> -->
-<!-- 	</update> -->
+	<select id="cntGetUsers" resultType="int">
+		select count(*) as cnt_user from users where mod_date is null
+ 	</select>
 </mapper>

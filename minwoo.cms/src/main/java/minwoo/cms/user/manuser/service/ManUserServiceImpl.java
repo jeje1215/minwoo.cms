@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 public class ManUserServiceImpl implements ManUserService{
 	@Autowired ManUserDao manUserDao;
 	
-	public List<ManUser> listUsers(){
-		return manUserDao.getUsers();
+	public List<ManUser> listUsers(ManUser manUser){
+		return manUserDao.getUsers(manUser);
 	}
 	
 	public ManUser modiListManUser(String userId){
@@ -22,6 +22,10 @@ public class ManUserServiceImpl implements ManUserService{
 	
 	public boolean modiLevelManUser(ManUser manUser){
 		return manUserDao.editLevelUser(manUser);
+	}
+	
+	public int cntUser(){
+		return manUserDao.cntGetUsers();
 	}
 
 }

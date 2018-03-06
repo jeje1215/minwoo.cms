@@ -30,35 +30,33 @@
 				</div>
 			</form>
 		</div>
+	      <button class="btn btn-warning btn-md" id="testbtn" onclick="go_btn()">
+	         <i class="fas fa-wrench"></i>변경
+	      </button>
 		<div class="list">
-      <table class="table table-hover">
-         <thead>
-            <tr>
-               <td></td>
-               <th>닉네임(아이디)</th>
-               <th class="title">이름</th>
-               <th>이메일</th>
-               <th style="color: #EA990B;">등급</th>
-            </tr>
-         </thead>
-         <tbody>
-            <c:forEach items="${man_userlist}" var="manuserlist">
-               <tr>
-                  <td><input type="checkbox" id="cb1" name="level" value="${manuserlist.userId}"/></td>
-                  <td>${manuserlist.userId}</td> 
-                  <td>${manuserlist.userNm}</td>
-                  <td>${manuserlist.userMail}</td>
-                  <td>${manuserlist.userLevel}</td>
-               </tr>
-            </c:forEach>
-         </tbody>
-      </table>
-
-      <button class="btn btn-warning btn-md" id="testbtn" onclick="go_btn()">
-         <i class="fas fa-wrench"></i>변경
-      </button>
-   </div>
-
+	      <table class="table table-hover">
+	         <thead>
+	            <tr>
+	               <td></td>
+	               <th>닉네임(아이디)</th>
+	               <th class="title">이름</th>
+	               <th>이메일</th>
+	               <th style="color: #EA990B;">등급</th>
+	            </tr>
+	         </thead>
+	         <tbody>
+	            <c:forEach items="${man_userlist}" var="manuserlist">
+	               <tr>
+	                  <td><input type="checkbox" id="cb1" name="level" value="${manuserlist.userId}"/></td>
+	                  <td>${manuserlist.userId}</td> 
+	                  <td>${manuserlist.userNm}</td>
+	                  <td>${manuserlist.userMail}</td>
+	                  <td>${manuserlist.userLevel}</td>
+	               </tr>
+	            </c:forEach>
+	         </tbody>
+	      </table>
+  	 </div>
    <br> <br>
 <!--    <div class="text-center">
       <ul class="pagination">
@@ -78,6 +76,15 @@
                class="glyphicon glyphicon-chevron-right"></span></a></li>
       </ul>
    </div> -->
+	<jsp:include page="../../common/paging.jsp" flush="true">
+	    <jsp:param name="firstPageNo" value="${paging.firstPageNo}" />
+	    <jsp:param name="prevPageNo" value="${paging.prevPageNo}" />
+	    <jsp:param name="startPageNo" value="${paging.startPageNo}" />
+	    <jsp:param name="pageNo" value="${paging.pageNo}" />
+	    <jsp:param name="endPageNo" value="${paging.endPageNo}" />
+	    <jsp:param name="nextPageNo" value="${paging.nextPageNo}" />
+	    <jsp:param name="finalPageNo" value="${paging.finalPageNo}" />
+	</jsp:include>
 </div>   
 
 </section>

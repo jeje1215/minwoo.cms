@@ -13,8 +13,8 @@ import org.springframework.stereotype.Repository;
 public class ManUserDaoImpl implements ManUserDao{
 	@Autowired ManUserMapper manUserMapper;
 	
-	public List<ManUser> getUsers(){
-		return manUserMapper.getUsers();
+	public List<ManUser> getUsers(ManUser manUser){
+		return manUserMapper.getUsers(manUser);
 	}
 	
 	public ManUser editListUser(String userId){
@@ -22,12 +22,11 @@ public class ManUserDaoImpl implements ManUserDao{
 	}
 	
 	public boolean editLevelUser(ManUser manUser){
-//		List<String> list = new ArrayList<String>();
-//		list.add("tmdckdzoq");
-//		list.add("nsc6173");	
-//		list.add("tmdckd0102");		
-		//manUser.setTmpCheckVal(list);
 		return manUserMapper.editLevelUser(manUser);
+	}
+	
+	public int cntGetUsers(){
+		return manUserMapper.cntGetUsers();
 	}
 
 }

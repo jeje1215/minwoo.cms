@@ -11,6 +11,25 @@ public class ManUser {
 	public String checkVal; // 체크박스 중 체크된 값
 	public String ulevel; // select박스 회원등급
 	public List<String> tmpCheckVal; // 임시값 (테스트중)
+	
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public int getRowCnt() {
+		return rowCnt;
+	}
+
+	public void setRowCnt(int rowCnt) {
+		this.rowCnt = rowCnt;
+	}
+
+	public int currentPage;
+	public int rowCnt;
 
 	public List<String> getTmpCheckVal() {
 		return tmpCheckVal;

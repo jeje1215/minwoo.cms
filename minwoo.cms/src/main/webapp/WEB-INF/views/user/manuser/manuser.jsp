@@ -14,10 +14,6 @@
       </div>
       <br>
 		<div class="d1">
-			<!--  <div class="form">
-            <input type="text" placeholder="검색어 입력">
-            <button type="submit" class="1"></button>
-      		</div> -->
 			<br>
 			<form id="levelForm" method="post">
 				<input name="checkVal" id="checkVal" style="display:none;">
@@ -30,9 +26,10 @@
 				</div>
 			</form>
 		</div>
-	      <button class="btn btn-warning btn-md" id="testbtn" onclick="go_btn()">
-	         <i class="fas fa-wrench"></i>변경
-	      </button>
+      <button class="btn btn-warning btn-md" id="testbtn" onclick="go_btn()">
+         <i class="fas fa-wrench"></i>변경
+      </button>
+      <br><br>
 		<div class="list">
 	      <table class="table table-hover">
 	         <thead>
@@ -58,24 +55,6 @@
 	      </table>
   	 </div>
    <br> <br>
-<!--    <div class="text-center">
-      <ul class="pagination">
-         <li class="disabled"><a href="#"><span
-               class="glyphicon glyphicon-chevron-left"></span></a></li>
-         <li><a href="#">1</a></li>
-         <li><a href="#">2</a></li>
-         <li><a href="#">3</a></li>
-         <li><a href="#">4</a></li>
-         <li class="active"><a href="#">5</a></li>
-         <li><a href="#">6</a></li>
-         <li><a href="#">7</a></li>
-         <li><a href="#">8</a></li>
-         <li><a href="#">9</a></li>
-         <li><a href="#">10</a></li>
-         <li><a href="#"><span
-               class="glyphicon glyphicon-chevron-right"></span></a></li>
-      </ul>
-   </div> -->
 	<jsp:include page="../../common/paging.jsp" flush="true">
 	    <jsp:param name="firstPageNo" value="${paging.firstPageNo}" />
 	    <jsp:param name="prevPageNo" value="${paging.prevPageNo}" />

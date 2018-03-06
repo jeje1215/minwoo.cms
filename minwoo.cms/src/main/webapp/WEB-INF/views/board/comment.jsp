@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../common/header.jsp"%>
-<%@ include file="../menu/topMenu.jsp"%>
-<%@ include file="../menu/leftMenu.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 
-<style>@import url("<c:url value="/css/message/msg.css"/>");</style>
+<style>@import url("<c:url value="/css/board/comment.css"/>");
+</style>
  <script>
 
  $(function(){
@@ -29,13 +28,13 @@ var showCom = function(comments){
      }
     
     //버튼클릭시이벤트
-    $("#listBtn").bind("click", function(){
-        var userList = $("#userList");  // 회원목록
-        var tr
-        var input
-        var etc
-        userList.empty();
-    });
+//     $("#listBtn").bind("click", function(){
+//         var userList = $("#userList");  // 회원목록
+//         var tr
+//         var input
+//         var etc
+//         userList.empty();
+//     });
     
     $("#addBtn").bind("click", function(){
         if(chkCom()){
@@ -45,7 +44,7 @@ var showCom = function(comments){
                    data:$("#comSend").serialize(),
                    success:function(result){                    
                        if(result) {
-                    	   $('#modalBody_one').html("등록되었습니다.");
+                    	   $('#modalBody_one').html("댓글등록되었습니다.");
    						$('#myModal_one').modal();
 
                        }else {
@@ -63,10 +62,13 @@ var showCom = function(comments){
         }
     });
 }
+ 
+
 
 </script>
 
 <body>
+
 <!-- 댓글 등록 -->
  
 <form id="comSend">
@@ -83,7 +85,8 @@ var showCom = function(comments){
 		</textarea>
 		<br>
 		<div class="col-sm-12 text-right">
-            <button class="btn btn-primary" type="submit"
+			<br>
+            <button class="btn btn-primary" type="button"
                id="addBtn">
                댓글 <i class="fas fa-plus"></i>
             </button>
@@ -91,4 +94,4 @@ var showCom = function(comments){
 
  </form>
 </body>
-<%@ include file="../common/footer.jsp"%>
+

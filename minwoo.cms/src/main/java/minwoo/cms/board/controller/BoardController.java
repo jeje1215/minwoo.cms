@@ -27,9 +27,17 @@ public class BoardController {
 	@RequestMapping(value="/board/comsend",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean comjoin(Comments comments){
+		System.out.println("야호1");
 		return comService.comjoin(comments);
 	}   
-   
+//	@RequestMapping(value="/board/comlist",method=RequestMethod.POST)
+//	@ResponseBody
+//	public List<Comments>listComs(){
+//		System.out.println("야호");
+//		return comService.listComs();
+//	
+//	}   
+	   
    @RequestMapping(value="/board/list", method = RequestMethod.POST)
    public String boardlist(String url){
       return url;

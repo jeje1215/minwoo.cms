@@ -1,5 +1,7 @@
 package minwoo.cms.comments.dao;
 
+import java.util.List;
+
 import minwoo.cms.comments.dao.mapper.ComMapper;
 import minwoo.cms.comments.domain.Comments;
 
@@ -12,6 +14,10 @@ public class ComDaoImpl implements ComDao {
 	
 	public int addCom(Comments comments){
 		return comMapper.addCom(comments);
+	}
+	
+	public List<Comments>getComs(){
+		return comMapper.getComs(); //댓글 목록
 	}
 
 }

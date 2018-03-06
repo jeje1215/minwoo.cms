@@ -20,10 +20,13 @@ public class ManUserController {
 	@Autowired ManUserService manUserService;
 
 	@RequestMapping(value = "/manuser")
-	public String urlMenu_manuser(Model model) {
+	public String urlMenu_manuser(Model model, Integer currentPage, Integer rowCnt) {
 		ManUser manUser = new ManUser();
-		manUser.setCurrentPage(1);
-		manUser.setRowCnt(5);
+		System.out.println(currentPage);
+		if (currentPage != null) {
+			manUser.setCurrentPage(currentPage);
+			manUser.setRowCnt(rowCnt);
+		}
 		model.addAttribute("man_userlist", manUserService.listUsers(manUser)); 
         Paging paging = new Paging();
         paging.setPageNo(1); // 페이지 번호

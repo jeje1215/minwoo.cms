@@ -55,6 +55,10 @@
 	      </table>
   	 </div>
    <br> <br>
+   <form id="pagingForm">
+	<input name="currentPage" id="currentPage" style="display:none;">
+	<input name="rowCnt" id="rowCnt" value="5" style="display:none;">
+   </form>
 	<jsp:include page="../../common/paging.jsp" flush="true">
 	    <jsp:param name="firstPageNo" value="${paging.firstPageNo}" />
 	    <jsp:param name="prevPageNo" value="${paging.prevPageNo}" />

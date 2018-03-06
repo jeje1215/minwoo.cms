@@ -69,8 +69,11 @@ function go_btn() {
    });
 }
 
-
-$(document).ready(function() {
-   // 초기 값 지정
-   
-});
+function goPage(i, frm){
+	if(i == null){
+		i == 1;
+	}
+	$('#currentPage').val(i);
+	frm.action = "manuser";
+	frm.submit();
+}

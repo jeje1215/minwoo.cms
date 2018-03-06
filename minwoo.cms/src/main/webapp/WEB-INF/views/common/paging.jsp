@@ -11,8 +11,8 @@
 	            <span>
 	              <c:forEach var="i" begin="${paging.startPageNo}" end="${paging.endPageNo}" step="1">
 	                  <c:choose>
-	                      <c:when test="${i eq paging.pageNo}"><a href="javascript:$.goPage(${i})" class="choice">${i}</a></c:when>
-	                      <c:otherwise><a href="javascript:$.goPage(${i})"><span class="pageNum">${i}</span></a></c:otherwise>
+	                      <c:when test="${i eq paging.pageNo}"><a href="javascript:goPage(${i}, pagingForm)" class="choice">${i}</a></c:when>
+	                      <c:otherwise><a href="javascript:goPage(${i}, pagingForm)"><span class="pageNum">${i}</span></a></c:otherwise>
 	                  </c:choose>
 	              </c:forEach>
 	            </span>

@@ -24,7 +24,7 @@
 					from users where mod_date is null 
 					order by user_id desc) a
 				where rownum <=#{rowCnt}*#{currentPage}) x
-			where x.rnum > #{rowCnt}*(#{currentPage}-1)
+			where x.rnum > #{rowCnt}*(#{currentPage}-1) 
         ]]>
 	</select>
 	<!-- where rownum <=10) x

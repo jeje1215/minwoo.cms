@@ -7,7 +7,15 @@ public class Comments {
 	private String comContent; //댓글 내용
 	private Date regDate; //댓글 작성일
 	private String userId; // 댓글작성 아이디
+	private int usbId; 
+
 	
+	public int getUsbId() {
+		return usbId;
+	}
+	public void setUsbId(int usbId) {
+		this.usbId = usbId;
+	}
 	public int getComId() {
 		return comId;
 	}

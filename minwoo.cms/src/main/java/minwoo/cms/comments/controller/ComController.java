@@ -14,15 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ComController {
 	@Autowired private ComService comService;
 	
-	@RequestMapping("/comments")
-	public String main(){
-		return "comments/main";
-	}
-	
-	@RequestMapping(value="/comsend",method=RequestMethod.POST)
+	//안쓰는거 ~ board에서 씀
+	@RequestMapping(value="/cms/comsend2",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean comjoin(Comments comments){
-		System.out.println("남승창 !");
+		System.out.println("안녕");
 		return comService.comjoin(comments);
 	}
 	

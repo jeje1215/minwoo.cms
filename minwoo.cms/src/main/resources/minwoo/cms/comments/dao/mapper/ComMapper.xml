@@ -4,8 +4,8 @@
 <mapper namespace="minwoo.cms.comments.dao.mapper.ComMapper">
 
 <insert id="addCom" parameterType="minwoo.cms.comments.domain.Comments">
-  insert into comments(com_id,com_content,userId)
-  values(comments_comid_seq.nextval,#{comContent},#{userId})
+  insert into comments(com_id,com_content,user_id,usb_id)
+  values(comments_comid_seq.nextval,#{comContent},#{userId},#{usbId})
 </insert>
 
 

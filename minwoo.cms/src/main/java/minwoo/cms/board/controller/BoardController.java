@@ -2,28 +2,33 @@ package minwoo.cms.board.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import minwoo.cms.board.domain.BoardVo;
 import minwoo.cms.board.service.BoardService;
+import minwoo.cms.comments.domain.Comments;
+import minwoo.cms.comments.service.ComService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class BoardController {
    @Autowired BoardService boardService;
+   @Autowired private ComService comService;
 
  /*  @RequestMapping("/board")
    public String list() {
       return "board/list";
    }*/
+  
+	@RequestMapping(value="/board/comsend",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean comjoin(Comments comments){
+		return comService.comjoin(comments);
+	}   
    
    @RequestMapping(value="/board/list", method = RequestMethod.POST)
    public String boardlist(String url){

@@ -15,8 +15,8 @@ var showCom = function(comments){
  }
  
  var regBtns = function(){
- //    var modal = $("#resultModal");  // 추가, 수정, 삭제결과창
- //    var msg1 = $("#msg1");            // 결과메세지
+  // 추가, 수정, 삭제결과창
+    var msg = $("#msg");            // 결과메세지
         
      var chkCom = function(){ // 댓글 글 여부    
          if($(":input[id='chkcom']").val()) return true
@@ -42,28 +42,26 @@ var showCom = function(comments){
             	   method:"post",
                    url:"comsend",                
                    data:$("#comSend").serialize(),
-                   success:function(result){                    
+                   success:function(result){          
                        if(result) {
-                    	   $('#modalBody_one').html("댓글등록되었습니다.");
-   						$('#myModal_one').modal();
-
-                       }else {
-                    	   msg1.text("등록 취소");
-                       }
-                       $("#listBtn").trigger("click");
-                   },
-                   error:function(a, b, errMsg1){
-                       //msg1.text("발신불가: " + errMsg1);                
-                   },
-                   complete:function(){
-                       //modal.modal("show");                    
-                   }
-               });
-        }
-    });
-}
- 
-
+   					    $('#modalBody_two').html("댓글 등록!");
+   					    $('#myModal_two').modal();
+      			       ; 
+                          }else {
+                       	   msg.text("발신불가");
+                          }
+                          $("#listBtn").trigger("click");
+                      },
+                      error:function(a, b, errMsg){
+                          msg.text("발신불가: " + errMsg);                
+                      },
+                      complete:function(){
+                          modal.modal("show");                    
+                      }
+                  });
+           }
+       });
+   }
 
 </script>
 

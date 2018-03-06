@@ -22,11 +22,6 @@ public class MsgController {
 	@RequestMapping(value="/sendmsg",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean send(Msg msg){
-		
-		System.out.println(msg.getMesGetId());
-		System.out.println(msg.getMesContent());
-		System.out.println(msg.getUserId());
-		
 		return msgService.send(msg);
 	}
 

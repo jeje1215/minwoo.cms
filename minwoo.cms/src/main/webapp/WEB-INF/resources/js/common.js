@@ -44,15 +44,7 @@ $(function(){
 		}
 	})
 }) 
-/*$.activeMenu = function(type, id) {
-	$("#" + type + "> li").each(function() {
-		$(this).removeClass("active")
-	})
-	$("#" + id).addClass("active")
 
-	$("#" + $("#" + id).attr("data-val")).addClass("active");
-}*/
-
+// 왼쪽메뉴 클릭시 sub_id값 가져오기
 function go_boardList(subid){
-	//alert(subid);
 }

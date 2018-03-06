@@ -1,7 +1,8 @@
 $(function(){
     regBtns();
+	var parentId = opener.document.getElementById( "mesId" ).value;
+	$("#chk11").val(parentId);
 });
- 
 var showMsg = function(msg){
     $(":input[id='chk11']").val($(msg).data("mesGetId"));
    

@@ -43,21 +43,19 @@
 						<img src="<c:url value="/img/pro.jpg"/>" style="width: 90px; height: 90px">
 						<h5>
 							<i class="fa fa-child" aria-hidden="true" style="float: center"></i>
-						
-				<A onclick="window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=700,height=700,left=0, top=0, scrollbars=yes');return false" href="#">${ sessionScope.user.loginId }님!</A>		
-						
-						
+							<a  href="#" onclick="window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=700,height=700,left=0, top=0, scrollbars=yes');return false">
+								${sessionScope.user.loginId}님!
+							</a>
 						</h5>
 						<p>CMS에오신것을환영합니다.</p>
-
 					</div>
 					<ul class="pro">
 						<li class="plan-feature"><i class="far fa-calendar-alt"
 							aria-hidden="true"></i> 가입일: ${ sessionScope.user.regDate }</li>
 						<li class="plan-feature"><i class="fas fa-chart-line"
 							aria-hidden="true"></i> 회원등급: ${sessionScope.user.userLevel == "A" ? "관리자":"일반"}</li>
-						<li class="plan-feature"><i class="far fa-edit"
-							aria-hidden="true"></i> 게시글: 0</li>
+						<!-- <li class="plan-feature"><i class="far fa-edit"
+							aria-hidden="true"></i> 게시글: 0</li> -->
 						<div class="row">
 							<button type="button" class="btn btn-default"
 								style="width: 80px;"
@@ -70,6 +68,8 @@
 								<i class="fas fa-sign-in-alt" aria-hidden="true"></i>Logout
 							</button>
 							<input type="text" style="display: none" id="loginId"
+								value="${ sessionScope.user.loginId }">
+							<input type="text" style="display: none" id="mesId"
 								value="${ sessionScope.user.loginId }">
 						</div>
 					</ul>

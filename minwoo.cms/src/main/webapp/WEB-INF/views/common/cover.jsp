@@ -25,17 +25,22 @@
          <br>
       </p>
    </div>
-<!--    <table>
-      <tr>
-         <td>게시글 1</td>
-         <td>게시글 2</td>
-         <td>게시글 3</td>
-      </tr>
-      <tr>
-         <td>게시글 1</td>
-         <td>게시글 2</td>
-         <td>게시글 3</td>
-      </tr>
-   </table> -->
+
+	<div class="container">
+		<div style="display:inline-block" class="left" id="boardList"></div>
+		<div style="display:inline-block" class="center" id="boardList2"></div>
+	</div>
+
+<%-- <%@ include file="/WEB-INF/views/board/list.jsp"%> --%>
+
+
+        
+<!-- <table> -->
+<!--       <tr> -->
+<!--          <td>게시글 1</td> -->
+<!--          <td>게시글 2</td> -->
+<!--          <td>게시글 3</td> -->
+<!--       </tr> -->
+<!-- </table> -->
 </body>
 </html>

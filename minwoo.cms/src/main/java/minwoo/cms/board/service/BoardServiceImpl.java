@@ -67,4 +67,8 @@ public class BoardServiceImpl implements BoardService{
 	   boardDao.updateCnt(usbId);
    }
    
+   public String getSubNm(int subId){
+	   return boardDao.chkSubNm(subId);
+   }
+   
 }

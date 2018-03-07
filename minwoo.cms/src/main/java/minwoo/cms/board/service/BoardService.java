@@ -11,4 +11,6 @@ public interface BoardService {
    boolean fixBoard(BoardVo boardVo); //게시물 수정
    int secede(int usbId); //게시물 삭제
    void plusCnt(int usbId);
+   
+   String getSubNm(int subId);
 }

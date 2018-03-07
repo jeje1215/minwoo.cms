@@ -10,5 +10,4 @@ public interface SubboardService {
 	SubboardInfo modiListManboard(int subId);
 	boolean modiManboard(SubboardInfo subboardInfo);
 	int removeManboard(SubboardInfo subboardInfo);
-
 }

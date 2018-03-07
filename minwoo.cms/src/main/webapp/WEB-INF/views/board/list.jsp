@@ -41,8 +41,6 @@ function go_mes(id){
 		         <tbody id=boardList style="word-break:break-all">
 		         </tbody>
 		      </table>
-		
-		
 		      <div class="form-group">
 		         <div class="col-sm-12 text-right">
 		           <!--  <button type="button" class="btn btn-success btn-md" id="listBtn">
@@ -56,19 +54,6 @@ function go_mes(id){
 		            </c:if>
 		         </div>
 		         <br> <br>
-		<!--          <div class="modal fade" id="resultModal">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title" id="msg"></h4>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					</div> -->
-				</div>
 		<!--          <div class="text-center">
 		            <ul class="pagination">
 		               <li class="disabled"><a href="#"><span

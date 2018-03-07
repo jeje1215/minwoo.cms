@@ -11,7 +11,7 @@
    <br>
       <form id="upForm" name="upForm" method="post">
          <table class="table table-hover" style="font-size:14px;">
-            <caption>게시글</caption>
+            <caption>${mvsubNm}</caption>
             <thead>
             </thead>
 			<tr>

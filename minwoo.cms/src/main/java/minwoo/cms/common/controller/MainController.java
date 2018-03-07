@@ -1,5 +1,6 @@
 package minwoo.cms.common.controller;
 
+import minwoo.cms.board.service.BoardService;
 import minwoo.cms.manad.service.AdService;
 import minwoo.cms.manboard.service.ManboardService;
 import minwoo.cms.manboard.service.SubboardService;
@@ -15,6 +16,7 @@ public class MainController {
 	@Autowired ManboardService manboardService;
 	@Autowired SubboardService subboardService;
 	@Autowired AdService adService;
+	@Autowired BoardService boardService;
 	
 	// cover page 이동
 	@RequestMapping("/")
@@ -45,6 +47,7 @@ public class MainController {
 		model.addAttribute("sub_boardlist", subboardService.boardList()); //서브 게시판<- List<T>
 		model.addAttribute("ads_img", adService.findAdList());
 		model.addAttribute("mvsubid", mvsubid);
+		model.addAttribute("mvsubNm", boardService.getSubNm(mvsubid));
 		return "main";
 	}	
 

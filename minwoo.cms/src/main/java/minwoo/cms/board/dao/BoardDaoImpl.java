@@ -52,4 +52,8 @@ public class BoardDaoImpl implements BoardDao {
    public BoardVo selectComment(int usbId){
 	   return boardMapper.selectComment(usbId);
    }
+   
+   public String chkSubNm(int subId){
+	   return boardMapper.chkSubNm(subId);
+   }
 }

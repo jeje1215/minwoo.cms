@@ -50,4 +50,8 @@
       select com_id
       from comments where usb_id=#{usbId}
    </select>
+   
+	<select id="chkSubNm" resultType="string" parameterType="int">
+		select sub_nm from subboards where sub_id = #{subId}
+	</select>	   
 </mapper>

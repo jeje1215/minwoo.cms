@@ -14,4 +14,5 @@ public interface BoardDao {
    void updateCnt(int usbId); //게시글 조회수
    
    BoardVo selectComment(int usbId);
+   String chkSubNm(int subId);
 }

@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BoardController {
-	@Autowired
-	BoardService boardService;
+	@Autowired BoardService boardService;
 	@Autowired private ComService comService;
 
 
@@ -29,6 +28,7 @@ public class BoardController {
 	@RequestMapping(value = "/board/write", method = RequestMethod.POST)
 	public String boardadd(String url, int mvsubid,Model model) {
 		model.addAttribute("mvsubid", mvsubid);
+		model.addAttribute("mvsubNm", boardService.getSubNm(mvsubid));
 		return url;
 	}
 
@@ -38,6 +38,7 @@ public class BoardController {
 		model.addAttribute("board_one", boardService.onelistboard(usbId));
 		model.addAttribute("comment_list", comService.listComs(usbId));
 		model.addAttribute("mvsubid", selmvsubid);
+		model.addAttribute("mvsubNm", boardService.getSubNm(selmvsubid));
 		return url;
 	}
 

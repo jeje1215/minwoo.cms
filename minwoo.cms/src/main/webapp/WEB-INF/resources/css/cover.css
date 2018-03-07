@@ -1,64 +1,102 @@
 @CHARSET "UTF-8";
 
 body {
-   font-weight: bold;
-   font-family: "HY강B";
-   text-align: center;
-   font-color: #1d305f;
+	font-weight: bold;
+	font-family: "HY강B";
+	text-align: center;
+	font-color: #1d305f;
 }
 
 div#cover {
-   padding-top: 350px;
-/*    background-image: url("<c:url value="/img/cover4.jpg"/>"); */
-   background-image: url("../img/cover4.jpg");  
-   background-repaet: fixed;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
-   width: auto;
-   height: 700px;
+	padding-top: 350px;
+	/*    background-image: url("<c:url value="/img/cover4.jpg"/>"); */
+	background-image: url("../img/cover4.jpg");
+	background-repaet: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: auto;
+	height: 700px;
+}
+
+div#boardList.board1 {
+	width: 250px;
+	height: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div#boardList2.board2 {
+	width: 250px;
+	height: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div#boardList3.board3 {
+	width: 250px;
+	height: 300px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 div a:hover {
-   background-color: cyan;
+	background-color: cyan;
 }
 
 .covertitle {
-   color: white;
-   font-size: 38px;
-   text-align: center;
-   width: 500px;
-   height: 60px;
-   margin-left: 37%;
-   background-color: #243853;
+	color: white;
+	font-size: 38px;
+	text-align: center;
+	width: 500px;
+	height: 60px;
+	margin-left: 37%;
+	background-color: #243853;
 }
 
 #menutop {
-   position: absolute;
-   top: 10px;
-   right: 10px;
-   color: #1d305f;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #1d305f;
 }
 
 .navbar-nav>li>a:hover {
-   background-color: white;
-   display: inline-block;
-   border-radius: 10px;
+	background-color: white;
+	display: inline-block;
+	border-radius: 10px;
 }
 
 .navbar-nav>li>a>span {
-   color: #fdd813;
+	color: #fdd813;
 }
 
 table, td {
-   border: 1px solid white;
+	border: 1px solid white;
+	height: 100px;
 }
 
 table {
-   height: 300px;
-   width: 500px;
-   margin-top: 80px;
-   margin-left: auto;
-   margin-right: auto;
-   text-align: center;
+	width: 300px;
+	height: 250px;
+	margin-top: 10px;
+	/*    margin-left: auto; */
+	/*    margin-right: auto; */
+	text-align: center;
+}
+
+.container {
+	text-align: justify;
+}
+
+jumbotron {
+	height: 170px
+}
+
+.thumbnail {
+	width: 330px;
+	margin-left: 30px;
+	margin-right: 30px;
 }

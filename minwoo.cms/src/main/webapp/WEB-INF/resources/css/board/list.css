@@ -18,7 +18,11 @@ table {
 
 }
 
-
+div#jum.jumbotron{
+	
+	background-color:#f0f8ff;
+	height:350px;
+}
 
 /* 등록취소 버튼 css */
 

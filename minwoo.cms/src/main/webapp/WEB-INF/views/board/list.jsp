@@ -38,7 +38,14 @@ function go_joinmv(){
 			<c:when test="${ sessionScope.user != null}">
 				<section id="post">
 				   <div class="container">
-						여기다~ 만들어줘여
+							<div class="jumbotron" id="jum">
+		        		<h2><img src="<c:url value="/img/list3.png"/>" align="left">Cms 개시판</h2>
+		        		<p>개시판에 오신걸 환영합니다!</p>
+		        		<p>수 많은 이야기와 글이 공존 하는 이곳에서<br> 
+		        		당신만의 세상을 펼쳐보세요!</p>
+		        		<p>		          	
+		        		</p>
+		     		 </div>
 					</div>
 				</section>
 			</c:when>

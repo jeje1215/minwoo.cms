@@ -3,7 +3,6 @@
 <%@ include file="../../common/header.jsp"%>
 <%@ include file="../../menu/topMenu.jsp"%>
 <%@ include file="../../menu/leftMenu.jsp"%>
-<%@ include file="../../common/modal.jsp"%>
 <style>@import url("<c:url value="/css/user/update/update.css"/>");</style>
 
    <section id="post">

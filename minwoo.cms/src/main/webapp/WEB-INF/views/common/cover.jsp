@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ include file="./header.jsp"%>
 <style>@import url("<c:url value="/css/cover.css"/>");</style>
-<script src="<c:url value="/js/cover.js"/>"></script>
 
    <div id="menutop">
       <ul class="nav navbar-nav navbar-right">
@@ -28,7 +27,7 @@
    </div>
 
 
-<h4 id="thumbnails-custom-content">게시물 <!--Custom content--></h4>
+<!-- <h4 id="thumbnails-custom-content">게시물 Custom content</h4>
   <div class="bs-example" data-example-id="thumbnails-with-custom-content">
     <div class="row">
       <div class="col-sm-6 col-md-4">
@@ -49,7 +48,7 @@
           </div>
         </div>
       </div>
-     </div>
+     </div> -->
 
 	<div class="container">
 		<div class="header">

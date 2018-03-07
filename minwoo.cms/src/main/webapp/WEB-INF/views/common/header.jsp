@@ -31,4 +31,5 @@
 <body>
 	<form name="urlForm" method="post">
 		<input type="text" name="url" id="mvUrl" style="display:none;">
+		<input type="text" name="mvsubid" id="mvSub" style="display:none;">
 	</form>

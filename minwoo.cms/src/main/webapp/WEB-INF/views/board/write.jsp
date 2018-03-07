@@ -6,16 +6,11 @@
 <%@ include file="../menu/leftMenu.jsp"%>
 <style>@import url("<c:url value="/css/board/list.css"/>");</style>
 <script src="<c:url value="/js/board/write.js"/>"></script>
-<style>
 
-
-</style>
-
-
-<body>
 	<section id="post">
 		<div class="container">
 			<form id="boardForm">
+			<input type="text" style="display:none;" name="subId" value="${mvsubid}">
 				<table class="table table-hover">
 					<caption>게시글 작성</caption>
 					<tfoot>
@@ -38,21 +33,17 @@
 					</tfoot>
 				</table>
 			</form>
-	<div class="form-group">
+		<div class="form-group">
 			<div class="col-sm-12 text-right">
 				<button class="btn btn-primary"  id="addBtn" >
 					 <i class="fa fa-check spaceLeft"></i>등록
 				</button>
-			
 				<button class="btn btn-danger" id="listBtn" onclick="menuUrl('main', urlForm)" >
 					 <i class="fa fa-times spaceLeft"></i>취소
 				</button>
-			
 			</div>
 		</div>
-		
-		
-		<div class="modal fade" id="resultModal">
+<!-- 		<div class="modal fade" id="resultModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -64,7 +55,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
-</body>
 <%@ include file="../common/footer.jsp"%>

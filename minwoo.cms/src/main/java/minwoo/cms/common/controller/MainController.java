@@ -37,6 +37,17 @@ public class MainController {
 		return url;
 	}	
 	
+	//메인페이지 이동2
+	@RequestMapping(value="/main2", method = RequestMethod.POST)
+	public String urlMenu_main2(String url, Model model, int mvsubid){
+		//왼쪽메뉴 나타내는 model
+		model.addAttribute("man_boardlist", manboardService.boardList()); //메인 게시판<- List<T>
+		model.addAttribute("sub_boardlist", subboardService.boardList()); //서브 게시판<- List<T>
+		model.addAttribute("ads_img", adService.findAdList());
+		model.addAttribute("mvsubid", mvsubid);
+		return "main";
+	}	
+
 	//쪽지창 이동
 	@RequestMapping(value="cms/message")
 	public String message_move(){

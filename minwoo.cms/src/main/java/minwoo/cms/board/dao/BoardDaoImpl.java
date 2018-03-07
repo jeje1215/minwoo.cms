@@ -13,8 +13,8 @@ public class BoardDaoImpl implements BoardDao {
    @Autowired private BoardMapper boardMapper;
 
    // 게시판 목록
-   public List<BoardVo> getBoardLists(){
-      return boardMapper.getBoardLists();
+   public List<BoardVo> getBoardLists(int subid){
+      return boardMapper.getBoardLists(subid);
    }
    
    // 게시판 등록

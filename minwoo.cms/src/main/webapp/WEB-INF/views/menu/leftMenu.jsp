@@ -47,7 +47,7 @@
 				<li>
 					<h3 onclick="menuUrl('manuser', urlForm)" style="cursor:pointer;">회원관리</h3>
 				</li>
-				<li>
+<!-- 				<li>
 					<h3>
 						접속통계<span class="plus">+</span>
 					</h3>
@@ -56,7 +56,7 @@
 						<li><a href="#">주간</a></li>
 						<li><a href="#">월간</a></li>
 					</ul>
-				</li>
+				</li> -->
 				<li>
 					<h3 onclick="menuUrl('manad', urlForm)" style="cursor:pointer;">
 						광고관리

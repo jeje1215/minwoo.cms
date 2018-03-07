@@ -23,10 +23,13 @@ function boardList(){
       var tr;
       var input;
       var etc;
+      var subid = $("input[name=selmvsubid]").val();
       boardList.empty();
 
       $.ajax({
          url : "cms/main/listboards",
+		 method : "post",
+		 data : {subid:subid},
          success : function(boards) {
         	 $(boards).each(function(idx, board) {
 				var nowDate = new Date(board.regDate);

@@ -10,6 +10,15 @@ public class BoardVo {
 	private Date regDate; // 게시글 작성일자
 	private int usbCnt; // 게시글 조회수
 	private int cntCom;
+	private int subId;
+
+	public int getSubId() {
+		return subId;
+	}
+
+	public void setSubId(int subId) {
+		this.subId = subId;
+	}
 
 	public int getCntCom() {
 		return cntCom;

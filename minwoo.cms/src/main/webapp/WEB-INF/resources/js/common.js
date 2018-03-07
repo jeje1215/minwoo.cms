@@ -12,7 +12,7 @@ $(function() {
 	if (namePage[2] == 'manboard' || namePage[2] == 'manad' || namePage[2] == 'manuser'){
 		$("ul[id=menu_setting]").show();
 		$("#top_setting").addClass("active");
-	}else if(namePage[2] == 'main' || namePage[2] == 'url' || namePage[2] == 'board'){
+	}else if(namePage[2] == 'main' || namePage[2] == 'url' || namePage[2] == 'board' || namePage[2] == 'main2' ){
 		$("ul[id=menu_home]").show();
 		$("#top_home").addClass("active");
 	}else if(namePage[2] == 'update' || namePage[2]+"/"+namePage[3] == 'user/manmes'){
@@ -35,6 +35,14 @@ function menuUrl(url, frm) {
 	frm.submit();
 }
 
+//회원게시판 이동
+function boardUrl(url, frm, subid) {
+	$('#mvUrl').val(url);
+	$('#mvSub').val(subid);
+	frm.action = "/cms/"+url;
+	frm.submit();
+}
+
 $(function(){
 	$("#accordian h3").click(function(){
 		$("#accordian ul ul").slideUp();
@@ -46,5 +54,5 @@ $(function(){
 
 // 왼쪽메뉴 클릭시 sub_id값 가져오기
 function go_boardList(subid){
-	menuUrl('main', urlForm); 
+	boardUrl('main2', urlForm, subid); 
 }

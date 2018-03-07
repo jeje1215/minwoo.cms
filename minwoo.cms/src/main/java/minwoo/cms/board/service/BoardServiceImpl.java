@@ -15,8 +15,8 @@ public class BoardServiceImpl implements BoardService{
    @Autowired private BoardDao boardDao;
    
    //목록얻기
-   public List<BoardVo> listBoards(){
-      return boardDao.getBoardLists();
+   public List<BoardVo> listBoards(int subid){
+      return boardDao.getBoardLists(subid);
    }
    
 

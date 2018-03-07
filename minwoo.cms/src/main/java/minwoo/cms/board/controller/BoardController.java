@@ -27,23 +27,24 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/board/write", method = RequestMethod.POST)
-	public String boardadd(String url) {
+	public String boardadd(String url, int mvsubid,Model model) {
+		model.addAttribute("mvsubid", mvsubid);
 		return url;
 	}
 
-	@RequestMapping(value = "/board/detail", method = { RequestMethod.POST,
-			RequestMethod.GET })
-	public String boardone(String url, Model model, int usbId) {
+	@RequestMapping(value = "/board/detail", method = RequestMethod.POST)
+	public String boardone(String url, Model model, int usbId, int selmvsubid) {
 		boardService.plusCnt(usbId);
 		model.addAttribute("board_one", boardService.onelistboard(usbId));
 		model.addAttribute("comment_list", comService.listComs(usbId));
+		model.addAttribute("mvsubid", selmvsubid);
 		return url;
 	}
 
 	@ResponseBody
-	@RequestMapping("/cms/main/listboards")
-	public List<BoardVo> boardlist() {
-		return boardService.listBoards();
+	@RequestMapping(value = "/cms/main/listboards")
+	public List<BoardVo> boardlist(int subid) {
+		return boardService.listBoards(subid);
 	}
 
 	@RequestMapping(value = "/main/createboard", method = { RequestMethod.POST,

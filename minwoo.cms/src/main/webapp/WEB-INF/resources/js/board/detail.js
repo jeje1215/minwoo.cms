@@ -1,3 +1,5 @@
+//top,left 메뉴 존재하는 페이지 이동시 사용하는 url 이동
+
 $(function(){
       regBtns();
 });
@@ -19,10 +21,9 @@ function updBtn(){ //수정 버튼
             data :$("#upForm").serialize(),
             success : function(result) {
                if (result){
-                  $('#modalBody_one').html("수정 성공");
+                  $('#modalBody_one').html("수정 되었습니다.");
                 $('#myModal_one').modal();
                 $('#myModal_one').on('click', '#modalOk', function() {
-               menuUrl('main', urlForm);
                }); 
             }else{
                   $('#modalBody_one').html("수정 실패");

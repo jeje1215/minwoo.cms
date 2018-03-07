@@ -3,15 +3,17 @@
 <mapper namespace="minwoo.cms.board.dao.mapper.BoardMapper">
 
    <!-- 01. 게시글 전체 목록 조회 -->
-   <select id="getBoardLists" resultType="minwoo.cms.board.domain.BoardVo">
+   <select id="getBoardLists" resultType="minwoo.cms.board.domain.BoardVo" parameterType="int">
       select usb_id usbId, usb_title usbTitle, usb_content usbContent, reg_date regDate, usb_cnt usbCnt,user_id userId
-      from userboards order by usb_id desc
+      from userboards 
+      where sub_id = #{subid}
+      order by usb_id desc
    </select>
    
    <!-- 02. 게시글 작성 추가 -->
    <insert id="addBoard" parameterType="minwoo.cms.board.domain.BoardVo">
-         insert into userboards(usb_id,usb_title,usb_content,user_id)
-         values(userboards_usbid_seq.nextval,#{usbTitle},#{usbContent},#{userId})
+         insert into userboards(usb_id,usb_title,usb_content,user_id,sub_id)
+         values(userboards_usbid_seq.nextval,#{usbTitle},#{usbContent},#{userId},#{subId})
    </insert>
    
    <!-- 03. 게시글 상세보기 -->

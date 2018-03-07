@@ -3,7 +3,7 @@ $(function(){
 });
 
 function boardList(){
-      var boardList = $("#boardList"); //게시판 목록
+      var boardList = $("#boardList"); //게시글 1
       var tr;
       var input;
       var etc;
@@ -14,7 +14,7 @@ function boardList(){
          success : function(boards) {
         	 var i = 0;
         	 $(boards).each(function(idx, board) {
-        		 if(i==2){
+        		 if(i==1){
 					 var nowDate = new Date(board.regDate);
 					 month = ''+(nowDate.getMonth()+1);
 					 day = ''+nowDate.getDate();
@@ -50,7 +50,7 @@ $(function(){
 });
 
 function boardList2(){
-   var boardList = $("#boardList2"); //게시판 목록
+   var boardList = $("#boardList2"); //게시글 2
    var tr;
    var input;
    var etc;
@@ -61,7 +61,7 @@ function boardList2(){
       success : function(boards) {
      	 var i = 0;
      	 $(boards).each(function(idx, board) {
-     		 if(i==3){
+     		 if(i==2){
 					 var nowDate = new Date(board.regDate);
 					 month = ''+(nowDate.getMonth()+1);
 					 day = ''+nowDate.getDate();
@@ -69,14 +69,7 @@ function boardList2(){
 					 if(day.length<2) day = '0' + day;
 					 if(month.length < 2) month = '0' + month;	 
 						 
-					   table = $("<table></table>");/*
-					   td = $("<tr><td><name='usbId' value='"
-					         + board.usbId+ "onClick='showBoard(this)'/>"
-					         + board.usbId+ "</td></tr>");
-					   td2 = $("<td style='cursor:pointer;' onclick='goviewUrl(\"board/detail\", listForm, "+board.usbId+")'>"
-							   + board.usbTitle+ "</td><td>"
-					     		+ board.userId+ "</td><td>"+ [year,month,day].join('-')
-					         + "</td><td>"+ board.usbCnt+"</td>");*/
+					   table = $("<table></table>");
 					   table_title = $("<tr><td>제목:<name='usbId' value='"
 					   + board.usbId+ "onClick='showBoard(this)'/>"
 					   + board.usbTitle+ "</td></tr>");
@@ -90,4 +83,82 @@ function boardList2(){
  });
 }
 
+//
 
+$(function(){
+	   boardList3();
+});
+
+function boardList3(){
+var boardList = $("#boardList3"); //게시글 3
+var tr;
+var input;
+var etc;
+boardList.empty();
+
+$.ajax({
+   url : "cms/main/listboards",
+   success : function(boards) {
+  	 var i = 0;
+  	 $(boards).each(function(idx, board) {
+  		 if(i==3){
+					 var nowDate = new Date(board.regDate);
+					 month = ''+(nowDate.getMonth()+1);
+					 day = ''+nowDate.getDate();
+					 year = nowDate.getFullYear();
+					 if(day.length<2) day = '0' + day;
+					 if(month.length < 2) month = '0' + month;	 
+						 
+					   table = $("<table></table>");
+					   table_title = $("<tr><td>제목:<name='usbId' value='"
+					   + board.usbId+ "onClick='showBoard(this)'/>"
+					   + board.usbTitle+ "</td></tr>");
+					   table_content = $("<tr><td>내용:"
+					   + board.usbContent+ "</td></tr>");
+					   boardList.append(table.append(table_title).append(table_content));
+  		 }
+         i++;
+  	 });
+   }
+});
+}
+
+//
+
+$(function(){
+	   boardList4();
+});
+
+function boardList4(){
+var boardList = $("#boardList4"); //게시글 4
+var tr;
+var input;
+var etc;
+boardList.empty();
+
+$.ajax({
+   url : "cms/main/listboards",
+   success : function(boards) {
+  	 var i = 0;
+  	 $(boards).each(function(idx, board) {
+  		 if(i==4){
+					 var nowDate = new Date(board.regDate);
+					 month = ''+(nowDate.getMonth()+1);
+					 day = ''+nowDate.getDate();
+					 year = nowDate.getFullYear();
+					 if(day.length<2) day = '0' + day;
+					 if(month.length < 2) month = '0' + month;	 
+						 
+					   table = $("<table></table>");
+					   table_title = $("<tr><td>제목:<name='usbId' value='"
+					   + board.usbId+ "onClick='showBoard(this)'/>"
+					   + board.usbTitle+ "</td></tr>");
+					   table_content = $("<tr><td>내용:"
+					   + board.usbContent+ "</td></tr>");
+					   boardList.append(table.append(table_title).append(table_content));
+  		 }
+         i++;
+  	 });
+   }
+});
+}

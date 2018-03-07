@@ -28,8 +28,10 @@
    </div>
 
 	<div class="container">
-		<div style="display:inline-block" class="left" id="boardList"></div>
-		<div style="display:inline-block" class="center" id="boardList2"></div>
+		<div style="display:inline-block" class="board1" id="boardList"></div> <!-- 게시글1 -->
+		<div style="display:inline-block" class="board2" id="boardList2"></div> <!-- 게시글2 -->
+		<div style="display:inline-block" class="board3" id="boardList3"></div> <!-- 게시글3 -->
+		<div style="display:inline-block" class="board4" id="boardList4"></div> <!-- 게시글4 -->
 	</div>
 
 <%-- <%@ include file="/WEB-INF/views/board/list.jsp"%> --%>

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="./header.jsp"%>
 <style>@import url("<c:url value="/css/cover.css"/>");</style>
+<script src="<c:url value="/js/cover.js"/>"></script>
 
    <div id="menutop">
       <ul class="nav navbar-nav navbar-right">

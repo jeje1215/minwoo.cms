@@ -14,7 +14,7 @@ function boardList(){
          success : function(boards) {
         	 var i = 0;
         	 $(boards).each(function(idx, board) {
-        		 if(i<2){
+        		 if(i==2){
 					 var nowDate = new Date(board.regDate);
 					 month = ''+(nowDate.getMonth()+1);
 					 day = ''+nowDate.getDate();
@@ -61,7 +61,7 @@ function boardList2(){
       success : function(boards) {
      	 var i = 0;
      	 $(boards).each(function(idx, board) {
-     		 if(i==5){
+     		 if(i==3){
 					 var nowDate = new Date(board.regDate);
 					 month = ''+(nowDate.getMonth()+1);
 					 day = ''+nowDate.getDate();

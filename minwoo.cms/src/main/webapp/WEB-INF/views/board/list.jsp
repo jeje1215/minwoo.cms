@@ -15,7 +15,15 @@ function go_mes(id){
 	<c:when test="${ mvsubid == null }">
 		<section id="post">
 		   <div class="container">
-	 			이미지~ 유나언니 꾸며주세요~
+	 			<div class="jumbotron">
+	 			
+        		<h2><img src="<c:url value="/img/list.png"/> " align="left";>Cms 개시판</h2>
+        		<p>지금 당장 가입하세요!</p>
+        		<p>놀라운 세상을 경험 할 수 있습니다.</p>
+        	<p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">가입하기</a>
+        </p>
+      </div>
 		   </div>
 		  </section>
 	</c:when>

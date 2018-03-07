@@ -18,15 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BoardController {
 	@Autowired
 	BoardService boardService;
-	@Autowired
-	private ComService comService;
+	@Autowired private ComService comService;
 
-	@RequestMapping(value = "/board/comsend", method = RequestMethod.POST)
-	@ResponseBody
-	public boolean comjoin(Comments comments) {
-		System.out.println("야호1");
-		return comService.comjoin(comments);
-	}
 
 	@RequestMapping(value = "/board/list", method = RequestMethod.POST)
 	public String boardlist(String url) {
@@ -43,6 +36,7 @@ public class BoardController {
 	public String boardone(String url, Model model, int usbId) {
 		boardService.plusCnt(usbId);
 		model.addAttribute("board_one", boardService.onelistboard(usbId));
+		model.addAttribute("comment_list", comService.listComs(usbId));
 		return url;
 	}
 
@@ -69,7 +63,8 @@ public class BoardController {
 	@ResponseBody
 	@RequestMapping(value = "/board/del", method = { RequestMethod.POST,
 			RequestMethod.GET })
-	public boolean secede(int usbId) {
+	public int secede(int usbId) {
+		//0 -> error, 1 -> 성공, 2-> 댓글 있음
 		return boardService.secede(usbId);
 	}
 }

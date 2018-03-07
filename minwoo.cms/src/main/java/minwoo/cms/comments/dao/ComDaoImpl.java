@@ -16,8 +16,11 @@ public class ComDaoImpl implements ComDao {
 		return comMapper.addCom(comments);
 	}
 	
-	public List<Comments>getComs(){
-		return comMapper.getComs(); //댓글 목록
+	public List<Comments>getComs(int usbId){
+		return comMapper.getComs(usbId); //댓글 목록
 	}
-
+	
+	public int delCom(int comid){
+		return comMapper.delCom(comid);
+	}
 }

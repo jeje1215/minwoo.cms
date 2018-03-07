@@ -13,7 +13,6 @@ var regBtns = function(){
 }
 
 function updBtn(){ //수정 버튼   
-
          $.ajax({
             url:"fixBoard",
             method:"post",
@@ -39,25 +38,28 @@ function updBtn(){ //수정 버튼
       
 function delBtn(){ //삭제버튼
    var board = $("#boardId").val();
-   
       $.ajax({
          url : "del",
          method:"post",
          data : {usbId:board},
          success : function(result) {
-            if (result){
-               $('#modalBody_one').html("삭제 성공");
+            if (result == 1){
+               $('#modalBody_one').html("삭제 되었습니다.");
                $('#myModal_one').modal();
                $('#myModal_one').on('click', '#modalOk', function() {
                    menuUrl('main', urlForm);
                 }); 
-            }else{
+            }else if(result == 0){
                $('#modalBody_one').html("삭제 실패");
                $('#myModal_one').modal();
+            }else if(result == 2){
+                $('#modalBody_one').html("해당 게시글에 댓글이 존재합니다. 삭제하실 수 없습니다.");
+                $('#myModal_one').modal();
             }
          },
          error : function(a, b, errMsg) {
-            $('#modalBody_one').html("삭제 땡"+errMsg);
+            //$('#modalBody_one').html("error "+errMsg);
+             $('#modalBody_one').html("해당 게시글에 댓글이 존재합니다. 삭제하실 수 없습니다.");
             $('#myModal_one').modal();
          }
       });

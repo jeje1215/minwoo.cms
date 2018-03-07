@@ -18,12 +18,11 @@
 			<form id="boardForm">
 				<table class="table table-hover">
 					<caption>게시글 작성</caption>
-
 					<tfoot>
 						<td>제 목</td>
-						<td><input type="text" name="usbTitle" size="80"
+						<td>
+							<input type="text" name="usbTitle" style="width:400px;"
 							placeholder="제목을 입력해주세요"></td>
-
 						<tr>
 							<td>내용</td>
 							<td><textarea name="usbContent" rows="10" cols="100"
@@ -39,8 +38,6 @@
 					</tfoot>
 				</table>
 			</form>
-			
-
 	<div class="form-group">
 			<div class="col-sm-12 text-right">
 				<button class="btn btn-primary"  id="addBtn" >

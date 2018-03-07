@@ -46,8 +46,21 @@ public class BoardServiceImpl implements BoardService{
 
    //게시물 삭제
    @Transactional
-   public boolean secede(int usbId) {
-	 return boardDao.deleteBoard(usbId)>0;
+   public int secede(int usbId) {
+	   //★★ 댓글 게시판 삭제판단이 안됩니다. 메인게시판, 서브게시판 동일하니 같이 작업하시기 바랍니다.★★
+	   int result = 0;
+	   BoardVo boardVo = new BoardVo();
+	   System.out.println("1");
+	   boardVo = boardDao.selectComment(usbId);
+	   System.out.println("2");
+	   if(boardVo != null){
+		   System.out.println("3");
+		   result = 2;
+	   }else{
+		   System.out.println("4");
+		   result = boardDao.deleteBoard(usbId);
+	   }
+	 return result;
    }
    
    public void plusCnt(int usbId){

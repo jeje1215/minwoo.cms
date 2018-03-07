@@ -201,6 +201,8 @@ function go_boardDel(){
 		},
 		error : function(a, b, errMsg) {
 			msg = "※ 실패 : " + errMsg;
+			$('#modalBody_one').html("하위게시판이 등록되어 삭제할 수 없습니다.");
+			$('#myModal_one').modal();
 		}
 	});
 }

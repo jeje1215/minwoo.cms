@@ -9,6 +9,6 @@ public interface BoardService {
    boolean createBoard(BoardVo boardVo); //게시물 등록
    public BoardVo readContent(int usbId); //게시물 상세보기
    boolean fixBoard(BoardVo boardVo); //게시물 수정
-   boolean secede(int usbId); //게시물 삭제
+   int secede(int usbId); //게시물 삭제
    void plusCnt(int usbId);
 }

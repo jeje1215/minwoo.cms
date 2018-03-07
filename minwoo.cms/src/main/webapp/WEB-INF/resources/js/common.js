@@ -1,4 +1,3 @@
-
 var pathname = location.pathname;
 var name = pathname.split('/');
 var namePage;
@@ -13,14 +12,13 @@ $(function() {
 	if (namePage[2] == 'manboard' || namePage[2] == 'manad' || namePage[2] == 'manuser'){
 		$("ul[id=menu_setting]").show();
 		$("#top_setting").addClass("active");
-	}else if(namePage[2] == 'main' || namePage[2] == 'url'){
+	}else if(namePage[2] == 'main' || namePage[2] == 'url' || namePage[2] == 'board'){
 		$("ul[id=menu_home]").show();
 		$("#top_home").addClass("active");
 	}else if(namePage[2] == 'update' || namePage[2]+"/"+namePage[3] == 'user/manmes'){
 		$("ul[id=menu_mypage]").show();
 		$("#top_mypage").addClass("active");
 	}
-	//$.activeMenu("header", name[1]);
 })
 
 //메뉴없는 페이지 이동시 사용하는 공통 url이동
@@ -36,6 +34,7 @@ function menuUrl(url, frm) {
 	frm.action = "/cms/"+url;
 	frm.submit();
 }
+
 $(function(){
 	$("#accordian h3").click(function(){
 		$("#accordian ul ul").slideUp();

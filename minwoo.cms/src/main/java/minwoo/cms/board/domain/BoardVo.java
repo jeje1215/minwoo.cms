@@ -3,59 +3,68 @@ package minwoo.cms.board.domain;
 import java.sql.Date;
 
 public class BoardVo {
-   private int usbId; // 게시글 번호
-   private String usbTitle; // 게시글 제목
-   private String usbContent; // 게시글 내용
-   private String userId; // 게시글 작성자
-   private Date regDate; // 게시글 작성일자
-   private int usbCnt; // 게시글 조회수
+	private int usbId; // 게시글 번호
+	private String usbTitle; // 게시글 제목
+	private String usbContent; // 게시글 내용
+	private String userId; // 게시글 작성자
+	private Date regDate; // 게시글 작성일자
+	private int usbCnt; // 게시글 조회수
+	private int cntCom;
 
-   public int getUsbId() {
-      return usbId;
-   }
+	public int getCntCom() {
+		return cntCom;
+	}
 
-   public void setUsbId(int usbId) {
-      this.usbId = usbId;
-   }
+	public void setCntCom(int cntCom) {
+		this.cntCom = cntCom;
+	}
 
-   public String getUsbTitle() {
-      return usbTitle;
-   }
+	public int getUsbId() {
+		return usbId;
+	}
 
-   public void setUsbTitle(String usbTitle) {
-      this.usbTitle = usbTitle;
-   }
+	public void setUsbId(int usbId) {
+		this.usbId = usbId;
+	}
 
-   public String getUsbContent() {
-      return usbContent;
-   }
+	public String getUsbTitle() {
+		return usbTitle;
+	}
 
-   public void setUsbContent(String usbContent) {
-      this.usbContent = usbContent;
-   }
+	public void setUsbTitle(String usbTitle) {
+		this.usbTitle = usbTitle;
+	}
 
-   public Date getRegDate() {
-      return regDate;
-   }
+	public String getUsbContent() {
+		return usbContent;
+	}
 
-   public void setRegDate(Date regdate) {
-      this.regDate = regdate;
-   }
+	public void setUsbContent(String usbContent) {
+		this.usbContent = usbContent;
+	}
 
-   public int getUsbCnt() {
-      return usbCnt;
-   }
+	public Date getRegDate() {
+		return regDate;
+	}
 
-   public void setUsbCnt(int usbCnt) {
-      this.usbCnt = usbCnt;
-   }
+	public void setRegDate(Date regdate) {
+		this.regDate = regdate;
+	}
 
-   public String getUserId() {
-	return userId;
-   }
+	public int getUsbCnt() {
+		return usbCnt;
+	}
 
-   public void setUserId(String userId) {
-	this.userId = userId;
-   }
+	public void setUsbCnt(int usbCnt) {
+		this.usbCnt = usbCnt;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

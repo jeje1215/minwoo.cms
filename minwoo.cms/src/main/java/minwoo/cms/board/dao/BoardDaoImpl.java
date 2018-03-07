@@ -48,4 +48,8 @@ public class BoardDaoImpl implements BoardDao {
    public void updateCnt(int usbId){
 	   boardMapper.updateCnt(usbId);
    }
+   
+   public BoardVo selectComment(int usbId){
+	   return boardMapper.selectComment(usbId);
+   }
 }

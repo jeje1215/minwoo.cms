@@ -2,13 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="minwoo.cms.comments.dao.mapper.ComMapper">
-
-
-
-<insert id="addCom" parameterType="minwoo.cms.comments.domain.Comments">
-  insert into comments(com_id,com_content,user_id,usb_id)
-  values(comments_comid_seq.nextval,#{comContent},#{userId},#{usbId})
-</insert>
-
-
+	<insert id="addCom" parameterType="minwoo.cms.comments.domain.Comments">
+	  insert into comments(com_id,com_content,user_id,usb_id)
+	  values(comments_comid_seq.nextval,#{comContent},#{userId},#{usbId})
+	</insert>
+	
+	<select id="getComs" resultType="minwoo.cms.comments.domain.Comments" parameterType="int">
+		select com_id comId,com_content comContent,user_id userId 
+		from comments 
+		where usb_id = #{usbId}
+		order by com_id asc
+	</select>		
+	
+    <delete id="delCom" parameterType="int">
+        delete comments where com_id = #{comid}
+    </delete>	
 </mapper>

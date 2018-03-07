@@ -39,5 +39,13 @@
 		set usb_cnt = usb_cnt+1
 		where usb_id=#{usbId}
 	</update>
+	
+	<resultMap id="commentMap" type="minwoo.cms.board.domain.BoardVo">
+		<id property="cntCom" column="com_id" />
+	</resultMap>		
    
+   <select id="selectComment" resultMap="commentMap" parameterType="int">
+      select com_id
+      from comments where usb_id=#{usbId}
+   </select>
 </mapper>

@@ -13,15 +13,15 @@ import org.springframework.transaction.annotation.Transactional;
 public class ComServiceImpl implements ComService{
 	@Autowired private ComDao comDao;
 	
-	public List<Comments>listComs(){
-		return comDao.getComs();
+	public List<Comments>listComs(int usbId){
+		return comDao.getComs(usbId);
 	}
 	
-	
-	@Transactional
 	public boolean comjoin(Comments comments){
 		return comDao.addCom(comments)>0;
 	}
 	
-
+	public boolean comdel(int comid){
+		return comDao.delCom(comid)>0;
+	}
 }

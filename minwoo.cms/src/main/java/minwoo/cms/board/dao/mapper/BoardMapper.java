@@ -15,4 +15,5 @@ public interface BoardMapper {
     */
    
    void updateCnt(int usbId);
+   BoardVo selectComment(int usbId);
 }

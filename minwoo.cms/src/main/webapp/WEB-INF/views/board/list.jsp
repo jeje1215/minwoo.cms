@@ -31,10 +31,12 @@
            <!--  <button type="button" class="btn btn-success btn-md" id="listBtn">
                <i class="glyphicon glyphicon-list-alt"></i> 목록
             </button> -->
-            <button class="btn btn-primary" type="submit"
-               onclick="menuUrl('board/write', urlForm)">
-               등록 <i class="fas fa-plus"></i>
-            </button>
+            <c:if test="${sessionScope.user != null}">
+	            <button class="btn btn-primary" type="submit"
+	               onclick="menuUrl('board/write', urlForm)">
+	               등록 <i class="fas fa-plus"></i>
+	            </button>
+            </c:if>
          </div>
          <br> <br>
          <div class="modal fade" id="resultModal">

@@ -8,7 +8,6 @@ public class Comments {
 	private Date regDate; //댓글 작성일
 	private String userId; // 댓글작성 아이디
 	private int usbId; 
-
 	
 	public int getUsbId() {
 		return usbId;

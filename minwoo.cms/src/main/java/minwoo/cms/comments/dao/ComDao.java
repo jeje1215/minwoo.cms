@@ -6,6 +6,6 @@ import minwoo.cms.comments.domain.Comments;
 
 public interface ComDao {
 	int addCom(Comments comments); //댓글 추가
-	List<Comments>getComs();//댓글 목록
-
+	List<Comments>getComs(int usbId);//댓글 목록
+	int delCom(int comid);
 }

@@ -27,8 +27,9 @@
 									</a>
 								</li>
 	     			 		</c:when>
-	     			 	</c:choose>
+	     			 	</c:choose>	   
 					</c:if>
+										
 				</ul>
 			</nav>
 		</header>

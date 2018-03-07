@@ -10,26 +10,43 @@ function go_mes(id){
 	window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=700,height=700,left=0, top=0, scrollbars=yes');
 	return false;
 }	
+function go_joinmv(){
+    $('#modalBody_two').html("회원가입 페이지로 이동하시겠습니까?");
+    $('#myModal_two').modal();
+    $('#myModal_two').on('click', '#modalOk', function() {
+    	goUrl('user/join/userJoin', urlForm);
+   }); 	
+}
 </script>
 <c:choose>
 	<c:when test="${ mvsubid == null }">
-		<section id="post">
-		   <div class="container">
-	 			<div class="jumbotron">
-	 			
-        		<h2><img src="<c:url value="/img/list.png"/> " align="left";>Cms 개시판</h2>
-        		<p>지금 당장 가입하세요!</p>
-        		<p>놀라운 세상을 경험 할 수 있습니다.</p>
-        	<p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">가입하기</a>
-        </p>
-      </div>
-		   </div>
-		  </section>
+		<c:choose>
+			<c:when test="${ sessionScope.user == null}">
+				<section id="post">
+				   <div class="container">
+			 		<div class="jumbotron">
+		        		<h2><img src="<c:url value="/img/list.png"/> " align="left">Cms 개시판</h2>
+		        		<p>지금 당장 가입하세요!</p>
+		        		<p>놀라운 세상을 경험 할 수 있습니다.</p>
+		        		<p>
+		          			<a class="btn btn-lg btn-primary" href="#" onclick="go_joinmv()" role="button">가입하기</a>
+		        		</p>
+		     		 </div>
+				   </div>
+				  </section>
+			</c:when>
+			<c:when test="${ sessionScope.user != null}">
+				<section id="post">
+				   <div class="container">
+						여기다~ 만들어줘여
+					</div>
+				</section>
+			</c:when>
+		</c:choose>
 	</c:when>
 	<c:when test="${ mvsubid != null }">
 		<section id="post">
-		   <div class="container">
+		   <div class="container">${mvsubNm}
 		      <br>
 		         <form name="listForm" method="post">
 		         	<input name="usbId" value="" style="display:none;">

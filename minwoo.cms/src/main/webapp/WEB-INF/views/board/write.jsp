@@ -12,7 +12,7 @@
 			<form id="boardForm">
 			<input type="text" style="display:none;" name="subId" value="${mvsubid}">
 				<table class="table table-hover">
-					<caption>게시글 작성</caption>
+					<caption>게시글 작성 - [${mvsubNm}]</caption>
 					<tfoot>
 						<td>제 목</td>
 						<td>
@@ -38,7 +38,7 @@
 				<button class="btn btn-primary"  id="addBtn" >
 					 <i class="fa fa-check spaceLeft"></i>등록
 				</button>
-				<button class="btn btn-danger" id="listBtn" onclick="menuUrl('main', urlForm)" >
+				<button class="btn btn-danger" id="listBtn" onclick="boardUrl('main2', urlForm, ${mvsubid});">
 					 <i class="fa fa-times spaceLeft"></i>취소
 				</button>
 			</div>

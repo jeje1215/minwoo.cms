@@ -57,7 +57,7 @@
 					</c:when>
 			    </c:choose>
 	        </c:if>
-            <button type="reset" class="btn btn-primary"  id="listBtn" onclick="boardUrl('main2', urlForm, ${mvsubid}); ">
+            <button type="reset" class="btn btn-primary"  id="listBtn" onclick="boardUrl('main2', urlForm, ${mvsubid});">
                 <i class="fa fa-check spaceLeft"></i>취소
             </button>
          </div>

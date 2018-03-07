@@ -1,3 +1,9 @@
+//top,left 메뉴 존재하는 페이지 이동시 사용하는 url 이동
+function goviewUrl(url, frm, idx) {
+	$('input[name=usbId]').val(idx);
+	frm.action = "/cms/"+url;
+	frm.submit();
+}
 $(function(){
 	   boardList();
 });
@@ -55,8 +61,3 @@ function boardList(){
       });
 	}
 	
-function go_mes(id){
-	$("#mesId").val(id);
-	window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=700,height=700,left=0, top=0, scrollbars=yes');
-	return false;
-}	

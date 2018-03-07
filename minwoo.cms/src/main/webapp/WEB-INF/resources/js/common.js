@@ -46,4 +46,5 @@ $(function(){
 
 // 왼쪽메뉴 클릭시 sub_id값 가져오기
 function go_boardList(subid){
+	menuUrl('main', urlForm); 
 }

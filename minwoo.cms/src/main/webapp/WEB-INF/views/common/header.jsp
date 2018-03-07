@@ -29,4 +29,6 @@
 <script src="<c:url value="/js/common.js"/>"></script>
 </head>
 <body>
-	<form name="urlForm" method="post"><input type="text" name="url" id="mvUrl" style="display:none;"></form>
+	<form name="urlForm" method="post">
+		<input type="text" name="url" id="mvUrl" style="display:none;">
+	</form>

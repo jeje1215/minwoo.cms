@@ -2,8 +2,14 @@
    pageEncoding="UTF-8"%>
 <style>@import url("<c:url value="/css/board/list.css"/>");
 </style>
-<script src="<c:url value="/js/board/write.js"/>"></script>
 <script src="<c:url value="/js/board/list.js"/>"></script>
+<script>
+function go_mes(id){
+	$("#mesId").val(id);
+	window.open('<c:url value="/message"/>','window','location=no, directories=no,resizable=no,status=no,toolbar=no,menubar=no, width=700,height=700,left=0, top=0, scrollbars=yes');
+	return false;
+}	
+</script>
 <section id="post">
    <div class="container">
       <br>

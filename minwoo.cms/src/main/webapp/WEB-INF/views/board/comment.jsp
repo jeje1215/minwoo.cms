@@ -78,14 +78,20 @@
 		</form>
 	</div>
 	<div>
+	
+
+	
+	
+	
 		<form id="comDel">
 		<input type="text" style="display:none" name="comId">
-		<table>
+		<table class="type03">
 			<c:forEach items="${comment_list}" var="comlist">
 				<tr>
-					<td>작성자 : ${comlist.userId}</td>
-					<td>내용 : ${comlist.comContent}</td>
+					<th scope="row">작성자 : ${comlist.userId}</th>
+					<td id="c">내용 : ${comlist.comContent}</td>
 					<td>
+					
 	     			 	<c:choose>
 	     			 		<c:when test="${ sessionScope.user.userLevel eq 'A' }">
 								<button class="btn btn-danger" onclick="delComment(${comlist.comId})">

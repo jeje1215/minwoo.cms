@@ -44,6 +44,7 @@ public class BoardDaoImpl implements BoardDao {
 	 return boardMapper.deleteBoard(usbId);
 	}
    
+   //게시글 조회수
    public void updateCnt(int usbId){
 	   boardMapper.updateCnt(usbId);
    }

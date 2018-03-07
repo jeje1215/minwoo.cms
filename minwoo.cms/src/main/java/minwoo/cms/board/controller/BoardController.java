@@ -16,71 +16,60 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BoardController {
-   @Autowired BoardService boardService;
-   @Autowired private ComService comService;
+	@Autowired
+	BoardService boardService;
+	@Autowired
+	private ComService comService;
 
- /*  @RequestMapping("/board")
-   public String list() {
-      return "board/list";
-   }*/
-  
-	@RequestMapping(value="/board/comsend",method=RequestMethod.POST)
+	@RequestMapping(value = "/board/comsend", method = RequestMethod.POST)
 	@ResponseBody
-	public boolean comjoin(Comments comments){
+	public boolean comjoin(Comments comments) {
 		System.out.println("야호1");
 		return comService.comjoin(comments);
-	}   
-//	@RequestMapping(value="/board/comlist",method=RequestMethod.POST)
-//	@ResponseBody
-//	public List<Comments>listComs(){
-//		System.out.println("야호");
-//		return comService.listComs();
-//	
-//	}   
-	   
-   @RequestMapping(value="/board/list", method = RequestMethod.POST)
-   public String boardlist(String url){
-      return url;
-   }
-   
-   @RequestMapping(value="/board/write", method = RequestMethod.POST)
-   public String boardadd(String url){
-      return url;
-   }
-   
-   /*@RequestMapping(value="/board/view", method = RequestMethod.POST)
-   public String boardview(int usbId){
-	   return "board/view";
-   }
-   */
-   @RequestMapping(value="/board/detail" , method={RequestMethod.POST,RequestMethod.GET})
-   public String boardone(String url,Model model, int usbId){
-	   boardService.plusCnt(usbId);
-	   model.addAttribute("board_one",boardService.onelistboard(usbId));
-	   return url;
-   }
-  
-   @ResponseBody
-   @RequestMapping("/cms/main/listboards")
-   public List<BoardVo> boardlist() {
-      return boardService.listBoards();
-   }
-   
-   @RequestMapping(value="/main/createboard" , method={RequestMethod.POST,RequestMethod.GET})
-   @ResponseBody
-   public boolean createBoard(BoardVo boardVo){
-      return boardService.createBoard(boardVo);
-   }
-   
-   @ResponseBody
-   @RequestMapping(value="/board/fixBoard",method={RequestMethod.POST,RequestMethod.GET})
-   public boolean fixBoard(BoardVo boardVo){
-      return boardService.fixBoard(boardVo);
-   }
-   
-   @ResponseBody
-   @RequestMapping(value="/board/del",  method={RequestMethod.POST,RequestMethod.GET})
-   public boolean secede(int usbId){
-	   return boardService.secede(usbId);
-   }
+	}
+
+	@RequestMapping(value = "/board/list", method = RequestMethod.POST)
+	public String boardlist(String url) {
+		return url;
+	}
+
+	@RequestMapping(value = "/board/write", method = RequestMethod.POST)
+	public String boardadd(String url) {
+		return url;
+	}
+
+	@RequestMapping(value = "/board/detail", method = { RequestMethod.POST,
+			RequestMethod.GET })
+	public String boardone(String url, Model model, int usbId) {
+		boardService.plusCnt(usbId);
+		model.addAttribute("board_one", boardService.onelistboard(usbId));
+		return url;
+	}
+
+	@ResponseBody
+	@RequestMapping("/cms/main/listboards")
+	public List<BoardVo> boardlist() {
+		return boardService.listBoards();
+	}
+
+	@RequestMapping(value = "/main/createboard", method = { RequestMethod.POST,
+			RequestMethod.GET })
+	@ResponseBody
+	public boolean createBoard(BoardVo boardVo) {
+		return boardService.createBoard(boardVo);
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/board/fixBoard", method = { RequestMethod.POST,
+			RequestMethod.GET })
+	public boolean fixBoard(BoardVo boardVo) {
+		return boardService.fixBoard(boardVo);
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/board/del", method = { RequestMethod.POST,
+			RequestMethod.GET })
+	public boolean secede(int usbId) {
+		return boardService.secede(usbId);
+	}
 }
